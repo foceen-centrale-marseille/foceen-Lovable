@@ -48,7 +48,7 @@ const Exposants = () => {
               className="w-80 h-40 bg-card rounded-xl flex items-center justify-center border-2 border-cyan p-6 cursor-pointer shadow-lg hover:shadow-xl transition-shadow">
 
               {parrain.logo ?
-              <img src={parrain.logo} alt={parrain.name} className="object-contain h-28 w-auto" /> :
+              <img src={parrain.logo} alt={parrain.name} className="object-contain h-28 w-auto" loading="lazy" decoding="async" /> :
 
               <span className="text-xl font-heading font-bold text-foreground">{parrain.name}</span>
               }
@@ -71,7 +71,7 @@ const Exposants = () => {
               className="w-44 h-24 bg-card rounded-lg flex items-center justify-center border border-border p-3 cursor-pointer hover:border-cyan hover:shadow-md transition-all">
 
                 {p.logo ?
-              <img src={p.logo} alt={p.name} className="object-contain h-16 w-auto" /> :
+              <img src={p.logo} alt={p.name} className="object-contain h-16 w-auto" loading="lazy" decoding="async" /> :
 
               <span className="text-sm font-heading text-foreground text-center">{p.name}</span>
               }
@@ -133,7 +133,7 @@ const Exposants = () => {
               className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center aspect-square hover:shadow-lg hover:border-cyan transition-all cursor-pointer group">
 
                 {company.logo ?
-              <img src={company.logo} alt={company.name} className="object-contain h-16 w-auto mb-3" /> :
+              <img src={company.logo} alt={company.name} className="object-contain h-16 w-auto mb-3" loading="lazy" decoding="async" /> :
 
               <Building2 size={32} className="text-muted-foreground mb-3 group-hover:text-cyan transition-colors" />
               }
@@ -165,7 +165,7 @@ const Exposants = () => {
                   <div className="flex items-center gap-5">
                     {selectedExposant.logo ?
                   <div className="w-20 h-20 bg-card rounded-lg flex items-center justify-center p-2 shrink-0">
-                        <img src={selectedExposant.logo} alt={selectedExposant.name} className="object-contain h-16 w-auto" />
+                        <img src={selectedExposant.logo} alt={selectedExposant.name} className="object-contain h-16 w-auto" loading="lazy" decoding="async" />
                       </div> :
 
                   <div className="w-20 h-20 bg-card/10 rounded-lg flex items-center justify-center shrink-0">
