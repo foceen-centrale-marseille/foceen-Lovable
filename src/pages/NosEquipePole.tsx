@@ -165,7 +165,10 @@ const MemberCard = ({ member }: { member: Member }) => {
             src={member.photo}
             alt={`${member.prenom} ${member.nom}`}
             className="w-full h-full object-cover object-top"
+            width={112}
+            height={112}
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-primary/10 text-primary font-heading font-bold text-2xl">

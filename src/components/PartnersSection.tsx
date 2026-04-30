@@ -21,7 +21,7 @@ export default function PartnersSection() {
         <h2 className="text-3xl font-heading font-bold text-center text-foreground mb-4">PARRAIN</h2>
         <div className="flex justify-center mb-12">
           <div className="w-72 h-32 bg-white rounded-lg flex items-center justify-center border border-border p-4">
-            <img src={parrain.src} alt={parrain.name} className="object-contain h-24 w-auto" />
+            <img src={parrain.src} alt={parrain.name} className="object-contain h-24 w-auto" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -29,7 +29,7 @@ export default function PartnersSection() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-items-center">
           {partenaires.map((p) => (
             <div key={p.name} className="w-36 h-20 bg-white rounded-lg flex items-center justify-center border border-border p-2">
-              <img src={p.src} alt={p.name} className="object-contain h-16 w-auto" />
+              <img src={p.src} alt={p.name} className="object-contain h-16 w-auto" loading="lazy" decoding="async" />
             </div>
           ))}
         </div>

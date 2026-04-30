@@ -144,7 +144,8 @@ const QuiSommesNous = () => {
                   src={teamYears[carouselIndex].img}
                   alt={teamYears[carouselIndex].label}
                   className="w-full h-full object-cover"
-                  loading="eager" />
+                  loading="lazy"
+                  decoding="async" />
 
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
                   <h3 className="text-xl md:text-2xl font-heading font-bold">
@@ -269,7 +270,8 @@ const QuiSommesNous = () => {
                 src={isoCertification}
                 alt="Certification ISO 9001 et ISO 20121 - Bureau Veritas"
                 className="w-full max-w-md rounded-xl border border-border shadow-sm object-contain"
-                loading="eager" />
+                loading="lazy"
+                decoding="async" />
 
             </div>
           </div>
