@@ -217,7 +217,12 @@ const QuiSommesNous = () => {
                 <div className="w-14 h-14 rounded-xl bg-cyan/10 flex items-center justify-center">
                   <v.icon size={26} className="text-cyan" />
                 </div>
-                <h4 className="font-heading font-semibold text-foreground">{v.title}</h4>
+                <h4
+                  className={`font-heading font-semibold text-foreground ${v.title === "Engagement" ? "notranslate" : ""}`}
+                  translate={v.title === "Engagement" ? "no" : undefined}
+                >
+                  {v.title}
+                </h4>
                 <p className="text-sm text-muted-foreground font-body leading-relaxed">{v.desc}</p>
               </motion.div>
             )}
