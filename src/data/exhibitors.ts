@@ -1044,8 +1044,87 @@ export const exposantsList: Exposant[] = [
     description: "Implanté en Drôme-Ardèche, proche de Valence, Conduent Business Solutions France conçoit et développe des logiciels et des systèmes billettiques innovants. Le développement du système de lecture et de contrôle de billets pour le métro de Mexico en 1968, puis la RATP au début des années 70, a fait de l'entreprise une pionnière dans le domaine de la Billettique. CBS France est aujourd'hui un centre de compétences mondial pour les transports publics et la mobilité intelligente.",
     highlights: ["Pionnier de la billettique depuis 1968 (métro de Mexico, RATP)", "Centre de compétences mondial pour la mobilité intelligente", "Spécialiste des transports publics", "Mobilité interne et développement des compétences"],
   },
+
+  // ── NAVAL GROUP ──
+  {
+    id: 125, name: "Naval Group", sector: "Industrie et Naval de défense", domain: "Industrie", yearCreated: 2003, logo: "/logos/naval-group.jpg",
+    location: "Toulon, Ollioules, Saint-Tropez, Nantes, Ruelle, Brest, Cherbourg, Lorient et Paris",
+    employees: "16 722", chiffreAffaires: "4,355 milliards d'euros",
+    website: "https://www.naval-group.com/fr/", websiteCarriere: "https://www.naval-group.com/fr/nous-rejoindre",
+    profiles: "Tous les profils sont intéressants",
+    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
+    applicationMethod: "Après réception du CV, entretien téléphonique avec un recruteur, puis entretien (physique ou visio) avec le manager et/ou le HR Business Partner. Enquête administrative de sécurité et procédure d'habilitation Défense Nationale possibles.",
+    description: "Naval Group est un acteur incontournable du naval de Défense. Il conçoit, réalise, maintient en service, déconstruit et démantèle des navires de surface, des sous-marins, des porte-avions, mais également des drones. Maître d'œuvre industriel, concepteur et intégrateur d'ensemble de ces navires et de leurs systèmes (applicatifs, matériels et réseaux informatiques, data center, IA, traitements du signal et des données), notre entreprise regroupe près de 500 métiers répartis sur 10 sites en France.",
+    highlights: ["10 sites implantés en France", "Près de 500 métiers : ingénierie systèmes, dev & cyber, nucléaire, supply chain", "Diversité et inclusion au cœur de la culture", "Habilitation Défense Nationale"],
+  },
+
+  // ── AXA FRANCE ──
+  {
+    id: 126, name: "AXA France", sector: "Assurance", domain: "Banque / Assurance", yearCreated: 1985, logo: "/logos/axa.jpg",
+    location: "France – Groupe présent dans 51 pays",
+    employees: "34 000", chiffreAffaires: "29 milliards d'euros",
+    website: "https://recrutement.axa.fr/axa-et-vous/notre-identite",
+    profiles: "Actuariat (chargés d'études actuarielles), Risk Management Assurance (gestionnaires de sinistres, souscripteurs), IT (software engineers, architectes, product owners) et fonctions supports",
+    postTypes: ["Alternance", "CDI", "Stage"],
+    applicationMethod: "Entretien RH, entretien(s) managers, éventuels tests techniques.",
+    description: "Un des leaders mondiaux de l'assurance dans la protection des biens, des personnes et des actifs, AXA c'est 145 000 collaborateurs et contributeurs qui s'engagent au quotidien pour nos clients, 51 pays dans lesquels nous distribuons nos produits et services et plus de 90 millions de clients qui nous font confiance dans le monde. Employeur citoyen et responsable, AXA s'engage au quotidien pour des causes sociétales et environnementales et mène une politique inclusive engagée pour reconnaître et valoriser les différences individuelles.",
+    highlights: ["145 000 collaborateurs dans le monde", "Présent dans 51 pays", "90 millions de clients", "Engagement sociétal et environnemental"],
+  },
+
+  // ── HARIBO ──
+  {
+    id: 127, name: "HARIBO", sector: "Agro-alimentaire", domain: "Agroalimentaire", yearCreated: 1920, logo: "/logos/haribo.jpg",
+    location: "Marseille, Uzès et monde (26 pays)",
+    employees: "8 500",
+    website: "https://www.haribo.com/fr-fr", websiteCarriere: "https://www.haribo.com/fr-fr/carrieres/travailler-chez-haribo",
+    profiles: "Production, Maintenance, Qualité, R&D, Amélioration Continue",
+    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
+    applicationMethod: "CV + entretiens.",
+    description: "Ensemble, transmettons notre joie dans le monde ! HARIBO est la marque des bonbons gélifiés numéro 1 dans le monde. Elle compte plus de 7 000 collaborateurs basés dans 26 pays. La recette de notre succès repose sur quelques ingrédients essentiels : notre engagement pour la qualité, notre approche originale et le travail précieux de nos collaborateurs issus de plus de 50 pays différents qui apportent la richesse de leur diversité à tout ce que nous entreprenons. Haribo, c'est beau la vie, pour les grands et les petits !",
+    highlights: ["N°1 mondial des bonbons gélifiés", "Présent dans 26 pays", "Collaborateurs de 50+ nationalités", "Marque iconique depuis 1920"],
+  },
+
+  // ── HEINEKEN FRANCE ──
+  {
+    id: 128, name: "HEINEKEN France", sector: "Agroalimentaire", domain: "Agroalimentaire", yearCreated: 1864, logo: "/logos/heineken.png",
+    location: "Mons-en-Barœul, Schiltigheim, Marseille – 71 sites de distribution en France",
+    employees: "3 700", chiffreAffaires: "29,82 milliards d'euros (groupe)",
+    website: "https://www.heinekenfrance.fr/", websiteCarriere: "https://www.heinekenfrance.fr/rejoignez-nous/",
+    profiles: "Ingénieur, Maintenance",
+    postTypes: ["Alternance", "Stage"],
+    applicationMethod: "CV, 2 entretiens (RH et opérationnel), en visio et présentiel.",
+    description: "Chez HEINEKEN France, nous exerçons deux métiers : brasseur et distributeur. Brasseur, nous sommes fiers de la belle diversité de nos marques de bières produites dans nos 3 brasseries françaises à Mons-en-Barœul, Schiltigheim et Marseille. Distributeur, avec notre filiale France Boissons, nous livrons chaque jour plus de 43 000 clients (cafés, hôtels, restaurants). Brasseur-distributeur depuis plus de 30 ans en France, nous regroupons 3 700 collaborateurs et générons 30 000 emplois indirects. HEINEKEN France appartient au groupe HEINEKEN, premier brasseur européen et deuxième mondial.",
+    highlights: ["3 brasseries françaises", "71 sites de distribution", "43 000 clients CHR livrés chaque jour", "Groupe HEINEKEN : 165 brasseries dans 70+ pays"],
+  },
+
+  // ── PERNOD RICARD ──
+  {
+    id: 129, name: "Pernod Ricard", sector: "Vins & Spiritueux", domain: "Agroalimentaire", yearCreated: 1975, logo: "/logos/pernod-ricard.png",
+    location: "International – 3 000 employés en France (Paris, Reims, Marseille, Cognac, Vendeville, Bordeaux, Thuir)",
+    employees: "19 000", chiffreAffaires: "10 959 millions d'euros",
+    website: "https://www.pernod-ricard.com", websiteCarriere: "https://www.pernod-ricard.com/fr/carrieres",
+    profiles: "Profils variés en bureaux ou en usine : RSE, Production, R&D / QHSE, Supply Chain, Achats, Tech, Data, Finance",
+    postTypes: ["Alternance", "Stage"],
+    applicationMethod: "CV, entretien RH puis entretien manager, en français ou en anglais selon le poste, en visio ou en présentiel. Programme « Junior Talent Lab » pour les stagiaires et alternants.",
+    description: "Pernod Ricard est un leader mondial du secteur des vins et spiritueux, associant des savoir-faire uniques dans la fabrication de ses produits, le développement de ses marques et leur distribution mondiale. Notre vaste portefeuille, allant du premium au luxe, compte notamment la vodka Absolut, le pastis Ricard, le whisky irlandais Jameson, le cognac Martell, le rhum Havana Club, le gin Beefeater, la liqueur Malibu ou les champagnes Mumm et Perrier-Jouët.",
+    highlights: ["Leader mondial des vins & spiritueux", "Marques iconiques : Absolut, Ricard, Jameson, Martell, Havana Club", "Programme Junior Talent Lab", "Esprit d'équipe et responsabilité"],
+  },
+
+  // ── SNCF RÉSEAU ──
+  {
+    id: 130, name: "SNCF Réseau", sector: "Infrastructure ferroviaire", domain: "Transport", yearCreated: 1938, logo: "/logos/sncf-reseau.jpg",
+    location: "Présent sur l'ensemble du territoire français – équipes au forum basées à Marseille",
+    employees: "50 000", chiffreAffaires: "9,5 milliards d'euros",
+    website: "https://www.sncf-reseau.com/fr",
+    profiles: "Profils techniques (techniciens/ingénieurs) sur des spécialités liées aux infrastructures ferroviaires (ouvrages d'art, GC, Télécom, énergie électrique HT/BT, signalisation, etc.) et profils plus généraux pour le pilotage de projets",
+    postTypes: ["Alternance", "CDI", "Stage"],
+    applicationMethod: "Selon le poste, pas de process général.",
+    description: "SNCF Réseau est l'une des entreprises du groupe SNCF, l'un des premiers acteurs mondiaux de transport de voyageurs et de logistique de marchandises. Avec plus de 50 000 collaborateurs et des milliers de partenaires partout en France, nous développons l'offre ferroviaire sur 28 000 km de lignes. Nos missions : entretenir, moderniser, développer et exploiter le réseau ferré national. Nos équipes adaptent le réseau aux besoins croissants de mobilité et aux enjeux de la transition écologique.",
+    highlights: ["28 000 km de lignes en France", "Commercialisation, exploitation et travaux sur le réseau", "Ingénierie et projets ferroviaires", "Acteur clé de la transition écologique"],
+  },
 ];
 
 export const allExposants = [parrain, ...partenaires, ...exposantsList].sort((a, b) =>
   a.name.localeCompare(b.name, "fr")
 );
+
