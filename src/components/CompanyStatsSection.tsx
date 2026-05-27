@@ -115,7 +115,8 @@ export default function CompanyStatsSection() {
             </div>
           </div>
           <a
-            href="/documents/Plaquette_entreprise_19e_edition.pdf"
+            href="/Plaquette_FOCEEN_2026.pdf"
+            download="Plaquette_FOCEEN_2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-cyan text-primary-foreground font-heading font-semibold text-sm uppercase tracking-wide hover:bg-cyan/90 transition-colors shadow-lg"
