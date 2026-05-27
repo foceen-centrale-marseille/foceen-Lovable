@@ -1047,7 +1047,7 @@ export const exposantsList: Exposant[] = [
 
   // ── NAVAL GROUP ──
   {
-    id: 125, name: "Naval Group", sector: "Industrie et Naval de défense", domain: "Industrie", yearCreated: 2003, logo: "/logos/naval-group.jpg",
+    id: 125, name: "Naval Group", sector: "Industrie et Naval de défense", domain: "Industrie", yearCreated: 2003, logo: "/logos/naval-group.png",
     location: "Toulon, Ollioules, Saint-Tropez, Nantes, Ruelle, Brest, Cherbourg, Lorient et Paris",
     employees: "16 722", chiffreAffaires: "4,355 milliards d'euros",
     website: "https://www.naval-group.com/fr/", websiteCarriere: "https://www.naval-group.com/fr/nous-rejoindre",
@@ -1060,7 +1060,7 @@ export const exposantsList: Exposant[] = [
 
   // ── AXA FRANCE ──
   {
-    id: 126, name: "AXA France", sector: "Assurance", domain: "Banque / Assurance", yearCreated: 1985, logo: "/logos/axa.jpg",
+    id: 126, name: "AXA France", sector: "Assurance", domain: "Banque / Assurance", yearCreated: 1985, logo: "/logos/axa.png",
     location: "France – Groupe présent dans 51 pays",
     employees: "34 000", chiffreAffaires: "29 milliards d'euros",
     website: "https://recrutement.axa.fr/axa-et-vous/notre-identite",
@@ -1073,7 +1073,7 @@ export const exposantsList: Exposant[] = [
 
   // ── HARIBO ──
   {
-    id: 127, name: "HARIBO", sector: "Agro-alimentaire", domain: "Agroalimentaire", yearCreated: 1920, logo: "/logos/haribo.jpg",
+    id: 127, name: "HARIBO", sector: "Agro-alimentaire", domain: "Agroalimentaire", yearCreated: 1920, logo: "/logos/haribo.png",
     location: "Marseille, Uzès et monde (26 pays)",
     employees: "8 500",
     website: "https://www.haribo.com/fr-fr", websiteCarriere: "https://www.haribo.com/fr-fr/carrieres/travailler-chez-haribo",
