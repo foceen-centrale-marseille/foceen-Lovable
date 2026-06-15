@@ -1,7 +1,6 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Download, FileText } from "lucide-react";
-import plaquetteAsset from "@/assets/Plaquette_FOCEEN_2026.pdf.asset.json";
 
 const sectorData = [
   { name: "BTP / Construction", value: 22 },
@@ -116,7 +115,7 @@ export default function CompanyStatsSection() {
             </div>
           </div>
           <a
-            href={plaquetteAsset.url}
+            href="/Plaquette_FOCEEN_2026.pdf"
             download="Plaquette_FOCEEN_2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
