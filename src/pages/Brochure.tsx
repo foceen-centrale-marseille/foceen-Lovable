@@ -698,10 +698,10 @@ function PlanSlide() {
 function SnefFicheSlide() {
   return (
     <div
-      className="w-full h-full px-10 md:px-20 pt-20 pb-16 grid lg:grid-cols-[1fr_1.4fr] gap-10 items-center"
+      className="w-full h-full px-10 md:px-20 pt-20 pb-16 grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:items-stretch overflow-hidden"
       style={{ background: THEME.paper }}
     >
-      <div className="flex flex-col items-center lg:items-start gap-6">
+      <div className="flex flex-col items-center lg:items-start gap-6 lg:justify-center">
         <div
           className="bg-white rounded-2xl w-full max-w-sm h-56 flex items-center justify-center p-8"
           style={{ border: `1px solid ${THEME.rule}` }}
@@ -719,7 +719,7 @@ function SnefFicheSlide() {
         </div>
       </div>
 
-      <div className="space-y-5">
+      <div className="min-h-0 overflow-y-auto pr-3 brochure-scroll space-y-5">
         {[
           { label: "Secteur d'activité", value: "Génie électrique, instrumentation, automatismes, IT industriel" },
           { label: "Année de création", value: "1905" },
@@ -741,7 +741,9 @@ function SnefFicheSlide() {
         <p className="mt-6 text-sm md:text-base leading-relaxed" style={{ color: THEME.ink }}>
           Le Groupe SNEF accompagne ses clients industriels dans la conception, la réalisation et la maintenance de leurs
           installations électriques et numériques. Acteur historique de la transition énergétique et digitale, SNEF intervient
-          dans l'énergie, l'industrie, le naval, le transport et les infrastructures.
+          dans l'énergie, l'industrie, le naval, le transport et les infrastructures. Le Groupe place l'innovation, la sécurité
+          et la performance opérationnelle au cœur de ses engagements, tout en investissant durablement dans la formation et
+          l'évolution de ses collaborateurs.
         </p>
       </div>
     </div>
@@ -758,42 +760,59 @@ function WordSlide({
   text,
   author,
   role,
+  image,
+  imageAlt,
 }: {
   tag: string;
   title: string;
   text: string;
   author: string;
   role: string;
+  image?: string;
+  imageAlt?: string;
 }) {
   return (
-    <div className="w-full h-full grid lg:grid-cols-[1fr_1.3fr]" style={{ background: THEME.paper }}>
+    <div className="w-full h-full grid lg:grid-cols-[1fr_1.3fr] overflow-hidden" style={{ background: THEME.paper }}>
       <div className="flex items-center justify-center px-10 md:px-16 py-20" style={{ background: THEME.royal }}>
-        <div
-          className="w-full max-w-sm aspect-[3/4] rounded-2xl flex items-center justify-center"
-          style={{ background: "rgba(255,255,255,0.08)", border: `2px dashed rgba(255,255,255,0.5)` }}
-        >
-          <span className="text-[11px] tracking-[0.4em] uppercase font-heading text-white/80">Photo</span>
-        </div>
+        {image ? (
+          <div
+            className="w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl"
+            style={{ border: `2px solid rgba(255,255,255,0.5)` }}
+          >
+            <img src={image} alt={imageAlt ?? ""} className="w-full h-full object-cover" />
+          </div>
+        ) : (
+          <div
+            className="w-full max-w-sm aspect-[3/4] rounded-2xl flex items-center justify-center"
+            style={{ background: "rgba(255,255,255,0.08)", border: `2px dashed rgba(255,255,255,0.5)` }}
+          >
+            <span className="text-[11px] tracking-[0.4em] uppercase font-heading text-white/80">Photo</span>
+          </div>
+        )}
       </div>
 
-      <div className="flex flex-col justify-center px-10 md:px-20 py-20">
-        <p className="text-[11px] tracking-[0.45em] uppercase font-heading mb-4" style={{ color: THEME.royal }}>
-          {tag}
-        </p>
-        <h2 className="font-heading font-black text-4xl md:text-5xl tracking-tight" style={{ color: THEME.ink }}>
-          {title}
-        </h2>
-        <div className="mt-4 h-[3px] w-20" style={{ background: THEME.royal }} />
-        <div
-          className="mt-6 text-7xl leading-none opacity-30"
-          style={{ color: THEME.royal, fontFamily: "Georgia, serif" }}
-        >
-          «
+      <div className="flex flex-col px-10 md:px-20 py-16 min-h-0 overflow-hidden">
+        <div className="shrink-0">
+          <p className="text-[11px] tracking-[0.45em] uppercase font-heading mb-4" style={{ color: THEME.royal }}>
+            {tag}
+          </p>
+          <h2 className="font-heading font-black text-4xl md:text-5xl tracking-tight" style={{ color: THEME.ink }}>
+            {title}
+          </h2>
+          <div className="mt-4 h-[3px] w-20" style={{ background: THEME.royal }} />
+          <div
+            className="mt-6 text-7xl leading-none opacity-30"
+            style={{ color: THEME.royal, fontFamily: "Georgia, serif" }}
+          >
+            «
+          </div>
         </div>
-        <p className="text-base md:text-lg leading-relaxed italic max-w-xl" style={{ color: THEME.ink }}>
-          {text}
-        </p>
-        <div className="mt-8 flex items-center gap-3">
+        <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll mt-2">
+          <p className="text-base md:text-lg leading-relaxed italic max-w-xl" style={{ color: THEME.ink }}>
+            {text}
+          </p>
+        </div>
+        <div className="mt-6 flex items-center gap-3 shrink-0">
           <div className="h-px w-10" style={{ background: THEME.royal }} />
           <div>
             <p className="font-heading font-bold text-base" style={{ color: THEME.ink }}>
@@ -812,7 +831,7 @@ function MotParrainSlide() {
     <WordSlide
       tag="Le mot du Parrain"
       title="MOT DU PARRAIN"
-      text="C'est avec une grande fierté que le Groupe SNEF parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les besoins concrets de l'industrie. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers."
+      text="C'est avec une grande fierté que le Groupe SNEF parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les besoins concrets de l'industrie. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers. À travers ce parrainage, nous souhaitons réaffirmer notre attachement au territoire, à la formation des futurs talents et à la transmission de notre passion pour l'ingénierie et l'innovation industrielle."
       author="Direction Groupe SNEF"
       role="Parrain de la 19ᵉ édition"
     />
@@ -824,9 +843,11 @@ function MotEquipeSlide() {
     <WordSlide
       tag="Le mot de l'équipe"
       title="MOT DE L'ÉQUIPE"
-      text="Pendant un an, notre équipe d'élèves-ingénieurs a porté l'ambition de faire du FOCEEN un moment d'exception. Cette brochure est le fruit de cet engagement : un outil pour vous présenter en détail les entreprises qui nous font confiance et les opportunités qu'elles offrent. Bonne lecture, et rendez-vous le 03 novembre 2026."
+      text="Pendant un an, notre équipe d'élèves-ingénieurs a porté l'ambition de faire du FOCEEN un moment d'exception. Cette brochure est le fruit de cet engagement : un outil pour vous présenter en détail les entreprises qui nous font confiance et les opportunités qu'elles offrent. Nous tenons à remercier chaleureusement nos partenaires, l'école Centrale Méditerranée et tous les bénévoles qui rendent cette 19ᵉ édition possible. Bonne lecture, et rendez-vous le 03 novembre 2026 au Parc Chanot pour vivre ensemble cette journée dédiée à votre avenir professionnel."
       author="Bureau FOCEEN"
       role="Mandat 2025 – 2026"
+      image={teamPhoto}
+      imageAlt="Équipe FOCEEN 2026"
     />
   );
 }
