@@ -236,6 +236,85 @@ const indexList = slides
   .filter(Boolean) as { name: string; slide: number }[];
 indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
+/* Domain classification for the Index slide */
+const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
+  {
+    label: "Audit & Conseil",
+    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS"],
+  },
+  {
+    label: "Environnement, Énergie & BTP",
+    names: [
+      "Bouygues Construction",
+      "Eiffage",
+      "Vinci Construction",
+      "Orano",
+      "Framatome",
+      "TechnicAtome",
+      "Technip Energies",
+      "EP2C Energy",
+    ],
+  },
+  {
+    label: "Informatique, IT & Média",
+    names: ["Dassault Systèmes", "Viveris", "Murex"],
+  },
+  {
+    label: "Ingénierie",
+    names: [
+      "Bee Engineering",
+      "ASSYSTEM",
+      "Groupe SNEF",
+      "Onet Technologies",
+      "AKKODIS",
+      "ECIA",
+    ],
+  },
+  {
+    label: "Transports & Systèmes embarqués",
+    names: [
+      "SNCF Réseau",
+      "Naval Group",
+      "THALES",
+      "Marine Nationale",
+      "Ministère des Armées",
+      "EXAIL",
+      "MB92 La Ciotat",
+      "CMA CGM",
+    ],
+  },
+  {
+    label: "Autres",
+    names: [
+      "HEINEKEN",
+      "Syntec-Ingénierie",
+      "France Chimie Méditerranée",
+      "EMIS et EMIS Access",
+    ],
+  },
+];
+
+const groupedIndex = (() => {
+  const used = new Set<string>();
+  const groups = DOMAIN_GROUPS.map((g) => {
+    const entries = g.names
+      .map((n) => indexList.find((c) => c.name === n))
+      .filter(Boolean) as { name: string; slide: number }[];
+    entries.forEach((e) => used.add(e.name));
+    entries.sort((a, b) => a.name.localeCompare(b.name, "fr"));
+    return { label: g.label, entries };
+  });
+  const leftovers = indexList.filter((c) => !used.has(c.name));
+  if (leftovers.length) {
+    const autres = groups.find((g) => g.label === "Autres");
+    if (autres) {
+      autres.entries.push(...leftovers);
+      autres.entries.sort((a, b) => a.name.localeCompare(b.name, "fr"));
+    }
+  }
+  return groups.filter((g) => g.entries.length > 0);
+})();
+
 /* Which slides have a BLUE background (royal) — arrows/chrome adapt */
 const isBlueSlide = (s: Slide) => s.kind === "cover" || s.kind === "divider";
 
