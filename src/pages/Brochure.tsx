@@ -1,21 +1,19 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, LayoutGrid } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid } from "lucide-react";
 import logoWhite from "@/assets/logo_foceen_white.png";
 
 /* ------------------------------------------------------------------ */
-/*  THEME — institutional paper / deep navy / warm gold                */
+/*  THEME                                                              */
 /* ------------------------------------------------------------------ */
 
 const THEME = {
   ink: "#0B1F3A",
-  inkSoft: "#152D52",
+  royal: "#1B497D", // royal blue requested for cover + dividers
+  royalDeep: "#13365C",
   gold: "#C9A24B",
-  goldSoft: "#E8D9B0",
   paper: "#F6F1E7",
-  paperDeep: "#EFE6D2",
   rule: "#D9CBA8",
-  frame: "#0B1F3A",
 };
 
 /* ------------------------------------------------------------------ */
@@ -37,7 +35,7 @@ type Company = {
 };
 
 const fakeDesc =
-  "Acteur de référence dans son secteur, l'entreprise conjugue innovation, exigence technique et engagement humain. Présente à l'international, elle place l'ingénierie et le développement durable au cœur de sa stratégie pour bâtir les solutions de demain.";
+  "Acteur de référence dans son secteur, l'entreprise conjugue innovation, exigence technique et engagement humain. Présente à l'international, elle place l'ingénierie et le développement durable au cœur de sa stratégie pour bâtir les solutions de demain. Ses équipes pluridisciplinaires interviennent sur des projets ambitieux et structurants, du design initial à la mise en service, en passant par la maintenance et l'amélioration continue. L'entreprise mise sur la formation de ses collaborateurs, la qualité de vie au travail et un management bienveillant pour fidéliser ses talents et accompagner leur évolution sur le long terme.";
 
 const baseProfiles = [
   "Ingénieurs généralistes",
@@ -85,14 +83,13 @@ const partners = [
   { name: "Cafés Richard", src: "/logo-cafes-richard.png" },
 ];
 
-/* Featured companies (pages 9-10) */
 const sncf = make("SNCF Réseau", "Transport ferroviaire", "/logos/sncf-reseau.jpg", {
   founded: "1997",
   location: "Saint-Denis (93)",
   revenue: "8,2 Md €",
   employees: "53 000",
   description:
-    "SNCF Réseau gère, exploite, maintient et développe les 28 000 km du réseau ferré national, deuxième plus grand d'Europe. Notre mission : garantir un transport ferroviaire sûr, performant et durable au service de tous les voyageurs et des marchandises.",
+    "SNCF Réseau gère, exploite, maintient et développe les 28 000 km du réseau ferré national, deuxième plus grand d'Europe. Notre mission : garantir un transport ferroviaire sûr, performant et durable au service de tous les voyageurs et des marchandises. Nos équipes interviennent sur l'ensemble du cycle de vie de l'infrastructure : conception, modernisation, exploitation et maintenance, en intégrant les technologies les plus innovantes (numérisation du réseau, signalisation ERTMS, IA prédictive). Rejoindre SNCF Réseau, c'est contribuer concrètement à la transition écologique et à la mobilité durable dans toute la France.",
   profiles: [
     "Ingénieurs Génie Civil / Ouvrages d'art",
     "Ingénieurs Systèmes embarqués",
@@ -100,11 +97,7 @@ const sncf = make("SNCF Réseau", "Transport ferroviaire", "/logos/sncf-reseau.j
     "Data Engineers / IA",
   ],
   positions: ["Stage 6 mois", "Alternance", "CDI Jeune diplômé", "VIE"],
-  recruitment: [
-    "Candidature sur sncf.com/carrières",
-    "Entretien RH + manager",
-    "Étude technique du dossier",
-  ],
+  recruitment: ["Candidature sur sncf.com/carrières", "Entretien RH + manager", "Étude technique du dossier"],
 });
 
 const navalGroup = make("Naval Group", "Défense navale", "/logos/naval-group.png", {
@@ -113,7 +106,7 @@ const navalGroup = make("Naval Group", "Défense navale", "/logos/naval-group.pn
   revenue: "4,4 Md €",
   employees: "15 700",
   description:
-    "Naval Group est le leader européen du naval de défense. Partenaire stratégique des marines, le Groupe conçoit, construit et maintient sur toute leur durée de vie des sous-marins et navires de surface, et fournit des services pour les chantiers et bases navales.",
+    "Naval Group est le leader européen du naval de défense. Partenaire stratégique des marines, le Groupe conçoit, construit et maintient sur toute leur durée de vie des sous-marins et navires de surface, et fournit des services pour les chantiers et bases navales. Présent dans plus de 18 pays, Naval Group investit massivement en R&D pour rester à la pointe sur des sujets complexes comme la propulsion nucléaire, la furtivité, les systèmes de combat ou la cybersécurité embarquée. Travailler chez Naval Group, c'est intégrer des projets uniques au monde, à très long terme, au service de la souveraineté nationale.",
   profiles: [
     "Ingénieurs Mécanique / Hydrodynamique",
     "Architectes navals",
@@ -121,14 +114,9 @@ const navalGroup = make("Naval Group", "Défense navale", "/logos/naval-group.pn
     "Cybersécurité & Systèmes",
   ],
   positions: ["Stage de fin d'études", "Alternance", "CDI", "VIE"],
-  recruitment: [
-    "Dépôt CV sur naval-group.com",
-    "Tests techniques",
-    "Entretien RH + entretien technique",
-  ],
+  recruitment: ["Dépôt CV sur naval-group.com", "Tests techniques", "Entretien RH + entretien technique"],
 });
 
-/* Sector groupings (PAGES SUIVANTES). Order = display order. */
 const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "BTP",
@@ -179,7 +167,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
     ],
   },
   {
-    name: "Audit & Conseil",
+    name: "Conseil",
     companies: [
       make("IKOS", "Conseil", "/logos/ikos.jpg"),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
@@ -242,11 +230,13 @@ const slides: Slide[] = (() => {
   return arr;
 })();
 
-/* Flat alphabetical list for the Index slide (with target slide index) */
 const indexList = slides
   .map((s, idx) => (s.kind === "company" ? { name: s.company.name, slide: idx } : null))
   .filter(Boolean) as { name: string; slide: number }[];
 indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
+
+/* Which slides have a BLUE background (royal) — arrows/chrome adapt */
+const isBlueSlide = (s: Slide) => s.kind === "cover" || s.kind === "divider";
 
 /* ------------------------------------------------------------------ */
 /*  ROOT                                                              */
@@ -256,10 +246,7 @@ export default function Brochure() {
   const [i, setI] = useState(0);
   const total = slides.length;
 
-  const go = useCallback(
-    (n: number) => setI(() => Math.max(0, Math.min(total - 1, n))),
-    [total],
-  );
+  const go = useCallback((n: number) => setI(() => Math.max(0, Math.min(total - 1, n))), [total]);
   const next = useCallback(() => go(i + 1), [go, i]);
   const prev = useCallback(() => go(i - 1), [go, i]);
 
@@ -275,11 +262,13 @@ export default function Brochure() {
   }, [next, prev, go, total]);
 
   const current = slides[i];
+  const blue = isBlueSlide(current);
+  const chromeColor = blue ? "#FFFFFF" : THEME.ink;
 
   return (
     <div
       className="fixed inset-0 w-screen h-screen overflow-hidden font-body select-none"
-      style={{ background: THEME.paper, color: THEME.ink }}
+      style={{ background: blue ? THEME.royal : THEME.paper, color: THEME.ink }}
       lang="fr"
     >
       <AnimatePresence mode="wait">
@@ -291,16 +280,14 @@ export default function Brochure() {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
-          {current.kind === "cover" && <CoverSlide />}
+          {current.kind === "cover" && <CoverSlide onConsult={() => go(1)} />}
           {current.kind === "toc" && <TocSlide onJump={go} />}
           {current.kind === "index" && <IndexSlide onPick={go} />}
           {current.kind === "plan" && <PlanSlide />}
           {current.kind === "snef-fiche" && <SnefFicheSlide />}
           {current.kind === "mot-parrain" && <MotParrainSlide />}
           {current.kind === "mot-equipe" && <MotEquipeSlide />}
-          {current.kind === "divider" && (
-            <DividerSlide label={current.label} subtitle={current.subtitle} />
-          )}
+          {current.kind === "divider" && <DividerSlide label={current.label} />}
           {current.kind === "company" && (
             <CompanySlide
               company={current.company}
@@ -311,32 +298,26 @@ export default function Brochure() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Nav arrows */}
-      <ArrowButton side="left" disabled={i === 0} onClick={prev} />
-      <ArrowButton side="right" disabled={i === total - 1} onClick={next} />
+      <ArrowButton side="left" disabled={i === 0} onClick={prev} onBlue={blue} />
+      <ArrowButton side="right" disabled={i === total - 1} onClick={next} onBlue={blue} />
 
-      {/* Top chrome */}
-      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-10 py-4 pointer-events-none">
-        <div
-          className="text-[11px] tracking-[0.35em] uppercase font-heading font-semibold"
-          style={{ color: THEME.ink }}
-        >
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-10 py-4 pointer-events-none z-40">
+        <div className="text-[11px] tracking-[0.35em] uppercase font-heading font-semibold" style={{ color: chromeColor }}>
           FOCEEN · Brochure 2026
         </div>
         <button
           onClick={() => go(2)}
           className="pointer-events-auto inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase font-heading hover:opacity-70 transition-opacity"
-          style={{ color: THEME.ink }}
+          style={{ color: chromeColor }}
         >
           <LayoutGrid className="w-3.5 h-3.5" />
           Index
         </button>
       </div>
 
-      {/* Page counter */}
       <div
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] font-heading"
-        style={{ color: THEME.ink }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] font-heading z-40"
+        style={{ color: chromeColor }}
       >
         <span className="font-bold">{String(i + 1).padStart(2, "0")}</span>
         <span className="opacity-40 mx-2">/</span>
@@ -354,10 +335,12 @@ function ArrowButton({
   side,
   onClick,
   disabled,
+  onBlue,
 }: {
   side: "left" | "right";
   onClick: () => void;
   disabled?: boolean;
+  onBlue: boolean;
 }) {
   const Icon = side === "left" ? ChevronLeft : ChevronRight;
   return (
@@ -367,113 +350,77 @@ function ArrowButton({
       aria-label={side === "left" ? "Page précédente" : "Page suivante"}
       className={`group absolute top-1/2 -translate-y-1/2 ${
         side === "left" ? "left-3 md:left-6" : "right-3 md:right-6"
-      } w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-300 z-50 ${
+      } w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 z-50 backdrop-blur-sm ${
         disabled ? "opacity-20 cursor-not-allowed" : "hover:scale-110"
       }`}
       style={{
-        background: THEME.ink,
-        color: THEME.paper,
-        boxShadow: "0 12px 30px -10px rgba(11,31,58,0.45)",
+        background: onBlue ? "rgba(255,255,255,0.12)" : "rgba(11,31,58,0.06)",
+        color: onBlue ? "#FFFFFF" : THEME.ink,
+        border: onBlue ? "1px solid rgba(255,255,255,0.55)" : `1px solid ${THEME.ink}33`,
       }}
     >
-      <Icon className="w-6 h-6 md:w-7 md:h-7" strokeWidth={1.5} />
+      <Icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.75} />
     </button>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  Reusable: SECTOR PILL (matches PDF template)                      */
+/*  SLIDE 1 — COVER (royal blue)                                      */
 /* ------------------------------------------------------------------ */
 
-function SectorPill({ label }: { label: string }) {
+function CoverSlide({ onConsult }: { onConsult: () => void }) {
   return (
-    <div className="flex justify-center w-full">
-      <div
-        className="relative inline-flex items-center justify-center px-10 md:px-14 py-3 md:py-4 rounded-full"
-        style={{ border: `4px solid ${THEME.frame}` }}
-      >
-        <span
-          className="font-heading font-bold uppercase tracking-[0.25em] text-xl md:text-3xl"
-          style={{ color: THEME.frame }}
-        >
-          {label}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  SLIDE 1 — COVER                                                   */
-/* ------------------------------------------------------------------ */
-
-function CoverSlide() {
-  return (
-    <div className="w-full h-full flex flex-col px-10 md:px-20 pt-16 pb-12" style={{ background: THEME.paper }}>
-      <div className="flex-1 grid lg:grid-cols-[1.15fr_1fr] gap-10 items-center">
-        {/* Left — title block */}
-        <div className="relative">
-          <p
-            className="text-[11px] tracking-[0.45em] uppercase mb-6 font-heading"
-            style={{ color: THEME.gold }}
-          >
-            19ᵉ édition · 03 novembre 2026 · Parc Chanot
-          </p>
-          <h1
-            className="font-heading font-black leading-[0.9] text-6xl md:text-7xl xl:text-8xl tracking-tight"
-            style={{ color: THEME.ink }}
-          >
-            BROCHURE
-            <br />
-            <span style={{ color: THEME.gold }}>ENTREPRISE</span>
-          </h1>
-          <div className="mt-8 h-[3px] w-32" style={{ background: THEME.gold }} />
-          <p className="mt-8 max-w-md text-base md:text-lg leading-relaxed" style={{ color: THEME.ink }}>
-            Forum Centrale Méditerranée Entreprises — Panorama complet des 35 entreprises présentes
-            au plus grand forum étudiant du Sud.
-          </p>
-        </div>
-
-        {/* Right — Parrain highlight */}
+    <div
+      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-16 pb-8"
+      style={{ background: THEME.royal, color: "#FFFFFF" }}
+    >
+      {/* Top white pill */}
+      <div className="flex flex-col items-center gap-3 mt-4">
         <div
-          className="relative rounded-3xl p-8 md:p-10 flex flex-col items-center"
-          style={{ background: THEME.ink, color: THEME.paper }}
+          className="bg-white rounded-full px-5 py-1.5 text-[11px] md:text-xs font-heading font-bold tracking-[0.25em]"
+          style={{ color: THEME.royal }}
         >
-          <p
-            className="text-[10px] tracking-[0.5em] uppercase font-heading mb-5"
-            style={{ color: THEME.gold }}
-          >
-            Parrain officiel
-          </p>
-          <div
-            className="rounded-2xl bg-white w-full h-40 flex items-center justify-center p-6 mb-6"
-          >
-            <img src="/logos/groupe-snef.png" alt="Groupe SNEF" className="max-h-24 object-contain" />
-          </div>
-          <h2 className="font-heading font-bold text-3xl mb-2 text-center">Groupe SNEF</h2>
-          <p className="text-sm opacity-80 text-center leading-relaxed max-w-sm">
-            Acteur majeur du génie électrique et industriel, partenaire engagé de l'édition 2026.
-          </p>
+          FOCEEN • 19ÈME ÉDITION
         </div>
+        <p className="text-xs md:text-sm tracking-[0.35em] uppercase font-heading text-white/90">
+          — 3 NOVEMBRE 2026 —
+        </p>
       </div>
 
-      {/* Bottom — partners strip */}
-      <div className="mt-10">
-        <p
-          className="text-[10px] tracking-[0.4em] uppercase font-heading mb-3"
-          style={{ color: THEME.gold }}
+      {/* Middle — logo + title + CTA */}
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 md:gap-8 w-full">
+        <img
+          src={logoWhite}
+          alt="FOCEEN"
+          className="h-16 md:h-20 object-contain"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+        <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
+          BROCHURE
+          <br />
+          ENTREPRISES
+        </h1>
+        <button
+          onClick={onConsult}
+          className="mt-2 inline-flex items-center gap-3 px-7 py-3 rounded-full border-2 border-white text-white font-heading font-semibold tracking-[0.2em] uppercase text-xs md:text-sm hover:bg-white hover:text-[#1B497D] transition-colors"
         >
-          Partenaires institutionnels & médias
+          Consulter
+          <ArrowSmall className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* Bottom — white rounded card with partners */}
+      <div className="w-full max-w-6xl bg-white rounded-2xl px-6 md:px-10 py-5 md:py-6 shadow-2xl">
+        <p
+          className="text-center text-[10px] md:text-[11px] tracking-[0.4em] uppercase font-heading font-semibold mb-4"
+          style={{ color: THEME.royal }}
+        >
+          Nos partenaires
         </p>
-        <div className="grid grid-cols-5 md:grid-cols-10 gap-2">
+        <div className="grid grid-cols-5 md:grid-cols-10 gap-3 items-center">
           {partners.map((p) => (
-            <div
-              key={p.name}
-              className="h-14 rounded-md flex items-center justify-center p-2 bg-white"
-              style={{ border: `1px solid ${THEME.rule}` }}
-              title={p.name}
-            >
-              <img src={p.src} alt={p.name} className="max-h-9 max-w-full object-contain" />
+            <div key={p.name} className="h-12 md:h-14 flex items-center justify-center" title={p.name}>
+              <img src={p.src} alt={p.name} className="max-h-full max-w-full object-contain" />
             </div>
           ))}
         </div>
@@ -483,7 +430,7 @@ function CoverSlide() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SLIDE 2 — TABLE OF CONTENTS (SOMMAIRE)                            */
+/*  SLIDE 2 — SOMMAIRE                                                */
 /* ------------------------------------------------------------------ */
 
 function TocSlide({ onJump }: { onJump: (n: number) => void }) {
@@ -513,16 +460,13 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
   return (
     <div className="w-full h-full flex flex-col px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
       <div className="mb-8">
-        <p
-          className="text-[11px] tracking-[0.5em] uppercase font-heading mb-2"
-          style={{ color: THEME.gold }}
-        >
+        <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-2" style={{ color: THEME.royal }}>
           Sommaire
         </p>
         <h2 className="font-heading font-black text-5xl md:text-6xl tracking-tight" style={{ color: THEME.ink }}>
           SOMMAIRE
         </h2>
-        <div className="mt-4 h-[3px] w-24" style={{ background: THEME.gold }} />
+        <div className="mt-4 h-[3px] w-24" style={{ background: THEME.royal }} />
       </div>
 
       <div className="flex-1 overflow-auto pr-2">
@@ -534,10 +478,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
                 className="group w-full flex items-baseline gap-5 text-left py-2 border-b transition-colors"
                 style={{ borderColor: THEME.rule }}
               >
-                <span
-                  className="font-heading font-bold text-2xl shrink-0"
-                  style={{ color: THEME.gold }}
-                >
+                <span className="font-heading font-bold text-2xl shrink-0" style={{ color: THEME.royal }}>
                   {it.num}
                 </span>
                 <span
@@ -546,10 +487,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
                 >
                   {it.title}
                 </span>
-                <span
-                  className="font-heading text-sm tracking-widest"
-                  style={{ color: THEME.ink, opacity: 0.5 }}
-                >
+                <span className="font-heading text-sm tracking-widest" style={{ color: THEME.ink, opacity: 0.5 }}>
                   p. {String(it.slide + 1).padStart(2, "0")}
                 </span>
               </button>
@@ -562,14 +500,10 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
                         className="text-xs md:text-sm hover:opacity-70 transition-opacity flex items-center gap-2 w-full text-left"
                         style={{ color: THEME.ink }}
                       >
-                        <span style={{ color: THEME.gold }}>›</span>
+                        <span style={{ color: THEME.royal }}>›</span>
                         <span className="flex-1 truncate">{c.name}</span>
-                        {c.count != null && (
-                          <span className="opacity-50 text-[10px]">({c.count})</span>
-                        )}
-                        <span className="opacity-40 text-[10px]">
-                          {String(c.slide + 1).padStart(2, "0")}
-                        </span>
+                        {c.count != null && <span className="opacity-50 text-[10px]">({c.count})</span>}
+                        <span className="opacity-40 text-[10px]">{String(c.slide + 1).padStart(2, "0")}</span>
                       </button>
                     </li>
                   ))}
@@ -592,10 +526,7 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
   return (
     <div className="w-full h-full flex flex-col px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
       <div className="mb-5">
-        <p
-          className="text-[11px] tracking-[0.5em] uppercase font-heading"
-          style={{ color: THEME.gold }}
-        >
+        <p className="text-[11px] tracking-[0.5em] uppercase font-heading" style={{ color: THEME.royal }}>
           Annuaire
         </p>
         <h2 className="font-heading font-black text-4xl md:text-5xl mt-2" style={{ color: THEME.ink }}>
@@ -614,14 +545,11 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
           >
             <span
               className="font-heading font-bold text-[10px] w-6 h-6 rounded-full flex items-center justify-center shrink-0"
-              style={{ background: THEME.ink, color: THEME.paper }}
+              style={{ background: THEME.royal, color: "#FFFFFF" }}
             >
               {String(idx + 1).padStart(2, "0")}
             </span>
-            <span
-              className="font-heading font-semibold text-xs leading-tight flex-1 truncate"
-              style={{ color: THEME.ink }}
-            >
+            <span className="font-heading font-semibold text-xs leading-tight flex-1 truncate" style={{ color: THEME.ink }}>
               {c.name}
             </span>
             <span className="text-[9px] opacity-50 shrink-0">p.{String(c.slide + 1).padStart(2, "0")}</span>
@@ -633,35 +561,29 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SLIDE 4 — PLAN DU FORUM                                           */
+/*  SLIDE 4 — PLAN                                                    */
 /* ------------------------------------------------------------------ */
 
 function PlanSlide() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
-      <p
-        className="text-[11px] tracking-[0.5em] uppercase font-heading mb-3"
-        style={{ color: THEME.gold }}
-      >
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-10 md:px-20 pt-20 pb-16"
+      style={{ background: THEME.paper }}
+    >
+      <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-3" style={{ color: THEME.royal }}>
         Orientation
       </p>
       <h2 className="font-heading font-black text-5xl md:text-6xl tracking-tight mb-2" style={{ color: THEME.ink }}>
         PLAN DU FORUM
       </h2>
-      <div className="h-[3px] w-24 mb-10" style={{ background: THEME.gold }} />
+      <div className="h-[3px] w-24 mb-10" style={{ background: THEME.royal }} />
 
       <div
         className="w-full max-w-5xl flex-1 max-h-[60vh] rounded-2xl flex items-center justify-center"
-        style={{
-          background: "white",
-          border: `4px dashed ${THEME.rule}`,
-        }}
+        style={{ background: "white", border: `4px dashed ${THEME.rule}` }}
       >
         <div className="text-center px-6">
-          <p
-            className="font-heading text-sm tracking-[0.3em] uppercase opacity-60"
-            style={{ color: THEME.ink }}
-          >
+          <p className="font-heading text-sm tracking-[0.3em] uppercase opacity-60" style={{ color: THEME.ink }}>
             Emplacement réservé
           </p>
           <p className="mt-2 text-2xl font-heading font-bold" style={{ color: THEME.ink }}>
@@ -677,12 +599,15 @@ function PlanSlide() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SLIDE 5 — SNEF EXPLICATIVE                                        */
+/*  SLIDE 5 — SNEF                                                    */
 /* ------------------------------------------------------------------ */
 
 function SnefFicheSlide() {
   return (
-    <div className="w-full h-full px-10 md:px-20 pt-20 pb-16 grid lg:grid-cols-[1fr_1.4fr] gap-10 items-center" style={{ background: THEME.paper }}>
+    <div
+      className="w-full h-full px-10 md:px-20 pt-20 pb-16 grid lg:grid-cols-[1fr_1.4fr] gap-10 items-center"
+      style={{ background: THEME.paper }}
+    >
       <div className="flex flex-col items-center lg:items-start gap-6">
         <div
           className="bg-white rounded-2xl w-full max-w-sm h-56 flex items-center justify-center p-8"
@@ -691,13 +616,13 @@ function SnefFicheSlide() {
           <img src="/logos/groupe-snef.png" alt="Groupe SNEF" className="max-h-32 object-contain" />
         </div>
         <div>
-          <p className="text-[11px] tracking-[0.45em] uppercase font-heading" style={{ color: THEME.gold }}>
+          <p className="text-[11px] tracking-[0.45em] uppercase font-heading" style={{ color: THEME.royal }}>
             Parrain de l'édition
           </p>
           <h2 className="font-heading font-black text-5xl mt-2" style={{ color: THEME.ink }}>
             GROUPE SNEF
           </h2>
-          <div className="mt-3 h-[3px] w-20" style={{ background: THEME.gold }} />
+          <div className="mt-3 h-[3px] w-20" style={{ background: THEME.royal }} />
         </div>
       </div>
 
@@ -709,7 +634,11 @@ function SnefFicheSlide() {
           { label: "Chiffre d'affaires", value: "≈ 1,3 Md €" },
           { label: "Effectifs", value: "12 500 collaborateurs" },
         ].map((r) => (
-          <div key={r.label} className="grid grid-cols-[180px_1fr] gap-4 pb-3" style={{ borderBottom: `1px solid ${THEME.rule}` }}>
+          <div
+            key={r.label}
+            className="grid grid-cols-[180px_1fr] gap-4 pb-3"
+            style={{ borderBottom: `1px solid ${THEME.rule}` }}
+          >
             <span className="text-xs font-heading uppercase tracking-widest opacity-60">{r.label}</span>
             <span className="font-heading font-semibold text-sm md:text-base" style={{ color: THEME.ink }}>
               {r.value}
@@ -717,9 +646,9 @@ function SnefFicheSlide() {
           </div>
         ))}
         <p className="mt-6 text-sm md:text-base leading-relaxed" style={{ color: THEME.ink }}>
-          Le Groupe SNEF accompagne ses clients industriels dans la conception, la réalisation et la maintenance
-          de leurs installations électriques et numériques. Acteur historique de la transition énergétique et
-          digitale, SNEF intervient dans l'énergie, l'industrie, le naval, le transport et les infrastructures.
+          Le Groupe SNEF accompagne ses clients industriels dans la conception, la réalisation et la maintenance de leurs
+          installations électriques et numériques. Acteur historique de la transition énergétique et digitale, SNEF intervient
+          dans l'énergie, l'industrie, le naval, le transport et les infrastructures.
         </p>
       </div>
     </div>
@@ -727,7 +656,7 @@ function SnefFicheSlide() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SLIDE 6 / 7 — MOT DU PARRAIN / MOT DE L'ÉQUIPE                    */
+/*  WORD SLIDES                                                       */
 /* ------------------------------------------------------------------ */
 
 function WordSlide({
@@ -745,42 +674,26 @@ function WordSlide({
 }) {
   return (
     <div className="w-full h-full grid lg:grid-cols-[1fr_1.3fr]" style={{ background: THEME.paper }}>
-      {/* Photo placeholder */}
-      <div className="flex items-center justify-center px-10 md:px-16 py-20" style={{ background: THEME.ink }}>
+      <div className="flex items-center justify-center px-10 md:px-16 py-20" style={{ background: THEME.royal }}>
         <div
           className="w-full max-w-sm aspect-[3/4] rounded-2xl flex items-center justify-center"
-          style={{
-            background: "rgba(255,255,255,0.06)",
-            border: `2px dashed ${THEME.gold}`,
-          }}
+          style={{ background: "rgba(255,255,255,0.08)", border: `2px dashed rgba(255,255,255,0.5)` }}
         >
-          <span
-            className="text-[11px] tracking-[0.4em] uppercase font-heading"
-            style={{ color: THEME.gold }}
-          >
-            Photo
-          </span>
+          <span className="text-[11px] tracking-[0.4em] uppercase font-heading text-white/80">Photo</span>
         </div>
       </div>
 
-      {/* Text */}
       <div className="flex flex-col justify-center px-10 md:px-20 py-20">
-        <p
-          className="text-[11px] tracking-[0.45em] uppercase font-heading mb-4"
-          style={{ color: THEME.gold }}
-        >
+        <p className="text-[11px] tracking-[0.45em] uppercase font-heading mb-4" style={{ color: THEME.royal }}>
           {tag}
         </p>
-        <h2
-          className="font-heading font-black text-4xl md:text-5xl tracking-tight"
-          style={{ color: THEME.ink }}
-        >
+        <h2 className="font-heading font-black text-4xl md:text-5xl tracking-tight" style={{ color: THEME.ink }}>
           {title}
         </h2>
-        <div className="mt-4 h-[3px] w-20" style={{ background: THEME.gold }} />
+        <div className="mt-4 h-[3px] w-20" style={{ background: THEME.royal }} />
         <div
           className="mt-6 text-7xl leading-none opacity-30"
-          style={{ color: THEME.gold, fontFamily: "Georgia, serif" }}
+          style={{ color: THEME.royal, fontFamily: "Georgia, serif" }}
         >
           «
         </div>
@@ -788,7 +701,7 @@ function WordSlide({
           {text}
         </p>
         <div className="mt-8 flex items-center gap-3">
-          <div className="h-px w-10" style={{ background: THEME.gold }} />
+          <div className="h-px w-10" style={{ background: THEME.royal }} />
           <div>
             <p className="font-heading font-bold text-base" style={{ color: THEME.ink }}>
               {author}
@@ -826,36 +739,33 @@ function MotEquipeSlide() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  DIVIDER SLIDE — INTERCALAIRE SECTEUR                              */
+/*  DIVIDER SLIDE — solid royal blue, huge centered white label       */
 /* ------------------------------------------------------------------ */
 
-function DividerSlide({ label, subtitle }: { label: string; subtitle?: string }) {
+function DividerSlide({ label }: { label: string }) {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center px-10" style={{ background: THEME.paper }}>
-      <p
-        className="text-[11px] tracking-[0.5em] uppercase font-heading mb-8"
-        style={{ color: THEME.gold }}
-      >
-        — Secteur —
-      </p>
-      <h2
-        className="font-heading font-black tracking-[0.15em] uppercase text-5xl md:text-7xl xl:text-8xl text-center"
-        style={{ color: THEME.ink }}
-      >
+    <div
+      className="w-full h-full flex flex-col items-center justify-center px-10"
+      style={{ background: THEME.royal, color: "#FFFFFF" }}
+    >
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.08]"
+        style={{
+          background:
+            "radial-gradient(ellipse at top right, #ffffff 0%, transparent 55%), radial-gradient(ellipse at bottom left, #ffffff 0%, transparent 55%)",
+        }}
+      />
+      <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-8 text-white/70">— Secteur —</p>
+      <h2 className="font-heading font-black tracking-[0.12em] uppercase text-6xl md:text-8xl xl:text-[140px] text-center leading-[0.95]">
         {label}
       </h2>
-      <div className="mt-8 h-[3px] w-32" style={{ background: THEME.gold }} />
-      {subtitle && (
-        <p className="mt-8 text-base md:text-lg opacity-70 max-w-xl text-center" style={{ color: THEME.ink }}>
-          {subtitle}
-        </p>
-      )}
+      <div className="mt-10 h-[3px] w-40 bg-white/70" />
     </div>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  COMPANY SLIDE — strict template from the imported PDF             */
+/*  COMPANY SLIDE — readable, centered, internal scroll on the bio    */
 /* ------------------------------------------------------------------ */
 
 function CompanySlide({
@@ -869,162 +779,162 @@ function CompanySlide({
 }) {
   return (
     <div
-      className="w-full h-full flex flex-col px-8 md:px-16 pt-14 pb-16"
+      className="w-full h-full flex flex-col items-center px-4 md:px-8 pt-14 pb-14 overflow-hidden"
       style={{ background: THEME.paper }}
     >
-      {/* SECTOR PILL */}
-      <div className="shrink-0 mb-6">
-        <SectorPill label={sector} />
+      {/* Sector pill */}
+      <div className="shrink-0 mb-4">
+        <div className="flex justify-center w-full">
+          <div
+            className="inline-flex items-center justify-center px-8 md:px-12 py-2.5 md:py-3 rounded-full"
+            style={{ border: `3px solid ${THEME.royal}` }}
+          >
+            <span
+              className="font-heading font-bold uppercase tracking-[0.25em] text-base md:text-xl"
+              style={{ color: THEME.royal }}
+            >
+              {sector}
+            </span>
+          </div>
+        </div>
       </div>
 
-      {/* MAIN CARD — rounded navy frame */}
+      {/* Centered white card */}
       <div
-        className="relative rounded-[28px] p-6 md:p-8 grid grid-cols-12 gap-6"
-        style={{ border: `3px solid ${THEME.frame}`, background: "rgba(255,255,255,0.55)" }}
+        className="w-full max-w-6xl flex-1 min-h-0 rounded-[24px] bg-white shadow-[0_20px_50px_-25px_rgba(11,31,58,0.35)] flex flex-col overflow-hidden"
+        style={{ border: `2px solid ${THEME.royal}` }}
       >
-        {/* LEFT — logo + name */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-start gap-4">
-          <div
-            className="w-full max-w-[260px] aspect-[4/3] bg-white rounded-xl flex items-center justify-center p-5"
-            style={{ border: `1px solid ${THEME.rule}` }}
-          >
-            {company.logo ? (
-              <img src={company.logo} alt={company.name} className="max-h-full max-w-full object-contain" />
-            ) : (
-              <span className="font-heading font-bold text-2xl text-center" style={{ color: THEME.ink }}>
-                {company.name}
-              </span>
-            )}
-          </div>
-          <div className="text-center md:text-left w-full">
+        {/* Header — logo + key info */}
+        <div
+          className="grid grid-cols-12 gap-5 p-5 md:p-7 shrink-0"
+          style={{ borderBottom: `1px solid ${THEME.rule}` }}
+        >
+          <div className="col-span-12 md:col-span-4 flex flex-col items-center md:items-start gap-3">
+            <div
+              className="w-full max-w-[240px] aspect-[4/3] bg-white rounded-xl flex items-center justify-center p-4"
+              style={{ border: `1px solid ${THEME.rule}` }}
+            >
+              {company.logo ? (
+                <img src={company.logo} alt={company.name} className="max-h-full max-w-full object-contain" />
+              ) : (
+                <span className="font-heading font-bold text-lg text-center" style={{ color: THEME.ink }}>
+                  {company.name}
+                </span>
+              )}
+            </div>
             <h3
-              className="font-heading font-black text-2xl md:text-3xl leading-tight tracking-tight"
+              className="font-heading font-black text-xl md:text-2xl leading-tight tracking-tight text-center md:text-left"
               style={{ color: THEME.ink }}
             >
               {company.name}
             </h3>
-            <div className="mt-2 h-[2px] w-20 mx-auto md:mx-0" style={{ background: THEME.ink }} />
+          </div>
+
+          <div className="col-span-12 md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 content-center">
+            {[
+              { l: "Secteur", v: company.sector },
+              { l: "Création", v: company.founded },
+              { l: "Localisation", v: company.location },
+              { l: "Chiffre d'affaires", v: company.revenue },
+              { l: "Effectifs", v: company.employees },
+            ].map((r) => (
+              <div key={r.l} className="flex flex-col">
+                <span
+                  className="font-heading text-[10px] uppercase tracking-[0.18em]"
+                  style={{ color: THEME.royal }}
+                >
+                  {r.l}
+                </span>
+                <span className="font-heading font-semibold text-sm md:text-base" style={{ color: THEME.ink }}>
+                  {r.v}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* RIGHT — key info rows */}
-        <div className="col-span-12 md:col-span-7 flex flex-col justify-center gap-3 md:gap-4">
-          {[
-            { l: "Secteur d'activité", v: company.sector },
-            { l: "Année de création", v: company.founded },
-            { l: "Localisation", v: company.location },
-            { l: "Chiffre d'affaires", v: company.revenue },
-            { l: "Nombre d'employés", v: company.employees },
-          ].map((r) => (
-            <div key={r.l} className="grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] gap-3 items-baseline">
-              <span
-                className="font-heading text-sm md:text-base"
-                style={{ color: THEME.ink, opacity: 0.85 }}
-              >
-                {r.l} :
-              </span>
-              <span
-                className="font-heading font-semibold text-sm md:text-base"
-                style={{ color: THEME.ink }}
-              >
-                {r.v}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* FOUR CONTENT BLOCKS BELOW — two columns linked by central rule */}
-      <div className="flex-1 grid grid-cols-12 gap-6 mt-6 min-h-0 relative">
-        {/* central vertical rule */}
-        <div
-          className="hidden md:block absolute top-2 bottom-2 left-1/2 -translate-x-1/2 w-[2px]"
-          style={{ background: THEME.frame }}
-        />
-
-        <div className="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 pr-0 md:pr-6">
-          <Block title="Présentation de l'entreprise">
-            <p className="text-xs md:text-sm leading-relaxed" style={{ color: THEME.ink }}>
-              {company.description}
+        {/* Body — two columns */}
+        <div className="flex-1 min-h-0 grid grid-cols-12 gap-0">
+          {/* LEFT — Présentation (scrolls internally) */}
+          <div
+            className="col-span-12 md:col-span-7 p-5 md:p-7 flex flex-col min-h-0"
+            style={{ borderRight: `1px solid ${THEME.rule}` }}
+          >
+            <p
+              className="font-heading font-bold text-xs md:text-sm uppercase tracking-[0.18em] mb-3 flex items-center gap-2 shrink-0"
+              style={{ color: THEME.royal }}
+            >
+              <span>›</span> Présentation de l'entreprise
             </p>
-          </Block>
-          <Block title="Profils recherchés">
-            <ul className="space-y-1.5">
-              {company.profiles.map((p) => (
-                <li
-                  key={p}
-                  className="text-xs md:text-sm flex items-start gap-2"
-                  style={{ color: THEME.ink }}
-                >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full mt-[7px] shrink-0"
-                    style={{ background: THEME.gold }}
-                  />
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </Block>
-        </div>
-
-        <div className="col-span-12 md:col-span-6 grid grid-rows-2 gap-5 pl-0 md:pl-6">
-          <Block title="Types de postes proposés">
-            <div className="flex flex-wrap gap-2">
-              {company.positions.map((p) => (
-                <span
-                  key={p}
-                  className="px-3 py-1.5 rounded-full text-[11px] font-heading font-semibold uppercase tracking-wider"
-                  style={{ background: THEME.ink, color: THEME.paper }}
-                >
-                  {p}
-                </span>
-              ))}
+            <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll">
+              <p className="text-sm md:text-[15px] leading-relaxed" style={{ color: THEME.ink }}>
+                {company.description}
+              </p>
             </div>
-          </Block>
-          <Block title="Modalités de recrutement">
-            <ul className="space-y-1.5">
-              {company.recruitment.map((r) => (
-                <li
-                  key={r}
-                  className="text-xs md:text-sm flex items-start gap-2"
-                  style={{ color: THEME.ink }}
-                >
+          </div>
+
+          {/* RIGHT — Profiles / Positions / Recruitment stacked */}
+          <div className="col-span-12 md:col-span-5 p-5 md:p-7 flex flex-col gap-5 min-h-0 overflow-y-auto brochure-scroll">
+            <SmallBlock title="Profils recherchés">
+              <ul className="space-y-1.5">
+                {company.profiles.map((p) => (
+                  <li key={p} className="text-xs md:text-sm flex items-start gap-2" style={{ color: THEME.ink }}>
+                    <span className="w-1.5 h-1.5 rounded-full mt-[7px] shrink-0" style={{ background: THEME.royal }} />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </SmallBlock>
+
+            <SmallBlock title="Types de postes">
+              <div className="flex flex-wrap gap-1.5">
+                {company.positions.map((p) => (
                   <span
-                    className="w-1.5 h-1.5 rounded-full mt-[7px] shrink-0"
-                    style={{ background: THEME.gold }}
-                  />
-                  {r}
-                </li>
-              ))}
-            </ul>
-          </Block>
+                    key={p}
+                    className="px-2.5 py-1 rounded-full text-[10px] font-heading font-semibold uppercase tracking-wider"
+                    style={{ background: THEME.royal, color: "#FFFFFF" }}
+                  >
+                    {p}
+                  </span>
+                ))}
+              </div>
+            </SmallBlock>
+
+            <SmallBlock title="Modalités de recrutement">
+              <ul className="space-y-1.5">
+                {company.recruitment.map((r) => (
+                  <li key={r} className="text-xs md:text-sm flex items-start gap-2" style={{ color: THEME.ink }}>
+                    <span className="w-1.5 h-1.5 rounded-full mt-[7px] shrink-0" style={{ background: THEME.royal }} />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </SmallBlock>
+          </div>
         </div>
       </div>
 
-      {/* page-number circle (template signature) */}
-      <div className="flex justify-center mt-3">
-        <div
-          className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm"
-          style={{ border: `2px solid ${THEME.frame}`, color: THEME.frame, background: THEME.paper }}
-        >
-          {page}
-        </div>
+      {/* page-number circle */}
+      <div
+        className="mt-3 w-9 h-9 rounded-full flex items-center justify-center font-heading font-bold text-xs shrink-0"
+        style={{ border: `2px solid ${THEME.royal}`, color: THEME.royal, background: THEME.paper }}
+      >
+        {page}
       </div>
     </div>
   );
 }
 
-function Block({ title, children }: { title: string; children: React.ReactNode }) {
+function SmallBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col min-h-0">
+    <div className="flex flex-col">
       <p
-        className="font-heading font-bold text-sm md:text-base mb-2 flex items-center gap-2"
-        style={{ color: THEME.frame }}
+        className="font-heading font-bold text-xs uppercase tracking-[0.18em] mb-2 flex items-center gap-2"
+        style={{ color: THEME.royal }}
       >
-        <span style={{ color: THEME.frame }}>›</span>
-        {title}
+        <span>›</span> {title}
       </p>
-      <div className="flex-1 overflow-hidden">{children}</div>
+      {children}
     </div>
   );
 }
