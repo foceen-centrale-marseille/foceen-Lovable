@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid } from "lucide-react";
 import logoWhite from "@/assets/logo_foceen_white.png";
+import teamPhoto from "@/assets/teams/team26.jpg";
 
 /* ------------------------------------------------------------------ */
 /*  THEME                                                              */
