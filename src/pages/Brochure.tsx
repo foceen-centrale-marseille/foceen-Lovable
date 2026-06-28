@@ -602,38 +602,51 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
 /* ------------------------------------------------------------------ */
 
 function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
-  const list = useMemo(() => indexList, []);
+  const groups = useMemo(() => groupedIndex, []);
   return (
     <div className="w-full h-full flex flex-col px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
-      <div className="mb-5">
+      <div className="mb-5 shrink-0">
         <p className="text-[11px] tracking-[0.5em] uppercase font-heading" style={{ color: THEME.royal }}>
           Annuaire
         </p>
         <h2 className="font-heading font-black text-4xl md:text-5xl mt-2" style={{ color: THEME.ink }}>
           INDEX DES ENTREPRISES
         </h2>
-        <p className="text-sm mt-2 opacity-60">Cliquez pour accéder à la fiche.</p>
+        <p className="text-sm mt-2 opacity-60">Classées par domaine d'activité — cliquez pour accéder à la fiche.</p>
       </div>
 
-      <div className="flex-1 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 content-start overflow-auto pr-2">
-        {list.map((c, idx) => (
-          <button
-            key={c.name + idx}
-            onClick={() => onPick(c.slide)}
-            className="group text-left rounded-lg px-3 py-2.5 transition-all hover:-translate-y-0.5 hover:shadow-md bg-white flex items-center gap-2"
-            style={{ border: `1px solid ${THEME.rule}` }}
-          >
-            <span
-              className="font-heading font-bold text-[10px] w-6 h-6 rounded-full flex items-center justify-center shrink-0"
-              style={{ background: THEME.royal, color: "#FFFFFF" }}
-            >
-              {String(idx + 1).padStart(2, "0")}
-            </span>
-            <span className="font-heading font-semibold text-xs leading-tight flex-1 truncate" style={{ color: THEME.ink }}>
-              {c.name}
-            </span>
-            <span className="text-[9px] opacity-50 shrink-0">p.{String(c.slide + 1).padStart(2, "0")}</span>
-          </button>
+      <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll space-y-6">
+        {groups.map((g) => (
+          <section key={g.label}>
+            <div className="flex items-baseline gap-4 mb-3">
+              <h3
+                className="font-heading font-black uppercase tracking-[0.18em] text-sm md:text-base"
+                style={{ color: THEME.royal }}
+              >
+                {g.label}
+              </h3>
+              <span className="h-px flex-1" style={{ background: THEME.rule }} />
+              <span className="text-[10px] font-heading opacity-60">{g.entries.length}</span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+              {g.entries.map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => onPick(c.slide)}
+                  className="group text-left rounded-lg px-3 py-2.5 transition-all hover:-translate-y-0.5 hover:shadow-md bg-white flex items-center gap-2"
+                  style={{ border: `1px solid ${THEME.rule}` }}
+                >
+                  <span
+                    className="font-heading font-semibold text-xs leading-tight flex-1 truncate"
+                    style={{ color: THEME.ink }}
+                  >
+                    {c.name}
+                  </span>
+                  <span className="text-[9px] opacity-50 shrink-0">p.{String(c.slide + 1).padStart(2, "0")}</span>
+                </button>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
     </div>
