@@ -34,6 +34,7 @@ const App = () => (
             <Route path="/infos-pratiques" element={<InfosPratiques />} />
           </Route>
           <Route path="/redirect-linkedin" element={<Redirect />} />
+          <Route path="/brochure" element={<Brochure />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
