@@ -1,7 +1,24 @@
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MapPin, Calendar, Users, Globe, TrendingUp, Briefcase, ArrowUpRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Calendar,
+  Users,
+  Globe,
+  TrendingUp,
+  Briefcase,
+  Target,
+  FileText,
+  Send,
+  LayoutGrid,
+} from "lucide-react";
 import logoWhite from "@/assets/logo_foceen_white.png";
+
+/* ------------------------------------------------------------------ */
+/*  DATA                                                              */
+/* ------------------------------------------------------------------ */
 
 type Company = {
   name: string;
@@ -21,7 +38,12 @@ type Company = {
 const fakeDesc =
   "Acteur de référence dans son secteur, l'entreprise conjugue innovation, exigence technique et engagement humain. Présente à l'international, elle place l'ingénierie et le développement durable au cœur de sa stratégie pour bâtir les solutions de demain.";
 
-const baseProfiles = ["Ingénieurs généralistes", "Profils techniques (mécanique, énergie, IT)", "Chefs de projet", "Consultants juniors"];
+const baseProfiles = [
+  "Ingénieurs généralistes",
+  "Profils techniques (mécanique, énergie, IT)",
+  "Chefs de projet",
+  "Consultants juniors",
+];
 const allContracts: Company["contracts"] = ["Stage", "Alternance", "CDD", "CDI"];
 
 const make = (name: string, sector: string, logo?: string): Company => ({
@@ -47,10 +69,10 @@ const partners = [
   { name: "Haribo", src: "/logos/haribo.png" },
   { name: "Batiactu", src: "/81792a_3e8f982fc8a6497ca46a98b487517d35~mv2.png" },
   { name: "Centrale Méditerranée", src: logoWhite },
-  { name: "Métropole Aix-Marseille-Provence", src: "/logo-metropole-aix-marseille.png" },
+  { name: "Métropole AMP", src: "/logo-metropole-aix-marseille.png" },
   { name: "Gomet'", src: "/logo-gomet.png" },
   { name: "Studyrama", src: "/752_ckeditor_agenda_53966_637f4194bed9f_1.png" },
-  { name: "Monde des Grandes Écoles & Universités", src: "/placeholder.svg" },
+  { name: "Monde des Grandes Écoles", src: "/placeholder.svg" },
 ];
 
 const companies: Company[] = [
@@ -91,315 +113,549 @@ const companies: Company[] = [
 
 const sortedCompanies = [...companies].sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
-const contractColor: Record<Company["contracts"][number], string> = {
-  Stage: "bg-cyan/15 text-cyan-dark border-cyan/30",
-  Alternance: "bg-primary/10 text-primary border-primary/20",
-  CDD: "bg-amber-100 text-amber-800 border-amber-200",
-  CDI: "bg-emerald-100 text-emerald-800 border-emerald-200",
+/* ------------------------------------------------------------------ */
+/*  THEME — institutional palette (deep navy + warm gold)             */
+/* ------------------------------------------------------------------ */
+
+const THEME = {
+  ink: "#0B1F3A", // deep institutional navy
+  inkSoft: "#152D52",
+  gold: "#C9A24B", // editorial accent
+  goldSoft: "#E8D9B0",
+  paper: "#F6F1E7", // warm off-white paper
+  paperDeep: "#EFE6D2",
+  line: "#1F3A66",
+  rule: "#D9CBA8",
 };
 
+/* ------------------------------------------------------------------ */
+/*  BUILD SLIDES                                                      */
+/* ------------------------------------------------------------------ */
+
+type Slide =
+  | { kind: "cover" }
+  | { kind: "editos" }
+  | { kind: "index" }
+  | { kind: "company"; company: Company; idx: number };
+
+const slides: Slide[] = [
+  { kind: "cover" },
+  { kind: "editos" },
+  { kind: "index" },
+  ...sortedCompanies.map((c, i) => ({ kind: "company" as const, company: c, idx: i })),
+];
+
+const COMPANY_SLIDE_START = 3;
+
+/* ------------------------------------------------------------------ */
+/*  COMPONENT                                                         */
+/* ------------------------------------------------------------------ */
+
 export default function Brochure() {
-  const [selected, setSelected] = useState<Company | null>(null);
-  const grid = useMemo(() => sortedCompanies, []);
+  const [i, setI] = useState(0);
+  const total = slides.length;
+
+  const go = useCallback(
+    (n: number) => setI((prev) => Math.max(0, Math.min(total - 1, n))),
+    [total],
+  );
+  const next = useCallback(() => go(i + 1), [go, i]);
+  const prev = useCallback(() => go(i - 1), [go, i]);
+
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") next();
+      else if (e.key === "ArrowLeft" || e.key === "PageUp") prev();
+      else if (e.key === "Home") go(0);
+      else if (e.key === "End") go(total - 1);
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [next, prev, go, total]);
+
+  const current = slides[i];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-body" lang="fr">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
+    <div
+      className="fixed inset-0 w-screen h-screen overflow-hidden font-body select-none"
+      style={{ background: THEME.paper, color: THEME.ink }}
+      lang="fr"
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -40 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0"
+        >
+          {current.kind === "cover" && <CoverSlide />}
+          {current.kind === "editos" && <EditosSlide />}
+          {current.kind === "index" && (
+            <IndexSlide onPick={(idx) => go(COMPANY_SLIDE_START + idx)} />
+          )}
+          {current.kind === "company" && (
+            <CompanySlide company={current.company} number={current.idx + 1} />
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Arrows */}
+      <ArrowButton side="left" disabled={i === 0} onClick={prev} />
+      <ArrowButton side="right" disabled={i === total - 1} onClick={next} />
+
+      {/* Top brand strip */}
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 md:px-10 py-4 pointer-events-none">
         <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 20%, hsl(var(--cyan)/0.4), transparent 50%), radial-gradient(circle at 80% 60%, hsl(var(--cyan-dark)/0.35), transparent 55%)",
-          }}
-        />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-36">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="uppercase tracking-[0.3em] text-xs md:text-sm text-cyan mb-6"
-          >
-            FOCEEN · 19ᵉ édition · 03 novembre 2026
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-5xl"
-          >
-            Brochure
-            <br />
-            <span className="text-cyan">Entreprises 2026</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mt-8 max-w-2xl text-primary-foreground/70 text-lg"
-          >
-            Un panorama des entreprises présentes au Forum Centrale Méditerranée Entreprises, et des
-            opportunités de carrière qu'elles offrent à nos élèves-ingénieurs.
-          </motion.p>
-
-          {/* Parrain */}
-          <div className="mt-20 grid md:grid-cols-[auto_1fr] gap-8 items-center">
-            <div className="bg-white rounded-2xl p-8 w-64 h-40 flex items-center justify-center shadow-2xl">
-              <img src="/logos/groupe-snef.png" alt="SNEF — Parrain" className="max-h-24 object-contain" />
-            </div>
-            <div>
-              <p className="uppercase tracking-[0.25em] text-xs text-cyan mb-2">Parrain de l'édition</p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold">Groupe SNEF</h2>
-              <p className="text-primary-foreground/70 mt-3 max-w-xl">
-                Nous remercions chaleureusement le Groupe SNEF d'accompagner cette 19ᵉ édition du FOCEEN
-                en tant que parrain officiel.
-              </p>
-            </div>
-          </div>
+          className="text-[11px] tracking-[0.35em] uppercase font-heading font-semibold"
+          style={{ color: THEME.ink }}
+        >
+          FOCEEN · Brochure 2026
         </div>
-      </section>
+        <button
+          onClick={() => go(2)}
+          className="pointer-events-auto inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase font-heading hover:opacity-70 transition-opacity"
+          style={{ color: THEME.ink }}
+        >
+          <LayoutGrid className="w-3.5 h-3.5" />
+          Index
+        </button>
+      </div>
 
-      {/* PARTENAIRES */}
-      <section className="py-20 bg-muted/40 border-y border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
-            <div>
-              <p className="uppercase tracking-[0.25em] text-xs text-cyan-dark mb-2">Ils nous soutiennent</p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary">Nos partenaires</h2>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {partners.map((p) => (
-              <div
-                key={p.name}
-                className="group bg-white border border-border rounded-xl h-28 flex items-center justify-center p-4 transition-all hover:shadow-lg hover:-translate-y-0.5"
-                title={p.name}
-              >
-                <img
-                  src={p.src}
-                  alt={p.name}
-                  className="max-h-16 max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Page counter */}
+      <div
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] font-heading"
+        style={{ color: THEME.ink }}
+      >
+        <span className="font-bold">{String(i + 1).padStart(2, "0")}</span>
+        <span className="opacity-40 mx-2">/</span>
+        <span className="opacity-60">{String(total).padStart(2, "0")}</span>
+      </div>
+    </div>
+  );
+}
 
-      {/* ÉDITOS */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-10">
-          {[
-            { title: "Le mot du Parrain", tag: "Édito" },
-            { title: "Le mot de l'équipe", tag: "Édito" },
-          ].map((e) => (
-            <article
-              key={e.title}
-              className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm"
+/* ------------------------------------------------------------------ */
+/*  NAV ARROWS                                                        */
+/* ------------------------------------------------------------------ */
+
+function ArrowButton({
+  side,
+  onClick,
+  disabled,
+}: {
+  side: "left" | "right";
+  onClick: () => void;
+  disabled?: boolean;
+}) {
+  const Icon = side === "left" ? ChevronLeft : ChevronRight;
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={side === "left" ? "Page précédente" : "Page suivante"}
+      className={`group absolute top-1/2 -translate-y-1/2 ${
+        side === "left" ? "left-3 md:left-6" : "right-3 md:right-6"
+      } w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
+        disabled ? "opacity-20 cursor-not-allowed" : "hover:scale-110"
+      }`}
+      style={{
+        background: THEME.ink,
+        color: THEME.paper,
+        boxShadow: "0 12px 30px -10px rgba(11,31,58,0.45)",
+      }}
+    >
+      <Icon className="w-6 h-6 md:w-8 md:h-8" strokeWidth={1.5} />
+    </button>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SLIDE: COVER                                                      */
+/* ------------------------------------------------------------------ */
+
+function CoverSlide() {
+  return (
+    <div className="w-full h-full flex flex-col" style={{ background: THEME.ink, color: THEME.paper }}>
+      <div className="flex-1 grid lg:grid-cols-[1.1fr_1fr]">
+        {/* Left — title */}
+        <div className="relative flex flex-col justify-center px-10 md:px-20 py-16">
+          <div
+            className="absolute inset-0 opacity-30 pointer-events-none"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 15% 25%, rgba(201,162,75,0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08), transparent 50%)",
+            }}
+          />
+          <div className="relative">
+            <p
+              className="text-[11px] tracking-[0.45em] uppercase mb-6 font-heading"
+              style={{ color: THEME.gold }}
             >
-              <div className="aspect-[16/9] bg-gradient-to-br from-primary/90 to-cyan/40 flex items-center justify-center text-primary-foreground/60 text-sm">
-                [ Photo à insérer ]
-              </div>
-              <div className="p-8">
-                <p className="uppercase tracking-[0.25em] text-xs text-cyan-dark mb-3">{e.tag}</p>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-4">
-                  {e.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mt-4">
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* PLAN DU FORUM */}
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="uppercase tracking-[0.25em] text-xs text-cyan-dark mb-2">Orientation</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-10">
-            Plan du Forum
-          </h2>
-          <div className="aspect-[16/9] w-full rounded-2xl border-2 border-dashed border-primary/30 bg-white/60 flex flex-col items-center justify-center text-muted-foreground">
-            <MapPin className="w-10 h-10 mb-3 text-cyan-dark" />
-            <p className="font-medium">Plan haute résolution à insérer ici</p>
-            <p className="text-sm mt-1">(image du plan des stands)</p>
-          </div>
-        </div>
-      </section>
-
-      {/* INDEX ENTREPRISES */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="mb-12">
-            <p className="uppercase tracking-[0.25em] text-xs text-cyan-dark mb-2">Annuaire</p>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-primary">
-              Index des entreprises
-            </h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl">
-              Cliquez sur une entreprise pour afficher sa fiche détaillée.
+              19ᵉ édition · 03 novembre 2026 · Parc Chanot
+            </p>
+            <h1 className="font-heading font-bold leading-[0.9] text-5xl md:text-7xl xl:text-8xl tracking-tight">
+              Brochure
+              <br />
+              <span style={{ color: THEME.gold }}>Entreprises</span>
+            </h1>
+            <div
+              className="mt-8 h-px w-32"
+              style={{ background: THEME.gold }}
+            />
+            <p className="mt-8 max-w-md text-base md:text-lg opacity-75 leading-relaxed">
+              Panorama des 33 entreprises présentes au Forum Centrale Méditerranée Entreprises 2026.
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {grid.map((c, i) => (
-              <motion.button
-                key={c.name}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: Math.min(i * 0.02, 0.4) }}
-                onClick={() => setSelected(c)}
-                className="group relative text-left bg-card border border-border rounded-xl p-5 hover:border-cyan hover:shadow-xl transition-all overflow-hidden"
-              >
-                <div className="h-16 mb-4 flex items-center">
-                  {c.logo ? (
-                    <img
-                      src={c.logo}
-                      alt={c.name}
-                      className="max-h-14 max-w-[70%] object-contain"
-                    />
-                  ) : (
-                    <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center text-primary font-heading font-bold">
-                      {c.name.charAt(0)}
-                    </div>
-                  )}
-                </div>
-                <h3 className="font-heading font-semibold text-primary leading-tight pr-6">
-                  {c.name}
-                </h3>
-                <p className="text-xs text-muted-foreground mt-1">{c.sector}</p>
-                <ArrowUpRight className="absolute top-4 right-4 w-4 h-4 text-muted-foreground group-hover:text-cyan-dark group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </motion.button>
-            ))}
+        {/* Right — Parrain */}
+        <div
+          className="flex flex-col justify-center px-10 md:px-16 py-16 relative"
+          style={{ background: THEME.inkSoft }}
+        >
+          <p
+            className="text-[10px] tracking-[0.45em] uppercase font-heading mb-4"
+            style={{ color: THEME.gold }}
+          >
+            Parrain de l'édition
+          </p>
+          <div
+            className="rounded-2xl p-8 w-full max-w-sm h-40 flex items-center justify-center mb-6"
+            style={{ background: THEME.paper }}
+          >
+            <img
+              src="/logos/groupe-snef.png"
+              alt="Groupe SNEF"
+              className="max-h-24 object-contain"
+            />
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">Groupe SNEF</h2>
+          <p className="opacity-75 max-w-md text-sm md:text-base leading-relaxed">
+            Acteur majeur du génie électrique et industriel, le Groupe SNEF accompagne la 19ᵉ édition
+            du FOCEEN en tant que parrain officiel.
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom — partners strip */}
+      <div
+        className="px-10 md:px-16 py-6 border-t flex items-center gap-8 overflow-hidden"
+        style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(0,0,0,0.2)" }}
+      >
+        <p
+          className="text-[10px] tracking-[0.4em] uppercase font-heading shrink-0"
+          style={{ color: THEME.gold }}
+        >
+          Partenaires
+        </p>
+        <div className="flex-1 grid grid-cols-5 md:grid-cols-10 gap-3 items-center">
+          {partners.map((p) => (
+            <div
+              key={p.name}
+              className="h-12 rounded-md flex items-center justify-center px-2"
+              style={{ background: "rgba(255,255,255,0.95)" }}
+              title={p.name}
+            >
+              <img src={p.src} alt={p.name} className="max-h-8 max-w-full object-contain" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SLIDE: EDITOS                                                     */
+/* ------------------------------------------------------------------ */
+
+function EditosSlide() {
+  const editos = [
+    {
+      tag: "Le mot du Parrain",
+      author: "Groupe SNEF",
+      role: "Parrain de la 19ᵉ édition",
+      text: "C'est avec une grande fierté que le Groupe SNEF parraine cette nouvelle édition du FOCEEN. Forum incontournable de la rentrée, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les besoins concrets de notre industrie. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain, de partager nos métiers et nos défis.",
+      tint: THEME.ink,
+      fg: THEME.paper,
+      accent: THEME.gold,
+    },
+    {
+      tag: "Le mot de l'équipe",
+      author: "Bureau FOCEEN 2026",
+      role: "Mandat 2025-2026",
+      text: "Pendant un an, notre équipe d'élèves-ingénieurs a porté l'ambition de faire du FOCEEN un moment d'exception. Cette brochure est le fruit de cet engagement : un outil pour vous présenter en détail les entreprises qui nous font confiance et les opportunités qu'elles offrent. Bonne lecture, et rendez-vous le 03 novembre 2026.",
+      tint: THEME.paperDeep,
+      fg: THEME.ink,
+      accent: THEME.gold,
+    },
+  ];
+
+  return (
+    <div className="w-full h-full grid lg:grid-cols-2">
+      {editos.map((e) => (
+        <div
+          key={e.tag}
+          className="flex flex-col justify-center px-10 md:px-16 py-20 relative overflow-hidden"
+          style={{ background: e.tint, color: e.fg }}
+        >
+          <p
+            className="text-[11px] tracking-[0.4em] uppercase font-heading mb-4"
+            style={{ color: e.accent }}
+          >
+            {e.tag}
+          </p>
+          <div
+            className="text-7xl md:text-8xl font-serif leading-none mb-2 opacity-30"
+            style={{ color: e.accent, fontFamily: "Georgia, serif" }}
+          >
+            «
+          </div>
+          <p className="text-base md:text-lg leading-relaxed max-w-xl italic" style={{ opacity: 0.9 }}>
+            {e.text}
+          </p>
+          <div className="mt-8 flex items-center gap-3">
+            <div className="h-px w-10" style={{ background: e.accent }} />
+            <div>
+              <p className="font-heading font-bold text-base">{e.author}</p>
+              <p className="text-xs opacity-70 mt-0.5">{e.role}</p>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  );
+}
 
-      <footer className="py-10 border-t border-border text-center text-sm text-muted-foreground">
-        © 2026 FOCEEN — Brochure Entreprises
-      </footer>
+/* ------------------------------------------------------------------ */
+/*  SLIDE: INDEX                                                      */
+/* ------------------------------------------------------------------ */
 
-      {/* DETAIL MODAL */}
-      <AnimatePresence>
-        {selected && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-stretch md:items-center justify-end md:justify-center p-0 md:p-8"
-            onClick={() => setSelected(null)}
+function IndexSlide({ onPick }: { onPick: (idx: number) => void }) {
+  const grid = useMemo(() => sortedCompanies, []);
+  return (
+    <div className="w-full h-full flex flex-col px-10 md:px-20 py-16 overflow-hidden">
+      <div className="mb-6">
+        <p
+          className="text-[11px] tracking-[0.4em] uppercase font-heading"
+          style={{ color: THEME.gold }}
+        >
+          Annuaire
+        </p>
+        <h2
+          className="font-heading font-bold text-3xl md:text-5xl mt-2"
+          style={{ color: THEME.ink }}
+        >
+          Index des entreprises
+        </h2>
+        <p className="text-sm mt-2 opacity-60">
+          Cliquez sur une entreprise pour accéder à sa fiche détaillée.
+        </p>
+      </div>
+
+      <div className="flex-1 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 content-start overflow-auto pr-2">
+        {grid.map((c, idx) => (
+          <button
+            key={c.name}
+            onClick={() => onPick(idx)}
+            className="group relative text-left rounded-lg border px-3 py-3 transition-all hover:shadow-lg hover:-translate-y-0.5"
+            style={{
+              background: "white",
+              borderColor: THEME.rule,
+            }}
           >
-            <motion.div
-              initial={{ x: 60, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 60, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 240, damping: 28 }}
-              className="bg-background w-full md:max-w-3xl md:rounded-2xl shadow-2xl overflow-y-auto max-h-screen md:max-h-[90vh] relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center hover:bg-muted transition-colors"
-                aria-label="Fermer"
+            <div className="flex items-center gap-2">
+              <span
+                className="font-heading font-bold text-[10px] w-6 h-6 rounded-full flex items-center justify-center shrink-0"
+                style={{ background: THEME.ink, color: THEME.paper }}
               >
-                <X className="w-5 h-5" />
-              </button>
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+              <span
+                className="font-heading font-semibold text-xs leading-tight truncate"
+                style={{ color: THEME.ink }}
+                title={c.name}
+              >
+                {c.name}
+              </span>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
-              {/* Header */}
-              <div className="bg-primary text-primary-foreground p-8 md:p-10">
-                <div className="bg-white rounded-xl h-28 w-full max-w-xs flex items-center justify-center p-4 mb-6">
-                  {selected.logo ? (
-                    <img src={selected.logo} alt={selected.name} className="max-h-20 object-contain" />
-                  ) : (
-                    <span className="font-heading font-bold text-2xl text-primary">{selected.name}</span>
-                  )}
-                </div>
-                <p className="uppercase tracking-[0.25em] text-xs text-cyan mb-2">{selected.sector}</p>
-                <h3 className="font-heading text-3xl md:text-4xl font-bold">{selected.name}</h3>
+/* ------------------------------------------------------------------ */
+/*  SLIDE: COMPANY                                                    */
+/* ------------------------------------------------------------------ */
+
+function CompanySlide({ company, number }: { company: Company; number: number }) {
+  const contractColor: Record<Company["contracts"][number], string> = {
+    Stage: "bg-[#0B1F3A] text-white",
+    Alternance: "bg-[#152D52] text-white",
+    CDD: "bg-[#C9A24B] text-white",
+    CDI: "bg-[#8A6B1F] text-white",
+  };
+
+  return (
+    <div className="w-full h-full flex flex-col px-8 md:px-14 py-12 overflow-hidden">
+      {/* Header bar */}
+      <div className="flex items-center justify-between gap-6 pb-5 mb-5 border-b" style={{ borderColor: THEME.rule }}>
+        <div className="flex items-center gap-5 min-w-0">
+          <div
+            className="h-20 w-40 rounded-lg flex items-center justify-center p-3 shrink-0"
+            style={{ background: "white", border: `1px solid ${THEME.rule}` }}
+          >
+            {company.logo ? (
+              <img src={company.logo} alt={company.name} className="max-h-14 max-w-full object-contain" />
+            ) : (
+              <span className="font-heading font-bold text-xl" style={{ color: THEME.ink }}>
+                {company.name}
+              </span>
+            )}
+          </div>
+          <div className="min-w-0">
+            <p
+              className="text-[10px] tracking-[0.4em] uppercase font-heading mb-1"
+              style={{ color: THEME.gold }}
+            >
+              Fiche n° {String(number).padStart(2, "0")}
+            </p>
+            <h2
+              className="font-heading font-bold text-2xl md:text-4xl truncate"
+              style={{ color: THEME.ink }}
+            >
+              {company.name}
+            </h2>
+            <p className="text-xs md:text-sm opacity-70 truncate">{company.sector}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Body grid */}
+      <div className="flex-1 grid grid-cols-12 gap-4 min-h-0">
+        {/* Left — infos clés */}
+        <aside
+          className="col-span-12 md:col-span-4 lg:col-span-3 rounded-xl p-5 flex flex-col gap-3"
+          style={{ background: THEME.ink, color: THEME.paper }}
+        >
+          <p
+            className="text-[10px] tracking-[0.4em] uppercase font-heading"
+            style={{ color: THEME.gold }}
+          >
+            Informations clés
+          </p>
+          {[
+            { i: Briefcase, l: "Secteur", v: company.sector },
+            { i: Calendar, l: "Création", v: company.founded },
+            { i: MapPin, l: "Localisation", v: company.location },
+            { i: TrendingUp, l: "Chiffre d'affaires", v: company.revenue },
+            { i: Users, l: "Effectifs", v: company.employees },
+            { i: Globe, l: "Site web", v: company.website },
+          ].map(({ i: Icon, l, v }) => (
+            <div key={l} className="flex items-start gap-3">
+              <Icon className="w-4 h-4 mt-1 shrink-0" style={{ color: THEME.gold }} />
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-wider opacity-60">{l}</p>
+                <p className="text-xs font-medium leading-snug break-words">{v}</p>
               </div>
+            </div>
+          ))}
+        </aside>
 
-              {/* Infos clés */}
-              <div className="p-8 md:p-10 space-y-10">
-                <div>
-                  <h4 className="font-heading font-bold text-primary mb-4 uppercase tracking-wider text-sm">
-                    Informations clés
-                  </h4>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {[
-                      { i: Briefcase, l: "Secteur", v: selected.sector },
-                      { i: Calendar, l: "Année de création", v: selected.founded },
-                      { i: MapPin, l: "Localisation", v: selected.location },
-                      { i: TrendingUp, l: "Chiffre d'affaires", v: selected.revenue },
-                      { i: Users, l: "Effectifs", v: selected.employees },
-                      { i: Globe, l: "Site web", v: selected.website },
-                    ].map(({ i: Icon, l, v }) => (
-                      <div key={l} className="flex items-start gap-3 p-4 rounded-lg bg-muted/50">
-                        <Icon className="w-5 h-5 text-cyan-dark mt-0.5 shrink-0" />
-                        <div>
-                          <p className="text-xs uppercase tracking-wider text-muted-foreground">{l}</p>
-                          <p className="font-medium text-foreground">{v}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+        {/* Center — présentation */}
+        <section
+          className="col-span-12 md:col-span-8 lg:col-span-5 rounded-xl p-6 flex flex-col"
+          style={{ background: "white", border: `1px solid ${THEME.rule}` }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <FileText className="w-4 h-4" style={{ color: THEME.gold }} />
+            <p
+              className="text-[10px] tracking-[0.4em] uppercase font-heading"
+              style={{ color: THEME.ink }}
+            >
+              Présentation de l'entreprise
+            </p>
+          </div>
+          <p
+            className="text-sm md:text-[15px] leading-relaxed flex-1"
+            style={{ color: THEME.ink }}
+          >
+            {company.description}
+          </p>
+          <div className="mt-4 pt-4 border-t" style={{ borderColor: THEME.rule }}>
+            <div className="flex items-center gap-2 mb-2">
+              <Send className="w-4 h-4" style={{ color: THEME.gold }} />
+              <p
+                className="text-[10px] tracking-[0.4em] uppercase font-heading"
+                style={{ color: THEME.ink }}
+              >
+                Modalités de recrutement
+              </p>
+            </div>
+            <p className="text-xs leading-relaxed opacity-80" style={{ color: THEME.ink }}>
+              {company.recruitment}
+            </p>
+          </div>
+        </section>
 
-                <div>
-                  <h4 className="font-heading font-bold text-primary mb-4 uppercase tracking-wider text-sm">
-                    Présentation
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">{selected.description}</p>
-                </div>
+        {/* Right — profils + contrats */}
+        <aside className="col-span-12 lg:col-span-4 flex flex-col gap-4">
+          <div
+            className="rounded-xl p-5 flex-1"
+            style={{ background: THEME.paperDeep, border: `1px solid ${THEME.rule}` }}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <Target className="w-4 h-4" style={{ color: THEME.gold }} />
+              <p
+                className="text-[10px] tracking-[0.4em] uppercase font-heading"
+                style={{ color: THEME.ink }}
+              >
+                Profils recherchés
+              </p>
+            </div>
+            <ul className="space-y-2">
+              {company.profiles.map((p) => (
+                <li key={p} className="flex items-start gap-2 text-xs" style={{ color: THEME.ink }}>
+                  <span
+                    className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0"
+                    style={{ background: THEME.gold }}
+                  />
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                <div>
-                  <h4 className="font-heading font-bold text-primary mb-4 uppercase tracking-wider text-sm">
-                    Profils recherchés
-                  </h4>
-                  <ul className="space-y-2">
-                    {selected.profiles.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-dark mt-2 shrink-0" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-heading font-bold text-primary mb-4 uppercase tracking-wider text-sm">
-                    Types de postes proposés
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {selected.contracts.map((c) => (
-                      <span
-                        key={c}
-                        className={`px-4 py-1.5 rounded-full text-sm font-medium border ${contractColor[c]}`}
-                      >
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-heading font-bold text-primary mb-4 uppercase tracking-wider text-sm">
-                    Modalités de recrutement
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">{selected.recruitment}</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <div
+            className="rounded-xl p-5"
+            style={{ background: "white", border: `1px solid ${THEME.rule}` }}
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <Briefcase className="w-4 h-4" style={{ color: THEME.gold }} />
+              <p
+                className="text-[10px] tracking-[0.4em] uppercase font-heading"
+                style={{ color: THEME.ink }}
+              >
+                Types de postes
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {company.contracts.map((c) => (
+                <span
+                  key={c}
+                  className={`px-3 py-1 rounded-full text-[11px] font-heading font-semibold uppercase tracking-wider ${contractColor[c]}`}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
