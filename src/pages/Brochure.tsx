@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid } from "lucide-react";
-import logoWhite from "@/assets/logo_foceen_white.png";
 import teamPhoto from "@/assets/teams/team26.jpg";
+
 
 /* ------------------------------------------------------------------ */
 /*  THEME                                                              */
@@ -77,7 +77,7 @@ const partners = [
   { name: "La Mie Câline", src: "/logo-la-mie-caline.png" },
   { name: "Haribo", src: "/logos/haribo.png" },
   { name: "Batiactu", src: "/81792a_3e8f982fc8a6497ca46a98b487517d35~mv2.png" },
-  { name: "Centrale Méditerranée", src: logoWhite },
+  { name: "Centrale Méditerranée", src: "/logo-foceen.png" },
   { name: "Métropole AMP", src: "/logo-metropole-aix-marseille.png" },
   { name: "Gomet'", src: "/logo-gomet.png" },
   { name: "Studyrama", src: "/752_ckeditor_agenda_53966_637f4194bed9f_1.png" },
@@ -470,7 +470,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
       {/* Middle — logo + title + CTA */}
       <div className="flex-1 flex flex-col items-center justify-center gap-6 md:gap-8 w-full">
         <img
-          src={logoWhite}
+          src="/logo-foceen.png"
           alt="FOCEEN"
           className="h-16 md:h-20 object-contain"
           style={{ filter: "brightness(0) invert(1)" }}

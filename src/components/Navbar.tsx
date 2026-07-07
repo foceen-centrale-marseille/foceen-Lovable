@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoWhite from "@/assets/logo_foceen_white.png";
+
 
 const navLinks = [
   { label: "Accueil", path: "/" },
@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/">
-            <img alt="FOCEEN" className="h-20 w-auto" src={logoWhite} width={160} height={80} decoding="async" />
+            <img alt="FOCEEN" className="h-20 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" style={{ filter: "brightness(0) invert(1)" }} />
           </Link>
 
           {/* Desktop links */}

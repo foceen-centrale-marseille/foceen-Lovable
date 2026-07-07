@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoWhite from "@/assets/logo_foceen_white.png";
+
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-start gap-4">
-            <img src={logoWhite} alt="FOCEEN" className="h-20 w-auto" width={160} height={80} loading="lazy" decoding="async" />
+            <img src="/logo-foceen.png" alt="FOCEEN" className="h-20 w-auto" width={160} height={80} loading="lazy" decoding="async" style={{ filter: "brightness(0) invert(1)"}} />
             <p className="text-sm text-primary-foreground/70 font-body">
               Forum Centrale Méditerranée Entreprises
             </p>
