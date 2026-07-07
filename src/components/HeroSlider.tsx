@@ -31,11 +31,11 @@ const HeroSlider = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImg})` }}
       >
-        <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-white/40" />
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex items-center justify-center px-4">
+      <div className="relative h-full flex items-center justify-center px-4" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.35)" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const HeroSlider = () => {
         >
           <div className="flex flex-col items-center text-center text-primary-foreground gap-8">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <div className="bg-white rounded-2xl px-6 py-4 shadow-lg">
+              <div className="flex items-center justify-center">
                 <img src="/logo-foceen.png" alt="FOCEEN" className="h-48 md:h-64 lg:h-80 w-auto" width={640} height={640} loading="eager" decoding="async" fetchPriority="high" />
               </div>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold uppercase tracking-wide leading-relaxed text-primary-foreground">

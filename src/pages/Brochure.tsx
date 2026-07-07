@@ -316,7 +316,7 @@ const groupedIndex = (() => {
 })();
 
 /* Which slides have a BLUE background (royal) — arrows/chrome adapt */
-const isBlueSlide = (s: Slide) => s.kind === "cover" || s.kind === "divider";
+const isBlueSlide = (s: Slide) => s.kind === "divider";
 
 /* ------------------------------------------------------------------ */
 /*  ROOT                                                              */
@@ -452,28 +452,28 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
   return (
     <div
       className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-16 pb-8"
-      style={{ background: THEME.royal, color: "#FFFFFF" }}
+      style={{ background: THEME.paper, color: THEME.ink }}
     >
-      {/* Top white pill */}
+      {/* Top pill */}
       <div className="flex flex-col items-center gap-3 mt-4">
         <div
-          className="bg-white rounded-full px-5 py-1.5 text-[11px] md:text-xs font-heading font-bold tracking-[0.25em]"
-          style={{ color: THEME.royal }}
+          className="rounded-full px-5 py-1.5 text-[11px] md:text-xs font-heading font-bold tracking-[0.25em]"
+          style={{ background: THEME.royal, color: "#FFFFFF" }}
         >
           FOCEEN • 19ÈME ÉDITION
         </div>
-        <p className="text-xs md:text-sm tracking-[0.35em] uppercase font-heading text-white/90">
+        <p className="text-xs md:text-sm tracking-[0.35em] uppercase font-heading" style={{ color: THEME.ink, opacity: 0.9 }}>
           — 3 NOVEMBRE 2026 —
         </p>
       </div>
 
       {/* Middle — logo + title + CTA */}
       <div className="flex-1 flex flex-col items-center justify-center gap-6 md:gap-8 w-full">
-        <div className="bg-white rounded-2xl px-5 py-3 shadow-lg">
+        <div className="flex items-center justify-center">
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-16 md:h-20 object-contain"
+            className="h-20 md:h-28 object-contain"
           />
         </div>
         <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
@@ -483,7 +483,16 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
         </h1>
         <button
           onClick={onConsult}
-          className="mt-2 inline-flex items-center gap-3 px-7 py-3 rounded-full border-2 border-white text-white font-heading font-semibold tracking-[0.2em] uppercase text-xs md:text-sm hover:bg-white hover:text-[#1B497D] transition-colors"
+          className="mt-2 inline-flex items-center gap-3 px-7 py-3 rounded-full border-2 font-heading font-semibold tracking-[0.2em] uppercase text-xs md:text-sm transition-colors"
+          style={{ borderColor: THEME.ink, color: THEME.ink }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = THEME.ink;
+            e.currentTarget.style.color = "#FFFFFF";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "transparent";
+            e.currentTarget.style.color = THEME.ink;
+          }}
         >
           Consulter
           <ArrowSmall className="w-4 h-4" />
