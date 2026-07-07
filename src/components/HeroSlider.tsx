@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-bg.jpg";
-import logoWhite from "@/assets/logo_foceen_white.png";
+
 
 const TARGET_DATE = new Date("2026-11-03T09:00:00").getTime();
 
@@ -44,7 +44,7 @@ const HeroSlider = () => {
         >
           <div className="flex flex-col items-center text-center text-primary-foreground gap-8">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <img src={logoWhite} alt="FOCEEN" className="h-48 md:h-64 lg:h-80 w-auto" width={640} height={640} loading="eager" decoding="async" fetchPriority="high" />
+              <img src="/logo-foceen.png" alt="FOCEEN" className="h-48 md:h-64 lg:h-80 w-auto" width={640} height={640} loading="eager" decoding="async" fetchPriority="high" />
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold uppercase tracking-wide leading-relaxed text-primary-foreground">
                 <span className="relative inline-block px-3 py-1 mb-2">
                   <span className="absolute inset-0 top-[40%] bg-cyan/80 -skew-x-1" />
