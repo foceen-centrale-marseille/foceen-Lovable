@@ -470,10 +470,9 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
       {/* Middle — logo + title + CTA */}
       <div className="flex-1 flex flex-col items-center justify-center gap-6 md:gap-8 w-full">
         <img
-          src={logoWhite}
+          src="/logo-foceen.png"
           alt="FOCEEN"
           className="h-16 md:h-20 object-contain"
-          style={{ filter: "brightness(0) invert(1)" }}
         />
         <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
           BROCHURE
