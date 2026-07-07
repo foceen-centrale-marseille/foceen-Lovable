@@ -473,7 +473,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-16 md:h-20 object-contain"
+            className="h-20 md:h-28 object-contain"
           />
         </div>
         <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
