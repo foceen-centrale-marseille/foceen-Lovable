@@ -44,7 +44,7 @@ const HeroSlider = () => {
         >
           <div className="flex flex-col items-center text-center text-primary-foreground gap-8">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <img src="/logo-foceen.png" alt="FOCEEN" className="h-48 md:h-64 lg:h-80 w-auto" width={640} height={640} loading="eager" decoding="async" fetchPriority="high" />
+              <img src="/logo-foceen.png" alt="FOCEEN" className="h-48 md:h-64 lg:h-80 w-auto" width={640} height={640} loading="eager" decoding="async" fetchPriority="high" style={{ filter: "brightness(0) invert(1)" }} />
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold uppercase tracking-wide leading-relaxed text-primary-foreground">
                 <span className="relative inline-block px-3 py-1 mb-2">
                   <span className="absolute inset-0 top-[40%] bg-cyan/80 -skew-x-1" />

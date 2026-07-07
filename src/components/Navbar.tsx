@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/">
-            <img alt="FOCEEN" className="h-20 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" />
+            <img alt="FOCEEN" className="h-20 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" style={{ filter: "brightness(0) invert(1)" }} />
           </Link>
 
           {/* Desktop links */}
