@@ -157,6 +157,13 @@ const Exposants = () => {
       {/* ── DETAIL MODAL ── */}
       <Dialog open={!!selectedExposant} onOpenChange={() => setSelectedExposant(null)}>
         <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-0">
+          <button
+            onClick={() => setSelectedExposant(null)}
+            aria-label="Fermer"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white hover:text-cyan cursor-pointer transition-all"
+          >
+            <X size={20} />
+          </button>
           {selectedExposant &&
           <>
               {/* Header */}
