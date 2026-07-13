@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Building2, Search, Filter, MapPin, Users, Calendar, ExternalLink, Globe, Briefcase, GraduationCap, FileText, TrendingUp } from "lucide-react";
+import { Building2, Search, Filter, MapPin, Users, Calendar, ExternalLink, Globe, Briefcase, GraduationCap, FileText, TrendingUp, X } from "lucide-react";
 import { useState, useMemo } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { type Exposant, DOMAINS, parrain, partenaires, allExposants } from "@/data/exhibitors";
