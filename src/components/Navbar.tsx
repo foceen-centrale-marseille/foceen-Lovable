@@ -93,8 +93,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`block text-sm font-heading ${
                       location.pathname === link.path
-                        ? "text-primary"
-                        : "text-primary/80"
+                        ? "text-white"
+                        : "text-white/80"
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >
