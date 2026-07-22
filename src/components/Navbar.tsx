@@ -72,7 +72,7 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white overflow-hidden border-b border-primary/10"
+            className="md:hidden bg-primary overflow-hidden border-b border-white/10"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) =>
