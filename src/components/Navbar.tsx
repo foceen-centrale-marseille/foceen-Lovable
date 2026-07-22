@@ -18,12 +18,12 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-primary/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center justify-center">
-            <img alt="FOCEEN" className="h-16 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" />
+          <Link to="/" className="flex items-center justify-center bg-white rounded-md px-3 py-1">
+            <img alt="FOCEEN" className="h-14 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" />
           </Link>
 
           {/* Desktop links */}
@@ -45,8 +45,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`text-sm font-heading transition-colors ${
                       location.pathname === link.path
-                        ? "text-primary underline underline-offset-4 decoration-cyan"
-                        : "text-primary/80 hover:text-primary"
+                        ? "text-white underline underline-offset-4 decoration-cyan"
+                        : "text-white/80 hover:text-white"
                     }`}
                   >
                   {link.label}
@@ -57,7 +57,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-primary-foreground"
+            className="md:hidden text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -72,7 +72,7 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white overflow-hidden border-b border-primary/10"
+            className="md:hidden bg-primary overflow-hidden border-b border-white/10"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) =>
@@ -93,8 +93,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`block text-sm font-heading ${
                       location.pathname === link.path
-                        ? "text-primary"
-                        : "text-primary/80"
+                        ? "text-white"
+                        : "text-white/80"
                     }`}
                     onClick={() => setMobileOpen(false)}
                   >
