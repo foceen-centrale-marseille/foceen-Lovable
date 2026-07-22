@@ -45,8 +45,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`text-sm font-heading transition-colors ${
                       location.pathname === link.path
-                        ? "text-primary underline underline-offset-4 decoration-cyan"
-                        : "text-primary/80 hover:text-primary"
+                        ? "text-white underline underline-offset-4 decoration-cyan"
+                        : "text-white/80 hover:text-white"
                     }`}
                   >
                   {link.label}
