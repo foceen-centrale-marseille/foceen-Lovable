@@ -57,7 +57,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-primary-foreground"
+            className="md:hidden text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
