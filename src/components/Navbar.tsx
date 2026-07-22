@@ -18,12 +18,12 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-primary/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center justify-center">
-            <img alt="FOCEEN" className="h-16 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" />
+          <Link to="/" className="flex items-center justify-center bg-white rounded-md px-3 py-1">
+            <img alt="FOCEEN" className="h-14 w-auto" src="/logo-foceen.png" width={160} height={80} decoding="async" />
           </Link>
 
           {/* Desktop links */}
