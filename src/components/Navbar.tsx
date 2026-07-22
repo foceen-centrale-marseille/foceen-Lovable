@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center justify-center bg-transparent">
-            <img alt="FOCEEN" className="h-16 w-auto bg-transparent" src="/logo-foceen.png" width={160} height={80} decoding="async" />
+            <img alt="FOCEEN" className="h-20 w-auto bg-transparent" src="/logo-foceen-white.png" width={200} height={100} decoding="async" />
           </Link>
 
           {/* Desktop links */}
