@@ -40,27 +40,30 @@ export const DOMAINS = [
 
 export const parrain: Exposant = {
   id: 0,
-  name: "VINCI Energies",
-  logo: "/Logo_VE_bleu_Rouge.png",
-  sector: "Acteur clé en matière d'efficacité énergétique et d'énergies renouvelables",
-  domain: "Énergie",
-  yearCreated: 1918,
-  location: "61 pays",
-  employees: "102 600 collaborateurs, 2 100 entreprises",
-  chiffreAffaires: "20,4 milliards d'euros (2024)",
-  website: "https://www.vinci-energies.com",
-  profiles: "Tous les profils techniques ou commerciaux nous intéressent : Ingénieurs d'affaires, Ingénieurs d'études, Ingénieurs projets, Responsable d'Affaires… Au-delà des diplômes, VINCI Energies recherche des tempéraments d'entrepreneurs en adéquation avec ses métiers et sa culture fondée sur l'autonomie et la responsabilité.",
+  name: "SNCF Réseau",
+  logo: "/logo-sncf.png",
+  sector: "Acteur majeur du transport ferroviaire et des mobilités durables",
+  domain: "Transport",
+  yearCreated: 1938,
+  location: "Présent sur l'ensemble du territoire français",
+  employees: "50 000 collaborateurs",
+  chiffreAffaires: "9,5 milliards d'euros",
+  website: "https://www.sncf-reseau.com/fr",
+  websiteCarriere: "https://www.emploi.sncf.com/",
+  profiles:
+    "Profils techniques (techniciens/ingénieurs) sur des spécialités liées aux infrastructures ferroviaires (ouvrages d'art, génie civil, télécom, énergie électrique HT/BT, signalisation…) et profils généralistes pour le pilotage de projets.",
   postTypes: ["CDI", "Alternance", "Stage"],
-  applicationMethod: "Chaque année VINCI Energies accueille en France plus de 5000 stagiaires et alternants. recrutement.vefimce@vinci-energies.com",
+  applicationMethod: "Selon le poste, pas de process général. Candidatures via le site emploi du groupe SNCF.",
   description:
-    "VINCI Energies nourrit l'offre globale du Groupe VINCI dans le domaine de l'efficacité énergétique et des énergies renouvelables et dans l'intégration de systèmes complexes. Présent dans 61 pays avec 102 600 collaborateurs et 2 100 entreprises, VINCI Energies accélère les transitions énergétique et numérique.",
+    "SNCF Réseau, entreprise du groupe SNCF, est un acteur majeur du transport ferroviaire et des mobilités durables. Avec plus de 50 000 collaborateurs, elle entretient, modernise, développe et exploite les 28 000 km du réseau ferré national afin d'adapter l'infrastructure aux besoins croissants de mobilité et aux enjeux de la transition écologique.",
   highlights: [
-    "Leader mondial des solutions multi-techniques",
-    "Présence dans 61 pays",
-    "Programme Pépinière d'intégration des jeunes diplômés",
-    "Valeurs CESAR : Confiance, Esprit d'entreprendre, Solidarité, Autonomie, Responsabilité",
+    "28 000 km de lignes en France",
+    "Entretien, modernisation et exploitation du réseau ferré national",
+    "Ingénierie et grands projets ferroviaires",
+    "Acteur clé de la transition écologique et des mobilités durables",
   ],
 };
+
 
 export const partenaires: Exposant[] = [
   {
