@@ -22,11 +22,21 @@ export default function PartnersSection() {
     <section className="py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-heading font-bold text-center text-foreground mb-4">PARRAIN</h2>
-        <div className="flex justify-center mb-12">
+        <div className="flex flex-col items-center mb-12">
           <div className="w-72 h-32 bg-white rounded-lg flex items-center justify-center border border-border p-4">
-            <img src={parrain.src} alt={parrain.name} className="object-contain h-24 w-auto" loading="lazy" decoding="async" />
+            <img
+              src={parrain.src}
+              alt={`Logo ${parrain.name}, parrain officiel du FOCEEN`}
+              width={800}
+              height={800}
+              className="object-contain max-h-24 max-w-full w-auto h-auto"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
+          <p className="mt-4 max-w-2xl text-center font-body text-muted-foreground">{parrain.description}</p>
         </div>
+
 
         <h2 className="text-3xl font-heading font-bold text-center text-foreground mb-8">NOS PARTENAIRES</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-items-center">
