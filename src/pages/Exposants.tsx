@@ -45,10 +45,10 @@ const Exposants = () => {
             <motion.div
               whileHover={{ scale: 1.03 }}
               onClick={() => setSelectedExposant(parrain)}
-              className="w-80 h-40 bg-card rounded-xl flex items-center justify-center border-2 border-cyan p-6 cursor-pointer shadow-lg hover:shadow-xl transition-shadow">
+              className="w-full max-w-lg min-h-56 bg-card rounded-xl flex items-center justify-center border-2 border-cyan p-8 cursor-pointer shadow-lg hover:shadow-xl transition-shadow">
 
               {parrain.logo ?
-              <img src={parrain.logo} alt={`Logo ${parrain.name}, parrain officiel du FOCEEN`} width={800} height={800} className="object-contain max-h-28 max-w-full w-auto h-auto" loading="lazy" decoding="async" /> :
+              <img src={parrain.logo} alt={`Logo ${parrain.name}, parrain officiel du FOCEEN`} width={800} height={800} className="object-contain w-full max-w-md h-auto max-h-48" loading="lazy" decoding="async" /> :
 
               <span className="text-xl font-heading font-bold text-foreground">{parrain.name}</span>
               }
