@@ -1113,18 +1113,19 @@ export const exposantsList: Exposant[] = [
     highlights: ["Leader mondial des vins & spiritueux", "Marques iconiques : Absolut, Ricard, Jameson, Martell, Havana Club", "Programme Junior Talent Lab", "Esprit d'équipe et responsabilité"],
   },
 
-  // ── SNCF RÉSEAU ──
+  // ── VINCI ENERGIES ──
   {
-    id: 130, name: "SNCF Réseau", sector: "Infrastructure ferroviaire", domain: "Transport", yearCreated: 1938, logo: "/logos/sncf-reseau.jpg",
-    location: "Présent sur l'ensemble du territoire français – équipes au forum basées à Marseille",
-    employees: "50 000", chiffreAffaires: "9,5 milliards d'euros",
-    website: "https://www.sncf-reseau.com/fr",
-    profiles: "Profils techniques (techniciens/ingénieurs) sur des spécialités liées aux infrastructures ferroviaires (ouvrages d'art, GC, Télécom, énergie électrique HT/BT, signalisation, etc.) et profils plus généraux pour le pilotage de projets",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "Selon le poste, pas de process général.",
-    description: "SNCF Réseau est l'une des entreprises du groupe SNCF, l'un des premiers acteurs mondiaux de transport de voyageurs et de logistique de marchandises. Avec plus de 50 000 collaborateurs et des milliers de partenaires partout en France, nous développons l'offre ferroviaire sur 28 000 km de lignes. Nos missions : entretenir, moderniser, développer et exploiter le réseau ferré national. Nos équipes adaptent le réseau aux besoins croissants de mobilité et aux enjeux de la transition écologique.",
-    highlights: ["28 000 km de lignes en France", "Commercialisation, exploitation et travaux sur le réseau", "Ingénierie et projets ferroviaires", "Acteur clé de la transition écologique"],
+    id: 131, name: "VINCI Energies", sector: "Efficacité énergétique et énergies renouvelables", domain: "Énergie", yearCreated: 1918, logo: "/Logo_VE_bleu_Rouge.png",
+    location: "61 pays",
+    employees: "102 600 collaborateurs, 2 100 entreprises", chiffreAffaires: "20,4 milliards d'euros (2024)",
+    website: "https://www.vinci-energies.com",
+    profiles: "Tous les profils techniques ou commerciaux : Ingénieurs d'affaires, Ingénieurs d'études, Ingénieurs projets, Responsable d'Affaires… Au-delà des diplômes, VINCI Energies recherche des tempéraments d'entrepreneurs.",
+    postTypes: ["CDI", "Alternance", "Stage"],
+    applicationMethod: "Chaque année VINCI Energies accueille en France plus de 5000 stagiaires et alternants. recrutement.vefimce@vinci-energies.com",
+    description: "VINCI Energies nourrit l'offre globale du Groupe VINCI dans le domaine de l'efficacité énergétique et des énergies renouvelables et dans l'intégration de systèmes complexes. Présent dans 61 pays avec 102 600 collaborateurs et 2 100 entreprises, VINCI Energies accélère les transitions énergétique et numérique.",
+    highlights: ["Leader mondial des solutions multi-techniques", "Présence dans 61 pays", "Programme Pépinière d'intégration des jeunes diplômés", "Valeurs CESAR"],
   },
+
 ];
 
 export const allExposants = [parrain, ...partenaires, ...exposantsList].sort((a, b) =>
