@@ -1,6 +1,8 @@
 const parrain = {
-  name: "VINCI Energies",
-  src: "/Logo_VE_bleu_Rouge.png",
+  name: "SNCF Réseau",
+  src: "/logo-sncf.png",
+  description:
+    "Acteur majeur du transport ferroviaire et des mobilités durables, SNCF Réseau entretient, modernise et exploite les 28 000 km du réseau ferré national.",
 };
 
 const partenaires = [
@@ -13,6 +15,7 @@ const partenaires = [
   { name: "Gomet'", src: "/logo-gomet.png" },
   { name: "Studyrama", src: "/752_ckeditor_agenda_53966_637f4194bed9f_1.png" },
 ];
+
 
 export default function PartnersSection() {
   return (
