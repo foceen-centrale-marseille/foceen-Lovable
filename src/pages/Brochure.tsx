@@ -84,11 +84,11 @@ const partners = [
   { name: "Cafés Richard", src: "/logo-cafes-richard.png" },
 ];
 
-const sncf = make("SNCF Réseau", "Transport ferroviaire", "/logos/sncf-reseau.jpg", {
+const sncf = make("SNCF Réseau", "Gestion et exploitation d'infrastructures ferroviaires, mobilités durables", "/logo-sncf.png", {
   founded: "1997",
-  location: "Saint-Denis (93)",
-  revenue: "8,2 Md €",
-  employees: "53 000",
+  location: "Saint-Denis (93) / Réseau national",
+  revenue: "9,5 Md €",
+  employees: "50 000 collaborateurs",
   description:
     "SNCF Réseau gère, exploite, maintient et développe les 28 000 km du réseau ferré national, deuxième plus grand d'Europe. Notre mission : garantir un transport ferroviaire sûr, performant et durable au service de tous les voyageurs et des marchandises. Nos équipes interviennent sur l'ensemble du cycle de vie de l'infrastructure : conception, modernisation, exploitation et maintenance, en intégrant les technologies les plus innovantes (numérisation du réseau, signalisation ERTMS, IA prédictive). Rejoindre SNCF Réseau, c'est contribuer concrètement à la transition écologique et à la mobilité durable dans toute la France.",
   profiles: [
@@ -205,7 +205,7 @@ type Slide =
   | { kind: "toc" }
   | { kind: "index" }
   | { kind: "plan" }
-  | { kind: "snef-fiche" }
+  | { kind: "sncf-fiche" }
   | { kind: "mot-parrain" }
   | { kind: "mot-equipe" }
   | { kind: "divider"; label: string; subtitle?: string }
@@ -217,11 +217,10 @@ const slides: Slide[] = (() => {
     { kind: "toc" },
     { kind: "index" },
     { kind: "plan" },
-    { kind: "snef-fiche" },
+    { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
     { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 35 partenaires" },
-    { kind: "company", company: sncf, sector: "Transport" },
     { kind: "company", company: navalGroup, sector: "Défense" },
   ];
   SECTORS.forEach((s) => {
@@ -364,7 +363,7 @@ export default function Brochure() {
           {current.kind === "toc" && <TocSlide onJump={go} />}
           {current.kind === "index" && <IndexSlide onPick={go} />}
           {current.kind === "plan" && <PlanSlide />}
-          {current.kind === "snef-fiche" && <SnefFicheSlide />}
+          {current.kind === "sncf-fiche" && <SncfFicheSlide />}
           {current.kind === "mot-parrain" && <MotParrainSlide />}
           {current.kind === "mot-equipe" && <MotEquipeSlide />}
           {current.kind === "divider" && <DividerSlide label={current.label} />}
@@ -532,7 +531,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
   const items: { num: string; title: string; slide: number; child?: { name: string; slide: number; count?: number }[] }[] = [
     { num: "01", title: "Index des entreprises", slide: 2 },
     { num: "02", title: "Plan du Forum", slide: 3 },
-    { num: "03", title: "Le Parrain — Groupe SNEF", slide: 4 },
+    { num: "03", title: "Le Parrain — SNCF Réseau", slide: 4 },
     { num: "04", title: "Le mot du Parrain", slide: 5 },
     { num: "05", title: "Le mot de l'équipe FOCEEN", slide: 6 },
     {
@@ -540,8 +539,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
       title: "Entreprises Partenaires",
       slide: 7,
       child: [
-        { name: "SNCF Réseau", slide: 8 },
-        { name: "Naval Group", slide: 9 },
+        { name: "Naval Group", slide: 8 },
         ...sectorEntries.map((s) => ({ name: s.name, slide: s.slide, count: s.count })),
       ],
     },
@@ -702,10 +700,10 @@ function PlanSlide() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SLIDE 5 — SNEF                                                    */
+/*  SLIDE 5 — SNCF RÉSEAU (PARRAIN)                                   */
 /* ------------------------------------------------------------------ */
 
-function SnefFicheSlide() {
+function SncfFicheSlide() {
   return (
     <div
       className="w-full h-full px-10 md:px-20 pt-20 pb-16 grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:items-stretch overflow-hidden"
@@ -716,14 +714,14 @@ function SnefFicheSlide() {
           className="bg-white rounded-2xl w-full max-w-sm h-56 flex items-center justify-center p-8"
           style={{ border: `1px solid ${THEME.rule}` }}
         >
-          <img src="/logos/groupe-snef.png" alt="Groupe SNEF" className="max-h-32 object-contain" />
+          <img src="/logo-sncf.png" alt="SNCF Réseau" className="max-h-32 object-contain" />
         </div>
         <div>
           <p className="text-[11px] tracking-[0.45em] uppercase font-heading" style={{ color: THEME.royal }}>
             Parrain de l'édition
           </p>
           <h2 className="font-heading font-black text-5xl mt-2" style={{ color: THEME.ink }}>
-            GROUPE SNEF
+            SNCF RÉSEAU
           </h2>
           <div className="mt-3 h-[3px] w-20" style={{ background: THEME.royal }} />
         </div>
@@ -731,11 +729,11 @@ function SnefFicheSlide() {
 
       <div className="min-h-0 overflow-y-auto pr-3 brochure-scroll space-y-5">
         {[
-          { label: "Secteur d'activité", value: "Génie électrique, instrumentation, automatismes, IT industriel" },
-          { label: "Année de création", value: "1905" },
-          { label: "Localisation", value: "Marseille (siège) — implantations mondiales" },
-          { label: "Chiffre d'affaires", value: "≈ 1,3 Md €" },
-          { label: "Effectifs", value: "12 500 collaborateurs" },
+          { label: "Secteur d'activité", value: "Gestion et exploitation d'infrastructures ferroviaires, mobilités durables" },
+          { label: "Année de création", value: "1997" },
+          { label: "Localisation", value: "Saint-Denis (93) / Réseau national" },
+          { label: "Chiffre d'affaires", value: "9,5 Md €" },
+          { label: "Effectifs", value: "50 000 collaborateurs" },
         ].map((r) => (
           <div
             key={r.label}
@@ -749,11 +747,12 @@ function SnefFicheSlide() {
           </div>
         ))}
         <p className="mt-6 text-sm md:text-base leading-relaxed" style={{ color: THEME.ink }}>
-          Le Groupe SNEF accompagne ses clients industriels dans la conception, la réalisation et la maintenance de leurs
-          installations électriques et numériques. Acteur historique de la transition énergétique et digitale, SNEF intervient
-          dans l'énergie, l'industrie, le naval, le transport et les infrastructures. Le Groupe place l'innovation, la sécurité
-          et la performance opérationnelle au cœur de ses engagements, tout en investissant durablement dans la formation et
-          l'évolution de ses collaborateurs.
+          SNCF Réseau gère, exploite, maintient et développe les 28 000 km du réseau ferré national, deuxième plus grand
+          d'Europe. Ses équipes interviennent sur l'ensemble du cycle de vie de l'infrastructure — conception, modernisation,
+          exploitation et maintenance — en intégrant les technologies les plus innovantes : numérisation du réseau,
+          signalisation ERTMS, intelligence artificielle prédictive. Au service de la transition écologique et des mobilités
+          durables, SNCF Réseau conduit les grands chantiers de modernisation et d'électrification qui structurent l'avenir
+          du transport ferroviaire français.
         </p>
       </div>
     </div>
@@ -841,8 +840,8 @@ function MotParrainSlide() {
     <WordSlide
       tag="Le mot du Parrain"
       title="MOT DU PARRAIN"
-      text="C'est avec une grande fierté que le Groupe SNEF parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les besoins concrets de l'industrie. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers. À travers ce parrainage, nous souhaitons réaffirmer notre attachement au territoire, à la formation des futurs talents et à la transmission de notre passion pour l'ingénierie et l'innovation industrielle."
-      author="Direction Groupe SNEF"
+      text="C'est avec une grande fierté que SNCF Réseau parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les enjeux concrets de la mobilité durable. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers du rail. À travers ce parrainage, nous souhaitons réaffirmer notre engagement auprès des élèves-ingénieurs autour des mobilités bas-carbone, des grands chantiers d'infrastructure et des métiers d'avenir du ferroviaire, ainsi que notre attachement au territoire et à la formation des futurs talents."
+      author="Direction SNCF Réseau"
       role="Parrain de la 19ᵉ édition"
     />
   );
