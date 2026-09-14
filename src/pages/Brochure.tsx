@@ -242,6 +242,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage (TFE)", "Alternance", "CDI – Jeune diplômé / Graduate program"],
         recruitment: ["Sélection CV", "1 à 3 entretiens techniques et RH"],
       }),
+      make("STMicroelectronics", "Industrie", "/logos/stmicroelectronics.png", {
+        founded: "1987",
+        location: "Internationale (sites en France : PACA, AURA...)",
+        revenue: "11,8 Md $",
+        employees: "48 000",
+        description:
+          "Acteur mondial de premier plan dans le secteur des semi-conducteurs, STMicroelectronics conçoit et fabrique des technologies essentielles qui rendent les objets plus intelligents, connectés et durables. L'entreprise façonne les solutions technologiques de pointe pour l'automobile, l'industrie et l'Internet des objets (IoT).",
+        profiles: ["Électronique analogique et numérique", "Microélectronique & Systèmes embarqués", "Développement logiciel embarqué (C, C++, Python)", "Conception de circuits intégrés & Validation/test"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["CV et lettre de motivation", "Entretien RH", "Entretien Manager"],
+      }),
     ],
   },
   {
@@ -350,7 +361,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["Candidatures et offres sur orange.jobs"],
       }),
-      make("Viveris", "Conseil & IT", "/logos/viveris.png"),
+      make("Viveris", "Numérique", "/logos/viveris.png", {
+        founded: "1986",
+        location: "France, Belgique, Maroc",
+        revenue: "94,2 M€",
+        employees: "920",
+        description:
+          "Viveris est un groupe de conseil et d’ingénierie indépendant qui accompagne depuis plus de 30 ans la transformation numérique des entreprises et de leurs produits (Systèmes embarqués, Informatique scientifique et technique, Systèmes d’information, Infrastructures).",
+        profiles: ["Ingénieurs Systèmes embarqués (HW/SW/embarqué/temps réel/IoT)", "Ingénieurs Systèmes d’information (FullStack Java/React/Data/Cloud)", "Ingénieurs Infrastructures (Sécurité, Admin Linux, Réseau, DevOps, DevSecOps)"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["CV sur le site carrières viveris.fr"],
+      }),
       make("Sopra Steria", "Numérique", "/logos/sopra-steria.png", {
         founded: "1968",
         location: "50+ sites en France (dont Sud-Est) — près de 30 pays",
@@ -397,6 +418,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Défense",
     companies: [
+      make("DGA", "Défense", "/logos/dga.png", {
+        founded: "1961",
+        location: "Échelle nationale (18 sites en France)",
+        revenue: "N/A (Budget État)",
+        employees: "10 600",
+        description:
+          "Force d'expertise, d'essais et d'ingénierie au sein du ministère des Armées créée en 1961, la DGA équipe les forces de façon souveraine et prépare l'avenir technologique de la défense. Elle conduit plus d'une centaine d'opérations d'armement par an couvrant l'aéronautique, le naval, le terrestre, l'espace, la dissuasion et la cybersécurité.",
+        profiles: ["Aéronautique & Plates-formes navales/terrestres", "Cybersécurité, IA & Sécurité des SI", "Espace, Drones & Guerre électronique", "Optronique, Propulsion & Défense NRBC"],
+        positions: ["CDD", "CDI"],
+        recruitment: ["CV + lettre de motivation", "Entretiens adaptés au poste", "Possibilité de concours civils/militaires"],
+      }),
       make("Marine Nationale", "Défense / Public", "/logos/marine-nationale.png"),
       make("Ministère des Armées", "Défense / Public", "/logos/ministere-armees.png"),
       make("THALES", "Industrie de Défense", "/logos/thales.png"),
@@ -450,7 +482,7 @@ const slides: Slide[] = (() => {
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 53 partenaires" },
+    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 55 partenaires" },
     { kind: "company", company: navalGroup, sector: "Défense" },
   ];
   SECTORS.forEach((s) => {
@@ -491,7 +523,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics"],
   },
   {
     label: "Ingénierie",
@@ -514,7 +546,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Défense",
-    names: ["Naval Group", "Marine Nationale", "Ministère des Armées"],
+    names: ["Naval Group", "Marine Nationale", "Ministère des Armées", "DGA"],
   },
   {
     label: "Transports & Systèmes embarqués",
