@@ -450,7 +450,7 @@ const slides: Slide[] = (() => {
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 47 partenaires" },
+    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 53 partenaires" },
     { kind: "company", company: navalGroup, sector: "Défense" },
   ];
   SECTORS.forEach((s) => {
@@ -469,7 +469,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France"],
+    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars"],
   },
   {
     label: "Environnement, Énergie & BTP",
@@ -491,7 +491,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange"],
   },
   {
     label: "Ingénierie",
@@ -507,6 +507,9 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Groupe Ortec",
       "Setec",
       "Groupe REEL",
+      "Groupe LGM",
+      "Groupe ADF",
+      "Egis",
     ],
   },
   {
@@ -521,6 +524,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "EXAIL",
       "MB92 La Ciotat",
       "CMA CGM",
+      "Jifmar Offshore Services",
     ],
   },
   {
