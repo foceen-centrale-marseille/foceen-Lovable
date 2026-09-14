@@ -136,6 +136,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       }),
       make("Eiffage", "BTP", "/logos/eiffage.png"),
       make("Vinci Construction", "BTP", "/logos/vinci-construction.png"),
+      make("RAZEL-BEC", "BTP", "/logos/razel-bec.png", {
+        founded: "1885",
+        location: "Nationale (PACA, IDF, AURA, Occitanie...) & Monaco",
+        revenue: "1,05 Md €",
+        employees: "5 000",
+        description:
+          "Filiale du Groupe FAYAT, RAZEL-BEC est un expert de référence des grands chantiers de travaux publics : ouvrages d'art, infrastructures linéaires, travaux souterrains, génie civil nucléaire et barrages. Fort de 145 ans d'histoire, le groupe déploie son excellence technique et humaine en France et à l'international.",
+        profiles: ["Conduite de travaux", "Ingénieurs études de prix", "Ingénieurs études techniques & méthodes", "Ingénieurs QSE & matériel"],
+        positions: ["Stage"],
+        recruitment: ["Préqualification RH (soft skills & motivation)", "Entretien opérationnel avec le tuteur"],
+      }),
     ],
   },
   {
@@ -198,6 +209,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("France Chimie Méditerranée", "Fédération industrielle"),
       make("Groupe SNEF", "Génie électrique & industriel", "/logos/groupe-snef.png"),
       make("Onet Technologies", "Services nucléaires", "/logos/onet.png"),
+      make("Pellenc ST", "Industrie", "/logos/pellenc-st.png", {
+        founded: "2001",
+        location: "Pertuis (84) / International",
+        revenue: "> 90 M€",
+        employees: "330",
+        description:
+          "Depuis 2001, Pellenc ST conçoit et fabrique en France des équipements de tri intelligents et des services connectés destinés au tri des déchets et à l’industrie du recyclage. Avec un parc installé de plus de 3 500 machines dans le monde entier, l'entreprise s'impose comme un leader technologique reconnu alliant vision, IA et robotique industrielle.",
+        profiles: ["Conception mécanique & 3D", "Ingénieurs méthodes & matériaux", "Data / IA / Computer vision", "Automatisation & robotique", "Génie des procédés"],
+        positions: ["Stage", "Alternance", "CDI"],
+        recruitment: ["Dépôt de CV", "Entretien RH", "Entretien N+1 / N+2", "Anglais professionnel"],
+      }),
+      make("Groupe REEL", "Industrie", "/logos/reel.png", {
+        founded: "1946",
+        location: "Siège en France — Présence internationale",
+        revenue: "600 M€",
+        employees: "3 400",
+        description:
+          "Spécialiste de la conception, de la fabrication et de la maintenance de systèmes de levage et de manutention complexes de haute sécurité, le Groupe REEL intervient au cœur des filières les plus exigeantes : nucléaire, aéronautique, hydroélectricité, énergies marines et aluminium.",
+        profiles: ["Automatisme & informatique industrielle", "Conception & calculs mécaniques", "Méthodes industrielles", "Chargés d'affaires techniques juniors"],
+        positions: ["Stage (TFE)", "Alternance", "CDI – Jeune diplômé / Graduate program"],
+        recruitment: ["Sélection CV", "1 à 3 entretiens techniques et RH"],
+      }),
     ],
   },
   {
@@ -231,6 +264,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("ECIA", "Ingénierie"),
       make("EMIS et EMIS Access", "Ingénierie"),
       make("Syntec-Ingénierie", "Fédération d'ingénierie", "/logos/syntec-ingenierie.png"),
+      make("Groupe Ortec", "Ingénierie", "/logos/ortec.png", {
+        founded: "1992",
+        location: "Aix-en-Provence (13) — 29 pays",
+        revenue: "1,8 Md €",
+        employees: "12 500",
+        description:
+          "Groupe d'ingénierie et de services industriels intégrant 12 500 collaborateurs à l'international, Ortec conçoit, réalise et accompagne les grands programmes de l'énergie, de l'environnement, du nucléaire et de l'aéronautique. L'entreprise propose des parcours variés aux jeunes diplômés guidés par des valeurs d'audace, d'exigence et de bienveillance.",
+        profiles: ["Ingénieurs calcul & mécanique", "Chefs de projets industriels", "Ingénierie nucléaire & énergie", "Data, numérique & systèmes complexes"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["Échange stand / Dépôt CV", "Mise en relation recruteur", "Entretiens opérationnels"],
+      }),
+      make("Setec", "Ingénierie", "/logos/setec.png", {
+        founded: "1957",
+        location: "Vitrolles, Paris, Lyon, Bordeaux, Toulouse, Nantes",
+        revenue: "560 M€",
+        employees: "4 200",
+        description:
+          "Groupe d'ingénierie indépendant détenu à 100 % par ses collaborateurs, Setec rassemble 40 sociétés à taille humaine sous l'impulsion « Ingénieurs et Citoyens ». Le groupe imagine et réalise des projets d'envergure en transports, génie civil, environnement, énergie, bâtiment et ville durable.",
+        profiles: ["Chefs de projet / Pilotes OPC", "Ingénieurs génie civil & ouvrages d'art", "Ingénieurs aménagement urbain", "Chargés d'études environnement / hydraulique", "Ingénieurs PMO"],
+        positions: ["Stage"],
+        recruitment: ["Candidature site carrières", "Échange téléphonique RH", "Entretien RH & Manager"],
+      }),
     ],
   },
   {
@@ -252,6 +307,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("Murex", "Logiciel financier", "/logos/murex.png"),
       make("Onepoint", "Conseil & Digital", "/logos/onepoint.jpg"),
       make("Viveris", "Conseil & IT", "/logos/viveris.png"),
+      make("Sopra Steria", "Numérique", "/logos/sopra-steria.png", {
+        founded: "1968",
+        location: "50+ sites en France (dont Sud-Est) — près de 30 pays",
+        revenue: "5,6 Md €",
+        employees: "51 000",
+        description:
+          "Acteur majeur de la tech européenne, Sopra Steria accompagne les grandes entreprises et administrations dans leur mutation digitale : conseil stratégique, intégration de systèmes, cloud, IA et cybersécurité, au service de filières clés telles que l'aérospatial, la défense, l'énergie et le secteur public.",
+        profiles: ["Développement logiciel (Java, Python, C#)", "Data & Intelligence artificielle", "Cybersécurité & Cloud / DevOps", "Consultants en transformation digitale & Business Analyse", "Systèmes embarqués"],
+        positions: ["Stage", "Alternance", "CDI – Jeune diplômé"],
+        recruitment: ["Dépôt CV", "Entretiens RH et opérationnels (1 à 3)", "Échange technique"],
+      }),
     ],
   },
   {
@@ -318,7 +384,7 @@ const slides: Slide[] = (() => {
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 41 partenaires" },
+    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 47 partenaires" },
     { kind: "company", company: navalGroup, sector: "Défense" },
   ];
   SECTORS.forEach((s) => {
@@ -347,6 +413,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "CEA",
       "Eiffage",
       "Vinci Construction",
+      "RAZEL-BEC",
       "PAPREC",
       "VINCI Energies",
       "Orano",
@@ -358,7 +425,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria"],
   },
   {
     label: "Ingénierie",
@@ -371,6 +438,9 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Onet Technologies",
       "AKKODIS",
       "ECIA",
+      "Groupe Ortec",
+      "Setec",
+      "Groupe REEL",
     ],
   },
   {
@@ -394,6 +464,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
+      "Pellenc ST",
     ],
   },
 ];
