@@ -384,7 +384,7 @@ const slides: Slide[] = (() => {
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 41 partenaires" },
+    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 47 partenaires" },
     { kind: "company", company: navalGroup, sector: "Défense" },
   ];
   SECTORS.forEach((s) => {
@@ -464,6 +464,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
+      "Pellenc ST",
     ],
   },
 ];
