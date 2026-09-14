@@ -207,6 +207,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["Sélection CV", "Entretiens techniques et RH"],
       }),
       make("France Chimie Méditerranée", "Fédération industrielle"),
+      make("Groupe ADF", "Industrie", "/logos/groupe-adf.png", {
+        founded: "1962",
+        location: "Vitrolles (siège) — International",
+        revenue: "682 M€",
+        employees: "5 100",
+        description:
+          "Depuis plus de 60 ans, Groupe ADF apporte des solutions complètes pour soutenir la performance des industriels. Ses équipes conçoivent des équipements innovants et assurent le support opérationnel et la maintenance face aux défis de la transition énergétique et digitale.",
+        profiles: ["Ingénieurs mécanique", "Ingénieurs hydraulique", "Chargés de projet", "Responsables qualité"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
+      }),
       make("Groupe SNEF", "Génie électrique & industriel", "/logos/groupe-snef.png"),
       make("Onet Technologies", "Services nucléaires", "/logos/onet.png"),
       make("Pellenc ST", "Industrie", "/logos/pellenc-st.png", {
@@ -262,7 +273,29 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["Dépôt CV", "Entretien RH", "Entretien technique opérationnel"],
       }),
       make("ECIA", "Ingénierie"),
+      make("Egis", "Ingénierie", "/logos/egis.png", {
+        founded: "1970",
+        location: "Siège à Paris — Présence dans 100+ pays",
+        revenue: "2,5 Md €",
+        employees: "24 000",
+        description:
+          "Acteur international de premier plan de l'ingénierie de la construction, de l'architecture et des services à la mobilité, Egis conçoit des infrastructures intelligentes et durables dans les transports, le bâtiment, l'eau, l'environnement et l'énergie bas-carbone.",
+        profiles: ["Ingénieurs génie civil & bâtiment", "Ingénieurs transports & mobilités", "Ingénieurs énergie & environnement", "Data, numérique & management de projet (BIM)"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["Entretien téléphonique", "Entretien RH", "Entretien opérationnel (étude de cas éventuelle)"],
+      }),
       make("EMIS et EMIS Access", "Ingénierie"),
+      make("Groupe LGM", "Ingénierie", "/logos/lgm.png", {
+        founded: "1991",
+        location: "France & International",
+        revenue: "170 M€",
+        employees: "1 600",
+        description:
+          "Le groupe LGM conçoit pour les grands groupes industriels des solutions innovantes visant à optimiser les performances des grands systèmes et infrastructures complexes en exploitation et maintenance : sûreté, gestion des risques, ingénierie électronique et logicielle.",
+        profiles: ["Ingénieurs & Chefs de projet", "AMO / PMO / Contract managers", "Ingénierie du soutien & MCO", "Maîtrise des risques & Ingénierie système"],
+        positions: ["Stage", "CDD", "CDI"],
+        recruitment: ["Candidature avec CV", "2 étapes en 3 semaines maximum", "Entretiens en visio et sur site"],
+      }),
       make("Syntec-Ingénierie", "Fédération d'ingénierie", "/logos/syntec-ingenierie.png"),
       make("Groupe Ortec", "Ingénierie", "/logos/ortec.png", {
         founded: "1992",
@@ -306,6 +339,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("Dassault Systèmes", "Logiciel", "/logos/dassault-systemes.png"),
       make("Murex", "Logiciel financier", "/logos/murex.png"),
       make("Onepoint", "Conseil & Digital", "/logos/onepoint.jpg"),
+      make("Orange", "Numérique", "/logos/orange.png", {
+        founded: "1988",
+        location: "France & International (26 pays)",
+        revenue: "43 Md €",
+        employees: "138 000",
+        description:
+          "Leader en France et acteur majeur en Europe des télécommunications multi-services avec 266 millions de clients, Orange recrute des profils engagés pour relever les défis de l'IA, de la cybersécurité, du cloud, de la 5G, du big data et de l'IoT au service d'un monde connecté et responsable.",
+        profiles: ["Transformation numérique & IA", "Cybersécurité & Cloud", "Big Data & IoT", "Virtualisation des réseaux & 5G"],
+        positions: ["Stage"],
+        recruitment: ["Candidatures et offres sur orange.jobs"],
+      }),
       make("Viveris", "Conseil & IT", "/logos/viveris.png"),
       make("Sopra Steria", "Numérique", "/logos/sopra-steria.png", {
         founded: "1968",
@@ -334,6 +378,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage de césure / fin d'études", "CDI Jeune diplômé"],
         recruitment: ["Dépôt CV", "Tests en ligne / Assessment center", "Entretiens managers et associés"],
       }),
+      make("Forvis Mazars", "Conseil", "/logos/forvis-mazars.png", {
+        founded: "1945",
+        location: "France (41 bureaux) & International (100+ pays)",
+        revenue: "5,2 Md €",
+        employees: "40 000 (dont 5 000 en France)",
+        description:
+          "Réseau international de référence dans l'audit, le conseil et la fiscalité, Forvis Mazars réunit plus de 40 000 professionnels à travers le monde pour accompagner les organisations dans leur gouvernance financière, leur gestion des risques et leur transformation stratégique.",
+        profiles: ["Auditeurs financiers & SI", "Consultants stratégie & management", "Consultants data & analyse financière", "Gestion des risques & conformité"],
+        positions: ["Stage", "Alternance", "CDI"],
+        recruitment: ["Sélection sur CV", "2 ou 3 entretiens selon le poste"],
+      }),
       make("IKOS", "Conseil", "/logos/ikos.jpg"),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
       make("Oresys", "Conseil", "/logos/oresys.png"),
@@ -351,6 +406,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
     name: "Transport",
     companies: [
       make("CMA CGM", "Transport maritime", "/logos/cma-cgm.png"),
+      make("Jifmar Offshore Services", "Transport", "/logos/jifmar.png", {
+        founded: "2005",
+        location: "Aix-en-Provence (siège) — International",
+        revenue: "51 M€",
+        employees: "850",
+        description:
+          "Leader des services maritimes opérant sur trois continents, Jifmar Group déploie des solutions clés en main d'ingénierie et de travaux maritimes dans les énergies marines renouvelables, l'oil & gas, la défense et l'inspection sous-marine grâce à une flotte innovante.",
+        profiles: ["Chefs de projet maritime", "Coordination d'opérations maritimes", "Gestion des risques & Planification", "Ingénieurs opérations & reporting"],
+        positions: ["Stage", "Alternance", "CDI"],
+        recruitment: ["CV", "3 entretiens", "Anglais professionnel requis"],
+      }),
       make("MB92 La Ciotat", "Naval / Yachting", "/logos/mb92.png"),
     ],
   },
