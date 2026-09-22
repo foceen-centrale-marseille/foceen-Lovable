@@ -809,13 +809,12 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Défense",
-    names: ["Naval Group", "Marine Nationale", "Ministère des Armées", "DGA"],
+    names: ["Naval Group", "Marine Nationale", "Ministère des Armées", "DGA", "THALES"],
   },
   {
     label: "Transports & Systèmes embarqués",
     names: [
       "SNCF",
-      "THALES",
       "EXAIL",
       "MB92 La Ciotat",
       "CMA CGM",
