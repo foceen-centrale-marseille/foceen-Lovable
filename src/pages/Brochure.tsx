@@ -185,7 +185,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["Sélection sur CV", "Parcours d'environ 3 entretiens (visio ou présentiel)"],
       }),
       make("Framatome", "Énergie nucléaire", "/logos/framatome.png"),
-      make("Orano", "Énergie nucléaire", "/logos/orano.png"),
+      make("Orano", "Énergie nucléaire", "/logos/orano.png", {
+        founded: "2018 (issu d'une longue histoire nucléaire)",
+        location: "17 sites en France — Présence internationale",
+        revenue: "5,1 Bd €",
+        employees: "17 500 collaborateurs",
+        description:
+          "Acteur majeur du nucléaire mondial, Orano valorise les matières nucléaires pour fournir une électricité bas-carbone, sécurisée et compétitive. Le groupe intervient sur tout le cycle : mines, conversion, enrichissement, recyclage des combustibles et démantèlement.",
+        profiles: ["Spécialisation nucléaire & environnement", "Projets, études & conception", "Maintenance, exploitation & assainissement", "Data, transition digitale & R&D"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Entretien RH (tests de langue, personnalité & enquête administrative)", "Entretien manager opérationnel"],
+      }),
       make("Technip Energies", "Énergie", "/logos/technip-energies.png"),
       make("TechnicAtome", "Énergie nucléaire", "/logos/technicatome.jpg"),
       make("VINCI Energies", "Énergie", "/logos/vinci-energies.png", {
