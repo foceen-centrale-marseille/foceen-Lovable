@@ -563,7 +563,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
       }),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
-      make("Oresys", "Conseil", "/logos/oresys.png"),
+      make("Oresys", "Conseil en management & organisation", "/logos/oresys.png", {
+        founded: "1981",
+        location: "Marseille, Paris, Lyon, Lille, Nantes, Toulouse, Strasbourg, Suisse",
+        revenue: "65 M€",
+        employees: "370 collaborateurs",
+        description:
+          "Cabinet de conseil indépendant leader en management, organisation et systèmes d'information, Oresys repose sur un modèle collaboratif sans hiérarchie pyramidale. Ses consultants interviennent sur plus de 680 missions de transformation par an.",
+        profiles: ["Jeunes diplômés grandes écoles d'ingénieurs", "Conseil en organisation & SI", "Gestion du changement & pilotage de projet", "Sens du collectif et esprit entrepreneurial"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["3 entretiens de motivation conduits directement avec des consultants"],
+      }),
     ],
   },
   {
