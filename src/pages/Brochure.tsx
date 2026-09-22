@@ -123,16 +123,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
     name: "BTP",
     companies: [
       make("Bouygues Construction", "BTP", "/logos/bouygues-batiment.jpg"),
-      make("Bouygues Bâtiment Sud-Est", "BTP", "/logos/bouygues-batiment-sud-est.png", {
+      make("Bouygues Bâtiment Sud-Est", "BTP & Construction", "/logos/bouygues-batiment-sud-est.png", {
         founded: "1973",
-        location: "Marseille / Région Sud-Est",
+        location: "Région Sud-Est",
         revenue: "380 M€",
-        employees: "950",
+        employees: "950 collaborateurs",
         description:
-          "Filiale de Bouygues Construction, Bouygues Bâtiment Sud-Est déploie son savoir-faire en conception, réalisation et rénovation d'ouvrages tertiaires, résidentiels et publics d'envergure, en intégrant des démarches durables et bas-carbone.",
-        profiles: ["Ingénieurs travaux", "Conducteurs de travaux", "Ingénieurs études de prix", "Chefs de projet méthodes"],
-        positions: ["Stage TFE", "CDI – Jeune diplômé", "Alternance"],
-        recruitment: ["Candidature en ligne", "Entretien RH", "Entretien opérationnel"],
+          "Acteur majeur de la construction en région Sud-Est, Bouygues Bâtiment Sud-Est conçoit, réalise et réhabilite des ouvrages d'envergure dans l'habitat, le tertiaire, l'industrie et la logistique, avec un engagement fort en matière de bas-carbone et de mixité des talents.",
+        profiles: ["Conduite de travaux", "Ingénieurs études de prix", "Méthodes & planification", "Ingénieurs travaux neufs et réhabilitation"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretiens opérationnels"],
       }),
       make("Eiffage", "BTP", "/logos/eiffage.png"),
       make("Vinci Construction", "BTP", "/logos/vinci-construction.png"),
@@ -258,8 +258,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Ingénierie",
     companies: [
-      make("AKKODIS", "Ingénierie & R&D", "/logos/akkodis.png"),
-      make("ASSYSTEM", "Ingénierie", "/logos/assystem.png"),
+      make("AKKODIS", "Ingénierie & IT", "/logos/akkodis.png", {
+        founded: "2022",
+        location: "30+ agences en France — Présence dans 30 pays",
+        revenue: "4 Md €",
+        employees: "50 000 (dont 2 000 en entité locale)",
+        description:
+          "Filiale d'Adecco Group, Akkodis associe ingénierie de pointe et numérique pour accompagner les organisations dans leur transformation technologique. Forte de 50 000 experts mondiaux, l'entreprise intervient sur l'ensemble du cycle d'innovation dans la défense, l'aéronautique, l'énergie, l'automobile et les télécommunications.",
+        profiles: ["Ingénieurs mécanique & conception", "Développeurs & intégrateurs logiciels", "Ingénieurs systèmes embarqués & IVVQ", "Ingénieurs gestion de configuration"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV (+ LM optionnelle)", "Pré-qualification téléphonique", "Entretien RH & Business Manager", "Entretien technique"],
+      }),
+      make("ASSYSTEM", "Ingénierie & Nucléaire", "/logos/assystem.png", {
+        founded: "1966",
+        location: "France & International (13 pays)",
+        revenue: "656 M€",
+        employees: "8 000 collaborateurs",
+        description:
+          "Parmi les leaders mondiaux de l'ingénierie nucléaire indépendante, Assystem accompagne depuis 60 ans les acteurs publics et industriels dans la réalisation d'infrastructures complexes soumises à de hautes exigences de sûreté, de l'ingénierie d'études au démantèlement.",
+        profiles: ["Ingénieurs projets (PMO, coûts, risques, qualité)", "Ingénieurs études (sûreté nucléaire, démantèlement)", "Ingénieurs électricité, mécanique & génie civil", "Ingénieurs systèmes, digital, data & IA"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Candidature en ligne", "Pré-sélection & échange téléphonique", "Entretien RH et managers", "Parcours d'intégration"],
+      }),
       make("Cap Ingelec", "Ingénierie", "/logos/cap-ingelec.png", {
         founded: "1992",
         location: "Saint-Jean-d'Illac (siège) — agences nationales",
@@ -271,7 +291,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage 6 mois", "CDI", "Alternance"],
         recruitment: ["Dépôt CV", "Échange téléphonique RH", "Entretien technique avec responsable métier"],
       }),
-      make("Bee Engineering", "Ingénierie", "/logos/bee-engineering.jpg"),
+      make("Bee Engineering", "Conseil en ingénierie", "/logos/bee-engineering.jpg", {
+        founded: "2010",
+        location: "11 implantations en France (Aix-en-Provence, Lyon, Paris, Nantes...)",
+        revenue: "80 M€",
+        employees: "950 collaborateurs",
+        description:
+          "Société de conseil en ingénierie en forte croissance, Bee Engineering intervient auprès des grands donneurs d'ordre dans les industries de l'énergie et des procédés, les grandes infrastructures et l'industrie des transports.",
+        profiles: ["Ingénieurs énergie & procédés", "Ingénieurs infrastructures", "Ingénieurs transports & mécanique"],
+        positions: ["CDI"],
+        recruitment: ["Sélection sur CV", "Parcours de 3 à 4 entretiens de qualification"],
+      }),
       make("EODD Ingénieurs Conseils", "Ingénierie", "/logos/eodd.png", {
         founded: "1991",
         location: "Lyon (siège) — agences nationales dont Marseille",
@@ -388,6 +418,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Conseil",
     companies: [
+      make("AXA France", "Assurance & Services financiers", "/logos/axa.png", {
+        founded: "1957",
+        location: "France & International",
+        revenue: "29 Md € (France) / 110 Md € (Groupe)",
+        employees: "118 000 collaborateurs",
+        description:
+          "Leader mondial de l'assurance et de la gestion d'actifs, AXA protège les personnes, leur santé et leur avenir financier. Présent dans le monde entier, le groupe s'engage pour la transition écologique et offre aux jeunes talents un environnement stimulant pour développer leurs compétences.",
+        profiles: ["Actuariat & Analyse financière", "Data science & Systèmes d'information", "Gestion de projet & Conseil en risques"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Dépôt de CV sur le site carrières", "Entretiens de sélection"],
+      }),
       make("EY Services France", "Audit & Conseil", "/logos/ey.png", {
         founded: "1989",
         location: "Paris, Marseille, Lyon et bureaux régionaux",
@@ -482,7 +523,7 @@ const slides: Slide[] = (() => {
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 55 partenaires" },
+    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 56 partenaires" },
     { kind: "company", company: navalGroup, sector: "Défense" },
   ];
   SECTORS.forEach((s) => {
@@ -501,7 +542,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars"],
+    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France"],
   },
   {
     label: "Environnement, Énergie & BTP",
