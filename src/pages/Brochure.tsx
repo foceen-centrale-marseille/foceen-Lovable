@@ -448,8 +448,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["CV + LM", "Entretien Manager opérationnel", "Entretien RH (visio ou sur site)"],
       }),
-      make("Murex", "Logiciel financier", "/logos/murex.png"),
-      make("Onepoint", "Conseil & Digital", "/logos/onepoint.jpg"),
+      make("Murex", "Fintech / Logiciel financier", "/logos/murex.png", {
+        founded: "1986",
+        location: "Paris (siège) — 19 bureaux dans le monde",
+        revenue: "820 M€",
+        employees: "3 500 collaborateurs",
+        description:
+          "Acteur mondial de la fintech, Murex développe des solutions logicielles de trading, de gestion des risques et de traitement d'opérations pour les marchés de capitaux. Sa plateforme est déployée auprès des plus grandes banques et institutions financières à l'international.",
+        profiles: ["Ingénierie financière & Finance de marché", "Développement logiciel (C++, Java)", "Architecture logicielle & Cloud", "Gestion des risques de marché"],
+        positions: ["Stage"],
+        recruitment: ["Sélection sur CV", "Test technique", "Entretien RH", "Entretien manager opérationnel"],
+      }),
+      make("Onepoint", "Conseil & Transformation technologique", "/logos/onepoint.jpg", {
+        founded: "2002",
+        location: "France (Aix-en-Provence, Paris, Lyon...) & Monde (6 pays)",
+        revenue: "500 M€",
+        employees: "4 000 collaborateurs",
+        description:
+          "Cabinet de conseil et d'architecture technologique en forte croissance, Onepoint accompagne les grandes mutations des entreprises et acteurs publics en associant innovation, IA et impact sociétal durable au cœur des territoires.",
+        profiles: ["Consultants transformation digitale", "Experts IA & Data", "Développeurs & Architectes SI", "Designers de services & Méthodologies agiles"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["2 à 3 entretiens selon profil (démonstration des savoir-faire techniques, métiers et méthodologiques)"],
+      }),
       make("Orange", "Numérique", "/logos/orange.png", {
         founded: "1988",
         location: "France & International (26 pays)",
