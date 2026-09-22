@@ -226,7 +226,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH et opérationnel (sur site ou visio)"],
       }),
-      make("France Chimie Méditerranée", "Fédération industrielle"),
+      make("France Chimie Méditerranée", "Fédération professionnelle / Chimie", undefined, {
+        founded: "1901",
+        location: "Régions PACA, Corse et Occitanie Est",
+        revenue: "Fédération (S.O.)",
+        employees: "Représente +800 entreprises & 25 000 salariés",
+        description:
+          "Organisation professionnelle de référence, France Chimie Méditerranée représente et accompagne l'ensemble de la filière chimique en PACA, Corse et Occitanie Est. Elle valorise les opportunités d'emploi, la transition écologique et l'innovation au cœur d'un tissu industriel régional stratégique.",
+        profiles: ["Ingénieurs procédés chimiques", "Chimie des matériaux & formulation", "HSE & Sécurité industrielle", "Transition énergétique & décarbonation"],
+        positions: ["CDD", "CDI"],
+        recruitment: ["CV + lettre de motivation", "Mise en relation filière"],
+      }),
       make("Groupe ADF", "Industrie", "/logos/groupe-adf.png", {
         founded: "1962",
         location: "Vitrolles (siège) — International",
@@ -489,16 +499,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Dépôt de CV sur le site carrières", "Entretiens de sélection"],
       }),
-      make("EY Services France", "Audit & Conseil", "/logos/ey.png", {
+      make("EY Services France", "Audit, Conseil & Stratégie", "/logos/ey.png", {
         founded: "1989",
-        location: "Paris, Marseille, Lyon et bureaux régionaux",
-        revenue: "1,5 Md € (France)",
-        employees: "7 000 (France)",
+        location: "17 bureaux en France (siège Paris-La Défense) — 145+ pays",
+        revenue: "53,2 Md $ (Groupe)",
+        employees: "7 000 collaborateurs (France)",
         description:
-          "Leader mondial de l'audit et du conseil, EY mobilise des équipes pluridisciplinaires pour guider les directions générales dans leurs enjeux stratégiques, technologiques, financiers et de transformation durable.",
-        profiles: ["Consultants stratégie & management", "Auditeurs financiers / SI", "Data Scientists", "Consultants cybersécurité", "Ingénieurs RSE / Climat"],
-        positions: ["Stage de césure / fin d'études", "CDI Jeune diplômé"],
-        recruitment: ["Dépôt CV", "Tests en ligne / Assessment center", "Entretiens managers et associés"],
+          "Leader mondial de l'audit, du conseil, de la stratégie et des transactions, EY accompagne les grandes organisations dans leurs transformations durables, technologiques et financières. Le cabinet propose un environnement d'apprentissage continu stimulant pour les jeunes diplômés d'écoles d'ingénieurs.",
+        profiles: ["Conseil en transformation digitale", "Data & Intelligence Artificielle", "Cybersécurité & Systèmes d'information", "Stratégie durable & enjeux ESG"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Candidature sur rejoindre-ey.com", "Tests en ligne & situationnels", "Assessment center / Entretiens opérationnels", "Entretien associé"],
       }),
       make("Forvis Mazars", "Conseil", "/logos/forvis-mazars.png", {
         founded: "1945",
@@ -511,7 +521,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI"],
         recruitment: ["Sélection sur CV", "2 ou 3 entretiens selon le poste"],
       }),
-      make("IKOS", "Conseil", "/logos/ikos.jpg"),
+      make("IKOS", "Ingénierie Ferroviaire & Énergie", "/logos/ikos.jpg", {
+        founded: "2005",
+        location: "33 bureaux dans 15 pays (Marseille, Lyon, Paris, Nantes, Lille...)",
+        revenue: "120 M€",
+        employees: "1 800 collaborateurs",
+        description:
+          "Société de conseil en ingénierie de référence dédiée au ferroviaire et à l'énergie (via sa marque IKER), IKOS s'engage pour les mobilités durables et l'énergie verte. Avec le support d'IKOS LAB, ses 1 800 ingénieurs conçoivent les systèmes de transport intelligents et sûrs du futur.",
+        profiles: ["Signalisation & automatismes (ERTMS/CBTC)", "Génie électrique & courants forts/faibles", "Matériel roulant & systèmes embarqués", "Génie civil, infrastructures & sûreté de fonctionnement"],
+        positions: ["CDI", "Stage", "VIE"],
+        recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
+      }),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
       make("Oresys", "Conseil", "/logos/oresys.png"),
     ],
@@ -531,7 +551,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["CV + lettre de motivation", "Entretiens adaptés au poste", "Possibilité de concours civils/militaires"],
       }),
       make("Marine Nationale", "Défense / Public", "/logos/marine-nationale.png"),
-      make("Ministère des Armées", "Défense / Public", "/logos/ministere-armees.png"),
+      make("Ministère des Armées", "Défense & Renseignement", "/logos/ministere-armees.png", {
+        founded: "1982",
+        location: "Siège à Paris (avec missions France & étranger)",
+        revenue: "S.O. (Service de l'État)",
+        employees: "7 500 agents",
+        description:
+          "Service secret de la France au sein du ministère des Armées, la DGSE recherche et exploite des renseignements stratégiques souverains pour anticiper les crises et protéger la Nation. Elle recrute des ingénieurs civils et militaires sur plus de 300 métiers technologiques et opérationnels d'exception.",
+        profiles: ["Cybersécurité, cryptographie & rétro-ingénierie", "Data science, Big Data & IA", "Ingénieurs télécoms, radiofréquences & signal", "Systèmes embarqués & développement logiciel sécurisé"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["Dépôt CV + lettre de motivation", "Processus de sélection avec habilitation de sécurité défense", "Confidentialité requise"],
+      }),
       make("THALES", "Industrie de Défense", "/logos/thales.png"),
     ],
   },
@@ -560,12 +590,34 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI"],
         recruitment: ["CV", "3 entretiens", "Anglais professionnel requis"],
       }),
-      make("MB92 La Ciotat", "Naval / Yachting", "/logos/mb92.png"),
+      make("MB92 La Ciotat", "Maintenance navale & Superyachts", "/logos/mb92.png", {
+        founded: "1999",
+        location: "Chantier naval de La Ciotat (13)",
+        revenue: "152 M€",
+        employees: "≈ 200 collaborateurs",
+        description:
+          "Leader mondial du refit, de la réparation et de la maintenance de superyachts, MB92 opère sur les infrastructures d'exception du chantier de La Ciotat. L'entreprise pilote des projets sur mesure alliant haute technicité maritime, innovation technologique et respect environnemental.",
+        profiles: ["Ingénieurs projets maritimes", "Chefs de projet refit naval", "Ingénieurs études & coordination technique", "Supervision de chantier maritime"],
+        positions: ["Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretiens sur site (français/anglais)"],
+      }),
     ],
   },
   {
     name: "Agroalimentaire",
-    companies: [make("HEINEKEN", "Agro-alimentaire", "/logos/heineken.png")],
+    companies: [
+      make("HEINEKEN", "Agroalimentaire / Brasserie", "/logos/heineken.png", {
+        founded: "1864",
+        location: "Brasserie de Marseille (La Valentine 13011) & Mons-en-Barœul",
+        revenue: "N.C.",
+        employees: "170 collaborateurs (site Marseille)",
+        description:
+          "HEINEKEN France conjugue l'activité de brasseur de marques iconiques (Heineken, Desperados, Affligem) via ses deux brasseries françaises — dont le site historique marseillais de la Valentine — et la distribution via France Boissons, alliant excellence industrielle et convivialité.",
+        profiles: ["Ingénieurs généralistes", "Ingénieurs agroalimentaire / procédés", "Ingénieurs maintenance & travaux neufs", "Qualité, hygiène & sécurité (QHSE)"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "2 à 3 entretiens (Teams et présentiel)", "Français / Anglais"],
+      }),
+    ],
   },
 ];
 
