@@ -397,7 +397,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "CDD", "CDI"],
         recruitment: ["Candidature avec CV", "2 étapes en 3 semaines maximum", "Entretiens en visio et sur site"],
       }),
-      make("Syntec-Ingénierie", "Fédération d'ingénierie", "/logos/syntec-ingenierie.png"),
+      make("Syntec-Ingénierie", "Fédération professionnelle / Ingénierie", "/logos/syntec-ingenierie.png", {
+        founded: "1991",
+        location: "Paris (représentation nationale)",
+        revenue: "Fédération (S.O.)",
+        employees: "Représente 400 entreprises & 90 000 salariés",
+        description:
+          "Fédération professionnelle des entreprises du secteur de l'ingénierie, Syntec-Ingénierie regroupe 400 entreprises actrices de l'écoconception, de la décarbonation industrielle et des énergies propres. L'ingénierie est le premier débouché pour les jeunes ingénieurs.",
+        profiles: ["Fédération professionnelle : présentation des métiers et opportunités de la filière ingénierie"],
+        positions: ["Information carrières & filières"],
+        recruitment: ["Échanges sur stand / Orientation vers les entreprises adhérentes"],
+      }),
       make("Groupe Ortec", "Ingénierie", "/logos/ortec.png", {
         founded: "1992",
         location: "Aix-en-Provence (13) — 29 pays",
