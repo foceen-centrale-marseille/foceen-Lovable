@@ -188,7 +188,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("Orano", "Énergie nucléaire", "/logos/orano.png", {
         founded: "2018 (issu d'une longue histoire nucléaire)",
         location: "17 sites en France — Présence internationale",
-        revenue: "5,1 Bd €",
+        revenue: "5,1 Md €",
         employees: "17 500 collaborateurs",
         description:
           "Acteur majeur du nucléaire mondial, Orano valorise les matières nucléaires pour fournir une électricité bas-carbone, sécurisée et compétitive. Le groupe intervient sur tout le cycle : mines, conversion, enrichissement, recyclage des combustibles et démantèlement.",
