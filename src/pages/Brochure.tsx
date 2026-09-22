@@ -185,7 +185,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["Sélection sur CV", "Parcours d'environ 3 entretiens (visio ou présentiel)"],
       }),
       make("Framatome", "Énergie nucléaire", "/logos/framatome.png"),
-      make("Orano", "Énergie nucléaire", "/logos/orano.png"),
+      make("Orano", "Énergie nucléaire", "/logos/orano.png", {
+        founded: "2018 (issu d'une longue histoire nucléaire)",
+        location: "17 sites en France — Présence internationale",
+        revenue: "5,1 Md €",
+        employees: "17 500 collaborateurs",
+        description:
+          "Acteur majeur du nucléaire mondial, Orano valorise les matières nucléaires pour fournir une électricité bas-carbone, sécurisée et compétitive. Le groupe intervient sur tout le cycle : mines, conversion, enrichissement, recyclage des combustibles et démantèlement.",
+        profiles: ["Spécialisation nucléaire & environnement", "Projets, études & conception", "Maintenance, exploitation & assainissement", "Data, transition digitale & R&D"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Entretien RH (tests de langue, personnalité & enquête administrative)", "Entretien manager opérationnel"],
+      }),
       make("Technip Energies", "Énergie", "/logos/technip-energies.png"),
       make("TechnicAtome", "Énergie nucléaire", "/logos/technicatome.jpg"),
       make("VINCI Energies", "Énergie", "/logos/vinci-energies.png", {
@@ -199,16 +209,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Programme Pépinière (CDI Jeune diplômé)", "Stage de fin d'études", "Alternance"],
         recruitment: ["Candidature en ligne", "Échange téléphonique", "Entretiens opérationnels et RH", "Parcours Pépinière"],
       }),
-      make("PAPREC", "Énergie", "/logos/paprec.png", {
+      make("PAPREC", "Recyclage & Valorisation énergétique", "/logos/paprec.png", {
         founded: "1994",
-        location: "Paris (siège) — La Seyne-sur-Mer, Lyon, Nantes, Toulouse",
-        revenue: "3 Md €",
-        employees: "16 000 collaborateurs",
+        location: "La Seyne-sur-Mer — Présence nationale et internationale",
+        revenue: "3,5 Md €",
+        employees: "18 000 collaborateurs",
         description:
-          "Leader français du recyclage et de la valorisation énergétique des déchets, Paprec conçoit, construit et exploite des usines d'incinération, de méthanisation et de tri haute performance au service de l'économie circulaire et de la production d'énergie verte.",
-        profiles: ["Ingénieurs procédés / thermique", "Ingénieurs bureau d'études (calcul, électricité, GC)", "Chefs de projets usines & travaux", "Ingénieurs exploitation"],
-        positions: ["Stage 6 mois", "Alternance", "CDI"],
-        recruitment: ["CV + lettre de motivation", "2 à 3 entretiens RH et directeurs d'usine"],
+          "Leader français du recyclage et acteur européen de premier plan de la gestion des déchets, Paprec conçoit, construit et exploite des usines de valorisation énergétique et produit des énergies vertes pour bâtir une économie circulaire durable.",
+        profiles: ["Ingénieurs généralistes & mécanique", "Ingénieurs énergétique & procédés thermiques", "Chefs de projet usines & travaux", "Ingénieurs études & exploitation"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretiens RH et techniques opérationnels"],
       }),
     ],
   },
@@ -387,7 +397,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "CDD", "CDI"],
         recruitment: ["Candidature avec CV", "2 étapes en 3 semaines maximum", "Entretiens en visio et sur site"],
       }),
-      make("Syntec-Ingénierie", "Fédération d'ingénierie", "/logos/syntec-ingenierie.png"),
+      make("Syntec-Ingénierie", "Fédération professionnelle / Ingénierie", "/logos/syntec-ingenierie.png", {
+        founded: "1991",
+        location: "Paris (représentation nationale)",
+        revenue: "Fédération (S.O.)",
+        employees: "Représente 400 entreprises & 90 000 salariés",
+        description:
+          "Fédération professionnelle des entreprises du secteur de l'ingénierie, Syntec-Ingénierie regroupe 400 entreprises actrices de l'écoconception, de la décarbonation industrielle et des énergies propres. L'ingénierie est le premier débouché pour les jeunes ingénieurs.",
+        profiles: ["Fédération professionnelle : présentation des métiers et opportunités de la filière ingénierie"],
+        positions: ["Information carrières & filières"],
+        recruitment: ["Échanges sur stand / Orientation vers les entreprises adhérentes"],
+      }),
       make("Groupe Ortec", "Ingénierie", "/logos/ortec.png", {
         founded: "1992",
         location: "Aix-en-Provence (13) — 29 pays",
@@ -448,8 +468,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["CV + LM", "Entretien Manager opérationnel", "Entretien RH (visio ou sur site)"],
       }),
-      make("Murex", "Logiciel financier", "/logos/murex.png"),
-      make("Onepoint", "Conseil & Digital", "/logos/onepoint.jpg"),
+      make("Murex", "Fintech / Logiciel financier", "/logos/murex.png", {
+        founded: "1986",
+        location: "Paris (siège) — 19 bureaux dans le monde",
+        revenue: "820 M€",
+        employees: "3 500 collaborateurs",
+        description:
+          "Acteur mondial de la fintech, Murex développe des solutions logicielles de trading, de gestion des risques et de traitement d'opérations pour les marchés de capitaux. Sa plateforme est déployée auprès des plus grandes banques et institutions financières à l'international.",
+        profiles: ["Ingénierie financière & Finance de marché", "Développement logiciel (C++, Java)", "Architecture logicielle & Cloud", "Gestion des risques de marché"],
+        positions: ["Stage"],
+        recruitment: ["Sélection sur CV", "Test technique", "Entretien RH", "Entretien manager opérationnel"],
+      }),
+      make("Onepoint", "Conseil & Transformation technologique", "/logos/onepoint.jpg", {
+        founded: "2002",
+        location: "France (Aix-en-Provence, Paris, Lyon...) & Monde (6 pays)",
+        revenue: "500 M€",
+        employees: "4 000 collaborateurs",
+        description:
+          "Cabinet de conseil et d'architecture technologique en forte croissance, Onepoint accompagne les grandes mutations des entreprises et acteurs publics en associant innovation, IA et impact sociétal durable au cœur des territoires.",
+        profiles: ["Consultants transformation digitale", "Experts IA & Data", "Développeurs & Architectes SI", "Designers de services & Méthodologies agiles"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["2 à 3 entretiens selon profil (démonstration des savoir-faire techniques, métiers et méthodologiques)"],
+      }),
       make("Orange", "Numérique", "/logos/orange.png", {
         founded: "1988",
         location: "France & International (26 pays)",
@@ -533,7 +573,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
       }),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
-      make("Oresys", "Conseil", "/logos/oresys.png"),
+      make("Oresys", "Conseil en management & organisation", "/logos/oresys.png", {
+        founded: "1981",
+        location: "Marseille, Paris, Lyon, Lille, Nantes, Toulouse, Strasbourg, Suisse",
+        revenue: "65 M€",
+        employees: "370 collaborateurs",
+        description:
+          "Cabinet de conseil indépendant leader en management, organisation et systèmes d'information, Oresys repose sur un modèle collaboratif sans hiérarchie pyramidale. Ses consultants interviennent sur plus de 680 missions de transformation par an.",
+        profiles: ["Jeunes diplômés grandes écoles d'ingénieurs", "Conseil en organisation & SI", "Gestion du changement & pilotage de projet", "Sens du collectif et esprit entrepreneurial"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["3 entretiens de motivation conduits directement avec des consultants"],
+      }),
     ],
   },
   {
