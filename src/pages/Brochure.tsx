@@ -173,7 +173,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
-      make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", {
+      make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", undefined, {
         founded: "2014",
         location: "France & International",
         revenue: "102 M€",
@@ -333,7 +333,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
       }),
-      make("ECIA", "Ingénierie Nucléaire", {
+      make("ECIA", "Ingénierie Nucléaire", undefined, {
         founded: "2007",
         location: "Venelles, Bagnols-sur-Cèze, Bollène, Lyon, Cherbourg, Nantes",
         revenue: "13 M€",
@@ -355,7 +355,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Entretien téléphonique", "Entretien RH", "Entretien opérationnel (étude de cas éventuelle)"],
       }),
-      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", {
+      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", undefined, {
         founded: "1987",
         location: "Vitrolles (13)",
         revenue: "≈ 47 M€",
