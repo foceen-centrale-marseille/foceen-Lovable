@@ -206,18 +206,38 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Entretien RH (tests de langue, personnalité & enquête administrative)", "Entretien manager opérationnel"],
       }),
-      make("Technip Energies", "Énergie", "/logos/technip-energies.png"),
-      make("TechnicAtome", "Énergie nucléaire", "/logos/technicatome.jpg"),
-      make("VINCI Energies", "Énergie", "/logos/vinci-energies.png", {
-        founded: "2000",
-        location: "Siège à Montesson (78) — 61 pays dans le monde",
-        revenue: "20,4 Md €",
-        employees: "102 600 collaborateurs",
+      make("Technip Energies", "Ingénierie & Technologies de l'Énergie", "/logos/technip-energies.png", {
+        founded: "1958",
+        location: "Présence internationale (35 pays)",
+        revenue: "7,2 Md €",
+        employees: "18 000 collaborateurs",
         description:
-          "Acteur majeur de la transition énergétique et de la transformation numérique, VINCI Energies déploie des technologies sur mesure pour les infrastructures d'énergie, les bâtiments connectés et l'industrie 4.0 à travers ses marques Axians, Actemium et Omexom.",
-        profiles: ["Ingénieurs d'affaires", "Ingénieurs études électriques / automatismes", "Chefs de projets énergie & télécoms", "Responsables d'affaires juniors"],
-        positions: ["Programme Pépinière (CDI Jeune diplômé)", "Stage de fin d'études", "Alternance"],
-        recruitment: ["Candidature en ligne", "Échange téléphonique", "Entretiens opérationnels et RH", "Parcours Pépinière"],
+          "Entreprise de technologies et d'ingénierie de premier plan, Technip Energies est un acteur de référence du GNL, de l'hydrogène vert, de la chimie durable et du captage de CO2. Ses 18 000 collaborateurs concrétisent la transition énergétique en transformant les innovations en réalités industrielles vers le Net Zéro.",
+        profiles: ["Ingénieurs procédés & Énergie", "Ingénieurs conception & HSE Design", "Cost control, Planning & Estimation", "Digital (IDS) & Management de grands projets"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV sur ten.com/careers", "Entretiens managers et RH (Français & Anglais)"],
+      }),
+      make("TechnicAtome", "Nucléaire & Défense", "/logos/technicatome.jpg", {
+        founded: "1972",
+        location: "Aix-en-Provence, Cadarache, Toulon, Saclay, Bordeaux, Nantes, Brest & Cherbourg",
+        revenue: "660 M€",
+        employees: "2 200 collaborateurs",
+        description:
+          "Entreprise française de haute technologie forte de 2 200 collaborateurs sur 8 sites, TechnicAtome conçoit et maintient les réacteurs nucléaires compacts de propulsion navale pour les sous-marins et porte-avions de la Marine Nationale, tout en œuvrant dans le nucléaire civil sur des programmes innovants tels que le Réacteur Jules Horowitz (RJH).",
+        profiles: ["Architecture système & Numérique sécuritaire", "Analyses de sûreté & Neutronique", "Thermohydraulique & Calculs", "Management de projets & Soutien logistique intégré (SLI)"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Échange téléphonique", "Entretiens managers opérationnels et RH"],
+      }),
+      make("VINCI Energies", "Énergie & Transformation numérique", "/logos/vinci-energies.png", {
+        founded: "1898",
+        location: "France & International (2 200 entreprises)",
+        revenue: "21,6 Md €",
+        employees: "109 000 collaborateurs",
+        description:
+          "Acteur clé de la transition environnementale et numérique, VINCI Energies déploie des solutions multitechniques sur mesure pour les infrastructures d'énergie, les bâtiments intelligents et l'industrie 4.0. Ses 2 200 entreprises agiles accompagnent leurs clients pour rendre les procédés plus fiables et durables.",
+        profiles: ["Ingénieurs d'affaires & Responsables d'affaires", "Ingénieurs d'études électriques & Automatismes", "Chefs de projet énergie & Télécoms", "Ingénieurs transition bas-carbone & Smart grids"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "2 à 3 entretiens d'embauche (RH et opérationnels)"],
       }),
       make("PAPREC", "Recyclage & Valorisation énergétique", "/logos/paprec.png", {
         founded: "1994",
@@ -269,7 +289,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
       }),
       make("Groupe SNEF", "Génie électrique & industriel", "/logos/groupe-snef.png"),
-      make("Onet Technologies", "Services nucléaires", "/logos/onet.png"),
+      make("Onet Technologies", "Ingénierie & Services nucléaires", "/logos/onet.png", {
+        founded: "2004",
+        location: "Multi-sites en France (siège à Marseille)",
+        revenue: "300 M€",
+        employees: "3 000 collaborateurs",
+        description:
+          "Partenaire historique de la filière nucléaire reconnu depuis plus de 40 ans, Onet Technologies accompagne les exploitants sur l'ensemble du cycle de vie des installations : ingénierie de conception, maintenance spécialisée, modifications, démantèlement et traitement des déchets, avec des exigences maximales de sûreté.",
+        profiles: ["Ingénieurs calcul & Mécanique nucléaire", "Ingénieurs assainissement & Démantèlement", "Chefs de projets sûreté & Environnement", "Ingénieurs travaux & Maintenance sur site"],
+        positions: ["Alternance", "CDI"],
+        recruitment: ["Sélection sur CV", "Entretiens de recrutement"],
+      }),
       make("Pellenc ST", "Industrie", "/logos/pellenc-st.png", {
         founded: "2001",
         location: "Pertuis (84) / International",
@@ -622,7 +652,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Dépôt CV + lettre de motivation", "Processus de sélection avec habilitation de sécurité défense", "Confidentialité requise"],
       }),
-      make("THALES", "Industrie de Défense", "/logos/thales.png"),
+      make("THALES", "Défense, Aérospatial, Cyber & Digital", "/logos/thales.png", {
+        founded: "2000",
+        location: "Siège à Meudon (92) — Multi-sites en France & 68 pays",
+        revenue: "22,1 Md €",
+        employees: "85 000 collaborateurs",
+        description:
+          "Leader mondial des hautes technologies et de la Deep Tech, Thales conçoit des solutions d'exception en connectivité, big data, IA, cybersécurité et quantique pour accompagner les acteurs de la défense, de l'aérospatial, du spatial et du digital dans l'accomplissement de leurs missions critiques.",
+        profiles: ["Ingénierie systèmes, logicielle & matérielle", "IA, Cybersécurité & Facteurs humains", "Management de l'ingénierie & Projets", "Industrie, Offres & Service client"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Candidature sur careers.thalesgroup.com", "Entretien responsable opérationnel", "Entretien RH & parcours d'intégration"],
+      }),
     ],
   },
   {
