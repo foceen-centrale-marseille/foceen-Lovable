@@ -152,16 +152,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Énergie",
     companies: [
-      make("CEA", "Recherche & Énergie", "/logos/cea.png", {
+      make("CEA", "Recherche & Énergies bas-carbone", "/logos/cea.png", {
         founded: "1945",
-        location: "Cadarache (13) / Multi-sites France",
-        revenue: "Organisme public de recherche",
+        location: "10 centres en France (dont Cadarache - 13)",
+        revenue: "6 Md € (Budget R&D)",
         employees: "21 500",
         description:
-          "Acteur majeur de la recherche au service de la souveraineté nationale, le CEA conçoit et développe des technologies innovantes dans les énergies bas-carbone (nucléaire et renouvelables), le numérique, la santé et la défense.",
-        profiles: ["Ingénieurs chercheurs en énergétique", "Docteurs / PhD", "Ingénieurs neutronique / thermo-hydraulique", "Data Scientists / Systèmes complexes"],
-        positions: ["Stage ingénieur", "Thèse / CIFRE", "CDD / CDI", "Alternance"],
-        recruitment: ["Candidature via l'espace emploi CEA", "Revue dossier", "Entretiens scientifiques et RH"],
+          "Acteur majeur de la recherche technologique et fondamentale, le CEA innove dans quatre domaines stratégiques : énergies bas-carbone (nucléaire et renouvelables), numérique, santé et défense souveraine. Premier déposant de brevets de recherche en France, il conjugue curiosité et excellence scientifique.",
+        profiles: ["Ingénieurs généralistes", "Ingénieurs mécanique & thermique", "Ingénieurs thermohydraulique & génie nucléaire", "Énergéticiens & Chimie des matériaux"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
       make("EP2C Energy", "Énergie"),
       make("Framatome", "Énergie nucléaire", "/logos/framatome.png"),
@@ -280,16 +280,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Candidature en ligne", "Pré-sélection & échange téléphonique", "Entretien RH et managers", "Parcours d'intégration"],
       }),
-      make("Cap Ingelec", "Ingénierie", "/logos/cap-ingelec.png", {
+      make("Cap Ingelec", "Ingénierie & Bâtiments complexes", "/logos/cap-ingelec.png", {
         founded: "1992",
-        location: "Saint-Jean-d'Illac (siège) — agences nationales",
-        revenue: "≈ 200 M€",
-        employees: "600",
+        location: "15 agences en France (dont Marseille/Aix) & International",
+        revenue: "680 M€",
+        employees: "850",
         description:
-          "Société d'ingénierie indépendante spécialisée dans la conception et la réalisation de bâtiments complexes, data centers, salles blanches et installations industrielles à haute exigence technique et énergétique.",
-        profiles: ["Ingénieurs génie électrique", "Ingénieurs CVC / Fluides", "Chefs de projets ingénierie", "Ingénieurs efficacité énergétique"],
-        positions: ["Stage 6 mois", "CDI", "Alternance"],
-        recruitment: ["Dépôt CV", "Échange téléphonique RH", "Entretien technique avec responsable métier"],
+          "Groupe d'ingénierie et réalisation spécialisé dans les bâtiments complexes, Cap Ingelec assure des missions clés en main sur des projets d'envergure dans les datacenters, l'énergie et l'industrie, tout en intégrant des démarches concrètes de réduction de l'empreinte environnementale.",
+        profiles: ["Ingénieurs travaux", "Ingénieurs études techniques", "Chefs de projets ingénierie", "Ingénieurs d'affaires"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretien téléphonique & présentiel", "Anglais opérationnel requis"],
       }),
       make("Bee Engineering", "Conseil en ingénierie", "/logos/bee-engineering.jpg", {
         founded: "2010",
@@ -365,19 +365,39 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Numérique",
     companies: [
-      make("Capgemini", "Conseil & IT", "/logos/capgemini.png", {
+      make("Capgemini", "Conseil, Tech & Ingénierie", "/logos/capgemini.png", {
         founded: "1967",
-        location: "International — 20+ villes en France",
+        location: "20+ villes en France — Présence dans 50 pays",
         revenue: "22,5 Md €",
-        employees: "340 000",
+        employees: "420 000",
         description:
-          "Leader mondial du conseil, de la transformation technologique et des services d'ingénierie, Capgemini accompagne les grandes organisations dans leur transition vers le cloud, la data, l'intelligence artificielle et la décarbonation.",
-        profiles: ["Consultants IT", "Software Engineers", "Data Engineers / IA", "Consultants cybersécurité", "Architectes cloud"],
-        positions: ["Stage de fin d'études", "Alternance", "CDI – Jeune diplômé"],
-        recruitment: ["CV sur le site carrières", "Entretiens RH", "Entretien opérationnel / technique"],
+          "Partenaire mondial de la transformation business et technologique, Capgemini intègre la puissance de l'IA, du cloud et de l'ingénierie de pointe pour concevoir et concrétiser le futur des grandes organisations à travers des solutions responsables et durables de bout en bout.",
+        profiles: ["Conseil & Management des SI", "Génie logiciel & Systèmes/Réseaux", "Cybersécurité & Cloud", "Data science, IA & Mathématiques appliquées", "Systèmes embarqués & Mécanique"],
+        positions: ["Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretiens RH et opérationnels", "Anglais indispensable"],
       }),
-      make("CGI", "Conseil & IT", "/logos/cgi.png"),
-      make("Dassault Systèmes", "Logiciel", "/logos/dassault-systemes.png"),
+      make("CGI", "Conseil & Services numériques (IT)", "/logos/cgi.png", {
+        founded: "1976",
+        location: "30+ implantations en France — Présence dans 40 pays",
+        revenue: "10,3 Md €",
+        employees: "94 500",
+        description:
+          "Leader mondial du conseil et des services numériques managés, CGI accompagne la mutation technologique de ses clients à travers l'intégration de systèmes, la cybersécurité, l'IA et l'agilité. Entreprise d'associés, CGI valorise l'initiative, l'expertise pointue et l'impact sociétal.",
+        profiles: ["Développement logiciel (Java, .NET, Python, React)", "Data engineering, Machine Learning & IA", "Cybersécurité, SOC & Gestion des risques", "Architecture Cloud (AWS, Azure, GCP) & DevOps"],
+        positions: ["Stage"],
+        recruitment: ["Préqualification téléphonique", "Entretien RH", "1 ou 2 entretiens techniques en visio"],
+      }),
+      make("Dassault Systèmes", "Édition de logiciels 3D & Mondes virtuels", "/logos/dassault-systemes.png", {
+        founded: "1981 / 1996",
+        location: "Aix-en-Provence (site régional) — Siège en France & International",
+        revenue: "71,6 M€ (entité Provence) / 6 Md € (Groupe)",
+        employees: "120 (Provence) / 25 000 (Groupe)",
+        description:
+          "Leader mondial des logiciels de modélisation 3D, de simulation et des jumeaux virtuels avec la plateforme 3DEXPERIENCE, Dassault Systèmes accélère le progrès humain et l'innovation durable dans l'aérospatial, l'automobile, l'industrie et les sciences de la vie.",
+        profiles: ["Ingénieurs R&D logicielle", "Ingénieurs développement (C++, Python, Web)", "Ingénieurs technico-commerciaux", "Ingénieurs modélisation & simulation 3D"],
+        positions: ["Stage"],
+        recruitment: ["CV + LM", "Entretien Manager opérationnel", "Entretien RH (visio ou sur site)"],
+      }),
       make("Murex", "Logiciel financier", "/logos/murex.png"),
       make("Onepoint", "Conseil & Digital", "/logos/onepoint.jpg"),
       make("Orange", "Numérique", "/logos/orange.png", {
@@ -478,7 +498,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Transport",
     companies: [
-      make("CMA CGM", "Transport maritime", "/logos/cma-cgm.png"),
+      make("CMA CGM", "Transport maritime & Logistique globale", "/logos/cma-cgm.png", {
+        founded: "1978",
+        location: "Siège mondial à Marseille (13) — Présence dans 177 pays",
+        revenue: "55,5 Md $",
+        employees: "160 000",
+        description:
+          "3ème compagnie maritime mondiale et géant de la logistique multimodale (mer, terre, air avec CEVA Logistics), CMA CGM dessert plus de 420 ports avec une flotte de 650 navires. Engagé pour le net zéro carbone d'ici 2050, le groupe marseillais invente les mobilités et chaînes d'approvisionnement décarbonées de demain.",
+        profiles: ["Ingénieurs logistique multimodale & supply chain", "Data, IA & Transformation digitale", "Transition énergétique maritime & propulsion", "Gestion de projet & Opérations maritimes"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["Sélection sur CV", "Entretien RH", "Entretien Manager opérationnel"],
+      }),
       make("Jifmar Offshore Services", "Transport", "/logos/jifmar.png", {
         founded: "2005",
         location: "Aix-en-Provence (siège) — International",
