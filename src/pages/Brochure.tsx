@@ -134,7 +134,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Entretiens opérationnels"],
       }),
-      make("Eiffage", "BTP", "/logos/eiffage.png"),
+      make("Eiffage", "BTP, Concessions & Énergie Systèmes", "/logos/eiffage.png", {
+        founded: "1884",
+        location: "France & Europe",
+        revenue: "25,3 Md €",
+        employees: "87 000 collaborateurs",
+        description:
+          "Acteur de référence d'une Europe bas-carbone et leader européen du BTP et des concessions, Eiffage déploie son savoir-faire à travers 8 métiers (Construction, Immobilier, Aménagement, Génie Civil, Route, Métal, Énergie Systèmes, Concessions) pour concevoir et rénover les infrastructures durables de demain.",
+        profiles: ["Ingénieurs travaux génie civil & bâtiment", "Ingénieurs études & méthodes", "Ingénieurs énergie systèmes", "Chefs de projet concessions & infrastructures"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Sélection des CV par les RH", "Échange téléphonique", "Rencontre avec l'opérationnel recruteur"],
+      }),
       make("Vinci Construction", "BTP", "/logos/vinci-construction.png"),
       make("RAZEL-BEC", "BTP", "/logos/razel-bec.png", {
         founded: "1885",
@@ -163,7 +173,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
-      make("EP2C Energy", "Énergie"),
+      make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", undefined, {
+        founded: "2014",
+        location: "France & International",
+        revenue: "102 M€",
+        employees: "650 collaborateurs",
+        description:
+          "Cabinet de conseil en ingénierie spécialisé dans les grands projets industriels et énergétiques complexes, EP2C Energy intervient sur l'ensemble du cycle de vie des projets (conception, gestion de projet, construction). Sa structure dynamique favorise une montée en compétences rapide et des mobilités internationales.",
+        profiles: ["Ingénieurs projets énergie & procédés", "Business Managers / Ingénieurs d'Affaires", "Ingénieurs supervision de chantier & construction"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Parcours d'environ 3 entretiens (visio ou présentiel)"],
+      }),
       make("Framatome", "Énergie nucléaire", "/logos/framatome.png"),
       make("Orano", "Énergie nucléaire", "/logos/orano.png"),
       make("Technip Energies", "Énergie", "/logos/technip-energies.png"),
@@ -195,16 +215,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Industrie",
     companies: [
-      make("EXAIL", "Hautes technologies", "/logos/exail.png", {
-        founded: "2022 (fusion ECA Group & iXblue)",
-        location: "Saint-Germain-en-Laye (siège) / Multi-sites France et international",
-        revenue: "≈ 300 M€",
-        employees: "2 000",
+      make("EXAIL", "Robotique & Hautes technologies", "/logos/exail.png", {
+        founded: "2022 (alliance ECA Group & iXblue)",
+        location: "Présence internationale (80+ pays)",
+        revenue: "370 M€",
+        employees: "2 000 collaborateurs",
         description:
-          "Champion technologique mondial de la robotique autonome, de la photonique, de la navigation inertielle de haute précision et de l'aérospatial pour applications civiles et de défense.",
-        profiles: ["Ingénieurs systèmes embarqués", "Ingénieurs optronique / photonique", "Ingénieurs robotique / IA", "Chefs de projet R&D"],
-        positions: ["Stage", "Alternance", "CDI"],
-        recruitment: ["Sélection CV", "Entretiens techniques et RH"],
+          "Champion mondial de haute technologie issu du rapprochement d'ECA Group et d'iXblue, Exail conçoit des solutions d'exception en robotique autonome, systèmes maritimes, navigation inertielle de haute précision, aérospatiale et photonique pour des environnements civils et militaires complexes.",
+        profiles: ["Ingénieurs électronique & matériel", "Ingénieurs systèmes embarqués & temps réel", "Ingénieurs logiciels & IA", "Ingénieurs photonique & robotique"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretien RH et opérationnel (sur site ou visio)"],
       }),
       make("France Chimie Méditerranée", "Fédération industrielle"),
       make("Groupe ADF", "Industrie", "/logos/groupe-adf.png", {
@@ -302,18 +322,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI"],
         recruitment: ["Sélection sur CV", "Parcours de 3 à 4 entretiens de qualification"],
       }),
-      make("EODD Ingénieurs Conseils", "Ingénierie", "/logos/eodd.png", {
+      make("EODD Ingénieurs Conseils", "Conseil & Ingénierie environnementale", "/logos/eodd.png", {
         founded: "1991",
-        location: "Lyon (siège) — agences nationales dont Marseille",
-        revenue: "≈ 25 M€",
-        employees: "250 collaborateurs",
+        location: "13 agences nationales (France métropolitaine et outre-mer)",
+        revenue: "30 M€",
+        employees: "320 collaborateurs",
         description:
-          "Société de conseil et d'ingénierie indépendante pionnière de la transition écologique, EODD intervient sur les projets urbains, la construction durable, la biodiversité, l'économie circulaire et la stratégie carbone des territoires et entreprises.",
-        profiles: ["Ingénieurs environnement / écoconception", "Ingénieurs performance énergétique / thermique", "Chefs de projets RSE & biodiversité", "Consultants transition bas-carbone"],
-        positions: ["Stage de fin d'études (TFE)", "CDI – Jeune diplômé", "Alternance"],
-        recruitment: ["Dépôt CV", "Entretien RH", "Entretien technique opérationnel"],
+          "Société à mission et bureau d'études pionnier de la transformation écologique depuis plus de 30 ans, EODD conçoit et déploie des solutions innovantes et concrètes à haute valeur environnementale et sociale pour l'aménagement urbain, la biodiversité, le bas-carbone et l'économie circulaire.",
+        profiles: ["Chargés d'études & spécialistes environnement", "Chefs de projet transition écologique & énergie", "Ingénieurs écoconception & biodiversité", "Directeurs d'affaires / projets durables"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
       }),
-      make("ECIA", "Ingénierie"),
+      make("ECIA", "Ingénierie Nucléaire", undefined, {
+        founded: "2007",
+        location: "Venelles, Bagnols-sur-Cèze, Bollène, Lyon, Cherbourg, Nantes",
+        revenue: "13 M€",
+        employees: "180 collaborateurs",
+        description:
+          "Entité d'EQUANS France, ECIA réunit près de 200 spécialistes sur 8 agences en France pour intervenir sur tout le cycle de vie des installations nucléaires, de la conception au démantèlement. Ses équipes apportent une expertise pointue en électricité courants forts/faibles, mécanique, génie climatique (HVAC) et contrôle-commande.",
+        profiles: ["Ingénieurs électricité (CFO/CFA)", "Ingénieurs contrôle-commande", "Ingénieurs génie mécanique & calculs", "Ingénieurs ventilation & génie climatique (HVAC)"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique (en visio)"],
+      }),
       make("Egis", "Ingénierie", "/logos/egis.png", {
         founded: "1970",
         location: "Siège à Paris — Présence dans 100+ pays",
@@ -325,7 +355,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Entretien téléphonique", "Entretien RH", "Entretien opérationnel (étude de cas éventuelle)"],
       }),
-      make("EMIS et EMIS Access", "Ingénierie"),
+      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", undefined, {
+        founded: "1987",
+        location: "Vitrolles (13)",
+        revenue: "≈ 47 M€",
+        employees: "170 collaborateurs",
+        description:
+          "Filiales du groupe Ponticelli Frères, EMIS et EMIS ACCESS accompagnent les grands donneurs d'ordre industriels en maintenance, mécanique, métallurgie, nettoyage industriel, accès et calorifuge, au service des filières vitales de l'énergie, de l'eau et de la santé.",
+        profiles: ["Ingénieurs qualité soudage", "Ingénieurs travaux & conducteurs de travaux", "Ingénieurs HSE", "Ingénieurs études & méthodes"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretiens de recrutement"],
+      }),
       make("Groupe LGM", "Ingénierie", "/logos/lgm.png", {
         founded: "1991",
         location: "France & International",
