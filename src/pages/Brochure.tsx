@@ -145,7 +145,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection des CV par les RH", "Échange téléphonique", "Rencontre avec l'opérationnel recruteur"],
       }),
-      make("Vinci Construction", "BTP", "/logos/vinci-construction.png"),
+      make("Vinci Construction", "BTP & Grands Projets", "/logos/vinci-construction.png", {
+        founded: "2000",
+        location: "France & International (100+ pays)",
+        revenue: "32,1 Md €",
+        employees: "117 000 collaborateurs",
+        description:
+          "Acteur mondial de premier plan de la construction, VINCI Construction réunit 1 300 entreprises de proximité et réseaux de spécialité pour bâtir les infrastructures de transport, les bâtiments, les réseaux et les aménagements urbains de demain, guidé par la passion de construire utile et durable.",
+        profiles: ["Conduite de travaux & Gestion de chantiers", "Ingénieurs études de prix & Méthodes", "Ingénieurs génie civil & Structures", "Chefs de projet aménagement & Réseaux"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Transmission et sélection des CV par les opérationnels", "Entretiens de recrutement"],
+      }),
       make("RAZEL-BEC", "BTP", "/logos/razel-bec.png", {
         founded: "1885",
         location: "Nationale (PACA, IDF, AURA, Occitanie...) & Monaco",
