@@ -73,7 +73,7 @@ const make = (
 
 const partners = [
   { name: "Naval Group", src: "/logos/naval-group.png" },
-  { name: "SNCF", src: "/logo-sncf-groupe.png" },
+  { name: "SNCF Réseau", src: "/logos/sncf-reseau.png" },
   { name: "La Mie Câline", src: "/logo-la-mie-caline.png" },
   { name: "Haribo", src: "/logos/haribo.png" },
   { name: "Batiactu", src: "/81792a_3e8f982fc8a6497ca46a98b487517d35~mv2.png" },
@@ -84,21 +84,16 @@ const partners = [
   { name: "Cafés Richard", src: "/logo-cafes-richard.png" },
 ];
 
-const sncf = make("Groupe SNCF", "Transport de voyageurs et logistique de marchandises, mobilités durables", "/logo-sncf-groupe.png", {
-  founded: "1938",
-  location: "Saint-Denis (siège) — présence nationale et internationale",
-  revenue: "≈ 43 Md €",
-  employees: "276 000 collaborateurs",
+const sncf = make("SNCF Réseau", "Gestion d'infrastructure ferroviaire & Mobilités", "/logos/sncf-reseau.png", {
+  founded: "1997",
+  location: "Siège à Saint-Denis (93) — Direction régionale PACA à Marseille & Réseau national",
+  revenue: "≈ 7 Md €",
+  employees: "53 000 collaborateurs",
   description:
-    "Le Groupe SNCF est un leader mondial des solutions de mobilité durable. Engagé dans la transition écologique, il accélère le développement du transport ferroviaire et de solutions de mobilité bas-carbone au service des voyageurs et des marchandises. L'innovation ferroviaire, la numérisation et la formation des jeunes talents ingénieurs sont au cœur de sa stratégie pour bâtir les mobilités de demain.",
-  profiles: [
-    "Ingénieurs Génie Civil / Ouvrages d'art",
-    "Ingénieurs Systèmes embarqués",
-    "Chefs de projet infrastructure",
-    "Data Engineers / IA",
-  ],
-  positions: ["Stage 6 mois", "Alternance", "CDI Jeune diplômé", "VIE"],
-  recruitment: ["Candidature sur sncf.com/carrières", "Entretien RH + manager", "Étude technique du dossier"],
+    "Gestionnaire du réseau ferré national, SNCF Réseau assure la maintenance, la modernisation et la sécurité de plus de 28 000 km de lignes en France. Acteur pivot de la décarbonation des transports, l'entreprise pilote des chantiers d'ingénierie majeurs en régénération de voies, signalisation de pointe et transition numérique.",
+  profiles: ["Ingénieurs voie, génie civil & ouvrages d'art", "Ingénieurs signalisation ferroviaire & télécoms", "Chefs de projets travaux & maintenance", "Ingénieurs informatique industrielle & data"],
+  positions: ["Alternance", "CDI", "Stage"],
+  recruitment: ["Candidatures sur sncf-reseau.com/fr/carrieres", "Entretiens RH et opérationnels"],
 });
 
 const navalGroup = make("Naval Group", "Industrie navale de Défense", "/logos/naval-group.png", {
@@ -834,7 +829,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Transports & Systèmes embarqués",
     names: [
-      "SNCF",
+      "SNCF Réseau",
       "EXAIL",
       "MB92 La Ciotat",
       "CMA CGM",
@@ -1095,7 +1090,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
   const items: { num: string; title: string; slide: number; child?: { name: string; slide: number; count?: number }[] }[] = [
     { num: "01", title: "Index des entreprises", slide: 2 },
     { num: "02", title: "Plan du Forum", slide: 3 },
-    { num: "03", title: "Le Parrain — Groupe SNCF", slide: 4 },
+    { num: "03", title: "Le Parrain — SNCF Réseau", slide: 4 },
     { num: "04", title: "Le mot du Parrain", slide: 5 },
     { num: "05", title: "Le mot de l'équipe FOCEEN", slide: 6 },
     {
@@ -1264,7 +1259,7 @@ function PlanSlide() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  SLIDE 5 — GROUPE SNCF (PARRAIN)                                   */
+/*  SLIDE 5 — SNCF RÉSEAU (PARRAIN)                                   */
 /* ------------------------------------------------------------------ */
 
 function SncfFicheSlide() {
@@ -1278,14 +1273,14 @@ function SncfFicheSlide() {
           className="bg-white rounded-2xl w-full max-w-sm h-56 flex items-center justify-center p-8"
           style={{ border: `1px solid ${THEME.rule}` }}
         >
-          <img src="/logo-sncf-groupe.png" alt="Groupe SNCF" className="max-h-32 object-contain" />
+          <img src="/logos/sncf-reseau.png" alt="SNCF Réseau" className="max-h-32 object-contain" />
         </div>
         <div>
           <p className="text-[11px] tracking-[0.45em] uppercase font-heading" style={{ color: THEME.royal }}>
             Parrain de l'édition
           </p>
           <h2 className="font-heading font-black text-5xl mt-2" style={{ color: THEME.ink }}>
-            GROUPE SNCF
+            SNCF RÉSEAU
           </h2>
           <div className="mt-3 h-[3px] w-20" style={{ background: THEME.royal }} />
         </div>
@@ -1293,11 +1288,11 @@ function SncfFicheSlide() {
 
       <div className="min-h-0 overflow-y-auto pr-3 brochure-scroll space-y-5">
         {[
-          { label: "Secteur d'activité", value: "Transport de voyageurs et logistique de marchandises, mobilités durables" },
-          { label: "Année de création", value: "1938" },
-          { label: "Localisation", value: "Saint-Denis (siège) — présence nationale et internationale" },
-          { label: "Chiffre d'affaires", value: "≈ 43 Md €" },
-          { label: "Effectifs", value: "276 000 collaborateurs" },
+          { label: "Secteur d'activité", value: "Gestion d'infrastructure ferroviaire & Mobilités" },
+          { label: "Année de création", value: "1997" },
+          { label: "Localisation", value: "Siège à Saint-Denis (93) — Direction régionale PACA à Marseille & Réseau national" },
+          { label: "Chiffre d'affaires", value: "≈ 7 Md €" },
+          { label: "Effectifs", value: "53 000 collaborateurs" },
         ].map((r) => (
           <div
             key={r.label}
@@ -1311,10 +1306,9 @@ function SncfFicheSlide() {
           </div>
         ))}
         <p className="mt-6 text-sm md:text-base leading-relaxed" style={{ color: THEME.ink }}>
-          Le Groupe SNCF est un leader mondial des solutions de mobilité durable. Engagé dans la transition écologique, il
-          accélère le développement du transport ferroviaire et de solutions de mobilité bas-carbone au service des
-          voyageurs et des marchandises. L'innovation ferroviaire, la numérisation et la formation des jeunes talents
-          ingénieurs sont au cœur de sa stratégie pour bâtir les mobilités de demain.
+          Gestionnaire du réseau ferré national, SNCF Réseau assure la maintenance, la modernisation et la sécurité de
+          plus de 28 000 km de lignes en France. Acteur pivot de la décarbonation des transports, l'entreprise pilote des
+          chantiers d'ingénierie majeurs en régénération de voies, signalisation de pointe et transition numérique.
         </p>
       </div>
     </div>
@@ -1413,8 +1407,8 @@ function MotParrainSlide() {
     <WordSlide
       tag="Le mot du Parrain"
       title="MOT DU PARRAIN"
-      text="C'est avec une grande fierté que le Groupe SNCF parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les enjeux concrets de la mobilité durable. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers du rail. À travers ce parrainage, nous souhaitons réaffirmer notre engagement auprès des élèves-ingénieurs de Centrale Méditerranée autour des mobilités bas-carbone, des grands chantiers d'infrastructure et des métiers d'avenir du ferroviaire, ainsi que notre attachement au territoire et à la formation des futurs talents."
-      author="Direction Groupe SNCF"
+      text="C'est avec une grande fierté que SNCF Réseau parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les enjeux concrets de la mobilité durable. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers du rail. À travers ce parrainage, nous souhaitons réaffirmer notre engagement auprès des élèves-ingénieurs de Centrale Méditerranée autour des mobilités bas-carbone, des grands chantiers d'infrastructure et des métiers d'avenir du ferroviaire, ainsi que notre attachement au territoire et à la formation des futurs talents."
+      author="Direction SNCF Réseau"
       role="Parrain de la 19ᵉ édition"
     />
   );
