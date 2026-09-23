@@ -1417,7 +1417,7 @@ function MotParrainSlide() {
 function MotEquipeSlide() {
   return (
     <div
-      className="w-full h-full overflow-y-auto brochure-scroll flex flex-col items-center py-6 px-4 md:px-12"
+      className="w-full h-full overflow-y-auto brochure-scroll flex flex-col items-center pt-6 pb-20 px-4 md:px-12"
       style={{ background: THEME.paper }}
     >
       {/* Titre */}
