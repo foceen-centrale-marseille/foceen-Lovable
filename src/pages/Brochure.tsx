@@ -1481,7 +1481,6 @@ function MotEquipeSlide() {
     </div>
   );
 }
-}
 
 /* ------------------------------------------------------------------ */
 /*  DIVIDER SLIDE — solid royal blue, huge centered white label       */
