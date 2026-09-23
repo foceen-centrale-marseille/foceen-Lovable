@@ -101,21 +101,21 @@ const sncf = make("Groupe SNCF", "Transport de voyageurs et logistique de marcha
   recruitment: ["Candidature sur sncf.com/carrières", "Entretien RH + manager", "Étude technique du dossier"],
 });
 
-const navalGroup = make("Naval Group", "Défense navale", "/logos/naval-group.png", {
-  founded: "1631",
-  location: "Paris (75)",
-  revenue: "4,4 Md €",
-  employees: "15 700",
+const navalGroup = make("Naval Group", "Industrie navale de Défense", "/logos/naval-group.png", {
+  founded: "2002 (héritage des arsenaux historiques)",
+  location: "9 sites en France (Toulon, Cherbourg, Lorient, Nantes-Indret, Ollioules...) & International",
+  revenue: "4,6 Md €",
+  employees: "17 000 collaborateurs",
   description:
-    "Naval Group est le leader européen du naval de défense. Partenaire stratégique des marines, le Groupe conçoit, construit et maintient sur toute leur durée de vie des sous-marins et navires de surface, et fournit des services pour les chantiers et bases navales. Présent dans plus de 18 pays, Naval Group investit massivement en R&D pour rester à la pointe sur des sujets complexes comme la propulsion nucléaire, la furtivité, les systèmes de combat ou la cybersécurité embarquée. Travailler chez Naval Group, c'est intégrer des projets uniques au monde, à très long terme, au service de la souveraineté nationale.",
+    "Maître d'œuvre industriel et leader européen du naval de défense, Naval Group conçoit, réalise et entretient des sous-marins, des porte-avions, des navires de surface et des systèmes de drones armés. L'entreprise intègre les technologies les plus avancées en propulsion nucléaire, IA de combat et cybersécurité navale.",
   profiles: [
-    "Ingénieurs Mécanique / Hydrodynamique",
-    "Architectes navals",
-    "Ingénieurs nucléaire embarqué",
-    "Cybersécurité & Systèmes",
+    "Ingénierie de systèmes complexes & Propulsion nucléaire",
+    "Cybersécurité, IA & Traitement de données navales",
+    "Développement logiciel & Architectures réseaux bord",
+    "Management de projets, Chantier & Supply chain",
   ],
-  positions: ["Stage de fin d'études", "Alternance", "CDI", "VIE"],
-  recruitment: ["Dépôt CV sur naval-group.com", "Tests techniques", "Entretien RH + entretien technique"],
+  positions: ["Alternance", "CDI", "Stage"],
+  recruitment: ["Sélection sur CV et lettre de motivation", "Entretiens RH et techniques opérationnels"],
 });
 
 const SECTORS: { name: string; companies: Company[] }[] = [
@@ -194,7 +194,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Parcours d'environ 3 entretiens (visio ou présentiel)"],
       }),
-      make("Framatome", "Énergie nucléaire", "/logos/framatome.png"),
+      make("Framatome", "Industrie nucléaire", "/logos/framatome.png", {
+        founded: "1958",
+        location: "France & International",
+        revenue: "5,4 Md €",
+        employees: "22 000 collaborateurs",
+        description:
+          "Leader international de l'énergie nucléaire, Framatome conçoit, fabrique et maintient les composants de cuve, le combustible nucléaire et les systèmes de contrôle-commande pour les parcs nucléaires du monde entier. Ses équipes contribuent chaque jour au développement d'un mix énergétique bas-carbone, sûr et compétitif.",
+        profiles: ["Ingénierie de conception & Systèmes", "Fabrication industrielle & Maintenance sur site", "Sûreté nucléaire, Qualité & Cybersécurité", "Pilotage de projet & Affaires"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Candidature sur le site carrières", "Tests d'anglais & d'auto-évaluation comportementale", "Parcours RH et 2 entretiens managers (3 maximum)"],
+      }),
       make("Orano", "Énergie nucléaire", "/logos/orano.png", {
         founded: "2018 (issu d'une longue histoire nucléaire)",
         location: "17 sites en France — Présence internationale",
@@ -640,7 +650,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDD", "CDI"],
         recruitment: ["CV + lettre de motivation", "Entretiens adaptés au poste", "Possibilité de concours civils/militaires"],
       }),
-      make("Marine Nationale", "Défense / Public", "/logos/marine-nationale.png"),
+      make("Marine Nationale", "Défense & Sécurité maritime", "/logos/marine-nationale.png", {
+        founded: "1326",
+        location: "Façades maritimes françaises (Toulon, Brest, Cherbourg) & Déploiements mondiaux",
+        revenue: "S.O. (Forces Armées)",
+        employees: "40 000 marins",
+        description:
+          "Force maritime des armées françaises, la Marine Nationale opère des sous-marins, navires de surface et aéronefs pour assurer la dissuasion nucléaire, la protection des approches maritimes et la souveraineté nationale. Elle propose plus de 80 métiers opérationnels et techniques hautement spécialisés.",
+        profiles: ["Officiers ingénieurs (opérations navales, propulsion)", "Systèmes d'information, Réseaux & Cyberdéfense", "Aéronautique navale & Électronique de bord", "Ingénierie de maintenance & Logistique opérationnelle"],
+        positions: ["CDD (Contrats d'officier)", "CDI (Officier de carrière)"],
+        recruitment: ["Dépôt CV + lettre de motivation", "Entretien en CIRFA", "Visite médicale d'aptitude", "Entretien d'unité opérationnelle"],
+      }),
       make("Ministère des Armées", "Défense & Renseignement", "/logos/ministere-armees.png", {
         founded: "1982",
         location: "Siège à Paris (avec missions France & étranger)",
