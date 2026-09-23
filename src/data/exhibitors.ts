@@ -40,8 +40,8 @@ export const DOMAINS = [
 
 export const parrain: Exposant = {
   id: 0,
-  name: "Groupe SNCF",
-  logo: "/logo-sncf-groupe.png",
+  name: "SNCF Réseau",
+  logo: "/logos/sncf-reseau.png",
   sector: "Leader des mobilités durables et acteur de la transition écologique",
   domain: "Transport",
   yearCreated: 1938,
@@ -53,9 +53,9 @@ export const parrain: Exposant = {
   profiles:
     "Profils techniques (techniciens/ingénieurs) sur des spécialités liées aux infrastructures ferroviaires (ouvrages d'art, génie civil, télécom, énergie électrique HT/BT, signalisation…) et profils généralistes pour le pilotage de projets.",
   postTypes: ["CDI", "Alternance", "Stage"],
-  applicationMethod: "Selon le poste, pas de process général. Candidatures via le site emploi du groupe SNCF.",
+  applicationMethod: "Selon le poste, pas de process général. Candidatures via le site emploi de SNCF Réseau.",
   description:
-    "Le Groupe SNCF est un leader des mobilités durables. Il accompagne chaque jour des millions de voyageurs et agit pour accélérer la transition écologique grâce au développement du transport ferroviaire et de solutions de mobilité bas-carbone.",
+    "Gestionnaire du réseau ferré national, SNCF Réseau entretient, modernise et sécurise plus de 28 000 km de lignes pour accélérer la décarbonation des mobilités et façonner les transports ferroviaires durables de demain.",
   highlights: [
     "28 000 km de lignes en France",
     "Entretien, modernisation et exploitation du réseau ferré national",
