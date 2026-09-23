@@ -1420,7 +1420,7 @@ function MotEquipeSlide() {
       className="w-full h-full overflow-y-auto brochure-scroll"
       style={{ background: THEME.paper }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center min-h-full px-6 md:px-12 py-10 md:py-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center min-h-full px-6 md:px-12 pt-8 pb-24 md:pt-14 md:pb-10">
         {/* Photo équipe */}
         <div className="flex justify-center md:justify-end">
           <div
