@@ -1416,16 +1416,72 @@ function MotParrainSlide() {
 
 function MotEquipeSlide() {
   return (
-    <WordSlide
-      tag="Le mot de l'équipe"
-      title="Le mot de l'équipe FOCEEN"
-      text="Pendant un an, notre équipe d'élèves-ingénieurs a porté l'ambition de faire du FOCEEN un moment d'exception. Cette brochure est le fruit de cet engagement : un outil pour vous présenter en détail les entreprises qui nous font confiance et les opportunités qu'elles offrent. Nous tenons à remercier chaleureusement nos partenaires, l'école Centrale Méditerranée et tous les bénévoles qui rendent cette 19ᵉ édition possible. Bonne lecture, et rendez-vous le 03 novembre 2026 au Parc Chanot pour vivre ensemble cette journée dédiée à votre avenir professionnel."
-      author="Bureau FOCEEN"
-      role="Mandat 2025 – 2026"
-      image={teamPhoto}
-      imageAlt="Équipe FOCEEN 2026"
-      imageFit="contain"
-    />
+    <div
+      className="w-full h-full overflow-y-auto brochure-scroll"
+      style={{ background: THEME.paper }}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center min-h-full px-6 md:px-12 pt-8 pb-24 md:pt-14 md:pb-10">
+        {/* Photo équipe */}
+        <div className="flex justify-center md:justify-end">
+          <div
+            className="w-full max-w-sm rounded-2xl overflow-hidden shadow-2xl bg-white/5"
+            style={{ border: `2px solid ${THEME.royal}` }}
+          >
+            <img
+              src={teamPhoto}
+              alt="Équipe FOCEEN 2026"
+              className="max-h-64 md:max-h-80 w-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Mot de l'équipe */}
+        <div className="flex flex-col">
+          <p
+            className="text-[11px] tracking-[0.45em] uppercase font-heading mb-4"
+            style={{ color: THEME.royal }}
+          >
+            Le mot de l'équipe
+          </p>
+          <h2
+            className="font-heading font-black text-4xl md:text-5xl tracking-tight"
+            style={{ color: THEME.ink }}
+          >
+            Le mot de l'équipe FOCEEN
+          </h2>
+          <div className="mt-4 h-[3px] w-20" style={{ background: THEME.royal }} />
+          <div
+            className="mt-6 text-7xl leading-none opacity-30"
+            style={{ color: THEME.royal, fontFamily: "Georgia, serif" }}
+          >
+            «
+          </div>
+          <p
+            className="mt-2 text-base md:text-lg leading-relaxed italic max-w-xl"
+            style={{ color: THEME.ink }}
+          >
+            Pendant un an, notre équipe d'élèves-ingénieurs a porté l'ambition de
+            faire du FOCEEN un moment d'exception. Cette brochure est le fruit de
+            cet engagement : un outil pour vous présenter en détail les entreprises
+            qui nous font confiance et les opportabilités qu'elles offrent. Nous
+            tenons à remercier chaleureusement nos partenaires, l'école Centrale
+            Méditerranée et tous les bénévoles qui rendent cette 19ᵉ édition
+            possible. Bonne lecture, et rendez-vous le 03 novembre 2026 au Parc
+            Chanot pour vivre ensemble cette journée dédiée à votre avenir
+            professionnel.
+          </p>
+          <div className="mt-6 flex items-center gap-3">
+            <div className="h-px w-10" style={{ background: THEME.royal }} />
+            <div>
+              <p className="font-heading font-bold text-base" style={{ color: THEME.ink }}>
+                Bureau FOCEEN
+              </p>
+              <p className="text-xs opacity-70 mt-0.5">Mandat 2025 – 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
