@@ -178,7 +178,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
-      make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", undefined, {
+      make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", "/logos/ep2c-energy.png", {
         founded: "2014",
         location: "France & International",
         revenue: "102 M€",
