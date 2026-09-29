@@ -271,7 +271,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH et opérationnel (sur site ou visio)"],
       }),
-      make("France Chimie Méditerranée", "Fédération professionnelle / Chimie", undefined, {
+      make("France Chimie Méditerranée", "Fédération professionnelle / Chimie", "/logos/france-chimie-mediterranee.png", {
         founded: "1901",
         location: "Régions PACA, Corse et Occitanie Est",
         revenue: "Fédération (S.O.)",
@@ -398,7 +398,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
       }),
-      make("ECIA", "Ingénierie Nucléaire", undefined, {
+      make("ECIA", "Ingénierie Nucléaire", "/logos/ecia.png", {
         founded: "2007",
         location: "Venelles, Bagnols-sur-Cèze, Bollène, Lyon, Cherbourg, Nantes",
         revenue: "13 M€",
@@ -420,7 +420,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Entretien téléphonique", "Entretien RH", "Entretien opérationnel (étude de cas éventuelle)"],
       }),
-      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", undefined, {
+      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", "/logos/emis.png", {
         founded: "1987",
         location: "Vitrolles (13)",
         revenue: "≈ 47 M€",
