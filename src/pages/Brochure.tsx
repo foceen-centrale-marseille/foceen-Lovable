@@ -752,6 +752,16 @@ type Slide =
   | { kind: "company"; company: Company; sector?: string };
 
 const slides: Slide[] = (() => {
+  // Single source of truth: every company slide comes from SECTORS, deduplicated by name.
+  const seen = new Set<string>();
+  const sectors = SECTORS.map((s) => {
+    const list = s.name === "Défense" && !s.companies.some((c) => c.name === navalGroup.name)
+      ? [navalGroup, ...s.companies]
+      : s.companies;
+    const companies = list.filter((c) => (seen.has(c.name) ? false : (seen.add(c.name), true)));
+    return { name: s.name, companies };
+  }).filter((s) => s.companies.length > 0);
+
   const arr: Slide[] = [
     { kind: "cover" },
     { kind: "toc" },
@@ -760,10 +770,9 @@ const slides: Slide[] = (() => {
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: "Découvrez nos 56 partenaires" },
-    { kind: "company", company: navalGroup, sector: "Défense" },
+    { kind: "divider", label: "Entreprises Partenaires", subtitle: `Découvrez nos ${seen.size} partenaires` },
   ];
-  SECTORS.forEach((s) => {
+  sectors.forEach((s) => {
     arr.push({ kind: "divider", label: s.name });
     s.companies.forEach((c) => arr.push({ kind: "company", company: c, sector: s.name }));
   });
@@ -881,8 +890,8 @@ export default function Brochure() {
   const total = slides.length;
 
   const go = useCallback((n: number) => setI(() => Math.max(0, Math.min(total - 1, n))), [total]);
-  const next = useCallback(() => go(i + 1), [go, i]);
-  const prev = useCallback(() => go(i - 1), [go, i]);
+  const next = useCallback(() => setI((p) => Math.min(total - 1, p + 1)), [total]);
+  const prev = useCallback(() => setI((p) => Math.max(0, p - 1)), []);
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
