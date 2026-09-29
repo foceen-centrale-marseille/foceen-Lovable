@@ -271,7 +271,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH et opérationnel (sur site ou visio)"],
       }),
-      make("France Chimie Méditerranée", "Fédération professionnelle / Chimie", undefined, {
+      make("France Chimie Méditerranée", "Fédération professionnelle / Chimie", "/logos/france-chimie-mediterranee.png", {
         founded: "1901",
         location: "Régions PACA, Corse et Occitanie Est",
         revenue: "Fédération (S.O.)",
