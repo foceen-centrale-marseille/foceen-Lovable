@@ -420,7 +420,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Entretien téléphonique", "Entretien RH", "Entretien opérationnel (étude de cas éventuelle)"],
       }),
-      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", undefined, {
+      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", "/logos/emis.png", {
         founded: "1987",
         location: "Vitrolles (13)",
         revenue: "≈ 47 M€",
