@@ -398,7 +398,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
       }),
-      make("ECIA", "Ingénierie Nucléaire", undefined, {
+      make("ECIA", "Ingénierie Nucléaire", "/logos/ecia.png", {
         founded: "2007",
         location: "Venelles, Bagnols-sur-Cèze, Bollène, Lyon, Cherbourg, Nantes",
         revenue: "13 M€",
