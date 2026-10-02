@@ -734,6 +734,61 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       }),
     ],
   },
+  {
+    name: "Formation",
+    companies: [
+      make("AVEC L'INDUSTRIE", "Compétences industrielles & OPCO", "/logos/avec-l-industrie.png", {
+        founded: "2018",
+        location: "Échelle nationale (29 branches industrielles)",
+        revenue: "Opérateur de compétences (OPCO 2i)",
+        employees: "732 collaborateurs",
+        description: "Initiative d'OPCO 2i et de 29 branches professionnelles industrielles (chimie, métallurgie, énergies...), Avec l’Industrie® valorise auprès des jeunes talents une industrie moderne, durable et souveraine en finançant la formation, l'alternance et l'évolution des compétences techniques.",
+        profiles: ["Tous profils ingénieurs & scientifiques", "Alternants & apprentis industriels", "Métiers de la production, R&D & maintenance"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Orientation vers les branches & entreprises partenaires"],
+      }),
+      make("emlyon business school", "Enseignement supérieur de management", "/logos/emlyon.png", {
+        founded: "1872",
+        location: "Lyon & Paris (campus à Shanghai et Mumbai)",
+        revenue: "112,5 M€",
+        employees: "500 collaborateurs — 9 375 étudiants",
+        description: "Triple accréditée (AACSB, EQUIS, AMBA), emlyon business school figure parmi les plus grandes écoles de commerce européennes. Elle propose plus de 20 programmes de Masters, MSc et Mastères Spécialisés complétant l'expertise scientifique par des compétences managériales et stratégiques.",
+        profiles: ["Étudiants Bac+3 à Bac+5 & jeunes ingénieurs", "Stratégie, management & organisation", "Finance, innovation & entrepreneuriat"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Dépôt de CV & dossier de candidature sur le site officiel"],
+      }),
+      make("ESSEC Business School", "Grande École de Management", "/logos/essec.png", {
+        founded: "1907",
+        location: "Cergy, Paris-La Défense, Singapour, Rabat",
+        revenue: "Grande École d'excellence",
+        employees: "2 000 collaborateurs & enseignants",
+        description: "Pionnière de l'enseignement supérieur du management et triple accréditée (AACSB, EQUIS, AMBA), l'ESSEC forme des dirigeants éclairés capables d'allier performance économique, créativité et impact sociétal positif grâce à une pédagogie d'excellence ouverte sur le monde.",
+        profiles: ["Diplômés d'écoles d'ingénieurs (admissions sur titre)", "Finance, conseil en stratégie & transformation durable", "Management de l'innovation & technologies"],
+        positions: ["Alternance", "Stage", "Mastères Spécialisés®"],
+        recruitment: ["Admissions sur titre / Concours", "Dossier académique & épreuves de sélection"],
+      }),
+      make("ISAE-SUPAERO", "Enseignement supérieur — Aéronautique & Espace", "/logos/isae-supaero.png", {
+        founded: "1909",
+        location: "Campus de 22 ha à Toulouse (31)",
+        revenue: "Établissement public d'enseignement supérieur",
+        employees: "1 900 étudiants & chercheurs",
+        description: "Référence mondiale de la formation des ingénieurs du secteur aérospatial, l'ISAE-SUPAERO dispose d'infrastructures de recherche uniques (souffleries, flotte de 9 avions, simulateurs, centre spatial étudiant). Elle propose 16 Mastères Spécialisés® conçus avec les industriels du secteur.",
+        profiles: ["Élèves ingénieurs & diplômés Bac+5 (M2, ingénieur)", "Conception aéronautique, propulsion & systèmes spatiaux", "Systèmes embarqués critiques, drones (UAV) & robotique", "Essais en vol, certification, data & IA appliquée"],
+        positions: ["Mastères Spécialisés®", "Alternance", "Stage"],
+        recruitment: ["Dossier de candidature en ligne (candidatures.tsaae.fr)", "Sélection sur dossier académique"],
+      }),
+      make("KEDGE Business School", "Grande École de Management", "/logos/kedge.png", {
+        founded: "2014 (fusion BEM Bordeaux & Euromed Marseille)",
+        location: "Marseille, Toulon, Bordeaux, Paris",
+        revenue: "Grande École associative",
+        employees: "600 collaborateurs — 23 000 étudiants",
+        description: "Dotée de la prestigieuse triple accréditation internationale (AACSB, EQUIS, AMBA), KEDGE Business School forme des leaders agiles et responsables. Elle propose des doubles compétences stratégiques aux élèves ingénieurs désireux de renforcer leur maîtrise du management et de l'entrepreneuriat.",
+        profiles: ["Étudiants ingénieurs Bac+3 à Bac+5 (double diplôme / MS)", "Leadership, négociation & stratégie", "Supply chain, gestion de projet & business development"],
+        positions: ["Alternance", "Double diplôme"],
+        recruitment: ["Candidature en ligne (join.kedge.edu)", "CV, bulletins, diplômes", "Entretien de motivation"],
+      }),
+    ],
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -854,6 +909,10 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "EMIS et EMIS Access",
       "Pellenc ST",
     ],
+  },
+  {
+    label: "Formation",
+    names: ["AVEC L'INDUSTRIE", "emlyon business school", "ESSEC Business School", "ISAE-SUPAERO", "KEDGE Business School"],
   },
 ];
 
