@@ -846,22 +846,28 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France"],
   },
   {
-    label: "Environnement, Énergie & BTP",
+    label: "Énergie",
     names: [
-      "Bouygues Construction",
-      "Bouygues Bâtiment Sud-Est",
+      "ASSYSTEM",
       "CEA",
-      "Eiffage",
-      "Vinci Construction",
-      "RAZEL-BEC",
-      "PAPREC",
-      "VINCI Energies",
-      "Orano",
+      "ECIA",
+      "EP2C Energy",
       "Framatome",
+      "Groupe REEL",
+      "Onet Technologies",
+      "Orano",
       "TechnicAtome",
       "Technip Energies",
-      "EP2C Energy",
+      "VINCI Energies",
     ],
+  },
+  {
+    label: "BTP & Construction",
+    names: ["Bouygues Bâtiment Sud-Est", "Bouygues Construction", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "Vinci Construction"],
+  },
+  {
+    label: "Environnement",
+    names: ["EODD Ingénieurs Conseils", "PAPREC", "Pellenc ST"],
   },
   {
     label: "Informatique, IT & Média",
@@ -871,16 +877,10 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     label: "Ingénierie",
     names: [
       "Bee Engineering",
-      "ASSYSTEM",
-      "Cap Ingelec",
-      "EODD Ingénieurs Conseils",
       "Groupe SNEF",
-      "Onet Technologies",
       "AKKODIS",
-      "ECIA",
       "Groupe Ortec",
       "Setec",
-      "Groupe REEL",
       "Groupe LGM",
       "Groupe ADF",
       "Egis",
@@ -907,7 +907,6 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
-      "Pellenc ST",
     ],
   },
   {
@@ -1261,7 +1260,12 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
                 {g.label}
               </h3>
               <span className="h-px flex-1" style={{ background: THEME.rule }} />
-              <span className="text-[10px] font-heading opacity-60">{g.entries.length}</span>
+              <span
+                className="min-w-6 h-6 px-1.5 rounded-full inline-flex items-center justify-center text-[10px] font-heading font-bold"
+                style={{ color: THEME.royal, border: `1px solid ${THEME.royal}`, background: `${THEME.royal}0D` }}
+              >
+                {g.entries.length}
+              </span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
               {g.entries.map((c) => (
