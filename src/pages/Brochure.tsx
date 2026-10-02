@@ -740,7 +740,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("AVEC L'INDUSTRIE", "Compétences industrielles & OPCO", "/logos/avec-l-industrie.png", {
         founded: "2018",
         location: "Échelle nationale (29 branches industrielles)",
-        revenue: "Opérateur de compétences (OPCO 2i)",
+        revenue: "NC",
         employees: "732 collaborateurs",
         description: "Initiative d'OPCO 2i et de 29 branches professionnelles industrielles (chimie, métallurgie, énergies...), Avec l’Industrie® valorise auprès des jeunes talents une industrie moderne, durable et souveraine en finançant la formation, l'alternance et l'évolution des compétences techniques.",
         profiles: ["Tous profils ingénieurs & scientifiques", "Alternants & apprentis industriels", "Métiers de la production, R&D & maintenance"],
@@ -760,7 +760,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("ESSEC Business School", "Grande École de Management", "/logos/essec.png", {
         founded: "1907",
         location: "Cergy, Paris-La Défense, Singapour, Rabat",
-        revenue: "Grande École d'excellence",
+        revenue: "NC",
         employees: "2 000 collaborateurs & enseignants",
         description: "Pionnière de l'enseignement supérieur du management et triple accréditée (AACSB, EQUIS, AMBA), l'ESSEC forme des dirigeants éclairés capables d'allier performance économique, créativité et impact sociétal positif grâce à une pédagogie d'excellence ouverte sur le monde.",
         profiles: ["Diplômés d'écoles d'ingénieurs (admissions sur titre)", "Finance, conseil en stratégie & transformation durable", "Management de l'innovation & technologies"],
@@ -770,7 +770,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("ISAE-SUPAERO", "Enseignement supérieur — Aéronautique & Espace", "/logos/isae-supaero.png", {
         founded: "1909",
         location: "Campus de 22 ha à Toulouse (31)",
-        revenue: "Établissement public d'enseignement supérieur",
+        revenue: "NC",
         employees: "1 900 étudiants & chercheurs",
         description: "Référence mondiale de la formation des ingénieurs du secteur aérospatial, l'ISAE-SUPAERO dispose d'infrastructures de recherche uniques (souffleries, flotte de 9 avions, simulateurs, centre spatial étudiant). Elle propose 16 Mastères Spécialisés® conçus avec les industriels du secteur.",
         profiles: ["Élèves ingénieurs & diplômés Bac+5 (M2, ingénieur)", "Conception aéronautique, propulsion & systèmes spatiaux", "Systèmes embarqués critiques, drones (UAV) & robotique", "Essais en vol, certification, data & IA appliquée"],
@@ -780,7 +780,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       make("KEDGE Business School", "Grande École de Management", "/logos/kedge.png", {
         founded: "2014 (fusion BEM Bordeaux & Euromed Marseille)",
         location: "Marseille, Toulon, Bordeaux, Paris",
-        revenue: "Grande École associative",
+        revenue: "NC",
         employees: "600 collaborateurs — 23 000 étudiants",
         description: "Dotée de la prestigieuse triple accréditation internationale (AACSB, EQUIS, AMBA), KEDGE Business School forme des leaders agiles et responsables. Elle propose des doubles compétences stratégiques aux élèves ingénieurs désireux de renforcer leur maîtrise du management et de l'entrepreneuriat.",
         profiles: ["Étudiants ingénieurs Bac+3 à Bac+5 (double diplôme / MS)", "Leadership, négociation & stratégie", "Supply chain, gestion de projet & business development"],
