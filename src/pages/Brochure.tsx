@@ -475,6 +475,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["Candidature site carrières", "Échange téléphonique RH", "Entretien RH & Manager"],
       }),
+      make("Inddigo", "Ingénierie & Conseil en transition écologique", "/logos/inddigo.png", {
+        founded: "1986",
+        location: "Agences à l'échelle nationale (France)",
+        revenue: "34,9 M€",
+        employees: "460 collaborateurs",
+        description:
+          "Pionnier du développement durable et de l'ingénierie environnementale depuis 1986, Inddigo accompagne territoires et entreprises privées dans leur transition : économie circulaire, gestion des déchets, décarbonation, énergies renouvelables et résilience climatique.",
+        profiles: ["Ingénieurs énergie & décarbonation", "Ingénieurs bâtiment durable & environnement", "Ingénieurs économie circulaire & déchets", "Ingénieurs mobilités douces & transports"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Préqualification", "2 entretiens (technique métier et RH)"],
+      }),
+      make("VEOLIA Maintenance et services industriels", "Maintenance industrielle & Services aux entreprises", "/logos/veolia-msi.png", {
+        founded: "1984",
+        location: "32 agences en France",
+        revenue: "220 M€",
+        employees: "1 500 collaborateurs",
+        description:
+          "Entité spécialisée de Veolia, elle assure la fiabilité, la performance et la décarbonation des sites industriels. Ses équipes déploient une expertise technique de pointe en maintenance, mécanique, métallurgie, nettoyage industriel et gestion d'arrêts d'unités.",
+        profiles: ["Ingénieurs génie mécanique", "Ingénieurs méthodes & maintenance industrielle", "Responsables d'affaires & arrêts d'unités"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "2 à 3 entretiens RH et opérationnels"],
+      }),
     ],
   },
   {
@@ -568,6 +590,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI – Jeune diplômé"],
         recruitment: ["Dépôt CV", "Entretiens RH et opérationnels (1 à 3)", "Échange technique"],
       }),
+      make("Doors3", "Conseil tech : IA générative, Blockchain & Web3", "/logos/doors3.png", {
+        founded: "2022",
+        location: "Marseille, Paris, Göteborg (Suède)",
+        revenue: "1,5 M€",
+        employees: "9 collaborateurs",
+        description:
+          "Cabinet de conseil en technologies de rupture fondé à Marseille, Doors3 transforme les innovations émergentes (IA générative, blockchain, expériences immersives) en solutions business concrètes, de la vision stratégique au déploiement technique.",
+        profiles: ["Consultants IA Générative", "Consultants Blockchain & Crypto", "Développeurs Full Stack", "Business Developers / Sales Tech"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Dépôt de CV et lettre de motivation", "Entretiens de sélection"],
+      }),
+      make("LUCCA", "Édition logicielle SaaS / SIRH", "/logos/lucca.png", {
+        founded: "2002",
+        location: "Paris (siège), Marseille, Nantes — Espagne, Allemagne, Suisse",
+        revenue: "71 M€",
+        employees: "800 collaborateurs",
+        description:
+          "Éditeur SaaS en forte croissance, Lucca conçoit des logiciels RH et administratifs intuitifs (congés, paie, notes de frais, temps de travail) déployés auprès de 10 000 entreprises clientes et plus d'un million d'utilisateurs à travers le monde.",
+        profiles: ["Software Engineers (Full Stack, Backend, Frontend)", "Ingénieurs DevOps & Cloud", "Product Managers & Développeurs applicatifs"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "4 étapes : RH, Manager, Petit oral, Grand oral"],
+      }),
     ],
   },
   {
@@ -628,6 +672,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Jeunes diplômés grandes écoles d'ingénieurs", "Conseil en organisation & SI", "Gestion du changement & pilotage de projet", "Sens du collectif et esprit entrepreneurial"],
         positions: ["CDI", "Stage"],
         recruitment: ["3 entretiens de motivation conduits directement avec des consultants"],
+      }),
+      make("Talisker Consulting", "Conseil en management & Transformation", "/logos/talisker.png", {
+        founded: "2006",
+        location: "France & International",
+        revenue: "7,5 M€",
+        employees: "47 collaborateurs",
+        description:
+          "Cabinet de conseil en management indépendant à taille humaine, Talisker accompagne les directions générales et métiers dans leurs transformations stratégiques, managériales et digitales (IA conversationnelle, refonte des DSI) grâce à la dynamique collective et au mentorat.",
+        profiles: ["Consultants transformation & organisation des DSI", "Consultants stratégie & dynamique collective", "Consultants IA & technologies innovantes"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Entretien RH", "2 études de cas avec Managers/Partners", "Entretien final Executive Partner"],
       }),
     ],
   },
@@ -843,7 +898,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France"],
+    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting"],
   },
   {
     label: "Énergie",
@@ -867,11 +922,11 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Environnement",
-    names: ["EODD Ingénieurs Conseils", "PAPREC", "Pellenc ST"],
+    names: ["EODD Ingénieurs Conseils", "Inddigo", "PAPREC", "Pellenc ST"],
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3"],
   },
   {
     label: "Ingénierie",
@@ -884,6 +939,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Groupe LGM",
       "Groupe ADF",
       "Egis",
+      "VEOLIA Maintenance et services industriels",
     ],
   },
   {
