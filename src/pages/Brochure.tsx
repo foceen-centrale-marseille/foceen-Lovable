@@ -661,6 +661,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage", "VIE"],
         recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
       }),
+      make("Deloitte", "Audit, Conseil & Stratégie", "/logos/deloitte.png", {
+        founded: "1845",
+        location: "17 bureaux en France — Présence dans 150+ pays",
+        revenue: "NC",
+        employees: "8 000 collaborateurs (France)",
+        description:
+          "Leader mondial du conseil et de l'audit, Deloitte propose l'offre pluridisciplinaire la plus complète du marché. Ses équipes accompagnent les entreprises de toutes tailles dans leurs transformations stratégiques, technologiques (IA, cloud, cyber), financières et durables au sein d'un environnement fondé sur l'intelligence collective.",
+        profiles: ["Étudiants M2 & jeunes diplômés ingénieurs", "Conseil en stratégie & management", "Transformation digitale, Cyber & Data", "Audit financier & conseil extra-financier (ESG)"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretiens de recrutement RH et opérationnels"],
+      }),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
       make("Oresys", "Conseil en management & organisation", "/logos/oresys.png", {
         founded: "1981",
@@ -776,6 +787,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Agroalimentaire",
     companies: [
+      make("COCA-COLA EUROPACIFIC PARTNERS", "Agroalimentaire & Biens de consommation", "/logos/ccep.png", {
+        founded: "NC",
+        location: "Présence dans 31 pays (usines et sites logistiques en France)",
+        revenue: "NC",
+        employees: "39 000 collaborateurs",
+        description:
+          "Coca-Cola Europacific Partners (CCEP) embouteille, commercialise et distribue les boissons les plus emblématiques au monde auprès de 600 millions de consommateurs. Acteur industriel de premier plan, le groupe investit dans les technologies de pointe, la supply chain agile et la transition écologique des emballages.",
+        profiles: ["Étudiants et diplômés niveau Master / Ingénieur", "Ingénieurs production & excellence opérationnelle", "Supply chain, logistique & maintenance industrielle", "Qualité, sécurité alimentaire & RSE"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretiens de recrutement"],
+      }),
       make("HEINEKEN", "Agroalimentaire / Brasserie", "/logos/heineken.png", {
         founded: "1864",
         location: "Brasserie de Marseille (La Valentine 13011) & Mons-en-Barœul",
@@ -898,7 +920,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting"],
+    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte"],
   },
   {
     label: "Énergie",
@@ -960,6 +982,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     label: "Autres",
     names: [
       "HEINEKEN",
+      "COCA-COLA EUROPACIFIC PARTNERS",
       "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
