@@ -486,7 +486,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Préqualification", "2 entretiens (technique métier et RH)"],
       }),
-      make("VEOLIA Maintenance et services industriels", "Maintenance industrielle & Services aux entreprises", "/logos/veolia-msi.png", {
+      make("VEOLIA Maintenance et services industriels", "Maintenance industrielle & Services aux entreprises", "/logos/veolia.png", {
         founded: "1984",
         location: "32 agences en France",
         revenue: "220 M€",
