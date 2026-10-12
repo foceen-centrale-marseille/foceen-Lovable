@@ -982,6 +982,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     label: "Autres",
     names: [
       "HEINEKEN",
+      "COCA-COLA EUROPACIFIC PARTNERS",
       "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
