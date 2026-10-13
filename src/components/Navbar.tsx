@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Qui sommes-nous ?", path: "/qui-sommes-nous" },
   { label: "Notre équipe", path: "/notre-equipe" },
   { label: "Infos Pratiques", path: "/infos-pratiques" },
+  { label: "FAQ", path: "/faq" },
   { label: "S'INSCRIRE", path: "/inscrire", external: true },
 ];
 
