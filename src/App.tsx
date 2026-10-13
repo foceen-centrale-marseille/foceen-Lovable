@@ -14,6 +14,7 @@ import InfosPratiques from "./pages/InfosPratiques";
 import NotFound from "./pages/NotFound";
 import Redirect from "./pages/Redirect";
 import Brochure from "./pages/Brochure";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/notre-equipe" element={<NotreEquipe />} />
             <Route path="/notre-equipe/:slug" element={<NosEquipePole />} />
             <Route path="/infos-pratiques" element={<InfosPratiques />} />
+            <Route path="/faq" element={<FAQ />} />
           </Route>
           <Route path="/redirect-linkedin" element={<Redirect />} />
           <Route path="/brochure" element={<Brochure />} />
