@@ -222,6 +222,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Entretien RH (tests de langue, personnalité & enquête administrative)", "Entretien manager opérationnel"],
       }),
+      make("Recycle Plastique", "Recyclage & Économie circulaire", "/logos/recycle-plastique.png", {
+        founded: "2019",
+        location: "France",
+        revenue: "NC",
+        employees: "3 collaborateurs",
+        description:
+          "Entreprise engagée dans la transition écologique concrète, Recycle Plastique valorise et recycle les matières plastiques pour répondre aux défis majeurs de l'économie circulaire et préserver les ressources de la planète.",
+        profiles: ["Profils engagés & résilients en transition écologique", "Génie des matériaux & procédés de valorisation plastique", "Gestion de projet environnement & RSE"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Sélection sur CV et lettre de motivation", "Entretien d'équipe"],
+      }),
       make("Technip Energies", "Ingénierie & Technologies de l'Énergie", "/logos/technip-energies.png", {
         founded: "1958",
         location: "Présence internationale (35 pays)",
@@ -305,6 +316,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
       }),
       make("Groupe SNEF", "Génie électrique & industriel", "/logos/groupe-snef.png"),
+      make("NAOS", "Dermocosmétique & Écobiologie", "/logos/naos.png", {
+        founded: "1977",
+        location: "Siège à Aix-en-Provence, Lyon, Paris & International (130 pays)",
+        revenue: "900 M€",
+        employees: "3 500 collaborateurs",
+        description:
+          "Entreprise à mission et créatrice des marques Bioderma, Institut Esthederm et État Pur, NAOS développe une approche scientifique pionnière : l'écobiologie, qui respecte l'écosystème cutané. Détenue par un fonds de dotation dédié au développement du potentiel humain, l'entreprise investit activement dans la R&D, l'industrie responsable et le soin du vivant.",
+        profiles: ["Ingénieurs R&D formulation & Chimie du vivant", "Ingénieurs procédés industriels, Packaging & Qualité", "Supply chain, Achats & Opérations internationales", "Marketing scientifique, Business & Fonctions supports"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Candidature sur careers.naos.com", "Échange RH", "Entretien manager & experts métiers"],
+      }),
       make("Onet Technologies", "Ingénierie & Services nucléaires", "/logos/onet.png", {
         founded: "2004",
         location: "Multi-sites en France (siège à Marseille)",
@@ -977,7 +999,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Environnement",
-    names: ["EODD Ingénieurs Conseils", "Inddigo", "PAPREC", "Pellenc ST"],
+    names: ["EODD Ingénieurs Conseils", "Inddigo", "PAPREC", "Pellenc ST", "Recycle Plastique"],
   },
   {
     label: "Informatique, IT & Média",
@@ -1017,6 +1039,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     names: [
       "HEINEKEN",
       "COCA-COLA EUROPACIFIC PARTNERS",
+      "NAOS",
       "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
