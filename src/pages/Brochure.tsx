@@ -1008,6 +1008,34 @@ const SECTORS: { name: string; companies: Company[] }[] = [
       }),
     ],
   },
+  {
+    name: "Associations & ONG",
+    companies: [
+      make(
+        "Amnesty International",
+        "Défense des droits humains & ONG",
+        "/logos/amnesty-international.png",
+        {
+          founded: "2022 (groupe local)",
+          location: "France & International",
+          revenue: "NC",
+          employees: "NC",
+          description:
+            "Mouvement mondial et indépendant, Amnesty International œuvre pour le respect de l'ensemble des droits énoncés dans la Déclaration universelle des droits de l'homme. L'organisation mène des recherches de terrain, sensibilise le public et engage des actions de plaidoyer pour prévenir et faire cesser les atteintes graves aux libertés fondamentales.",
+          profiles: [
+            "Tous profils engagés",
+            "Plaidoyer, recherche & communication",
+            "Gestion de projets associatifs & mobilisation",
+          ],
+          positions: ["Stage"],
+          recruitment: [
+            "Candidature via le site officiel amnesty.fr",
+            "Entretien de motivation",
+          ],
+        },
+      ),
+    ],
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -1136,6 +1164,10 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Formation",
     names: ["AVEC L'INDUSTRIE", "emlyon business school", "ESSEC Business School", "ISAE-SUPAERO", "KEDGE Business School", "IAE Aix", "ISEN Méditerranée", "ESSCA School of Management", "Apec"],
+  },
+  {
+    label: "Associations & ONG",
+    names: ["Amnesty International"],
   },
 ];
 
