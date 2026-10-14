@@ -222,6 +222,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Candidature sur le site carrières", "Tests d'anglais & d'auto-évaluation comportementale", "Parcours RH et 2 entretiens managers (3 maximum)"],
       }),
+      make("Groupe SNEF", "Génie électrique & Solutions multitechniques", "/logos/groupe-snef.png", {
+        founded: "1905",
+        location: "Siège historique à Marseille — Présence dans 30+ pays",
+        revenue: "2,2 Md €",
+        employees: "14 500 collaborateurs",
+        description:
+          "Fondé à Marseille en 1905, le Groupe Snef est un acteur majeur des solutions multitechniques en France et à l'international. Le groupe conçoit, intègre et maintient des installations complexes dans les secteurs de l'énergie, de l'industrie, du maritime, du nucléaire et du tertiaire pour accompagner la transition énergétique et numérique.",
+        profiles: ["Ingénieurs génie électrique, automatisme & énergie", "Ingénieurs d'études & projets (industrie, naval, nucléaire)", "Conducteurs de travaux & chargés d'affaires", "Responsables d'opérations en infrastructures & tertiaire"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV (jobs.groupesnef.com)", "2 à 3 entretiens individuels en agences SNEF"],
+      }),
       make("Orano", "Énergie nucléaire", "/logos/orano.png", {
         founded: "2018 (issu d'une longue histoire nucléaire)",
         location: "17 sites en France — Présence internationale",
@@ -326,7 +337,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
       }),
-      make("Groupe SNEF", "Génie électrique & industriel", "/logos/groupe-snef.png"),
       make("NAOS", "Dermocosmétique & Écobiologie", "/logos/naos.png", {
         founded: "1977",
         location: "Siège à Aix-en-Provence, Lyon, Paris & International (130 pays)",
@@ -1063,6 +1073,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Enedis",
       "EP2C Energy",
       "Framatome",
+      "Groupe SNEF",
       "Groupe REEL",
       "Onet Technologies",
       "Orano",
@@ -1087,7 +1098,6 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     label: "Ingénierie",
     names: [
       "Bee Engineering",
-      "Groupe SNEF",
       "AKKODIS",
       "Groupe Ortec",
       "Setec",
