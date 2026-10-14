@@ -117,7 +117,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "BTP",
     companies: [
-      make("Bouygues Construction", "BTP", "/logos/bouygues-batiment.jpg"),
       make("Bouygues Bâtiment Sud-Est", "BTP & Construction", "/logos/bouygues-batiment-sud-est.png", {
         founded: "1973",
         location: "Région Sud-Est",
@@ -140,6 +139,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection des CV par les RH", "Échange téléphonique", "Rencontre avec l'opérationnel recruteur"],
       }),
+      make("RAZEL-BEC", "BTP", "/logos/razel-bec.png", {
+        founded: "1885",
+        location: "Nationale (PACA, IDF, AURA, Occitanie...) & Monaco",
+        revenue: "1,05 Md €",
+        employees: "5 000",
+        description:
+          "Filiale du Groupe FAYAT, RAZEL-BEC est un expert de référence des grands chantiers de travaux publics : ouvrages d'art, infrastructures linéaires, travaux souterrains, génie civil nucléaire et barrages. Fort de 145 ans d'histoire, le groupe déploie son excellence technique et humaine en France et à l'international.",
+        profiles: ["Conduite de travaux", "Ingénieurs études de prix", "Ingénieurs études techniques & méthodes", "Ingénieurs QSE & matériel"],
+        positions: ["Stage"],
+        recruitment: ["Préqualification RH (soft skills & motivation)", "Entretien opérationnel avec le tuteur"],
+      }),
       make("SMAC", "Enveloppe du bâtiment & Rénovation énergétique", "/logos/smac.png", {
         founded: "2005",
         location: "70 agences en France & 4 filiales internationales",
@@ -161,17 +171,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Conduite de travaux & Gestion de chantiers", "Ingénieurs études de prix & Méthodes", "Ingénieurs génie civil & Structures", "Chefs de projet aménagement & Réseaux"],
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Transmission et sélection des CV par les opérationnels", "Entretiens de recrutement"],
-      }),
-      make("RAZEL-BEC", "BTP", "/logos/razel-bec.png", {
-        founded: "1885",
-        location: "Nationale (PACA, IDF, AURA, Occitanie...) & Monaco",
-        revenue: "1,05 Md €",
-        employees: "5 000",
-        description:
-          "Filiale du Groupe FAYAT, RAZEL-BEC est un expert de référence des grands chantiers de travaux publics : ouvrages d'art, infrastructures linéaires, travaux souterrains, génie civil nucléaire et barrages. Fort de 145 ans d'histoire, le groupe déploie son excellence technique et humaine en France et à l'international.",
-        profiles: ["Conduite de travaux", "Ingénieurs études de prix", "Ingénieurs études techniques & méthodes", "Ingénieurs QSE & matériel"],
-        positions: ["Stage"],
-        recruitment: ["Préqualification RH (soft skills & motivation)", "Entretien opérationnel avec le tuteur"],
       }),
     ],
   },
@@ -324,6 +323,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Industrie",
     companies: [
+      make("Groupe ADF", "Industrie", "/logos/groupe-adf.png", {
+        founded: "1962",
+        location: "Vitrolles (siège) — International",
+        revenue: "682 M€",
+        employees: "5 100",
+        description:
+          "Depuis plus de 60 ans, Groupe ADF apporte des solutions complètes pour soutenir la performance des industriels. Ses équipes conçoivent des équipements innovants et assurent le support opérationnel et la maintenance face aux défis de la transition énergétique et digitale.",
+        profiles: ["Ingénieurs mécanique", "Ingénieurs hydraulique", "Chargés de projet", "Responsables qualité"],
+        positions: ["Stage", "Alternance", "CDD", "CDI"],
+        recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
+      }),
       make("EXAIL", "Robotique & Hautes technologies", "/logos/exail.png", {
         founded: "2022 (alliance ECA Group & iXblue)",
         location: "Présence internationale (80+ pays)",
@@ -345,17 +355,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs procédés chimiques", "Chimie des matériaux & formulation", "HSE & Sécurité industrielle", "Transition énergétique & décarbonation"],
         positions: ["CDD", "CDI"],
         recruitment: ["CV + lettre de motivation", "Mise en relation filière"],
-      }),
-      make("Groupe ADF", "Industrie", "/logos/groupe-adf.png", {
-        founded: "1962",
-        location: "Vitrolles (siège) — International",
-        revenue: "682 M€",
-        employees: "5 100",
-        description:
-          "Depuis plus de 60 ans, Groupe ADF apporte des solutions complètes pour soutenir la performance des industriels. Ses équipes conçoivent des équipements innovants et assurent le support opérationnel et la maintenance face aux défis de la transition énergétique et digitale.",
-        profiles: ["Ingénieurs mécanique", "Ingénieurs hydraulique", "Chargés de projet", "Responsables qualité"],
-        positions: ["Stage", "Alternance", "CDD", "CDI"],
-        recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
       }),
       make("NAOS", "Dermocosmétique & Écobiologie", "/logos/naos.png", {
         founded: "1977",
@@ -390,17 +389,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI"],
         recruitment: ["Dépôt de CV", "Entretien RH", "Entretien N+1 / N+2", "Anglais professionnel"],
       }),
-      make("Groupe REEL", "Industrie", "/logos/reel.png", {
-        founded: "1946",
-        location: "Siège en France — Présence internationale",
-        revenue: "600 M€",
-        employees: "3 400",
-        description:
-          "Spécialiste de la conception, de la fabrication et de la maintenance de systèmes de levage et de manutention complexes de haute sécurité, le Groupe REEL intervient au cœur des filières les plus exigeantes : nucléaire, aéronautique, hydroélectricité, énergies marines et aluminium.",
-        profiles: ["Automatisme & informatique industrielle", "Conception & calculs mécaniques", "Méthodes industrielles", "Chargés d'affaires techniques juniors"],
-        positions: ["Stage (TFE)", "Alternance", "CDI – Jeune diplômé / Graduate program"],
-        recruitment: ["Sélection CV", "1 à 3 entretiens techniques et RH"],
-      }),
       make("STMicroelectronics", "Industrie", "/logos/stmicroelectronics.png", {
         founded: "1987",
         location: "Internationale (sites en France : PACA, AURA...)",
@@ -415,7 +403,7 @@ const SECTORS: { name: string; companies: Company[] }[] = [
     ],
   },
   {
-    name: "Ingénierie",
+    name: "Ingénierie et Industrie",
     companies: [
       make("AKKODIS", "Ingénierie & IT", "/logos/akkodis.png", {
         founded: "2022",
@@ -439,6 +427,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Candidature en ligne", "Pré-sélection & échange téléphonique", "Entretien RH et managers", "Parcours d'intégration"],
       }),
+      make("Bee Engineering", "Conseil en ingénierie", "/logos/bee-engineering.jpg", {
+        founded: "2010",
+        location: "11 implantations en France (Aix-en-Provence, Lyon, Paris, Nantes...)",
+        revenue: "80 M€",
+        employees: "950 collaborateurs",
+        description:
+          "Société de conseil en ingénierie en forte croissance, Bee Engineering intervient auprès des grands donneurs d'ordre dans les industries de l'énergie et des procédés, les grandes infrastructures et l'industrie des transports.",
+        profiles: ["Ingénieurs énergie & procédés", "Ingénieurs infrastructures", "Ingénieurs transports & mécanique"],
+        positions: ["CDI"],
+        recruitment: ["Sélection sur CV", "Parcours de 3 à 4 entretiens de qualification"],
+      }),
       make("Bertin Technologies", "Instrumentation scientifique & Systèmes critiques", "/logos/bertin-technologies.png", {
         founded: "1956",
         location: "France (Aix, Montigny, Grenoble, Pertuis...) & International (Europe, USA)",
@@ -460,28 +459,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs travaux", "Ingénieurs études techniques", "Chefs de projets ingénierie", "Ingénieurs d'affaires"],
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien téléphonique & présentiel", "Anglais opérationnel requis"],
-      }),
-      make("Bee Engineering", "Conseil en ingénierie", "/logos/bee-engineering.jpg", {
-        founded: "2010",
-        location: "11 implantations en France (Aix-en-Provence, Lyon, Paris, Nantes...)",
-        revenue: "80 M€",
-        employees: "950 collaborateurs",
-        description:
-          "Société de conseil en ingénierie en forte croissance, Bee Engineering intervient auprès des grands donneurs d'ordre dans les industries de l'énergie et des procédés, les grandes infrastructures et l'industrie des transports.",
-        profiles: ["Ingénieurs énergie & procédés", "Ingénieurs infrastructures", "Ingénieurs transports & mécanique"],
-        positions: ["CDI"],
-        recruitment: ["Sélection sur CV", "Parcours de 3 à 4 entretiens de qualification"],
-      }),
-      make("EODD Ingénieurs Conseils", "Conseil & Ingénierie environnementale", "/logos/eodd.png", {
-        founded: "1991",
-        location: "13 agences nationales (France métropolitaine et outre-mer)",
-        revenue: "30 M€",
-        employees: "320 collaborateurs",
-        description:
-          "Société à mission et bureau d'études pionnier de la transformation écologique depuis plus de 30 ans, EODD conçoit et déploie des solutions innovantes et concrètes à haute valeur environnementale et sociale pour l'aménagement urbain, la biodiversité, le bas-carbone et l'économie circulaire.",
-        profiles: ["Chargés d'études & spécialistes environnement", "Chefs de projet transition écologique & énergie", "Ingénieurs écoconception & biodiversité", "Directeurs d'affaires / projets durables"],
-        positions: ["Alternance", "CDI", "Stage"],
-        recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
       }),
       make("ECIA", "Ingénierie Nucléaire", "/logos/ecia.png", {
         founded: "2007",
@@ -516,6 +493,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretiens de recrutement"],
       }),
+      make("EODD Ingénieurs Conseils", "Conseil & Ingénierie environnementale", "/logos/eodd.png", {
+        founded: "1991",
+        location: "13 agences nationales (France métropolitaine et outre-mer)",
+        revenue: "30 M€",
+        employees: "320 collaborateurs",
+        description:
+          "Société à mission et bureau d'études pionnier de la transformation écologique depuis plus de 30 ans, EODD conçoit et déploie des solutions innovantes et concrètes à haute valeur environnementale et sociale pour l'aménagement urbain, la biodiversité, le bas-carbone et l'économie circulaire.",
+        profiles: ["Chargés d'études & spécialistes environnement", "Chefs de projet transition écologique & énergie", "Ingénieurs écoconception & biodiversité", "Directeurs d'affaires / projets durables"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
+      }),
+      make("Inddigo", "Ingénierie & Conseil en transition écologique", "/logos/inddigo.png", {
+        founded: "1986",
+        location: "Agences à l'échelle nationale (France)",
+        revenue: "34,9 M€",
+        employees: "460 collaborateurs",
+        description:
+          "Pionnier du développement durable et de l'ingénierie environnementale depuis 1986, Inddigo accompagne territoires et entreprises privées dans leur transition : économie circulaire, gestion des déchets, décarbonation, énergies renouvelables et résilience climatique.",
+        profiles: ["Ingénieurs énergie & décarbonation", "Ingénieurs bâtiment durable & environnement", "Ingénieurs économie circulaire & déchets", "Ingénieurs mobilités douces & transports"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Préqualification", "2 entretiens (technique métier et RH)"],
+      }),
       make("Groupe LGM", "Ingénierie", "/logos/lgm.png", {
         founded: "1991",
         location: "France & International",
@@ -526,17 +525,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs & Chefs de projet", "AMO / PMO / Contract managers", "Ingénierie du soutien & MCO", "Maîtrise des risques & Ingénierie système"],
         positions: ["Stage", "CDD", "CDI"],
         recruitment: ["Candidature avec CV", "2 étapes en 3 semaines maximum", "Entretiens en visio et sur site"],
-      }),
-      make("Syntec-Ingénierie", "Fédération professionnelle / Ingénierie", "/logos/syntec-ingenierie.png", {
-        founded: "1991",
-        location: "Paris (représentation nationale)",
-        revenue: "Fédération (S.O.)",
-        employees: "Représente 400 entreprises & 90 000 salariés",
-        description:
-          "Fédération professionnelle des entreprises du secteur de l'ingénierie, Syntec-Ingénierie regroupe 400 entreprises actrices de l'écoconception, de la décarbonation industrielle et des énergies propres. L'ingénierie est le premier débouché pour les jeunes ingénieurs.",
-        profiles: ["Fédération professionnelle : présentation des métiers et opportunités de la filière ingénierie"],
-        positions: ["Information carrières & filières"],
-        recruitment: ["Échanges sur stand / Orientation vers les entreprises adhérentes"],
       }),
       make("Groupe Ortec", "Ingénierie", "/logos/ortec.png", {
         founded: "1992",
@@ -549,6 +537,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Échange stand / Dépôt CV", "Mise en relation recruteur", "Entretiens opérationnels"],
       }),
+      make("Groupe REEL", "Industrie", "/logos/reel.png", {
+        founded: "1946",
+        location: "Siège en France — Présence internationale",
+        revenue: "600 M€",
+        employees: "3 400",
+        description:
+          "Spécialiste de la conception, de la fabrication et de la maintenance de systèmes de levage et de manutention complexes de haute sécurité, le Groupe REEL intervient au cœur des filières les plus exigeantes : nucléaire, aéronautique, hydroélectricité, énergies marines et aluminium.",
+        profiles: ["Automatisme & informatique industrielle", "Conception & calculs mécaniques", "Méthodes industrielles", "Chargés d'affaires techniques juniors"],
+        positions: ["Stage (TFE)", "Alternance", "CDI – Jeune diplômé / Graduate program"],
+        recruitment: ["Sélection CV", "1 à 3 entretiens techniques et RH"],
+      }),
       make("Setec", "Ingénierie", "/logos/setec.png", {
         founded: "1957",
         location: "Vitrolles, Paris, Lyon, Bordeaux, Toulouse, Nantes",
@@ -560,16 +559,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["Candidature site carrières", "Échange téléphonique RH", "Entretien RH & Manager"],
       }),
-      make("Inddigo", "Ingénierie & Conseil en transition écologique", "/logos/inddigo.png", {
-        founded: "1986",
-        location: "Agences à l'échelle nationale (France)",
-        revenue: "34,9 M€",
-        employees: "460 collaborateurs",
+      make("Syntec-Ingénierie", "Fédération professionnelle / Ingénierie", "/logos/syntec-ingenierie.png", {
+        founded: "1991",
+        location: "Paris (représentation nationale)",
+        revenue: "Fédération (S.O.)",
+        employees: "Représente 400 entreprises & 90 000 salariés",
         description:
-          "Pionnier du développement durable et de l'ingénierie environnementale depuis 1986, Inddigo accompagne territoires et entreprises privées dans leur transition : économie circulaire, gestion des déchets, décarbonation, énergies renouvelables et résilience climatique.",
-        profiles: ["Ingénieurs énergie & décarbonation", "Ingénieurs bâtiment durable & environnement", "Ingénieurs économie circulaire & déchets", "Ingénieurs mobilités douces & transports"],
-        positions: ["Alternance", "CDD", "CDI", "Stage"],
-        recruitment: ["Sélection sur CV", "Préqualification", "2 entretiens (technique métier et RH)"],
+          "Fédération professionnelle des entreprises du secteur de l'ingénierie, Syntec-Ingénierie regroupe 400 entreprises actrices de l'écoconception, de la décarbonation industrielle et des énergies propres. L'ingénierie est le premier débouché pour les jeunes ingénieurs.",
+        profiles: ["Fédération professionnelle : présentation des métiers et opportunités de la filière ingénierie"],
+        positions: ["Information carrières & filières"],
+        recruitment: ["Échanges sur stand / Orientation vers les entreprises adhérentes"],
       }),
       make("Tractebel", "Ingénierie de l'énergie & Grandes infrastructures", "/logos/tractebel.png", {
         founded: "1994 (héritage Coyne et Bellier)",
@@ -620,17 +619,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "2 entretiens (RH + manager métier)", "En présentiel ou visioconférence"],
       }),
-      make("Capgemini", "Conseil, Tech & Ingénierie", "/logos/capgemini.png", {
-        founded: "1967",
-        location: "20+ villes en France — Présence dans 50 pays",
-        revenue: "22,5 Md €",
-        employees: "420 000",
-        description:
-          "Partenaire mondial de la transformation business et technologique, Capgemini intègre la puissance de l'IA, du cloud et de l'ingénierie de pointe pour concevoir et concrétiser le futur des grandes organisations à travers des solutions responsables et durables de bout en bout.",
-        profiles: ["Conseil & Management des SI", "Génie logiciel & Systèmes/Réseaux", "Cybersécurité & Cloud", "Data science, IA & Mathématiques appliquées", "Systèmes embarqués & Mécanique"],
-        positions: ["Stage"],
-        recruitment: ["CV + lettre de motivation", "Entretiens RH et opérationnels", "Anglais indispensable"],
-      }),
       make("CGI France", "Conseil & Services IT", "/logos/cgi.png", {
         founded: "1976",
         location: "30+ agences en France & Présence dans 40 pays",
@@ -652,6 +640,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs R&D logicielle", "Ingénieurs développement (C++, Python, Web)", "Ingénieurs technico-commerciaux", "Ingénieurs modélisation & simulation 3D"],
         positions: ["Stage"],
         recruitment: ["CV + LM", "Entretien Manager opérationnel", "Entretien RH (visio ou sur site)"],
+      }),
+      make("Doors3", "Conseil tech : IA générative, Blockchain & Web3", "/logos/doors3.png", {
+        founded: "2022",
+        location: "Marseille, Paris, Göteborg (Suède)",
+        revenue: "1,5 M€",
+        employees: "9 collaborateurs",
+        description:
+          "Cabinet de conseil en technologies de rupture fondé à Marseille, Doors3 transforme les innovations émergentes (IA générative, blockchain, expériences immersives) en solutions business concrètes, de la vision stratégique au déploiement technique.",
+        profiles: ["Consultants IA Générative", "Consultants Blockchain & Crypto", "Développeurs Full Stack", "Business Developers / Sales Tech"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Dépôt de CV et lettre de motivation", "Entretiens de sélection"],
+      }),
+      make("LUCCA", "Édition logicielle SaaS / SIRH", "/logos/lucca.png", {
+        founded: "2002",
+        location: "Paris (siège), Marseille, Nantes — Espagne, Allemagne, Suisse",
+        revenue: "71 M€",
+        employees: "800 collaborateurs",
+        description:
+          "Éditeur SaaS en forte croissance, Lucca conçoit des logiciels RH et administratifs intuitifs (congés, paie, notes de frais, temps de travail) déployés auprès de 10 000 entreprises clientes et plus d'un million d'utilisateurs à travers le monde.",
+        profiles: ["Software Engineers (Full Stack, Backend, Frontend)", "Ingénieurs DevOps & Cloud", "Product Managers & Développeurs applicatifs"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "4 étapes : RH, Manager, Petit oral, Grand oral"],
       }),
       make("Murex", "Fintech / Logiciel financier", "/logos/murex.png", {
         founded: "1986",
@@ -686,17 +696,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["Candidatures et offres sur orange.jobs"],
       }),
-      make("Viveris", "Numérique", "/logos/viveris.png", {
-        founded: "1986",
-        location: "France, Belgique, Maroc",
-        revenue: "94,2 M€",
-        employees: "920",
-        description:
-          "Viveris est un groupe de conseil et d’ingénierie indépendant qui accompagne depuis plus de 30 ans la transformation numérique des entreprises et de leurs produits (Systèmes embarqués, Informatique scientifique et technique, Systèmes d’information, Infrastructures).",
-        profiles: ["Ingénieurs Systèmes embarqués (HW/SW/embarqué/temps réel/IoT)", "Ingénieurs Systèmes d’information (FullStack Java/React/Data/Cloud)", "Ingénieurs Infrastructures (Sécurité, Admin Linux, Réseau, DevOps, DevSecOps)"],
-        positions: ["CDI", "Stage"],
-        recruitment: ["CV sur le site carrières viveris.fr"],
-      }),
       make("Sopra Steria", "Numérique", "/logos/sopra-steria.png", {
         founded: "1968",
         location: "50+ sites en France (dont Sud-Est) — près de 30 pays",
@@ -708,27 +707,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI – Jeune diplômé"],
         recruitment: ["Dépôt CV", "Entretiens RH et opérationnels (1 à 3)", "Échange technique"],
       }),
-      make("Doors3", "Conseil tech : IA générative, Blockchain & Web3", "/logos/doors3.png", {
-        founded: "2022",
-        location: "Marseille, Paris, Göteborg (Suède)",
-        revenue: "1,5 M€",
-        employees: "9 collaborateurs",
+      make("Viveris", "Numérique", "/logos/viveris.png", {
+        founded: "1986",
+        location: "France, Belgique, Maroc",
+        revenue: "94,2 M€",
+        employees: "920",
         description:
-          "Cabinet de conseil en technologies de rupture fondé à Marseille, Doors3 transforme les innovations émergentes (IA générative, blockchain, expériences immersives) en solutions business concrètes, de la vision stratégique au déploiement technique.",
-        profiles: ["Consultants IA Générative", "Consultants Blockchain & Crypto", "Développeurs Full Stack", "Business Developers / Sales Tech"],
-        positions: ["Alternance", "CDI", "Stage"],
-        recruitment: ["Dépôt de CV et lettre de motivation", "Entretiens de sélection"],
-      }),
-      make("LUCCA", "Édition logicielle SaaS / SIRH", "/logos/lucca.png", {
-        founded: "2002",
-        location: "Paris (siège), Marseille, Nantes — Espagne, Allemagne, Suisse",
-        revenue: "71 M€",
-        employees: "800 collaborateurs",
-        description:
-          "Éditeur SaaS en forte croissance, Lucca conçoit des logiciels RH et administratifs intuitifs (congés, paie, notes de frais, temps de travail) déployés auprès de 10 000 entreprises clientes et plus d'un million d'utilisateurs à travers le monde.",
-        profiles: ["Software Engineers (Full Stack, Backend, Frontend)", "Ingénieurs DevOps & Cloud", "Product Managers & Développeurs applicatifs"],
+          "Viveris est un groupe de conseil et d’ingénierie indépendant qui accompagne depuis plus de 30 ans la transformation numérique des entreprises et de leurs produits (Systèmes embarqués, Informatique scientifique et technique, Systèmes d’information, Infrastructures).",
+        profiles: ["Ingénieurs Systèmes embarqués (HW/SW/embarqué/temps réel/IoT)", "Ingénieurs Systèmes d’information (FullStack Java/React/Data/Cloud)", "Ingénieurs Infrastructures (Sécurité, Admin Linux, Réseau, DevOps, DevSecOps)"],
         positions: ["CDI", "Stage"],
-        recruitment: ["Sélection sur CV", "4 étapes : RH, Manager, Petit oral, Grand oral"],
+        recruitment: ["CV sur le site carrières viveris.fr"],
       }),
     ],
   },
@@ -756,6 +744,28 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Conseillers en stratégie patrimoniale", "Profils commerciaux, banque, finance & assurance", "Chefs de projet ingénierie patrimoniale"],
         positions: ["CDI"],
         recruitment: ["Sélection sur CV", "Entretien de présentation", "1/2 journée en immersion opérationnelle"],
+      }),
+      make("Capgemini", "Conseil, Tech & Ingénierie", "/logos/capgemini.png", {
+        founded: "1967",
+        location: "20+ villes en France — Présence dans 50 pays",
+        revenue: "22,5 Md €",
+        employees: "420 000",
+        description:
+          "Partenaire mondial de la transformation business et technologique, Capgemini intègre la puissance de l'IA, du cloud et de l'ingénierie de pointe pour concevoir et concrétiser le futur des grandes organisations à travers des solutions responsables et durables de bout en bout.",
+        profiles: ["Conseil & Management des SI", "Génie logiciel & Systèmes/Réseaux", "Cybersécurité & Cloud", "Data science, IA & Mathématiques appliquées", "Systèmes embarqués & Mécanique"],
+        positions: ["Stage"],
+        recruitment: ["CV + lettre de motivation", "Entretiens RH et opérationnels", "Anglais indispensable"],
+      }),
+      make("Deloitte", "Audit, Conseil & Stratégie", "/logos/deloitte.png", {
+        founded: "1845",
+        location: "17 bureaux en France — Présence dans 150+ pays",
+        revenue: "NC",
+        employees: "8 000 collaborateurs (France)",
+        description:
+          "Leader mondial du conseil et de l'audit, Deloitte propose l'offre pluridisciplinaire la plus complète du marché. Ses équipes accompagnent les entreprises de toutes tailles dans leurs transformations stratégiques, technologiques (IA, cloud, cyber), financières et durables au sein d'un environnement fondé sur l'intelligence collective.",
+        profiles: ["Étudiants M2 & jeunes diplômés ingénieurs", "Conseil en stratégie & management", "Transformation digitale, Cyber & Data", "Audit financier & conseil extra-financier (ESG)"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretiens de recrutement RH et opérationnels"],
       }),
       make("EY Services France", "Audit, Conseil & Stratégie", "/logos/ey.png", {
         founded: "1989",
@@ -789,17 +799,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Signalisation & automatismes (ERTMS/CBTC)", "Génie électrique & courants forts/faibles", "Matériel roulant & systèmes embarqués", "Génie civil, infrastructures & sûreté de fonctionnement"],
         positions: ["CDI", "Stage", "VIE"],
         recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
-      }),
-      make("Deloitte", "Audit, Conseil & Stratégie", "/logos/deloitte.png", {
-        founded: "1845",
-        location: "17 bureaux en France — Présence dans 150+ pays",
-        revenue: "NC",
-        employees: "8 000 collaborateurs (France)",
-        description:
-          "Leader mondial du conseil et de l'audit, Deloitte propose l'offre pluridisciplinaire la plus complète du marché. Ses équipes accompagnent les entreprises de toutes tailles dans leurs transformations stratégiques, technologiques (IA, cloud, cyber), financières et durables au sein d'un environnement fondé sur l'intelligence collective.",
-        profiles: ["Étudiants M2 & jeunes diplômés ingénieurs", "Conseil en stratégie & management", "Transformation digitale, Cyber & Data", "Audit financier & conseil extra-financier (ESG)"],
-        positions: ["Alternance", "CDI", "Stage"],
-        recruitment: ["Sélection sur CV", "Entretiens de recrutement RH et opérationnels"],
       }),
       make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
       make("Oresys", "Conseil en management & organisation", "/logos/oresys.png", {
@@ -1121,7 +1120,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte", "Cap Finances"],
+    names: ["KPMG", "Onepoint", "Oresys", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte", "Cap Finances", "Capgemini"],
   },
   {
     label: "Énergie",
@@ -1134,7 +1133,6 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "EP2C Energy",
       "Framatome",
       "Groupe SNEF",
-      "Groupe REEL",
       "Onet Technologies",
       "Orano",
       "TechnicAtome",
@@ -1144,7 +1142,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "BTP & Construction",
-    names: ["Bouygues Bâtiment Sud-Est", "Bouygues Construction", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"],
+    names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"],
   },
   {
     label: "Environnement",
@@ -1152,11 +1150,14 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3", "Atos", "CGI France", "BPCE Solutions informatiques"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3", "Atos", "CGI France", "BPCE Solutions informatiques"],
   },
   {
-    label: "Ingénierie",
+    label: "Ingénierie et Industrie",
     names: [
+      "Bertin Technologies",
+      "Groupe REEL",
+      "Syntec-Ingénierie",
       "Bee Engineering",
       "AKKODIS",
       "Groupe Ortec",
@@ -1188,7 +1189,6 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "HEINEKEN",
       "COCA-COLA EUROPACIFIC PARTNERS",
       "NAOS",
-      "Syntec-Ingénierie",
       "France Chimie Méditerranée",
       "EMIS et EMIS Access",
     ],
