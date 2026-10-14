@@ -439,6 +439,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Candidature en ligne", "Pré-sélection & échange téléphonique", "Entretien RH et managers", "Parcours d'intégration"],
       }),
+      make("Bertin Technologies", "Instrumentation scientifique & Systèmes critiques", "/logos/bertin-technologies.png", {
+        founded: "1956",
+        location: "France (Aix, Montigny, Grenoble, Pertuis...) & International (Europe, USA)",
+        revenue: "178 M€",
+        employees: "1 000 collaborateurs",
+        description:
+          "Fondé en 1956 par l'ingénieur Jean Bertin, Bertin Technologies conçoit et développe des équipements de pointe et des systèmes de mesure pour des applications scientifiques et critiques. Ses innovations interviennent dans des secteurs hautement stratégiques : défense et sécurité, nucléaire civil, spatial, environnement et sciences du vivant.",
+        profiles: ["Ingénieurs mécanique & conception de systèmes", "Ingénieurs optique, optronique & photonique", "Ingénieurs instrumentation, mesure & physique", "Ingénieurs R&D systèmes critiques"],
+        positions: ["Alternance", "Stage (opportunités de CDD/CDI en pré-embauche)"],
+        recruitment: ["Candidature sur bertintechnologies.taleez.com", "Présélection sur CV", "Échange téléphonique RH", "Entretien technique avec manager / tuteur"],
+      }),
       make("Cap Ingelec", "Ingénierie & Bâtiments complexes", "/logos/cap-ingelec.png", {
         founded: "1992",
         location: "15 agences en France (dont Marseille/Aix) & International",
