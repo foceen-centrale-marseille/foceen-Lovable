@@ -117,17 +117,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "BTP",
     companies: [
-      make("SMAC", "Enveloppe du bâtiment & Rénovation énergétique", "/logos/smac.png", {
-        founded: "2005",
-        location: "70 agences en France & 4 filiales internationales",
-        revenue: "500 M€",
-        employees: "2 400 collaborateurs",
-        description:
-          "Leader français de l'enveloppe du bâtiment, SMAC intervient en étanchéité, façades architecturales, bardage et rénovation énergétique (toitures végétalisées, ombrières photovoltaïques) sur des chantiers tertiaires, résidentiels et industriels d'envergure.",
-        profiles: ["Ingénieurs travaux & Conduite de chantier", "Ingénieurs bureau d'études & méthodes", "Chargés d'affaires & métreurs", "Ingénieurs performance énergétique du bâtiment"],
-        positions: ["Alternance", "Stage"],
-        recruitment: ["Sélection sur CV", "2 entretiens opérationnels en agence"],
-      }),
       make("Bouygues Construction", "BTP", "/logos/bouygues-batiment.jpg"),
       make("Bouygues Bâtiment Sud-Est", "BTP & Construction", "/logos/bouygues-batiment-sud-est.png", {
         founded: "1973",
@@ -150,6 +139,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs travaux génie civil & bâtiment", "Ingénieurs études & méthodes", "Ingénieurs énergie systèmes", "Chefs de projet concessions & infrastructures"],
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection des CV par les RH", "Échange téléphonique", "Rencontre avec l'opérationnel recruteur"],
+      }),
+      make("SMAC", "Enveloppe du bâtiment & Rénovation énergétique", "/logos/smac.png", {
+        founded: "2005",
+        location: "70 agences en France & 4 filiales internationales",
+        revenue: "500 M€",
+        employees: "2 400 collaborateurs",
+        description:
+          "Leader français de l'enveloppe du bâtiment, SMAC intervient en étanchéité, façades architecturales, bardage et rénovation énergétique (toitures végétalisées, ombrières photovoltaïques) sur des chantiers tertiaires, résidentiels et industriels d'envergure.",
+        profiles: ["Ingénieurs travaux & Conduite de chantier", "Ingénieurs bureau d'études & méthodes", "Chargés d'affaires & métreurs", "Ingénieurs performance énergétique du bâtiment"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Sélection sur CV", "2 entretiens opérationnels en agence"],
       }),
       make("Vinci Construction", "BTP & Grands Projets", "/logos/vinci-construction.png", {
         founded: "2000",
@@ -354,17 +354,6 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Ingénierie",
     companies: [
-      make("Tractebel", "Ingénierie de l'énergie & Grandes infrastructures", "/logos/tractebel.png", {
-        founded: "1994 (héritage Coyne et Bellier)",
-        location: "France & International",
-        revenue: "118 M€",
-        employees: "600 collaborateurs (Tractebel France)",
-        description:
-          "Filiale d'ingénierie internationale d'ENGIE, Tractebel est un acteur historique de la transition énergétique. Spécialiste mondial des ouvrages hydroélectriques, des barrages et du nucléaire civil (îlots nucléaires), l'entreprise conçoit des infrastructures complexes décarbonées.",
-        profiles: ["Ingénieurs génie civil & calcul de structures", "Ingénieurs mécanique & modélisation 3D / CAO", "Ingénieurs procédés, hydraulique & nucléaire", "Chefs de projets & suivi de travaux"],
-        positions: ["Alternance", "Stage"],
-        recruitment: ["Sélection sur CV", "Entretiens techniques et RH"],
-      }),
       make("AKKODIS", "Ingénierie & IT", "/logos/akkodis.png", {
         founded: "2022",
         location: "30+ agences en France — Présence dans 30 pays",
@@ -507,6 +496,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs énergie & décarbonation", "Ingénieurs bâtiment durable & environnement", "Ingénieurs économie circulaire & déchets", "Ingénieurs mobilités douces & transports"],
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Préqualification", "2 entretiens (technique métier et RH)"],
+      }),
+      make("Tractebel", "Ingénierie de l'énergie & Grandes infrastructures", "/logos/tractebel.png", {
+        founded: "1994 (héritage Coyne et Bellier)",
+        location: "France & International",
+        revenue: "118 M€",
+        employees: "600 collaborateurs (Tractebel France)",
+        description:
+          "Filiale d'ingénierie internationale d'ENGIE, Tractebel est un acteur historique de la transition énergétique. Spécialiste mondial des ouvrages hydroélectriques, des barrages et du nucléaire civil (îlots nucléaires), l'entreprise conçoit des infrastructures complexes décarbonées.",
+        profiles: ["Ingénieurs génie civil & calcul de structures", "Ingénieurs mécanique & modélisation 3D / CAO", "Ingénieurs procédés, hydraulique & nucléaire", "Chefs de projets & suivi de travaux"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretiens techniques et RH"],
       }),
       make("VEOLIA Maintenance et services industriels", "Maintenance industrielle & Services aux entreprises", "/logos/veolia.png", {
         founded: "1984",
