@@ -84,16 +84,16 @@ const partners = [
   { name: "Cafés Richard", src: "/logo-cafes-richard.png" },
 ];
 
-const sncf = make("SNCF Réseau", "Gestion d'infrastructure ferroviaire & Mobilités", "/logos/sncf-reseau.png", {
-  founded: "1997",
-  location: "Siège à Saint-Denis (93) — Direction régionale PACA à Marseille & Réseau national",
-  revenue: "≈ 7 Md €",
-  employees: "53 000 collaborateurs",
+const sncf = make("SNCF Réseau", "Infrastructures & Gestion du réseau ferroviaire", "/logos/sncf-reseau.png", {
+  founded: "1938 (société anonyme du groupe SNCF depuis 2020)",
+  location: "Ancrage national sur l'ensemble des territoires & Europe",
+  revenue: "NC",
+  employees: "50 000 collaborateurs",
   description:
-    "Gestionnaire du réseau ferré national, SNCF Réseau assure la maintenance, la modernisation et la sécurité de plus de 28 000 km de lignes en France. Acteur pivot de la décarbonation des transports, l'entreprise pilote des chantiers d'ingénierie majeurs en régénération de voies, signalisation de pointe et transition numérique.",
-  profiles: ["Ingénieurs voie, génie civil & ouvrages d'art", "Ingénieurs signalisation ferroviaire & télécoms", "Chefs de projets travaux & maintenance", "Ingénieurs informatique industrielle & data"],
+    "Gestionnaire d'infrastructure du réseau ferré national détenu à 100 % par l'État français, SNCF Réseau assure la maintenance, la modernisation et la régulation de l'ensemble des voies ferroviaires pour concevoir des mobilités durables, connectées et performantes au cœur des territoires.",
+  profiles: ["Ingénieurs génie civil & voies ferrées", "Ingénieurs signalisation, télécoms & informatique ferroviaire", "Ingénieurs maintenance, exploitation & sécurité des circulations", "Chefs de projets modernisation des infrastructures"],
   positions: ["Alternance", "CDI", "Stage"],
-  recruitment: ["Candidatures sur sncf-reseau.com/fr/carrieres", "Entretiens RH et opérationnels"],
+  recruitment: ["Candidatures via le portail carrière SNCF Réseau", "Processus de sélection et entretiens selon le poste"],
 });
 
 const navalGroup = make("Naval Group", "Industrie navale de Défense", "/logos/naval-group.png", {
@@ -591,6 +591,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Ingénieurs génie mécanique", "Ingénieurs méthodes & maintenance industrielle", "Responsables d'affaires & arrêts d'unités"],
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "2 à 3 entretiens RH et opérationnels"],
+      }),
+      make("Vulcain Engineering", "Conseil & Ingénierie de l'énergie et du nucléaire", "/logos/vulcain-engineering.png", {
+        founded: "2005",
+        location: "France (Marseille, Aix, Cadarache...) & International",
+        revenue: "194 M€",
+        employees: "6 800 collaborateurs",
+        description:
+          "Société de conseil et d’ingénierie de premier plan spécialisée dans les secteurs de l’énergie et du nucléaire, Vulcain Engineering pilote des projets d’envergure nationale et internationale, ainsi qu'en région Sud (Marseille, Aix, Cadarache) aux côtés d'acteurs clés comme EDF, TechnicAtome, SPIE ou ITER.",
+        profiles: ["Ingénieurs génie nucléaire & sûreté", "Ingénieurs procédés & mécanique industrielle", "Chefs de projet ingénierie & calcul d'installations", "Ingénieurs exploitation & maintenance industrielle"],
+        positions: ["CDI", "Stage"],
+        recruitment: ["Sélection sur CV (vulcain-eng.com)", "Appel de préqualification RH", "Entretien technique et présentation client"],
       }),
     ],
   },
@@ -1167,6 +1178,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Egis",
       "VEOLIA Maintenance et services industriels",
       "Tractebel",
+      "Vulcain Engineering",
     ],
   },
   {
@@ -1648,11 +1660,11 @@ function SncfFicheSlide() {
 
       <div className="min-h-0 overflow-y-auto pr-3 brochure-scroll space-y-5">
         {[
-          { label: "Secteur d'activité", value: "Gestion d'infrastructure ferroviaire & Mobilités" },
-          { label: "Année de création", value: "1997" },
-          { label: "Localisation", value: "Siège à Saint-Denis (93) — Direction régionale PACA à Marseille & Réseau national" },
-          { label: "Chiffre d'affaires", value: "≈ 7 Md €" },
-          { label: "Effectifs", value: "53 000 collaborateurs" },
+          { label: "Secteur d'activité", value: sncf.sector },
+          { label: "Année de création", value: sncf.founded },
+          { label: "Localisation", value: sncf.location },
+          { label: "Chiffre d'affaires", value: sncf.revenue },
+          { label: "Effectifs", value: sncf.employees },
         ].map((r) => (
           <div
             key={r.label}
@@ -1666,9 +1678,7 @@ function SncfFicheSlide() {
           </div>
         ))}
         <p className="mt-6 text-sm md:text-base leading-relaxed" style={{ color: THEME.ink }}>
-          Gestionnaire du réseau ferré national, SNCF Réseau assure la maintenance, la modernisation et la sécurité de
-          plus de 28 000 km de lignes en France. Acteur pivot de la décarbonation des transports, l'entreprise pilote des
-          chantiers d'ingénierie majeurs en régénération de voies, signalisation de pointe et transition numérique.
+          {sncf.description}
         </p>
       </div>
     </div>
