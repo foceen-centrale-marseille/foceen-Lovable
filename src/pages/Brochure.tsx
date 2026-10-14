@@ -189,6 +189,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
+      make("Enedis", "Distribution d'électricité & Réseaux intelligents", "/logos/enedis.png", {
+        founded: "2008",
+        location: "Réseau national (95 % du territoire français) & Direction régionale PACA",
+        revenue: "NC",
+        employees: "42 000 collaborateurs",
+        description:
+          "Gestionnaire du réseau public de distribution d'électricité et entreprise à mission, Enedis modernise et digitalise 1,4 million de km de lignes pour accélérer la transition écologique : raccordement massif des énergies renouvelables, déploiement des mobilités électriques et gestion intelligente des données.",
+        profiles: ["Ingénieurs data & IA (Power BI, Copilot, Python)", "Ingénieurs réseaux électriques & électrotechnique", "Chefs de projet raccordement EnR & transition écologique", "Ingénieurs sécurité, télécoms & automatismes"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Candidature sur enedis.fr/hub-carriere", "Entretien avec un binôme métier / RH"],
+      }),
       make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", "/logos/ep2c-energy.png", {
         founded: "2014",
         location: "France & International",
@@ -557,6 +568,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Candidature sur atos.net", "Présélection RH", "Entretien d'embauche"],
       }),
+      make("BPCE Solutions informatiques", "Ingénierie logicielle & Technologies bancaires", "/logos/bpce-si.png", {
+        founded: "2022",
+        location: "18 sites en France (dont Aix-en-Provence)",
+        revenue: "NC",
+        employees: "2 600 collaborateurs",
+        description:
+          "Entité technologique majeure du Groupe BPCE, BPCE Solutions informatiques conçoit, opère et modernise les systèmes d'information des Banques Populaires et des Caisses d'Épargne. Ses équipes conçoivent des applications bancaires et mobiles hautement scalables et sécurisées.",
+        profiles: ["Développeurs IT (Java, Angular, Python, Kotlin)", "Ingénieurs Cloud, DevOps & Cybersécurité", "Tech Leads & Chefs de projets SI", "Business Analysts & Ingénieurs Agiles"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV", "2 entretiens (RH + manager métier)", "En présentiel ou visioconférence"],
+      }),
       make("Capgemini", "Conseil, Tech & Ingénierie", "/logos/capgemini.png", {
         founded: "1967",
         location: "20+ villes en France — Présence dans 50 pays",
@@ -682,6 +704,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Actuariat & Analyse financière", "Data science & Systèmes d'information", "Gestion de projet & Conseil en risques"],
         positions: ["Alternance", "Stage"],
         recruitment: ["Dépôt de CV sur le site carrières", "Entretiens de sélection"],
+      }),
+      make("Cap Finances", "Gestion de patrimoine & Conseil financier", "/logos/capfinances.png", {
+        founded: "2004",
+        location: "Implantation nationale (France)",
+        revenue: "150 M€",
+        employees: "150 collaborateurs — 1 400 conseillers partenaires",
+        description:
+          "Filiale de Groupe Premium et référence nationale de la gestion de patrimoine depuis plus de 20 ans, Capfinances accompagne particuliers et professionnels dans l'optimisation, la valorisation et la transmission de leurs actifs en épargne, retraite, prévoyance et investissements.",
+        profiles: ["Conseillers en stratégie patrimoniale", "Profils commerciaux, banque, finance & assurance", "Chefs de projet ingénierie patrimoniale"],
+        positions: ["CDI"],
+        recruitment: ["Sélection sur CV", "Entretien de présentation", "1/2 journée en immersion opérationnelle"],
       }),
       make("EY Services France", "Audit, Conseil & Stratégie", "/logos/ey.png", {
         founded: "1989",
@@ -869,6 +902,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Formation",
     companies: [
+      make("Apec", "Conseil & Accompagnement professionnel des cadres", "/logos/apec.png", {
+        founded: "1960",
+        location: "Paris (siège) & centres en région (dont Marseille)",
+        revenue: "NC",
+        employees: "1 200 collaborateurs",
+        description:
+          "Acteur de référence du marché de l'emploi des cadres et des jeunes diplômés, l'Apec accompagne les ingénieurs et talents de l'enseignement supérieur dans la définition de leur trajectoire professionnelle, tout en conseillant les entreprises dans le sourcing et la réussite de leurs recrutements.",
+        profiles: ["Jeunes diplômés ingénieurs & Bac+5", "Consultants en évolution professionnelle", "Chargés de relations entreprises & talents"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Candidatures et accompagnement via apec.fr"],
+      }),
       make("AVEC L'INDUSTRIE", "Compétences industrielles & OPCO", "/logos/avec-l-industrie.png", {
         founded: "2018",
         location: "Échelle nationale (29 branches industrielles)",
@@ -889,6 +933,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Dépôt de CV & dossier de candidature sur le site officiel"],
       }),
+      make("ESSCA School of Management", "Grande École de Management", "/logos/essca.png", {
+        founded: "1909",
+        location: "10 campus (Aix-en-Provence, Paris, Lyon, Angers, Bordeaux, Budapest, Shanghai...)",
+        revenue: "NC",
+        employees: "500 collaborateurs — 8 000 étudiants",
+        description:
+          "Triple accréditée (AACSB, AMBA, EQUIS), l'ESSCA forme des managers responsables et ouverts sur le monde. Son Programme Grande École (grade de Master) et ses MSc permettent aux profils scientifiques d'acquérir une expertise ciblée en finance, conseil, supply chain, audit ou entrepreneuriat.",
+        profiles: ["Profils scientifiques & ingénieurs (admissions parallèles)", "Finance d'entreprise, audit & conseil", "Supply chain, logistique & commerce international", "Marketing & entrepreneuriat"],
+        positions: ["Alternance"],
+        recruitment: ["Dossier académique", "Entretien individuel de motivation"],
+      }),
       make("ESSEC Business School", "Grande École de Management", "/logos/essec.png", {
         founded: "1907",
         location: "Cergy, Paris-La Défense, Singapour, Rabat",
@@ -899,6 +954,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage", "Mastères Spécialisés®"],
         recruitment: ["Admissions sur titre / Concours", "Dossier académique & épreuves de sélection"],
       }),
+      make("IAE Aix", "Enseignement supérieur de management & IAE", "/logos/iae-aix.png", {
+        founded: "1955",
+        location: "Aix-en-Provence (13)",
+        revenue: "NC",
+        employees: "80 collaborateurs",
+        description:
+          "Composante universitaire d'excellence inspirée des business schools américaines, l’IAE Aix conjugue tradition et innovation managériale. Son programme MSc en Management Général prépare les profils scientifiques et ingénieurs à des carrières à haut potentiel, alliant agilité, leadership et vision stratégique transversale.",
+        profiles: ["Élèves et diplômés ingénieurs (double compétence)", "Management général & Pilotage stratégique", "Gestion de projet complexe & Leadership"],
+        positions: ["Alternance"],
+        recruitment: ["Candidature en ligne (gomovein)", "Admissibilité sur dossier académique (CV, LM)", "Entretien de sélection"],
+      }),
       make("ISAE-SUPAERO", "Enseignement supérieur — Aéronautique & Espace", "/logos/isae-supaero.png", {
         founded: "1909",
         location: "Campus de 22 ha à Toulouse (31)",
@@ -908,6 +974,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         profiles: ["Élèves ingénieurs & diplômés Bac+5 (M2, ingénieur)", "Conception aéronautique, propulsion & systèmes spatiaux", "Systèmes embarqués critiques, drones (UAV) & robotique", "Essais en vol, certification, data & IA appliquée"],
         positions: ["Mastères Spécialisés®", "Alternance", "Stage"],
         recruitment: ["Dossier de candidature en ligne (candidatures.tsaae.fr)", "Sélection sur dossier académique"],
+      }),
+      make("ISEN Méditerranée", "Grande École d'Ingénieurs — Numérique & Technologies", "/logos/isen.png", {
+        founded: "NC",
+        location: "Campus à Marseille (Château-Gombert) & Toulon",
+        revenue: "NC",
+        employees: "NC",
+        description:
+          "Grande école d'ingénieurs habilitée CTI, l'ISEN Méditerranée forme des ingénieurs experts des transformations technologiques : IA, cybersécurité, systèmes embarqués, robotique, objets connectés et smart energy. Ancrée à Château-Gombert, elle favorise l'immersion terrain par une pédagogie par projets et l'apprentissage.",
+        profiles: ["Étudiants scientifiques Bac+2 à Bac+6", "Ingénierie logicielle, IA & Cybersécurité", "Systèmes embarqués, robotique & IoT", "Smart energy & e-santé"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Candidature en ligne via isen-mediterranee.fr", "Admissions sur dossier et concours"],
       }),
       make("KEDGE Business School", "Grande École de Management", "/logos/kedge.png", {
         founded: "2014 (fusion BEM Bordeaux & Euromed Marseille)",
@@ -975,7 +1052,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte"],
+    names: ["KPMG", "Onepoint", "Oresys", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte", "Cap Finances"],
   },
   {
     label: "Énergie",
@@ -983,6 +1060,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "ASSYSTEM",
       "CEA",
       "ECIA",
+      "Enedis",
       "EP2C Energy",
       "Framatome",
       "Groupe REEL",
@@ -1003,7 +1081,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3", "Atos", "CGI France"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3", "Atos", "CGI France", "BPCE Solutions informatiques"],
   },
   {
     label: "Ingénierie",
@@ -1047,7 +1125,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Formation",
-    names: ["AVEC L'INDUSTRIE", "emlyon business school", "ESSEC Business School", "ISAE-SUPAERO", "KEDGE Business School"],
+    names: ["AVEC L'INDUSTRIE", "emlyon business school", "ESSEC Business School", "ISAE-SUPAERO", "KEDGE Business School", "IAE Aix", "ISEN Méditerranée", "ESSCA School of Management", "Apec"],
   },
 ];
 
