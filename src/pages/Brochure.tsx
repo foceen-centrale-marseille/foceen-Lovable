@@ -140,6 +140,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection des CV par les RH", "Échange téléphonique", "Rencontre avec l'opérationnel recruteur"],
       }),
+      make("SMAC", "Enveloppe du bâtiment & Rénovation énergétique", "/logos/smac.png", {
+        founded: "2005",
+        location: "70 agences en France & 4 filiales internationales",
+        revenue: "500 M€",
+        employees: "2 400 collaborateurs",
+        description:
+          "Leader français de l'enveloppe du bâtiment, SMAC intervient en étanchéité, façades architecturales, bardage et rénovation énergétique (toitures végétalisées, ombrières photovoltaïques) sur des chantiers tertiaires, résidentiels et industriels d'envergure.",
+        profiles: ["Ingénieurs travaux & Conduite de chantier", "Ingénieurs bureau d'études & méthodes", "Chargés d'affaires & métreurs", "Ingénieurs performance énergétique du bâtiment"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Sélection sur CV", "2 entretiens opérationnels en agence"],
+      }),
       make("Vinci Construction", "BTP & Grands Projets", "/logos/vinci-construction.png", {
         founded: "2000",
         location: "France & International (100+ pays)",
@@ -486,6 +497,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Préqualification", "2 entretiens (technique métier et RH)"],
       }),
+      make("Tractebel", "Ingénierie de l'énergie & Grandes infrastructures", "/logos/tractebel.png", {
+        founded: "1994 (héritage Coyne et Bellier)",
+        location: "France & International",
+        revenue: "118 M€",
+        employees: "600 collaborateurs (Tractebel France)",
+        description:
+          "Filiale d'ingénierie internationale d'ENGIE, Tractebel est un acteur historique de la transition énergétique. Spécialiste mondial des ouvrages hydroélectriques, des barrages et du nucléaire civil (îlots nucléaires), l'entreprise conçoit des infrastructures complexes décarbonées.",
+        profiles: ["Ingénieurs génie civil & calcul de structures", "Ingénieurs mécanique & modélisation 3D / CAO", "Ingénieurs procédés, hydraulique & nucléaire", "Chefs de projets & suivi de travaux"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Sélection sur CV", "Entretiens techniques et RH"],
+      }),
       make("VEOLIA Maintenance et services industriels", "Maintenance industrielle & Services aux entreprises", "/logos/veolia.png", {
         founded: "1984",
         location: "32 agences en France",
@@ -502,6 +524,17 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Numérique",
     companies: [
+      make("Atos", "Services du numérique & Conseil IT", "/logos/atos.png", {
+        founded: "1997",
+        location: "Nombreuses implantations en France (Aix, Sophia, Paris...) & 54 pays",
+        revenue: "7,2 Md €",
+        employees: "52 000 collaborateurs",
+        description:
+          "Acteur mondial des services numériques, Atos conçoit des fondations digitales robustes et évolutives pour les entreprises et institutions. Le groupe déploie des solutions d'intelligence artificielle, de cloud hybride, de cybersécurité et de décarbonation appliquées aux missions critiques.",
+        profiles: ["Développeurs Full Stack & Logiciels embarqués", "Ingénieurs DevOps, Cloud & Systèmes/Réseaux", "Ingénieurs Data Science, IA & Cybersécurité", "Consultants fonctionnels & Scrum Masters"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Candidature sur atos.net", "Présélection RH", "Entretien d'embauche"],
+      }),
       make("Capgemini", "Conseil, Tech & Ingénierie", "/logos/capgemini.png", {
         founded: "1967",
         location: "20+ villes en France — Présence dans 50 pays",
@@ -513,16 +546,16 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["CV + lettre de motivation", "Entretiens RH et opérationnels", "Anglais indispensable"],
       }),
-      make("CGI", "Conseil & Services numériques (IT)", "/logos/cgi.png", {
+      make("CGI France", "Conseil & Services IT", "/logos/cgi.png", {
         founded: "1976",
-        location: "30+ implantations en France — Présence dans 40 pays",
+        location: "30+ agences en France & Présence dans 40 pays",
         revenue: "10,3 Md €",
-        employees: "94 500",
+        employees: "94 500 collaborateurs",
         description:
-          "Leader mondial du conseil et des services numériques managés, CGI accompagne la mutation technologique de ses clients à travers l'intégration de systèmes, la cybersécurité, l'IA et l'agilité. Entreprise d'associés, CGI valorise l'initiative, l'expertise pointue et l'impact sociétal.",
-        profiles: ["Développement logiciel (Java, .NET, Python, React)", "Data engineering, Machine Learning & IA", "Cybersécurité, SOC & Gestion des risques", "Architecture Cloud (AWS, Azure, GCP) & DevOps"],
-        positions: ["Stage"],
-        recruitment: ["Préqualification téléphonique", "Entretien RH", "1 ou 2 entretiens techniques en visio"],
+          "Cinquième entreprise indépendante de conseil et de services IT au monde, CGI accompagne les grandes organisations dans leur transition technologique : intégration de systèmes, conseil métier, cloud, data/IA et cybersécurité, portée par une culture d'associés-entrepreneurs.",
+        profiles: ["Développement logiciel (Java, .NET, Python, React)", "Cloud (AWS, Azure, GCP) & DevOps", "Data Engineering, Machine Learning & BI", "Cybersécurité, Audit & Gestion des risques"],
+        positions: ["Stage (pré-embauche)"],
+        recruitment: ["Sélection CV", "Préqualification téléphonique", "Entretien RH", "1 à 2 entretiens techniques en visio"],
       }),
       make("Dassault Systèmes", "Édition de logiciels 3D & Mondes virtuels", "/logos/dassault-systemes.png", {
         founded: "1981 / 1996",
@@ -920,7 +953,7 @@ indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   {
     label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "CGI", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte"],
+    names: ["KPMG", "Onepoint", "Oresys", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte"],
   },
   {
     label: "Énergie",
@@ -940,7 +973,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "BTP & Construction",
-    names: ["Bouygues Bâtiment Sud-Est", "Bouygues Construction", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "Vinci Construction"],
+    names: ["Bouygues Bâtiment Sud-Est", "Bouygues Construction", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"],
   },
   {
     label: "Environnement",
@@ -948,7 +981,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
   },
   {
     label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3"],
+    names: ["Dassault Systèmes", "Viveris", "Murex", "Capgemini", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3", "Atos", "CGI France"],
   },
   {
     label: "Ingénierie",
@@ -962,6 +995,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
       "Groupe ADF",
       "Egis",
       "VEOLIA Maintenance et services industriels",
+      "Tractebel",
     ],
   },
   {
