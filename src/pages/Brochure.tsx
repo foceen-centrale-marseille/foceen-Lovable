@@ -189,6 +189,26 @@ const SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
+      make("EDF", "Production & Fourniture d'énergie bas carbone", "/logos/edf.png", {
+        founded: "1946",
+        location: "2 000+ implantations en France & Présence à l'international",
+        revenue: "113,3 Md €",
+        employees: "191 440 collaborateurs",
+        description:
+          "Leader mondial des énergies bas carbone, le Groupe EDF produit, transporte et distribue une électricité compétitive et décarbonée grâce à son mix diversifié (nucléaire, hydraulique, éolien, solaire). Acteur clé de la transition énergétique, EDF offre plus de 230 métiers au cœur de missions techniques et de souveraineté énergétique.",
+        profiles: [
+          "Ingénieurs nucléaire, génie atomique & thermique",
+          "Ingénieurs énergies renouvelables (éolien, solaire, hydroélectricité)",
+          "Ingénieurs exploitation, maintenance & sûreté industrielle",
+          "Ingénieurs réseaux, data & systèmes d'information",
+        ],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: [
+          "Candidatures sur edf.fr/edf-recrute",
+          "Sélection sur CV et lettre de motivation",
+          "Entretiens RH et opérationnels",
+        ],
+      }),
       make("Enedis", "Distribution d'électricité & Réseaux intelligents", "/logos/enedis.png", {
         founded: "2008",
         location: "Réseau national (95 % du territoire français) & Direction régionale PACA",
@@ -1097,6 +1117,7 @@ const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
     names: [
       "ASSYSTEM",
       "CEA",
+      "EDF",
       "ECIA",
       "Enedis",
       "EP2C Energy",
