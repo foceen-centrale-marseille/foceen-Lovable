@@ -113,7 +113,7 @@ const navalGroup = make("Naval Group", "Industrie navale de Défense", "/logos/n
   recruitment: ["Sélection sur CV et lettre de motivation", "Entretiens RH et techniques opérationnels"],
 });
 
-const SECTORS: { name: string; companies: Company[] }[] = [
+const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "BTP",
     companies: [
@@ -1079,6 +1079,37 @@ const SECTORS: { name: string; companies: Company[] }[] = [
   },
 ];
 
+/* Official category mapping — single source for slide sectors AND index groups (sorted A→Z). */
+const CATEGORY_MAP: { label: string; names: string[] }[] = [
+  { label: "Audit & Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "EY Services France", "Forvis Mazars", "IKOS", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
+  { label: "Énergie & Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
+  { label: "BTP & Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
+  { label: "Transports & Systèmes embarqués", names: ["CMA CGM", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
+  { label: "Informatique, IT & Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
+  { label: "Défense", names: ["Dassault Systèmes", "DGA", "Marine Nationale", "Ministère des Armées", "Naval Group", "THALES"] },
+  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "Tractebel", "VEOLIA Maintenance et services industriels", "Vulcain Engineering"] },
+  { label: "Formation", names: ["Apec", "AVEC L'INDUSTRIE", "emlyon business school", "ESSCA School of Management", "ESSEC Business School", "IAE Aix", "ISEN Méditerranée", "KEDGE Business School", "ISAE-SUPAERO"] },
+  { label: "Autre", names: ["Amnesty International", "COCA-COLA EUROPACIFIC PARTNERS", "EMIS et EMIS Access", "France Chimie Méditerranée", "HEINEKEN", "NAOS"] },
+];
+
+const SECTORS: { name: string; companies: Company[] }[] = (() => {
+  const pool = new Map<string, Company>();
+  [navalGroup, ...RAW_SECTORS.flatMap((s) => s.companies)].forEach((c) => { if (!pool.has(c.name)) pool.set(c.name, c); });
+  const placed = new Set<string>();
+  const out = CATEGORY_MAP.map((g) => ({
+    name: g.label,
+    companies: g.names
+      .map((n) => pool.get(n))
+      .filter((c): c is Company => !!c && !placed.has(c.name) && (placed.add(c.name), true))
+      .sort((a, b) => a.name.localeCompare(b.name, "fr")),
+  }));
+  // Safety net: any unmapped fiche (never the sponsor, which has its own slide) goes to "Autre".
+  const autre = out.find((g) => g.name === "Autre")!;
+  pool.forEach((c) => { if (!placed.has(c.name) && c.name !== sncf.name) autre.companies.push(c); });
+  autre.companies.sort((a, b) => a.name.localeCompare(b.name, "fr"));
+  return out;
+})();
+
 /* ------------------------------------------------------------------ */
 /*  SLIDES BUILD                                                      */
 /* ------------------------------------------------------------------ */
@@ -1098,10 +1129,7 @@ const slides: Slide[] = (() => {
   // Single source of truth: every company slide comes from SECTORS, deduplicated by name.
   const seen = new Set<string>();
   const sectors = SECTORS.map((s) => {
-    const list = s.name === "Défense" && !s.companies.some((c) => c.name === navalGroup.name)
-      ? [navalGroup, ...s.companies]
-      : s.companies;
-    const companies = list.filter((c) => (seen.has(c.name) ? false : (seen.add(c.name), true)));
+    const companies = s.companies.filter((c) => (seen.has(c.name) ? false : (seen.add(c.name), true)));
     return { name: s.name, companies };
   }).filter((s) => s.companies.length > 0);
 
@@ -1128,92 +1156,7 @@ const indexList = slides
 indexList.sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
 /* Domain classification for the Index slide */
-const DOMAIN_GROUPS: { label: string; names: string[] }[] = [
-  {
-    label: "Audit & Conseil",
-    names: ["KPMG", "Onepoint", "Oresys", "IKOS", "EY Services France", "Forvis Mazars", "AXA France", "Talisker Consulting", "Deloitte", "Cap Finances", "Capgemini"],
-  },
-  {
-    label: "Énergie",
-    names: [
-      "ASSYSTEM",
-      "CEA",
-      "EDF",
-      "ECIA",
-      "Enedis",
-      "EP2C Energy",
-      "Framatome",
-      "Groupe SNEF",
-      "Onet Technologies",
-      "Orano",
-      "TechnicAtome",
-      "Technip Energies",
-      "VINCI Energies",
-    ],
-  },
-  {
-    label: "BTP & Construction",
-    names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"],
-  },
-  {
-    label: "Environnement",
-    names: ["EODD Ingénieurs Conseils", "Inddigo", "PAPREC", "Pellenc ST", "Recycle Plastique"],
-  },
-  {
-    label: "Informatique, IT & Média",
-    names: ["Dassault Systèmes", "Viveris", "Murex", "Sopra Steria", "Orange", "STMicroelectronics", "LUCCA", "Doors3", "Atos", "CGI France", "BPCE Solutions informatiques"],
-  },
-  {
-    label: "Ingénierie et Industrie",
-    names: [
-      "Bertin Technologies",
-      "Groupe REEL",
-      "Syntec-Ingénierie",
-      "Bee Engineering",
-      "AKKODIS",
-      "Groupe Ortec",
-      "Setec",
-      "Groupe LGM",
-      "Groupe ADF",
-      "Egis",
-      "VEOLIA Maintenance et services industriels",
-      "Tractebel",
-      "Vulcain Engineering",
-    ],
-  },
-  {
-    label: "Défense",
-    names: ["Naval Group", "Marine Nationale", "Ministère des Armées", "DGA", "THALES"],
-  },
-  {
-    label: "Transports & Systèmes embarqués",
-    names: [
-      "SNCF Réseau",
-      "EXAIL",
-      "MB92 La Ciotat",
-      "CMA CGM",
-      "Jifmar Offshore Services",
-    ],
-  },
-  {
-    label: "Autres",
-    names: [
-      "HEINEKEN",
-      "COCA-COLA EUROPACIFIC PARTNERS",
-      "NAOS",
-      "France Chimie Méditerranée",
-      "EMIS et EMIS Access",
-    ],
-  },
-  {
-    label: "Formation",
-    names: ["AVEC L'INDUSTRIE", "emlyon business school", "ESSEC Business School", "ISAE-SUPAERO", "KEDGE Business School", "IAE Aix", "ISEN Méditerranée", "ESSCA School of Management", "Apec"],
-  },
-  {
-    label: "Associations & ONG",
-    names: ["Amnesty International"],
-  },
-];
+const DOMAIN_GROUPS: { label: string; names: string[] }[] = CATEGORY_MAP;
 
 const groupedIndex = (() => {
   const used = new Set<string>();
@@ -1227,7 +1170,7 @@ const groupedIndex = (() => {
   });
   const leftovers = indexList.filter((c) => !used.has(c.name));
   if (leftovers.length) {
-    const autres = groups.find((g) => g.label === "Autres");
+    const autres = groups.find((g) => g.label === "Autre");
     if (autres) {
       autres.entries.push(...leftovers);
       autres.entries.sort((a, b) => a.name.localeCompare(b.name, "fr"));
@@ -1465,8 +1408,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
       title: "Entreprises Partenaires",
       slide: 7,
       child: [
-        { name: "Naval Group", slide: 8 },
-        ...sectorEntries.map((s) => ({ name: s.name, slide: s.slide, count: s.count })),
+                ...sectorEntries.map((s) => ({ name: s.name, slide: s.slide, count: s.count })),
       ],
     },
   ];
