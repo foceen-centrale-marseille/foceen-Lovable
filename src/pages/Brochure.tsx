@@ -581,16 +581,27 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Sélection sur CV", "Entretiens techniques et RH"],
       }),
-      make("VEOLIA Maintenance et services industriels", "Maintenance industrielle & Services aux entreprises", "/logos/veolia.png", {
-        founded: "1984",
-        location: "32 agences en France",
-        revenue: "220 M€",
-        employees: "1 500 collaborateurs",
+      make("Exiom Partners", "Conseil en Management — Banque & Assurance", "/logos/exiom.png", {
+        founded: "2019",
+        location: "Paris & Lyon — Rayonnement national",
+        revenue: "30 M€",
+        employees: "200 collaborateurs",
         description:
-          "Entité spécialisée de Veolia, elle assure la fiabilité, la performance et la décarbonation des sites industriels. Ses équipes déploient une expertise technique de pointe en maintenance, mécanique, métallurgie, nettoyage industriel et gestion d'arrêts d'unités.",
-        profiles: ["Ingénieurs génie mécanique", "Ingénieurs méthodes & maintenance industrielle", "Responsables d'affaires & arrêts d'unités"],
-        positions: ["Alternance", "CDD", "CDI", "Stage"],
-        recruitment: ["Sélection sur CV", "2 à 3 entretiens RH et opérationnels"],
+          "Cabinet de conseil en management fondé en 2019, Exiom Partners accompagne les acteurs majeurs de la banque et de l'assurance dans leurs grands enjeux stratégiques : transformation opérationnelle, modélisation des risques, organisation et performance financière.",
+        profiles: ["Actuaires & Ingénieurs financiers quantitatifs (Quant)", "Consultants en organisation & transformation bancaire", "Profils ingénieurs généralistes & Data / Risques"],
+        positions: ["Alternance", "CDI", "Stage"],
+        recruitment: ["Sélection sur CV et lettre de motivation (exiompartners.com)", "Entretiens de recrutement"],
+      }),
+      make("RTM", "Mobilités & Transports urbains de voyageurs", "/logos/rtm.png", {
+        founded: "1950",
+        location: "Métropole Aix-Marseille-Provence",
+        revenue: "NC",
+        employees: "587 collaborateurs (fonctions cadres/ingénierie)",
+        description:
+          "Acteur historique de la mobilité métropolitaine, la RTM conçoit, modernise et exploite le réseau de transports en commun (métro, tramway, bus, transport à la demande) au service des habitants de la métropole d'Aix-Marseille-Provence, avec une politique dynamique d'innovation et d'évolution interne.",
+        profiles: ["Ingénieurs exploitation & systèmes de transport", "Ingénieurs maintenance, matériel roulant & infrastructures", "Chefs de projets modernisation, signalisation & billettique", "Ingénieurs systèmes d'information & data mobilité"],
+        positions: ["CDD", "CDI", "Stage"],
+        recruitment: ["Candidature sur talents.rtm.fr (CV et lettre de motivation)", "Entretiens individuels ou croisés à Marseille", "Accompagnement et opportunités de mobilité interne"],
       }),
       make("Vulcain Engineering", "Conseil & Ingénierie de l'énergie et du nucléaire", "/logos/vulcain-engineering.png", {
         founded: "2005",
@@ -1081,13 +1092,13 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
 
 /* Official category mapping — single source for slide sectors AND index groups (sorted A→Z). */
 const CATEGORY_MAP: { label: string; names: string[] }[] = [
-  { label: "Audit & Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "EY Services France", "Forvis Mazars", "IKOS", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
+  { label: "Audit & Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "Exiom Partners", "EY Services France", "Forvis Mazars", "IKOS", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
   { label: "Énergie & Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
   { label: "BTP & Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
   { label: "Transports & Systèmes embarqués", names: ["CMA CGM", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
   { label: "Informatique, IT & Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
   { label: "Défense", names: ["Dassault Systèmes", "DGA", "Marine Nationale", "Ministère des Armées", "Naval Group", "THALES"] },
-  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "Tractebel", "VEOLIA Maintenance et services industriels", "Vulcain Engineering"] },
+  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "Tractebel", "Vulcain Engineering"] },
   { label: "Formation", names: ["Apec", "AVEC L'INDUSTRIE", "emlyon business school", "ESSCA School of Management", "ESSEC Business School", "IAE Aix", "ISEN Méditerranée", "KEDGE Business School", "ISAE-SUPAERO"] },
   { label: "Autre", names: ["Amnesty International", "COCA-COLA EUROPACIFIC PARTNERS", "EMIS et EMIS Access", "France Chimie Méditerranée", "HEINEKEN", "NAOS"] },
 ];
