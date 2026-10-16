@@ -1092,12 +1092,12 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
 
 /* Official category mapping — single source for slide sectors AND index groups (sorted A→Z). */
 const CATEGORY_MAP: { label: string; names: string[] }[] = [
-  { label: "Audit & Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "Exiom Partners", "EY Services France", "Forvis Mazars", "IKOS", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
+  { label: "Audit & Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "Exiom Partners", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
   { label: "Énergie & Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
   { label: "BTP & Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
-  { label: "Transports & Systèmes embarqués", names: ["CMA CGM", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
-  { label: "Informatique, IT & Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
-  { label: "Défense", names: ["Dassault Systèmes", "DGA", "Marine Nationale", "Ministère des Armées", "Naval Group", "THALES"] },
+  { label: "Transports & Systèmes embarqués", names: ["CMA CGM", "IKOS", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
+  { label: "Informatique, IT & Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Dassault Systèmes", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
+  { label: "Défense", names: ["DGA", "Marine Nationale", "Ministère des Armées", "Naval Group", "THALES"] },
   { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "Tractebel", "Vulcain Engineering"] },
   { label: "Formation", names: ["Apec", "AVEC L'INDUSTRIE", "emlyon business school", "ESSCA School of Management", "ESSEC Business School", "IAE Aix", "ISEN Méditerranée", "KEDGE Business School", "ISAE-SUPAERO"] },
   { label: "Autre", names: ["Amnesty International", "COCA-COLA EUROPACIFIC PARTNERS", "EMIS et EMIS Access", "France Chimie Méditerranée", "HEINEKEN", "NAOS"] },
