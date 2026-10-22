@@ -1819,8 +1819,11 @@ function MotEquipeSlide() {
           Méditerranée et tous les bénévoles qui rendent cette 19ᵉ édition
           possible. Bonne lecture, et rendez-vous le 03 novembre 2026 au Parc
           Chanot pour vivre ensemble cette journée dédiée à votre avenir
-          professionnel.&nbsp;»
+          professionnel.
         </p>
+        <div className="self-end mt-1 opacity-30" style={{ color: THEME.royal }} aria-hidden="true">
+          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current rotate-180" strokeWidth={0} />
+        </div>
         <div className="mt-6 flex items-center gap-3 shrink-0">
           <div className="h-px w-10" style={{ background: THEME.royal }} />
           <div className="text-center">
