@@ -544,17 +544,6 @@ export const exposantsList: Exposant[] = [
     description: "Dassault Systèmes est un accélérateur de progrès humain. Nous proposons aux entreprises et aux particuliers des environnements virtuels collaboratifs permettant d'imaginer des innovations durables. Grâce aux jumeaux virtuels d'expérience du monde réel qu'ils créent avec la plateforme 3DEXPERIENCE et ses applications, Dassault Systèmes est un créateur de valeur, au service de plus de 350 000 clients de toutes tailles et de tous secteurs d'activité, dans plus de 150 pays.",
     highlights: ["Plateforme 3DEXPERIENCE", "350 000 clients dans 150+ pays", "23 800 collaborateurs passionnés"],
   },
-  // ── France Télévisions ──
-  {
-    id: 88, name: "France Télévisions", logo: "/logos/france-televisions.png", sector: "Audiovisuel", domain: "Numérique", yearCreated: 1992,
-    location: "France", employees: "9 000", chiffreAffaires: "5,5 milliards d'euros",
-    website: "https://www.francetelevisions.fr/groupe", websiteCarriere: "https://recrutement.francetelevisions.fr",
-    profiles: "Ingénieurs Technologies, Chef de Projet informatiques, Architecte SI, Administrateurs Réseaux IT, Assistant DATA, Data Ingénieur",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV",
-    description: "Rejoindre France Télévisions, c'est contribuer à faire le média de la société de demain. Le média qui offre à tous les Français une information fiable et indépendante. France Télévisions est le groupe audiovisuel public incontournable des Français, avec des chaînes emblématiques comme France 2, France 3, France 4, France 5 et France Info. Notre mission est simple : informer, éduquer et divertir ! Entre IA, data, cloud, outils technologiques novateurs, l'innovation est au cœur de nos missions.",
-    highlights: ["Premier groupe audiovisuel public français", "Innovation : IA, data, cloud", "Chaînes : France 2, 3, 4, 5, Info"],
-  },
   // ── Lucca ──
   {
     id: 89, name: "Lucca", logo: "/logos/lucca.png", sector: "Tech/SaaS", domain: "Numérique", yearCreated: 2002,
@@ -791,18 +780,6 @@ export const exposantsList: Exposant[] = [
     highlights: ["Service de renseignement extérieur français", "7 200 agents au service de la France", "Du contre-terrorisme à la cybersécurité", "Profils très divers : techniques, linguistes, analystes"],
   },
 
-  // ── Conduent Business Solutions France ──
-  {
-    id: 124, name: "Conduent Business Solutions", sector: "Industrie – Transport – Billétique", domain: "Numérique", yearCreated: 1970, logo: "/logos/conduent.png",
-    location: "Guilherand-Granges (Proche Valence)",
-    employees: "600", chiffreAffaires: "3,5 millions d'euros",
-    website: "https://www.conduent.com/", websiteCarriere: "https://careers.conduent.com/",
-    profiles: "Développement, Ingénierie Logicielle, Ingénierie Système, Test validation, Ingénierie d'Affaires, Développement d'affaires, Gestion de projet",
-    postTypes: ["CDI", "Stage"],
-    applicationMethod: "CV – Entretiens Techniques – Entretiens RH – Entretiens possibles en Visio. Les entretiens sont réalisés en Français en évaluant le niveau d'Anglais.",
-    description: "Implanté en Drôme-Ardèche, proche de Valence, Conduent Business Solutions France conçoit et développe des logiciels et des systèmes billettiques innovants. Le développement du système de lecture et de contrôle de billets pour le métro de Mexico en 1968, puis la RATP au début des années 70, a fait de l'entreprise une pionnière dans le domaine de la Billettique. CBS France est aujourd'hui un centre de compétences mondial pour les transports publics et la mobilité intelligente.",
-    highlights: ["Pionnier de la billettique depuis 1968 (métro de Mexico, RATP)", "Centre de compétences mondial pour la mobilité intelligente", "Spécialiste des transports publics", "Mobilité interne et développement des compétences"],
-  },
 
   // ── NAVAL GROUP ──
   {
@@ -830,18 +807,6 @@ export const exposantsList: Exposant[] = [
     highlights: ["145 000 collaborateurs dans le monde", "Présent dans 51 pays", "90 millions de clients", "Engagement sociétal et environnemental"],
   },
 
-  // ── HARIBO ──
-  {
-    id: 127, name: "HARIBO", sector: "Agro-alimentaire", domain: "Agroalimentaire", yearCreated: 1920, logo: "/logos/haribo.png",
-    location: "Marseille, Uzès et monde (26 pays)",
-    employees: "8 500",
-    website: "https://www.haribo.com/fr-fr", websiteCarriere: "https://www.haribo.com/fr-fr/carrieres/travailler-chez-haribo",
-    profiles: "Production, Maintenance, Qualité, R&D, Amélioration Continue",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod: "CV + entretiens.",
-    description: "Ensemble, transmettons notre joie dans le monde ! HARIBO est la marque des bonbons gélifiés numéro 1 dans le monde. Elle compte plus de 7 000 collaborateurs basés dans 26 pays. La recette de notre succès repose sur quelques ingrédients essentiels : notre engagement pour la qualité, notre approche originale et le travail précieux de nos collaborateurs issus de plus de 50 pays différents qui apportent la richesse de leur diversité à tout ce que nous entreprenons. Haribo, c'est beau la vie, pour les grands et les petits !",
-    highlights: ["N°1 mondial des bonbons gélifiés", "Présent dans 26 pays", "Collaborateurs de 50+ nationalités", "Marque iconique depuis 1920"],
-  },
 
   // ── HEINEKEN FRANCE ──
   {
