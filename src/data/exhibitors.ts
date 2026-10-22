@@ -119,53 +119,6 @@ export const partenaires: Exposant[] = [
 export const exposantsList: Exposant[] = [
   // ── Fiches intégrées depuis les documents reçus ──
   {
-    id: 51,
-    name: "ACCEO",
-    logo: "/logos/acceo.webp",
-    sector: "Ingénierie du bâtiment",
-    domain: "Conseil",
-    yearCreated: 2003,
-    location: "Échelle nationale",
-    employees: "554",
-    chiffreAffaires: "39 millions d'euros",
-    website: "https://www.acceo.eu/fr/",
-    websiteCarriere: "https://talent.acceo.eu/nos-offres-demploi/",
-    profiles: "Ingénieurs génie Civil, Energie, Commerce, Assistants, Développeur informatique",
-    postTypes: ["CDI"],
-    applicationMethod: "CV",
-    description:
-      "ACCEO, Bureau d'Études et d'Ingénierie en bâtiment, est un acteur indépendant et engagé sur son marché. Représenté par 15 agences et 5 antennes en France, ACCEO réalise un chiffre d'affaires de 56 millions d'euros pour plus de 550 collaborateurs. ACCEO se structure autour d'une vision innovante : ACCEO'RIZON 2028, portée par des équipes investies et passionnées. Notre mission : apporter l'expertise et la sérénité dans l'optimisation technique et environnementale des bâtiments.",
-    highlights: [
-      "4 domaines : Environnement, Ascenseur, Énergie, Accessibilité-Maîtrise d'œuvre",
-      "Engagement RSE fort",
-      "15 agences et 5 antennes en France",
-    ],
-  },
-  {
-    id: 52,
-    name: "AptiSkills",
-    logo: "/logos/aptiskills.png",
-    sector: "Bâtiment, TP, Transport et Environnement. ENR, Nucléaire, Oil&Gas, Naval, Ferroviaire et Aéronautique",
-    domain: "Conseil",
-    yearCreated: 2013,
-    location: "9 agences en France (Lyon, Lille, Nantes, Strasbourg, Bordeaux, Toulouse, Paris, Marseille, Grenoble)",
-    employees: "1 000",
-    chiffreAffaires: "79,9 millions d'euros",
-    website: "https://www.aptiskills.fr/",
-    profiles:
-      "Ingénieurs Consultants (Structure, CVC, Elec, Efficacité Énergétique, VRD, Environnement, etc.), Ingénieurs en Management de projet (MOA, AMO, MOE, Promotion Immobilière, etc.), Ingénieurs d'Affaires, rôle d'Intrapreneur (Business, Management, Recrutement)",
-    postTypes: ["CDI", "Stage"],
-    applicationMethod:
-      "Nous cherchons à comprendre les souhaits de carrière de chacun lors d'un processus rapide de 3 étapes. Notre priorité : dénicher la mission idéale pour nos futurs AptiSkilliens !",
-    description:
-      "Si on partait de l'ambition et de la carrière de nos collaborateurs, pour construire une société ? D'une utopie, AptiSkills en a fait son modèle d'entreprise. 11 ans après sa création, ce sont 9 agences réparties sur la France, plus de 1 000 talents mais une seule idée : donner vie à vos aspirations ! Entreprise spécialisée dans les métiers de l'industrie et du BTP, nous accompagnons nos équipes dans leur épanouissement personnel et professionnel, en construisant la carrière de chacun.",
-    highlights: [
-      "9 agences en France, plus de 1 000 talents",
-      "Spécialisée dans l'industrie et le BTP",
-      "Accompagnement personnalisé de carrière",
-    ],
-  },
-  {
     id: 53,
     name: "Bee Engineering",
     logo: "/logos/bee-engineering.jpg",
@@ -347,17 +300,6 @@ export const exposantsList: Exposant[] = [
     description: "Audit, Conseil, Expertise Services Conseil & Droit & Fiscalité : rejoignez un cabinet leader aux 100 ans d'existence ! Comme nos 11 000 collaborateurs, faites le choix d'une Entreprise à Mission.",
     highlights: ["Entreprise à Mission avec 100 ans d'existence", "11 000 collaborateurs, 190 bureaux en France", "Secteurs : Industrie, Énergie, Télécommunications, Services Financiers, Technologie"],
   },
-  // ── Mantu Group ──
-  {
-    id: 61, name: "Mantu Group", logo: "/logos/mantu.png", sector: "Conseil", domain: "Conseil", yearCreated: 2007,
-    location: "Siège social à Genève, bureaux dans 60 pays", employees: "12 000", chiffreAffaires: "1,01 milliard d'euros",
-    website: "https://mantu.com/", websiteCarriere: "https://careers.mantu.com/jobs",
-    profiles: "Profils business et Data/IT/IA intéressés par la transformation digitale",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "Premier contact par conversation virtuelle/téléphonique. En moyenne 3 entretiens.",
-    description: "Mantu est un groupe international de conseil indépendant qui accompagne les entreprises dans leurs projets de transformation et d'innovation. Présent dans plus de 60 pays, avec plus de 12 000 talents.",
-    highlights: ["Groupe indépendant présent dans 60+ pays", "12 000 talents de 100+ nationalités", "Indépendance financière (non coté en bourse)", "Moyenne d'âge de 33 ans"],
-  },
   // ── Onepoint ──
   {
     id: 62, name: "Onepoint", logo: "/logos/onepoint.jpg", sector: "Conseil", domain: "Conseil", yearCreated: 2002,
@@ -381,29 +323,6 @@ export const exposantsList: Exposant[] = [
     applicationMethod: "CV + Lettre de motivation, 3 entretiens de motivation avec des consultants, 1er en visio, les deux suivants en présentiel.",
     description: "Société de conseil indépendante créée en 1981, Oresys est un acteur majeur du conseil en transformation, organisation et systèmes d'information. Première société de conseil certifiée ISO 9001 depuis 1995.",
     highlights: ["Première société de conseil certifiée ISO 9001", "Turn over 2 fois inférieur aux autres cabinets", "Expertise multisectorielle et multispécialiste"],
-  },
-  // ── PwC ──
-  {
-    id: 64, name: "PwC", logo: "/logos/pwc.png", sector: "Audit, conseil", domain: "Conseil", yearCreated: 1998,
-    location: "Internationale", employees: "+3 000", chiffreAffaires: "US$55.4 billion",
-    website: "https://carrieres.pwc.fr/fr/",
-    profiles: "Ingénieurs",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod: "CV, lettre de motivation",
-    description: "En France et au Maghreb, PwC développe des missions de conseil, d'audit et d'expertise juridique et fiscale. Fortes de 6750 collaborateurs, ses équipes pluridisciplinaires conjuguent leurs savoir-faire au sein d'un réseau international de plus de 364 000 personnes dans 151 pays.",
-    highlights: ["364 000 personnes dans 151 pays", "Acteur de référence de la transformation durable", "Équipes pluridisciplinaires"],
-  },
-  // ── Randstad Digital ──
-  {
-    id: 65, name: "Randstad Digital", logo: "/logos/randstad-digital.png", sector: "Conseil Engineering et IT", domain: "Conseil", yearCreated: 1989,
-    location: "Présente sur tous les continents, toutes les grandes villes de France",
-    employees: "25 000", chiffreAffaires: "24,1 milliards d'euros",
-    website: "https://www.randstaddigital.fr/fr/",
-    profiles: "Avionic System Engineer, Quality Engineer, Export Control, Embedded Software Engineer, Software Engineer, Devops Engineer",
-    postTypes: ["CDI", "Stage"],
-    applicationMethod: "CV, 2/3 entretiens",
-    description: "Chez Randstad Digital, nous façonnons le changement technologique. En tant que partenaire technologique du Groupe Randstad, notre mission est d'accélérer la transformation digitale de nos clients. 5 piliers : Engineering, Produit & digital, Data, Cloud & Infrastructure, Expérience client (UX).",
-    highlights: ["35+ ans d'ingénierie et conseil en haute technologie", "25 000 ingénieurs et experts digitaux dans le monde", "5 piliers : Engineering, Produit & digital, Data, Cloud, UX"],
   },
   // ── Sopra Steria (mise à jour complète) ──
   {
@@ -430,23 +349,6 @@ export const exposantsList: Exposant[] = [
     description: "VIVERIS est un groupe de conseil et d'ingénierie indépendant qui accompagne depuis plus de 30 ans la transformation numérique des entreprises (Systèmes embarqués, Informatique scientifique et technique, Systèmes d'information, Infrastructures).",
     highlights: ["30+ ans d'expertise en transformation numérique", "Systèmes embarqués, SI, Infrastructures", "Présence en France, Belgique et Maroc"],
   },
-
-  // ── Yélé ──
-  {
-    id: 67, name: "Yélé Consulting", logo: "/logos/yele.png", sector: "Conseil dans la transition énergétique et environnementale et en transformation digitale", domain: "Conseil", yearCreated: 2010,
-    location: "Paris et Lyon", employees: "130", chiffreAffaires: "16 millions d'euros",
-    website: "https://www.yele.fr/", websiteCarriere: "https://carrieres.yele.fr/",
-    profiles: "Profils motivés et curieux intéressés par les métiers du conseil. Stages de fin d'études (6 mois) – Conseil en transformation digitale, transition énergétique & environnementale. Jeunes diplômés – Consultants juniors. Alternances (selon les besoins des missions).",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "Rencontre sur stand : échanges informels (pensez à venir avec un CV à jour). Les candidatures retenues seront contactées pour un process en 2 à 3 étapes (préqualification téléphonique, entretien RH et opérationnel).",
-    description: "Yélé Consulting est un cabinet de conseil et d'ingénierie indépendant, spécialiste de la transition énergétique et environnementale. Nous intervenons dans les domaines de l'Énergie & Utilities, du Transport & Mobilité et de l'Industrie. Nos clients sont RTE, Enedis, TotalEnergies, RATP, SNCF… Créé en 2010, Yélé Consulting fait partie du groupe JAD.",
-    highlights: [
-      "Missions de mécénat de compétences ouvertes à tous",
-      "Actions citoyennes",
-      "Activités FunY pour la convivialité et l'esprit d'équipe",
-      "Valeurs : Audacieux, accessibles, éclairants et engagés",
-    ],
-  },
   // ── Bouygues Bâtiment Sud-Est ──
   {
     id: 68, name: "Bouygues Bâtiment Sud-Est", logo: "/logos/bouygues-batiment.jpg", sector: "Construction", domain: "BTP", yearCreated: 1973,
@@ -460,21 +362,6 @@ export const exposantsList: Exposant[] = [
       "Filiale de Bouygues Construction",
       "Habitat, tertiaire, industrie et logistique",
       "Engagement en faveur de la diversité",
-    ],
-  },
-  // ── Colas ──
-  {
-    id: 69, name: "Colas", logo: "/logos/colas.png", sector: "BTP", domain: "BTP", yearCreated: 1929,
-    location: "Internationale", employees: "70 000", chiffreAffaires: "16 milliards d'euros",
-    website: "https://careers.colasjobs.com/",
-    profiles: "Ingénieurs travaux : responsables de la planification et de la supervision des chantiers. Conducteurs de travaux : chargés de la gestion opérationnelle des projets sur le terrain. Techniciens de laboratoire : effectuent des tests sur les matériaux utilisés dans la construction.",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod: "Préqualification téléphonique / entretien",
-    description: "Colas, filiale du groupe Bouygues, a pour mission d'imaginer, de construire et d'entretenir des infrastructures de transport de façon responsable. Implanté dans plus de 50 pays sur les cinq continents, à travers un réseau de 800 entités locales et 3 000 unités de production et de recyclage de matériaux, Colas rassemble 70 000 collaborateurs engagés dans leur territoire.",
-    highlights: [
-      "Présence dans plus de 50 pays",
-      "800 entités locales",
-      "Leader mondial des solutions de mobilité",
     ],
   },
   // ── EDF ──
@@ -507,52 +394,6 @@ export const exposantsList: Exposant[] = [
       "Plus de 100 000 chantiers par an",
       "8 métiers répartis en 4 branches",
       "Engagement dans la transition écologique et digitale",
-    ],
-  },
-  // ── Fauché ──
-  {
-    id: 72, name: "Fauché", logo: "/logos/fauche.png", sector: "Solutions et services à l'énergie", domain: "Énergie", yearCreated: 1963,
-    location: "Marseille, Vitrolles, Avignon, Aix en Provence, Nice, Fos sur mer, Bagnols-sur-Cèze", employees: "3 200", chiffreAffaires: "400 millions d'euros (2023)",
-    website: "https://www.fauche.com", websiteCarriere: "https://groupefauche-career.talent-soft.com",
-    profiles: "Softskills : Travail en équipe, Sens de l'organisation. Hardskills : Électricité, Plomberie, CVC.",
-    postTypes: ["CDI", "Alternance", "Stage"],
-    applicationMethod: "CV et entretiens",
-    description: "Fauché est n°1 français indépendant des solutions et services à l'énergie. Ses 3 200 collaborateurs imaginent, réalisent et assurent la maintenance de vos projets électriques dans les domaines tertiaires, industriels et les infrastructures de transport.",
-    highlights: [
-      "N°1 français indépendant des solutions et services à l'énergie",
-      "Évolution de carrière : Assistant chargé d'affaires, Chargé d'affaires, Responsable d'activités",
-    ],
-  },
-  // ── GCC ──
-  {
-    id: 73, name: "GCC", logo: "/logos/gcc.png", sector: "Construction", domain: "BTP", yearCreated: 1921,
-    location: "Nationale", employees: "3 000", chiffreAffaires: "1,2 milliards d'euros",
-    website: "https://www.gcc-groupe.com/",
-    profiles: "Conducteur de travaux, Études de prix",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV, moins de 3 entretiens",
-    description: "GCC est un Groupe de BTP indépendant à taille humaine. Salaire selon profil et expérience. Prime Intéressement & Participation, Prime Vacances, Mutuelle avec options complémentaires de couverture PEG avec abondement. Engagements RSE répartis sur 4 domaines : offrir des solutions sobres et durables, garantir de bonnes conditions de travail en toute sécurité, limiter l'empreinte environnementale, fédérer autour des engagements RSE.",
-    highlights: [
-      "Partenariat avec Hoffman pour un béton bas carbone",
-      "50% du CA en réhabilitation/rénovation d'ici 2028",
-      "Programme intrapreneuriat « Licorne »",
-      "100% du personnel encadrant formé à la RSE",
-    ],
-  },
-  // ── NGE ──
-  {
-    id: 74, name: "NGE", logo: "/logos/nge.png", sector: "Travaux Publics", domain: "BTP", yearCreated: 2002,
-    location: "Échelle Internationale", employees: "23 000", chiffreAffaires: "4,3 millions d'euros",
-    website: "https://www.nge.fr/", websiteCarriere: "https://www.nge-recrute.fr/",
-    profiles: "Conducteur de travaux, Chef de chantier, Géomètre, Ingénieur études de prix",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV + 2 entretiens (RH + Opérationnels)",
-    description: "S'appeler NGE, Nouvelles Générations d'Entrepreneurs, c'est avoir l'audace nécessaire à la prise de risques. Nous sommes cette entreprise de BTP. Chaque jour, nous réinventons nos métiers pour concevoir, réaliser et rénover des projets d'envergure et des ouvrages de proximité. Nos équipes sont engagées aux côtés des territoires et des communautés pour créer des ponts, des routes, des voies ferrées, des réseaux de fibre optique, des espaces de vie culturels, sociaux, éducatifs…",
-    highlights: [
-      "Nouvelles Générations d'Entrepreneurs",
-      "Construire ENSEMBLE est la marque de fabrique de NGE",
-      "Transition écologique au cœur des projets",
-      "L'humain au cœur de chacun des projets",
     ],
   },
   // ── Orano Support ──
@@ -597,17 +438,6 @@ export const exposantsList: Exposant[] = [
     applicationMethod: "CV et lettre de motivation - Process de recrutement en deux étapes : préqualification téléphonique RH puis entretien opérationnel avec le manager ou futur tuteur.",
     description: "Razel-Bec est un expert reconnu dans tous les domaines des travaux publics : génie civil et ouvrages d'art, travaux souterrains, barrages, nucléaire, infrastructures linéaires, génie urbain et écologique. Véritable partenaire de proximité reconnu pour ses expertises techniques, Razel-Bec répond aux attentes de ses clients avec des solutions inventives et fiables.",
     highlights: ["Expert en génie civil et ouvrages d'art", "Présent sur le chantier du Grand Paris", "9 implantations dans le monde"],
-  },
-  // ── SADE CGTH ──
-  {
-    id: 78, name: "SADE CGTH", logo: "/logos/sade-cgth.webp", sector: "Travaux publics", domain: "BTP", yearCreated: 1918,
-    location: "Marseille et dans toute la France", employees: "350", chiffreAffaires: "82 870 euros",
-    website: "https://www.sade-cgth.fr/",
-    profiles: "Conducteur de travaux, Chef de chantier, Chef d'équipe, Canalisateur",
-    postTypes: ["Alternance", "CDI"],
-    applicationMethod: "CV et lettre de motivation",
-    description: "Entreprise plus que centenaire, la SADE est spécialiste de la conception, la construction, la réhabilitation et l'entretien des réseaux (eau et énergie) et des infrastructures (génie civil et travaux souterrains) en France et à l'international. Entrepreneur de la transformation écologique, elle promeut des solutions techniques sobres et innovantes pour des réseaux vertueux et des infrastructures décarbonées.",
-    highlights: ["Plus de 100 ans d'expertise", "Spécialiste des réseaux eau et énergie", "Transformation écologique"],
   },
   // ── Setec ──
   {
@@ -665,17 +495,6 @@ export const exposantsList: Exposant[] = [
     applicationMethod: "1) Si votre profil nous intéresse, il sera transmis à nos opérationnels pour sélection des CV répondant au mieux aux besoins des services. 2) Si votre candidature est retenue, vous serez ensuite contactés pour un entretien.",
     description: "VINCI Construction est l'un des principaux acteurs mondiaux de la construction, dans le domaine des infrastructures de transport, des bâtiments, des réseaux et des aménagements urbains. VINCI Construction s'appuie sur un réseau d'entreprises de proximité, des réseaux de spécialité et une expertise spécifique sur les grands projets d'infrastructures. Présentes dans plus de 100 pays, ses 1 300 entreprises emploient plus de 117 000 collaborateurs.",
     highlights: ["Principaux acteurs mondiaux de la construction", "1 300 entreprises dans 100+ pays", "117 000 collaborateurs"],
-  },
-  // ── Voltalia ──
-  {
-    id: 84, name: "Voltalia", logo: "/logos/voltalia.png", sector: "Énergies renouvelables", domain: "Énergie", yearCreated: 2005,
-    location: "Internationale", employees: "1 700", chiffreAffaires: "546 millions d'euros",
-    website: "https://www.voltalia.com/fr", websiteCarriere: "https://www.voltalia.com/fr/careers",
-    profiles: "Ingénieurs : électricité, énergie, construction, génie civil, matériaux…",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod: "CV, LM - anglais très fortement apprécié.",
-    description: "Fondée en France en 2005, Voltalia s'est développée pour devenir un producteur d'énergie et un fournisseur de services international. Nous sommes spécialisés dans les solutions d'énergies renouvelables qui permettent à nos clients de s'inscrire dans le mouvement mondial de la transition énergétique et écologique.",
-    highlights: ["Producteur d'énergie renouvelable international", "Transition énergétique et écologique", "Présence internationale"],
   },
 
   // ── Exposants avec fiches complètes ──
@@ -788,19 +607,6 @@ export const exposantsList: Exposant[] = [
     highlights: ["Accélérateur de la transition énergétique", "8 000 Switchers dans 12 pays", "Expertise nucléaire et renouvelables"],
   },
 
-  // ── Axone Group ──
-  {
-    id: 105, name: "Axone Group", logo: "/logos/axone.png", sector: "Ingénierie, études techniques", domain: "Ingénierie", yearCreated: 2016,
-    location: "Aix-en-Provence / Toulon / Lyon / Paris / Tours",
-    employees: "65", chiffreAffaires: "5 millions d'euros",
-    website: "https://www.axonegroup.com/", websiteCarriere: "https://www.axonegroup.com/offres-demploi/",
-    profiles: "Ingénieur(e) Système Industriel / Ingénieur Sûreté Nucléaire / Ingénieur Sûreté de Fonctionnement",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV, 3 entretiens (RH, managérial et technique), en visio ou physique.",
-    description: "Axone est un acteur incontournable dans la maîtrise des risques liés aux systèmes complexes, principalement dans les secteurs du nucléaire et de la défense. Chez AXONE, on vit dans le monde réel : un bon salaire avec 13 RTT par an, une équipe sympa, des petits déjeuners et activités en tout genre, un séminaire annuel original avec un thème secret et des activités époustouflantes. Une vraie politique RSE – pas pipo ! Nous sommes Entreprise à Mission depuis 2024. Des formations régulières prises en charge par AXONE Institute. Une organisation vraiment flexible.",
-    highlights: ["Entreprise à Mission depuis 2024", "13 RTT par an + avantages équipe", "Formation continue via AXONE Institute", "Maîtrise des risques : nucléaire et défense"],
-  },
-
   // ── Bertin Technologies ──
   {
     id: 106, name: "Bertin Technologies", logo: "/logos/bertin-technologies.webp", sector: "Instrumentation industrielle et scientifique", domain: "Industrie", yearCreated: 1956,
@@ -812,32 +618,6 @@ export const exposantsList: Exposant[] = [
     applicationMethod: "CV, lettre de motivation, 2 à 3 entretiens dont 1 minimum en présentiel.",
     description: "BERTIN TECHNOLOGIES est un groupe industriel européen de l'instrumentation pour des applications critiques ou scientifiques. Chaque jour, nous poursuivons les avancées technologiques dans des domaines variés : le Spatial, la Défense et la sécurité, les Grands Instruments Scientifiques, le Nucléaire Civil et les Sciences de la Vie et la Santé.",
     highlights: ["Groupe industriel européen de l'instrumentation", "Secteurs : Spatial, Défense, Nucléaire, Sciences de la Vie", "Applications critiques et scientifiques"],
-  },
-
-  // ── Bertrandt Technology France ──
-  {
-    id: 107, name: "Bertrandt Technology France", logo: "/logos/bertrandt.png", sector: "Ingénierie automobile, aéronautique, Défense et spatial", domain: "Ingénierie", yearCreated: 1974,
-    location: "7 sites en France + 50 sites à l'international (États-Unis, Europe, Afrique, Chine)",
-    employees: "13 000", chiffreAffaires: "1,1 milliard d'euros",
-    website: "https://www.bertrandt.com/", websiteCarriere: "https://www.bertrandt.com/en/career",
-    profiles: "Ingénieurs généralistes, ingénieurs mécaniques, Data analystes",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV, 2 entretiens (technique et RH), niveau d'anglais testé, lieux d'entretien : Vitrolles, Nice, Paris et Toulouse.",
-    description: "Numéro 1 en Europe sur le marché de l'ingénierie automobile, le groupe Bertrandt, fort de 13 000 collaborateurs et d'une expérience de plus de 50 ans dans le développement de sous-systèmes/systèmes/véhicules complets, est le partenaire de confiance de tous les grands donneurs d'ordres européens, y compris dans l'aéronautique depuis plus de 20 ans. Avec ses ingénieurs et de nombreux partenaires, les entités de Bertrandt en France sont capables de mobiliser d'importantes ressources pour vous accompagner dans l'innovation et le maquettage de nouveaux concepts.",
-    highlights: ["N°1 européen de l'ingénierie automobile", "50+ ans d'expérience", "7 sites en France, présence mondiale"],
-  },
-
-  // ── ERAS (Equans) ──
-  {
-    id: 108, name: "ERAS", logo: "/logos/eras.png", sector: "Ingénierie de Conception et de Réalisation (EPCm, EPC)", domain: "Ingénierie", yearCreated: 1994,
-    location: "Lyon, Marseille, Montoir-de-Bretagne, Mulhouse, La Garenne-Colombes, Orléans, Dunkerque, Rouen, Tavaux, Avignon, Compiègne",
-    employees: "350", chiffreAffaires: "42 millions d'euros",
-    website: "https://eras.com", websiteCarriere: "https://www.equans.com/join-us",
-    profiles: "Ingénieur d'études, Ingénieur calculs",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV, entretien technique et RH.",
-    description: "Depuis plus de 30 ans, ERAS Ingénierie accompagne les industriels dans la réussite de leurs projets pour des missions tous corps d'état en avant-projets, maîtrise d'œuvre globale (EPCm) et clé-en-main (EPC). Ingénierie de Conception et de Réalisation dédiée aux procédés industriels.",
-    highlights: ["30+ ans d'expertise en ingénierie industrielle", "Maîtrise d'œuvre globale EPCm et EPC", "Marque du groupe Equans", "Présente dans 11 villes françaises"],
   },
 
   // ── Exail SAS ──
@@ -890,19 +670,6 @@ export const exposantsList: Exposant[] = [
     applicationMethod: "CV, lettre de motivation, 3/4 entretiens, français/anglais, visioconférence + site.",
     description: "Au service de la performance, de l'innovation et de la compétitivité des industriels, Ortec est un groupe international. Intégrateur de solutions en Ingénierie et Travaux, le Groupe Ortec accompagne les industriels sur l'ensemble du cycle de vie de leurs projets (conception, réalisation, maintenance) avec une offre articulée autour de 4 segments : Engineering, Contracting, Global Services et Energies. Le Groupe ORTEC intervient aujourd'hui sur de nombreux marchés : Oil & Gas, Nucléaire, Aéronautique & Spatial, Défense, Automobile, Ferroviaire, Chimie, Pharmacie, Agroalimentaire.",
     highlights: ["Groupe international 15 000 collaborateurs", "4 segments : Engineering, Contracting, Global Services, Energies", "Siège à Aix-en-Provence"],
-  },
-
-  // ── Parlym ──
-  {
-    id: 113, name: "Parlym", logo: "/logos/parlym.png", sector: "Ingénierie multi-sectorielle (Nucléaire, Transition énergétique, Oil & Gas, Défense, Pharmacie, ENR)", domain: "Ingénierie", yearCreated: 1995,
-    location: "Internationale",
-    employees: "1 400", chiffreAffaires: "230 millions d'euros",
-    website: "https://www.parlym.com/", websiteCarriere: "https://parlym.nos-recrutements.fr/",
-    profiles: "Ingénieurs en génie civil, tuyauterie, calcul, EIA, superviseurs/préparateurs travaux, chefs de projet, Business Managers",
-    postTypes: ["CDI"],
-    applicationMethod: "CV.",
-    description: "QUI SOMMES NOUS ? Le Groupe PARLYM est un acteur majeur de l'ingénierie, qui développe son expertise depuis plus de 50 ans. Avec une croissance constante, nous sommes fiers aujourd'hui de compter plus de 1 200 collaborateurs à travers le monde, qui déploient leurs compétences sur des projets clefs en main au sein de secteurs stratégiques : Nucléaire, Transition énergétique, Industrie, Oil & Gas, Défense & Pharmacie et Energies Renouvelables. POURQUOI NOUS REJOINDRE ? C'est intégrer une culture d'entreprise visant la performance, évoluer au sein d'un environnement multiculturel, participer au développement du Groupe.",
-    highlights: ["50+ ans d'expertise en ingénierie", "1 400 collaborateurs à l'international", "Secteurs : Nucléaire, ENR, Oil & Gas, Défense"],
   },
 
   // ── Syntec-Ingénierie ──
@@ -1022,19 +789,6 @@ export const exposantsList: Exposant[] = [
     highlights: ["Service de renseignement extérieur français", "7 200 agents au service de la France", "Du contre-terrorisme à la cybersécurité", "Profils très divers : techniques, linguistes, analystes"],
   },
 
-  // ── Monaco Marine ──
-  {
-    id: 123, name: "Monaco Marine", sector: "Naval Yachting", domain: "Industrie", yearCreated: 1995, logo: "/logos/monaco-marine.png",
-    location: "Région PACA (Marseille, Beaulieu-sur-Mer, Monaco)",
-    employees: "220", chiffreAffaires: "110 millions d'euros",
-    website: "https://www.monacomarine.com/fr", websiteCarriere: "https://recrutement.monacomarine.com/fr/",
-    profiles: "Chef de Projet Yachting – Dernière année d'étude ou jeune diplômé(e) d'une formation technique/école d'ingénieur ou école de commerce avec forte capacité d'organisation et maîtrise de l'Anglais et du Français",
-    postTypes: ["CDI", "Stage"],
-    applicationMethod: "Possibilité d'embauche en tant que Chef de Projet en sortie de stage de 6 mois. Possibilité d'évoluer au sein de Monaco Marine vers des métiers d'expertise technique ou de management.",
-    description: "Monaco Marine est une société spécialisée dans le refit, la réparation et la maintenance de yachts à moteur ou à voiles de 10 à 180 mètres. Nous proposons des services allant de la simple révision au refit complet. Nous accueillons, conseillons nos clients et pilotons leur projet de la conception à la finalisation au sein de nos 8 chantiers navals répartis entre Marseille et Beaulieu-sur-Mer.",
-    highlights: ["8 chantiers navals entre Marseille et Beaulieu-sur-Mer", "Yachts de 10 à 180 mètres", "Évolution vers des postes d'expertise ou management", "Une marina à Monaco complète l'offre de service"],
-  },
-
   // ── Conduent Business Solutions France ──
   {
     id: 124, name: "Conduent Business Solutions", sector: "Industrie – Transport – Billétique", domain: "Numérique", yearCreated: 1970, logo: "/logos/conduent.png",
@@ -1098,19 +852,6 @@ export const exposantsList: Exposant[] = [
     applicationMethod: "CV, 2 entretiens (RH et opérationnel), en visio et présentiel.",
     description: "Chez HEINEKEN France, nous exerçons deux métiers : brasseur et distributeur. Brasseur, nous sommes fiers de la belle diversité de nos marques de bières produites dans nos 3 brasseries françaises à Mons-en-Barœul, Schiltigheim et Marseille. Distributeur, avec notre filiale France Boissons, nous livrons chaque jour plus de 43 000 clients (cafés, hôtels, restaurants). Brasseur-distributeur depuis plus de 30 ans en France, nous regroupons 3 700 collaborateurs et générons 30 000 emplois indirects. HEINEKEN France appartient au groupe HEINEKEN, premier brasseur européen et deuxième mondial.",
     highlights: ["3 brasseries françaises", "71 sites de distribution", "43 000 clients CHR livrés chaque jour", "Groupe HEINEKEN : 165 brasseries dans 70+ pays"],
-  },
-
-  // ── PERNOD RICARD ──
-  {
-    id: 129, name: "Pernod Ricard", sector: "Vins & Spiritueux", domain: "Agroalimentaire", yearCreated: 1975, logo: "/logos/pernod-ricard.png",
-    location: "International – 3 000 employés en France (Paris, Reims, Marseille, Cognac, Vendeville, Bordeaux, Thuir)",
-    employees: "19 000", chiffreAffaires: "10 959 millions d'euros",
-    website: "https://www.pernod-ricard.com", websiteCarriere: "https://www.pernod-ricard.com/fr/carrieres",
-    profiles: "Profils variés en bureaux ou en usine : RSE, Production, R&D / QHSE, Supply Chain, Achats, Tech, Data, Finance",
-    postTypes: ["Alternance", "Stage"],
-    applicationMethod: "CV, entretien RH puis entretien manager, en français ou en anglais selon le poste, en visio ou en présentiel. Programme « Junior Talent Lab » pour les stagiaires et alternants.",
-    description: "Pernod Ricard est un leader mondial du secteur des vins et spiritueux, associant des savoir-faire uniques dans la fabrication de ses produits, le développement de ses marques et leur distribution mondiale. Notre vaste portefeuille, allant du premium au luxe, compte notamment la vodka Absolut, le pastis Ricard, le whisky irlandais Jameson, le cognac Martell, le rhum Havana Club, le gin Beefeater, la liqueur Malibu ou les champagnes Mumm et Perrier-Jouët.",
-    highlights: ["Leader mondial des vins & spiritueux", "Marques iconiques : Absolut, Ricard, Jameson, Martell, Havana Club", "Programme Junior Talent Lab", "Esprit d'équipe et responsabilité"],
   },
 
   // ── VINCI ENERGIES ──
