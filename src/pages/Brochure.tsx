@@ -1666,6 +1666,7 @@ function WordSlide({
   image,
   imageAlt,
   imageFit = "cover",
+  imageAspect = "aspect-[3/4]",
 }: {
   tag: string;
   title: string;
@@ -1675,6 +1676,7 @@ function WordSlide({
   image?: string;
   imageAlt?: string;
   imageFit?: "cover" | "contain";
+  imageAspect?: string;
 }) {
   const isContain = imageFit === "contain";
   return (
@@ -1685,7 +1687,7 @@ function WordSlide({
             className={
               isContain
                 ? "w-full max-w-md rounded-2xl overflow-hidden shadow-2xl bg-white/5"
-                : "w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl"
+                : `w-full max-w-md ${imageAspect} rounded-2xl overflow-hidden shadow-2xl`
             }
             style={{ border: `2px solid rgba(255,255,255,0.5)` }}
           >
@@ -1754,6 +1756,9 @@ function MotParrainSlide() {
       text="C'est avec une grande fierté que SNCF Réseau parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les enjeux concrets de la mobilité durable. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers du rail. À travers ce parrainage, nous souhaitons réaffirmer notre engagement auprès des élèves-ingénieurs de Centrale Méditerranée autour des mobilités bas-carbone, des grands chantiers d'infrastructure et des métiers d'avenir du ferroviaire, ainsi que notre attachement au territoire et à la formation des futurs talents."
       author="Direction SNCF Réseau"
       role="Parrain de la 19ᵉ édition"
+      image="/parrain-sncf-reseau.jpg"
+      imageAlt="Voies ferrées au soleil couchant avec le logo SNCF Réseau"
+      imageAspect="aspect-[3/2]"
     />
   );
 }
