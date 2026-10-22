@@ -1557,7 +1557,7 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
 function PlanSlide() {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-center px-14 sm:px-10 md:px-20 pt-10 md:pt-20 pb-5 md:pb-16"
+      className="w-full h-full flex flex-col items-center justify-center px-14 sm:px-8 md:px-4 pt-8 md:pt-12 pb-3 md:pb-6"
       style={{ background: THEME.paper }}
     >
       <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-2 md:mb-3 text-center" style={{ color: THEME.royal }}>
@@ -1566,18 +1566,20 @@ function PlanSlide() {
       <h2 className="font-heading font-black text-2xl sm:text-5xl md:text-6xl tracking-tight mb-2 text-center" style={{ color: THEME.ink }}>
         PLAN DU FORUM
       </h2>
-      <div className="h-[3px] w-24 mb-4 md:mb-8" style={{ background: THEME.royal }} />
+      <div className="h-[3px] w-24 mb-3 md:mb-5" style={{ background: THEME.royal }} />
 
-      <div className="w-full max-w-6xl flex-1 min-h-0 flex items-center justify-start md:justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
-        <img
-          src="/plan-foceen.jpg"
-          alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
-          loading="eager"
-          decoding="async"
-          className="object-contain w-full h-full max-h-[78vh] rounded-lg shadow-sm min-w-[900px] md:min-w-0"
-          style={{ border: `1px solid ${THEME.rule}` }}
-        />
+      <div className="w-full flex-1 min-h-0 flex items-center justify-start md:justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
+        <div className="w-fit mx-auto shrink-0 max-w-none md:max-w-[calc(100%-9rem)] rounded-2xl border border-border/60 bg-white shadow-sm overflow-hidden p-1 sm:p-2">
+          <img
+            src="/plan-foceen.jpg"
+            alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
+            loading="eager"
+            decoding="async"
+            className="block aspect-[1145/816] w-auto max-h-[76vh] max-w-full object-contain rounded-xl min-w-[900px] md:min-w-0"
+          />
+        </div>
       </div>
+
 
       <p className="mt-2 md:mt-3 text-[10px] uppercase tracking-[0.25em] md:hidden" style={{ color: THEME.royal }}>
         Faites glisser pour explorer le plan
