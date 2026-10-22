@@ -544,17 +544,6 @@ export const exposantsList: Exposant[] = [
     description: "Dassault Systèmes est un accélérateur de progrès humain. Nous proposons aux entreprises et aux particuliers des environnements virtuels collaboratifs permettant d'imaginer des innovations durables. Grâce aux jumeaux virtuels d'expérience du monde réel qu'ils créent avec la plateforme 3DEXPERIENCE et ses applications, Dassault Systèmes est un créateur de valeur, au service de plus de 350 000 clients de toutes tailles et de tous secteurs d'activité, dans plus de 150 pays.",
     highlights: ["Plateforme 3DEXPERIENCE", "350 000 clients dans 150+ pays", "23 800 collaborateurs passionnés"],
   },
-  // ── France Télévisions ──
-  {
-    id: 88, name: "France Télévisions", logo: "/logos/france-televisions.png", sector: "Audiovisuel", domain: "Numérique", yearCreated: 1992,
-    location: "France", employees: "9 000", chiffreAffaires: "5,5 milliards d'euros",
-    website: "https://www.francetelevisions.fr/groupe", websiteCarriere: "https://recrutement.francetelevisions.fr",
-    profiles: "Ingénieurs Technologies, Chef de Projet informatiques, Architecte SI, Administrateurs Réseaux IT, Assistant DATA, Data Ingénieur",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod: "CV",
-    description: "Rejoindre France Télévisions, c'est contribuer à faire le média de la société de demain. Le média qui offre à tous les Français une information fiable et indépendante. France Télévisions est le groupe audiovisuel public incontournable des Français, avec des chaînes emblématiques comme France 2, France 3, France 4, France 5 et France Info. Notre mission est simple : informer, éduquer et divertir ! Entre IA, data, cloud, outils technologiques novateurs, l'innovation est au cœur de nos missions.",
-    highlights: ["Premier groupe audiovisuel public français", "Innovation : IA, data, cloud", "Chaînes : France 2, 3, 4, 5, Info"],
-  },
   // ── Lucca ──
   {
     id: 89, name: "Lucca", logo: "/logos/lucca.png", sector: "Tech/SaaS", domain: "Numérique", yearCreated: 2002,
