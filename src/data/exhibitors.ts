@@ -830,18 +830,6 @@ export const exposantsList: Exposant[] = [
     highlights: ["145 000 collaborateurs dans le monde", "Présent dans 51 pays", "90 millions de clients", "Engagement sociétal et environnemental"],
   },
 
-  // ── HARIBO ──
-  {
-    id: 127, name: "HARIBO", sector: "Agro-alimentaire", domain: "Agroalimentaire", yearCreated: 1920, logo: "/logos/haribo.png",
-    location: "Marseille, Uzès et monde (26 pays)",
-    employees: "8 500",
-    website: "https://www.haribo.com/fr-fr", websiteCarriere: "https://www.haribo.com/fr-fr/carrieres/travailler-chez-haribo",
-    profiles: "Production, Maintenance, Qualité, R&D, Amélioration Continue",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod: "CV + entretiens.",
-    description: "Ensemble, transmettons notre joie dans le monde ! HARIBO est la marque des bonbons gélifiés numéro 1 dans le monde. Elle compte plus de 7 000 collaborateurs basés dans 26 pays. La recette de notre succès repose sur quelques ingrédients essentiels : notre engagement pour la qualité, notre approche originale et le travail précieux de nos collaborateurs issus de plus de 50 pays différents qui apportent la richesse de leur diversité à tout ce que nous entreprenons. Haribo, c'est beau la vie, pour les grands et les petits !",
-    highlights: ["N°1 mondial des bonbons gélifiés", "Présent dans 26 pays", "Collaborateurs de 50+ nationalités", "Marque iconique depuis 1920"],
-  },
 
   // ── HEINEKEN FRANCE ──
   {
