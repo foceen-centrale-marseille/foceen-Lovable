@@ -1339,7 +1339,7 @@ function ArrowButton({
 function CoverSlide({ onConsult }: { onConsult: () => void }) {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-12 pb-8"
+      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-10 pb-8"
       style={{ background: THEME.paper, color: THEME.ink }}
     >
       {/* Top pill */}
@@ -1361,7 +1361,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-16 md:h-[72px] object-contain"
+            className="h-16 md:h-24 object-contain"
           />
         </div>
         <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
@@ -1388,7 +1388,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
       </div>
 
       {/* Bottom — white rounded card with partners */}
-      <div className="w-full max-w-6xl bg-white rounded-2xl px-4 md:px-8 py-3 md:py-4 shadow-2xl">
+      <div className="w-full max-w-6xl bg-white rounded-2xl px-4 md:px-8 py-3 shadow-2xl">
         <p
           className="text-center text-[10px] md:text-[11px] tracking-[0.4em] uppercase font-heading font-semibold mb-2.5"
           style={{ color: THEME.royal }}
@@ -1405,7 +1405,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
               <img
                 src={p.src}
                 alt={p.name}
-                className="object-contain max-h-[min(3.5rem,6.5vh)] sm:max-h-[min(4rem,7vh)] w-auto"
+                className="object-contain max-h-[min(3.5rem,6.4vh)] sm:max-h-[min(4rem,6.4vh)] w-auto"
                 loading="eager"
                 decoding="async"
               />
