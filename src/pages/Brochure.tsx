@@ -1557,27 +1557,31 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
 function PlanSlide() {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-center px-4 sm:px-10 md:px-20 pt-14 md:pt-20 pb-8 md:pb-16"
+      className="w-full h-full flex flex-col items-center justify-center px-14 sm:px-10 md:px-20 pt-12 md:pt-20 pb-6 md:pb-16"
       style={{ background: THEME.paper }}
     >
-      <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-3" style={{ color: THEME.royal }}>
+      <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-3 text-center" style={{ color: THEME.royal }}>
         Orientation
       </p>
-      <h2 className="font-heading font-black text-4xl sm:text-5xl md:text-6xl tracking-tight mb-2 text-center" style={{ color: THEME.ink }}>
+      <h2 className="font-heading font-black text-2xl sm:text-5xl md:text-6xl tracking-tight mb-2 text-center" style={{ color: THEME.ink }}>
         PLAN DU FORUM
       </h2>
-      <div className="h-[3px] w-24 mb-6 md:mb-8" style={{ background: THEME.royal }} />
+      <div className="h-[3px] w-24 mb-5 md:mb-8" style={{ background: THEME.royal }} />
 
-      <div className="w-full max-w-6xl flex-1 min-h-0 flex items-center justify-center">
+      <div className="w-full max-w-6xl flex-1 min-h-0 flex items-center justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
         <img
           src="/plan-foceen.jpg"
           alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
           loading="eager"
           decoding="async"
-          className="object-contain w-full h-full max-h-[78vh] rounded-lg shadow-sm"
+          className="object-contain w-full h-full max-h-[78vh] rounded-lg shadow-sm min-w-[760px] md:min-w-0"
           style={{ border: `1px solid ${THEME.rule}` }}
         />
       </div>
+
+      <p className="mt-3 text-[10px] uppercase tracking-[0.25em] md:hidden" style={{ color: THEME.royal }}>
+        Faites glisser pour explorer le plan
+      </p>
     </div>
   );
 }
