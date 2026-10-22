@@ -72,16 +72,12 @@ const make = (
 });
 
 const partners = [
-  { name: "Naval Group", src: "/logos/naval-group.png" },
-  { name: "SNCF Réseau", src: "/logos/sncf-reseau.png" },
-  { name: "La Mie Câline", src: "/logo-la-mie-caline.png" },
+  { name: "Batiactu", src: "/logos/batiactu.png" },
+  { name: "Le Monde des Grandes Écoles et Universités", src: "/logos/monde-grandes-ecoles.png" },
   { name: "Haribo", src: "/logos/haribo.png" },
-  { name: "Batiactu", src: "/81792a_3e8f982fc8a6497ca46a98b487517d35~mv2.png" },
-  { name: "Centrale Méditerranée", src: "/logo-foceen.png" },
-  { name: "Métropole AMP", src: "/logo-metropole-aix-marseille.png" },
-  { name: "Gomet'", src: "/logo-gomet.png" },
-  { name: "Studyrama", src: "/752_ckeditor_agenda_53966_637f4194bed9f_1.png" },
-  { name: "Cafés Richard", src: "/logo-cafes-richard.png" },
+  { name: "Gomet'", src: "/logos/gomet.png" },
+  { name: "Studyrama", src: "/logos/studyrama.png" },
+  { name: "SNCF Réseau", src: "/logos/sncf-reseau.png" },
 ];
 
 const sncf = make("SNCF Réseau", "Infrastructures & Gestion du réseau ferroviaire", "/logos/sncf-reseau.png", {
@@ -1399,10 +1395,20 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
         >
           Nos partenaires
         </p>
-        <div className="grid grid-cols-5 md:grid-cols-10 gap-3 items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3 items-center">
           {partners.map((p) => (
-            <div key={p.name} className="h-12 md:h-14 flex items-center justify-center" title={p.name}>
-              <img src={p.src} alt={p.name} className="max-h-full max-w-full object-contain" />
+            <div
+              key={p.name}
+              title={p.name}
+              className="flex items-center justify-center bg-white rounded-xl border border-border/50 shadow-sm p-2"
+            >
+              <img
+                src={p.src}
+                alt={p.name}
+                className="object-contain max-h-14 sm:max-h-16 w-auto"
+                loading="eager"
+                decoding="async"
+              />
             </div>
           ))}
         </div>
