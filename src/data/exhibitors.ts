@@ -791,18 +791,6 @@ export const exposantsList: Exposant[] = [
     highlights: ["Service de renseignement extérieur français", "7 200 agents au service de la France", "Du contre-terrorisme à la cybersécurité", "Profils très divers : techniques, linguistes, analystes"],
   },
 
-  // ── Conduent Business Solutions France ──
-  {
-    id: 124, name: "Conduent Business Solutions", sector: "Industrie – Transport – Billétique", domain: "Numérique", yearCreated: 1970, logo: "/logos/conduent.png",
-    location: "Guilherand-Granges (Proche Valence)",
-    employees: "600", chiffreAffaires: "3,5 millions d'euros",
-    website: "https://www.conduent.com/", websiteCarriere: "https://careers.conduent.com/",
-    profiles: "Développement, Ingénierie Logicielle, Ingénierie Système, Test validation, Ingénierie d'Affaires, Développement d'affaires, Gestion de projet",
-    postTypes: ["CDI", "Stage"],
-    applicationMethod: "CV – Entretiens Techniques – Entretiens RH – Entretiens possibles en Visio. Les entretiens sont réalisés en Français en évaluant le niveau d'Anglais.",
-    description: "Implanté en Drôme-Ardèche, proche de Valence, Conduent Business Solutions France conçoit et développe des logiciels et des systèmes billettiques innovants. Le développement du système de lecture et de contrôle de billets pour le métro de Mexico en 1968, puis la RATP au début des années 70, a fait de l'entreprise une pionnière dans le domaine de la Billettique. CBS France est aujourd'hui un centre de compétences mondial pour les transports publics et la mobilité intelligente.",
-    highlights: ["Pionnier de la billettique depuis 1968 (métro de Mexico, RATP)", "Centre de compétences mondial pour la mobilité intelligente", "Spécialiste des transports publics", "Mobilité interne et développement des compétences"],
-  },
 
   // ── NAVAL GROUP ──
   {
