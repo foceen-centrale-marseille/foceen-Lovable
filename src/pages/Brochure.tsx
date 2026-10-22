@@ -1356,12 +1356,12 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
       </div>
 
       {/* Middle — logo + title + CTA */}
-      <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-4 md:gap-5 w-full">
+      <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-3 md:gap-4 w-full">
         <div className="flex items-center justify-center">
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-16 md:h-20 object-contain"
+            className="h-16 md:h-[72px] object-contain"
           />
         </div>
         <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
@@ -1371,7 +1371,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
         </h1>
         <button
           onClick={onConsult}
-          className="mt-2 inline-flex items-center gap-3 px-7 py-3 rounded-full border-2 font-heading font-semibold tracking-[0.2em] uppercase text-xs md:text-sm transition-colors"
+          className="mt-2 inline-flex items-center gap-3 px-7 py-2.5 rounded-full border-2 font-heading font-semibold tracking-[0.2em] uppercase text-xs md:text-sm transition-colors"
           style={{ borderColor: THEME.ink, color: THEME.ink }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = THEME.ink;
