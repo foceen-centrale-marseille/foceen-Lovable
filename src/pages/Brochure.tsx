@@ -822,7 +822,17 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage", "VIE"],
         recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
       }),
-      make("KPMG", "Audit & Conseil", "/logos/kpmg.jpg"),
+      make("KPMG", "Audit, Conseil & Expertise comptable", "/logos/kpmg.jpg", {
+        founded: "1922",
+        location: "Présence nationale (nombreux bureaux en région et à Paris)",
+        revenue: "1,55 Md €",
+        employees: "7 200 collaborateurs",
+        description:
+          "Leader de l'audit et du conseil, KPMG accompagne les grandes entreprises, PME et acteurs publics dans leurs transformations stratégiques, financières et opérationnelles. Le cabinet propose aux ingénieurs des parcours stimulants au croisement de la tech et du conseil : data analytics, cybersécurité, digital audit, deal advisory et stratégie bas-carbone.",
+        profiles: ["Consultants Data & Analytics / IA", "Auditeurs des systèmes d'information & Cybersécurité", "Consultants Transformation digitale & Deal Advisory", "Consultants Opérations, Énergie & Industrie"],
+        positions: ["Alternance", "CDD", "CDI", "Stage"],
+        recruitment: ["Candidature sur kpmg.com/carrieres", "Préqualification téléphonique RH", "Tests de personnalité et de langues", "2 entretiens managériaux avec étude de cas + entretien avec un associé"],
+      }),
       make("Oresys", "Conseil en management & organisation", "/logos/oresys.png", {
         founded: "1981",
         location: "Marseille, Paris, Lyon, Lille, Nantes, Toulouse, Strasbourg, Suisse",
