@@ -1568,7 +1568,7 @@ function PlanSlide() {
       </h2>
       <div className="h-[3px] w-24 mb-5 md:mb-8" style={{ background: THEME.royal }} />
 
-      <div className="w-full max-w-6xl flex-1 min-h-0 flex items-center justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
+      <div className="w-full max-w-6xl flex-1 min-h-0 flex items-center justify-start md:justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
         <img
           src="/plan-foceen.jpg"
           alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
