@@ -1364,7 +1364,7 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
             className="h-16 md:h-24 object-contain"
           />
         </div>
-        <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
+        <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-6xl xl:text-[110px] tracking-tight">
           BROCHURE
           <br />
           ENTREPRISES
