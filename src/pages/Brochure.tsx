@@ -1709,7 +1709,7 @@ function WordSlide({
             style={{ color: THEME.royal }}
             aria-hidden="true"
           >
-            <Quote className="w-9 h-9 md:w-12 md:h-12 fill-current" strokeWidth={0} />
+            <Quote className="w-9 h-9 md:w-12 md:h-12 fill-current rotate-180" strokeWidth={0} />
           </div>
         </div>
         <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll mt-2">
@@ -1719,7 +1719,7 @@ function WordSlide({
             </p>
           ))}
           <div className="flex justify-end mt-2" aria-hidden="true" style={{ color: THEME.royal }}>
-            <Quote className="w-9 h-9 md:w-12 md:h-12 fill-current rotate-180" strokeWidth={0} />
+            <Quote className="w-9 h-9 md:w-12 md:h-12 fill-current" strokeWidth={0} />
           </div>
         </div>
         <div className="mt-6 flex items-center gap-3 shrink-0">
@@ -1805,7 +1805,7 @@ function MotEquipeSlide() {
           style={{ color: THEME.royal }}
           aria-hidden="true"
         >
-          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current" strokeWidth={0} />
+          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current rotate-180" strokeWidth={0} />
         </div>
         <p
           className="text-base md:text-lg leading-relaxed italic text-center"
@@ -1822,7 +1822,7 @@ function MotEquipeSlide() {
           professionnel.
         </p>
         <div className="self-end mt-1 opacity-30" style={{ color: THEME.royal }} aria-hidden="true">
-          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current rotate-180" strokeWidth={0} />
+          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current" strokeWidth={0} />
         </div>
         <div className="mt-6 flex items-center gap-3 shrink-0">
           <div className="h-px w-10" style={{ background: THEME.royal }} />
