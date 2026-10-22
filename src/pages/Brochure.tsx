@@ -1132,6 +1132,7 @@ type Slide =
   | { kind: "plan" }
   | { kind: "sncf-fiche" }
   | { kind: "mot-parrain" }
+  | { kind: "mot-directrice" }
   | { kind: "mot-equipe" }
   | { kind: "divider"; label: string; subtitle?: string }
   | { kind: "company"; company: Company; sector?: string };
@@ -1151,6 +1152,7 @@ const slides: Slide[] = (() => {
     { kind: "plan" },
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
+    { kind: "mot-directrice" },
     { kind: "mot-equipe" },
     { kind: "divider", label: "Entreprises Partenaires", subtitle: `Découvrez nos ${seen.size} partenaires` },
   ];
@@ -1241,6 +1243,7 @@ export default function Brochure() {
           {current.kind === "plan" && <PlanSlide />}
           {current.kind === "sncf-fiche" && <SncfFicheSlide />}
           {current.kind === "mot-parrain" && <MotParrainSlide />}
+          {current.kind === "mot-directrice" && <MotDirectriceSlide />}
           {current.kind === "mot-equipe" && <MotEquipeSlide />}
           {current.kind === "divider" && <DividerSlide label={current.label} />}
           {current.kind === "company" && (
@@ -1408,16 +1411,18 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
     return { name: s.name, slide: idx, count: s.companies.length };
   });
 
+  const at = (k: Slide["kind"]) => slides.findIndex((sl) => sl.kind === k);
   const items: { num: string; title: string; slide: number; child?: { name: string; slide: number; count?: number }[] }[] = [
-    { num: "01", title: "Index des entreprises", slide: 2 },
-    { num: "02", title: "Plan du Forum", slide: 3 },
-    { num: "03", title: "Le Parrain — SNCF Réseau", slide: 4 },
-    { num: "04", title: "Le mot du Parrain", slide: 5 },
-    { num: "05", title: "Le mot de l'équipe FOCEEN", slide: 6 },
+    { num: "01", title: "Index des entreprises", slide: at("index") },
+    { num: "02", title: "Plan du Forum", slide: at("plan") },
+    { num: "03", title: "Le Parrain — SNCF Réseau", slide: at("sncf-fiche") },
+    { num: "04", title: "Le mot du Parrain", slide: at("mot-parrain") },
+    { num: "05", title: "Le mot de la directrice", slide: at("mot-directrice") },
+    { num: "06", title: "Le mot de l'équipe FOCEEN", slide: at("mot-equipe") },
     {
-      num: "06",
+      num: "07",
       title: "Entreprises Partenaires",
-      slide: 7,
+      slide: at("mot-equipe") + 1,
       child: [
                 ...sectorEntries.map((s) => ({ name: s.name, slide: s.slide, count: s.count })),
       ],
@@ -1654,7 +1659,7 @@ function WordSlide({
 }: {
   tag: string;
   title: string;
-  text: string;
+  text: string | string[];
   author: string;
   role: string;
   image?: string;
@@ -1707,9 +1712,11 @@ function WordSlide({
           </div>
         </div>
         <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll mt-2">
-          <p className="text-base md:text-lg leading-relaxed italic max-w-xl" style={{ color: THEME.ink }}>
-            {text}
-          </p>
+          {(Array.isArray(text) ? text : [text]).map((t, k) => (
+            <p key={k} className="text-base md:text-lg leading-relaxed italic max-w-xl mb-4 last:mb-0" style={{ color: THEME.ink }}>
+              {t}
+            </p>
+          ))}
         </div>
         <div className="mt-6 flex items-center gap-3 shrink-0">
           <div className="h-px w-10" style={{ background: THEME.royal }} />
@@ -1733,6 +1740,25 @@ function MotParrainSlide() {
       text="C'est avec une grande fierté que SNCF Réseau parraine cette nouvelle édition du FOCEEN. Forum incontournable, il symbolise la rencontre entre l'excellence académique de Centrale Méditerranée et les enjeux concrets de la mobilité durable. Nous y voyons une opportunité unique d'échanger avec les ingénieurs de demain et de partager nos métiers du rail. À travers ce parrainage, nous souhaitons réaffirmer notre engagement auprès des élèves-ingénieurs de Centrale Méditerranée autour des mobilités bas-carbone, des grands chantiers d'infrastructure et des métiers d'avenir du ferroviaire, ainsi que notre attachement au territoire et à la formation des futurs talents."
       author="Direction SNCF Réseau"
       role="Parrain de la 19ᵉ édition"
+    />
+  );
+}
+
+function MotDirectriceSlide() {
+  return (
+    <WordSlide
+      tag="Le mot de la directrice"
+      title="Le mot de la directrice"
+      text={[
+        "Le Forum Centrale Méditerranée Entreprises (FOCEEN) s’impose, année après année, comme un rendez-vous incontournable de rencontre et de dialogue, entre les entreprises, les étudiants et les jeunes diplômés de la région Sud. C’est le plus grand forum de recrutement ingénieur du Sud-Est et il incarne pleinement notre ambition : rapprocher les élèves ingénieures des réalités et des besoins économiques du territoire.",
+        "Dans un contexte marqué par des défis technologiques, environnementaux et industriels, l’ingénierie joue un rôle central. À Centrale Méditerranée, nous portons une conviction forte : former des ingénieurs capables de comprendre la complexité du monde, d’innover et d’agir avec responsabilité pour accompagner les grandes transitions. L’enjeu est clair : répondre aux attentes croissantes en compétences scientifiques et techniques, tout en préparant des profils engagés, agiles et ouverts.",
+        "Le FOCEEN s’inscrit pleinement dans cette dynamique, en résonance avec les priorités portées par la Région Sud, notamment à travers le Plan Ingénieurs Sud, qui vise à renforcer l’attractivité des formations scientifiques et à répondre aux enjeux en compétences des entreprises régionales. Ce forum est une illustration concrète de cette mobilisation collective au service de l’emploi des jeunes et du développement économique régional, en lien étroit avec les Grandes Écoles et l’ensemble des acteurs socio-économiques.",
+        "Organisé par les élèves ingénieurs de Centrale Méditerranée avec un engagement remarquable, le FOCEEN est également un véritable terrain d’apprentissage. De la conception à la mise en œuvre, ils mobilisent avec exigence leurs compétences en gestion de projet, stratégie, partenariats, communication et management, démontrant leur capacité à conduire des projets complexes et collectifs.",
+        "Pour cette nouvelle édition, plusieurs milliers d’étudiants et de jeunes diplômés auront l’opportunité d’échanger avec des entreprises de tous secteurs, de découvrir les métiers en évolution, de préciser leurs projets professionnels et de saisir des opportunités de stages et d’emplois. Au-delà du recrutement, le FOCEEN contribue à faire émerger les vocations, à éclairer les parcours et à renforcer durablement les liens entre formation et emploi.",
+        "Je tiens à remercier chaleureusement l’ensemble des partenaires, entreprises, institutions et acteurs engagés aux côtés de l’École pour faire de cet événement un succès. Leur engagement fidèle est essentiel pour accompagner les élèves et jeunes diplômés et construire collectivement l’avenir de notre territoire. Ensemble, nous contribuons concrètement à l’emploi des jeunes et au dynamisme de la région Sud.",
+      ]}
+      author="Carole Deumié"
+      role="Directrice de l’École Centrale Méditerranée"
     />
   );
 }
