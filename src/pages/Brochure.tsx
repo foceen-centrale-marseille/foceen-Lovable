@@ -1339,11 +1339,11 @@ function ArrowButton({
 function CoverSlide({ onConsult }: { onConsult: () => void }) {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-12 pb-6"
+      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-12 pb-8"
       style={{ background: THEME.paper, color: THEME.ink }}
     >
       {/* Top pill */}
-      <div className="flex flex-col items-center gap-3 mt-4">
+      <div className="flex flex-col items-center gap-3 mt-2">
         <div
           className="rounded-full px-5 py-1.5 text-[11px] md:text-xs font-heading font-bold tracking-[0.25em]"
           style={{ background: THEME.royal, color: "#FFFFFF" }}
@@ -1356,12 +1356,12 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
       </div>
 
       {/* Middle — logo + title + CTA */}
-      <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-4 md:gap-6 w-full">
+      <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-4 md:gap-5 w-full">
         <div className="flex items-center justify-center">
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-16 md:h-24 object-contain"
+            className="h-16 md:h-20 object-contain"
           />
         </div>
         <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-7xl xl:text-[110px] tracking-tight">
