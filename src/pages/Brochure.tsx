@@ -1792,6 +1792,11 @@ function MotDirectriceSlide() {
       ]}
       author="Carole Deumié"
       role="Directrice de l’École Centrale Méditerranée"
+      image="/directrice-carole-deumie.jpg"
+      imageAlt="Portrait de Carole Deumié, Directrice de l’École Centrale Méditerranée"
+      imageAspect="aspect-[4/5]"
+      imagePosition="object-top"
+      imageMaxW="max-w-[260px] sm:max-w-[320px]"
     />
   );
 }
