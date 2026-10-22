@@ -1673,6 +1673,8 @@ function WordSlide({
   imageAlt,
   imageFit = "cover",
   imageAspect = "aspect-[3/4]",
+  imagePosition = "object-center",
+  imageMaxW = "max-w-md",
 }: {
   tag: string;
   title: string;
@@ -1683,6 +1685,8 @@ function WordSlide({
   imageAlt?: string;
   imageFit?: "cover" | "contain";
   imageAspect?: string;
+  imagePosition?: string;
+  imageMaxW?: string;
 }) {
   const isContain = imageFit === "contain";
   return (
@@ -1692,15 +1696,19 @@ function WordSlide({
           <div
             className={
               isContain
-                ? "w-full max-w-md rounded-2xl overflow-hidden shadow-2xl bg-white/5"
-                : `w-full max-w-md ${imageAspect} rounded-2xl overflow-hidden shadow-2xl`
+                ? `w-full ${imageMaxW} rounded-2xl overflow-hidden shadow-2xl bg-white/5`
+                : `w-full ${imageMaxW} ${imageAspect} rounded-2xl overflow-hidden shadow-2xl`
             }
             style={{ border: `2px solid rgba(255,255,255,0.5)` }}
           >
             <img
               src={image}
               alt={imageAlt ?? ""}
-              className={isContain ? "w-full h-auto max-h-[55vh] object-contain" : "w-full h-full object-cover"}
+              className={
+                isContain
+                  ? "w-full h-auto max-h-[55vh] object-contain"
+                  : `w-full h-full object-cover ${imagePosition}`
+              }
             />
           </div>
         ) : (
