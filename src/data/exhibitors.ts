@@ -36,6 +36,8 @@ export const DOMAINS = [
   "Banque / Assurance",
   "Audit & Conseil",
   "Ingénierie",
+  "Formation",
+  "Autre",
 ];
 
 export const parrain: Exposant = {
@@ -867,6 +869,774 @@ export const exposantsList: Exposant[] = [
     highlights: ["Leader mondial des solutions multi-techniques", "Présence dans 61 pays", "Programme Pépinière d'intégration des jeunes diplômés", "Valeurs CESAR"],
   },
 
+  // ── Synchronisation depuis la brochure ──
+  {
+    id: 132,
+    name: "Cap Finances",
+    logo: "/logos/capfinances.png",
+    sector: "Gestion de patrimoine & Conseil financier",
+    domain: "Audit & Conseil",
+    yearCreated: 2004,
+    location: "Implantation nationale (France)",
+    employees: "150 collaborateurs — 1 400 conseillers partenaires",
+    chiffreAffaires: "150 M€",
+    website: "https://www.capfinances.fr",
+    profiles: "Conseillers en stratégie patrimoniale, Profils commerciaux, banque, finance & assurance, Chefs de projet ingénierie patrimoniale",
+    postTypes: [
+      "CDI"
+    ],
+    applicationMethod: "Sélection sur CV ; Entretien de présentation ; 1/2 journée en immersion opérationnelle.",
+    description: "Filiale de Groupe Premium et référence nationale de la gestion de patrimoine depuis plus de 20 ans, Capfinances accompagne particuliers et professionnels dans l'optimisation, la valorisation et la transmission de leurs actifs en épargne, retraite, prévoyance et investissements.",
+    highlights: [
+      "Conseillers en stratégie patrimoniale",
+      "Profils commerciaux, banque, finance & assurance",
+      "Chefs de projet ingénierie patrimoniale"
+    ]
+  },
+  {
+    id: 133,
+    name: "Talisker Consulting",
+    logo: "/logos/talisker.png",
+    sector: "Conseil en management & Transformation",
+    domain: "Audit & Conseil",
+    yearCreated: 2006,
+    location: "France & International",
+    employees: "47 collaborateurs",
+    chiffreAffaires: "7,5 M€",
+    website: "https://www.talisker-consulting.com",
+    profiles: "Consultants transformation & organisation des DSI, Consultants stratégie & dynamique collective, Consultants IA & technologies innovantes",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Entretien RH ; 2 études de cas avec Managers/Partners ; Entretien final Executive Partner.",
+    description: "Cabinet de conseil en management indépendant à taille humaine, Talisker accompagne les directions générales et métiers dans leurs transformations stratégiques, managériales et digitales (IA conversationnelle, refonte des DSI) grâce à la dynamique collective et au mentorat.",
+    highlights: [
+      "Consultants transformation & organisation des DSI",
+      "Consultants stratégie & dynamique collective",
+      "Consultants IA & technologies innovantes"
+    ]
+  },
+  {
+    id: 134,
+    name: "ECIA",
+    logo: "/logos/ecia.png",
+    sector: "Ingénierie Nucléaire",
+    domain: "Énergie",
+    yearCreated: 2007,
+    location: "Venelles, Bagnols-sur-Cèze, Bollène, Lyon, Cherbourg, Nantes",
+    employees: "180 collaborateurs",
+    chiffreAffaires: "13 M€",
+    website: "https://www.equans.fr",
+    profiles: "Ingénieurs électricité (CFO/CFA), Ingénieurs contrôle-commande, Ingénieurs génie mécanique & calculs, Ingénieurs ventilation & génie climatique (HVAC)",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Sélection sur CV ; Entretien RH ; Entretien technique (en visio).",
+    description: "Entité d'EQUANS France, ECIA réunit près de 200 spécialistes sur 8 agences en France pour intervenir sur tout le cycle de vie des installations nucléaires, de la conception au démantèlement. Ses équipes apportent une expertise pointue en électricité courants forts/faibles, mécanique, génie climatique (HVAC) et contrôle-commande.",
+    highlights: [
+      "Ingénieurs électricité (CFO/CFA)",
+      "Ingénieurs contrôle-commande",
+      "Ingénieurs génie mécanique & calculs",
+      "Ingénieurs ventilation & génie climatique (HVAC)"
+    ]
+  },
+  {
+    id: 135,
+    name: "Enedis",
+    logo: "/logos/enedis.png",
+    sector: "Distribution d'électricité & Réseaux intelligents",
+    domain: "Énergie",
+    yearCreated: 2008,
+    location: "Réseau national (95 % du territoire français) & Direction régionale PACA",
+    employees: "42 000 collaborateurs",
+    website: "https://www.enedis.fr",
+    profiles: "Ingénieurs data & IA (Power BI, Copilot, Python), Ingénieurs réseaux électriques & électrotechnique, Chefs de projet raccordement EnR & transition écologique, Ingénieurs sécurité, télécoms & automatismes",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "Candidature sur enedis.fr/hub-carriere ; Entretien avec un binôme métier / RH.",
+    description: "Gestionnaire du réseau public de distribution d'électricité et entreprise à mission, Enedis modernise et digitalise 1,4 million de km de lignes pour accélérer la transition écologique : raccordement massif des énergies renouvelables, déploiement des mobilités électriques et gestion intelligente des données.",
+    highlights: [
+      "Ingénieurs data & IA (Power BI, Copilot, Python)",
+      "Ingénieurs réseaux électriques & électrotechnique",
+      "Chefs de projet raccordement EnR & transition écologique",
+      "Ingénieurs sécurité, télécoms & automatismes"
+    ]
+  },
+  {
+    id: 136,
+    name: "EODD Ingénieurs Conseils",
+    logo: "/logos/eodd.png",
+    sector: "Conseil & Ingénierie environnementale",
+    domain: "Environnement",
+    yearCreated: 1991,
+    location: "13 agences nationales (France métropolitaine et outre-mer)",
+    employees: "320 collaborateurs",
+    chiffreAffaires: "30 M€",
+    website: "https://www.eodd.fr",
+    profiles: "Chargés d'études & spécialistes environnement, Chefs de projet transition écologique & énergie, Ingénieurs écoconception & biodiversité, Directeurs d'affaires / projets durables",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "CV + lettre de motivation ; Entretien RH téléphonique ; Entretien opérationnel avec équipes métiers (présentiel/visio).",
+    description: "Société à mission et bureau d'études pionnier de la transformation écologique depuis plus de 30 ans, EODD conçoit et déploie des solutions innovantes et concrètes à haute valeur environnementale et sociale pour l'aménagement urbain, la biodiversité, le bas-carbone et l'économie circulaire.",
+    highlights: [
+      "Chargés d'études & spécialistes environnement",
+      "Chefs de projet transition écologique & énergie",
+      "Ingénieurs écoconception & biodiversité",
+      "Directeurs d'affaires / projets durables"
+    ]
+  },
+  {
+    id: 137,
+    name: "EP2C Energy",
+    logo: "/logos/ep2c-energy.png",
+    sector: "Conseil & Ingénierie de l'Énergie",
+    domain: "Énergie",
+    yearCreated: 2014,
+    location: "France & International",
+    employees: "650 collaborateurs",
+    chiffreAffaires: "102 M€",
+    website: "https://www.ep2c-energy.com",
+    profiles: "Ingénieurs projets énergie & procédés, Business Managers / Ingénieurs d'Affaires, Ingénieurs supervision de chantier & construction",
+    postTypes: [
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Sélection sur CV ; Parcours d'environ 3 entretiens (visio ou présentiel).",
+    description: "Cabinet de conseil en ingénierie spécialisé dans les grands projets industriels et énergétiques complexes, EP2C Energy intervient sur l'ensemble du cycle de vie des projets (conception, gestion de projet, construction). Sa structure dynamique favorise une montée en compétences rapide et des mobilités internationales.",
+    highlights: [
+      "Ingénieurs projets énergie & procédés",
+      "Business Managers / Ingénieurs d'Affaires",
+      "Ingénieurs supervision de chantier & construction"
+    ]
+  },
+  {
+    id: 138,
+    name: "Inddigo",
+    logo: "/logos/inddigo.png",
+    sector: "Ingénierie & Conseil en transition écologique",
+    domain: "Environnement",
+    yearCreated: 1986,
+    location: "Agences à l'échelle nationale (France)",
+    employees: "460 collaborateurs",
+    chiffreAffaires: "34,9 M€",
+    website: "https://www.inddigo.com",
+    profiles: "Ingénieurs énergie & décarbonation, Ingénieurs bâtiment durable & environnement, Ingénieurs économie circulaire & déchets, Ingénieurs mobilités douces & transports",
+    postTypes: [
+      "Alternance",
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Sélection sur CV ; Préqualification ; 2 entretiens (technique métier et RH).",
+    description: "Pionnier du développement durable et de l'ingénierie environnementale depuis 1986, Inddigo accompagne territoires et entreprises privées dans leur transition : économie circulaire, gestion des déchets, décarbonation, énergies renouvelables et résilience climatique.",
+    highlights: [
+      "Ingénieurs énergie & décarbonation",
+      "Ingénieurs bâtiment durable & environnement",
+      "Ingénieurs économie circulaire & déchets",
+      "Ingénieurs mobilités douces & transports"
+    ]
+  },
+  {
+    id: 139,
+    name: "Pellenc ST",
+    logo: "/logos/pellenc-st.png",
+    sector: "Industrie",
+    domain: "Environnement",
+    yearCreated: 2001,
+    location: "Pertuis (84) / International",
+    employees: "330",
+    chiffreAffaires: "> 90 M€",
+    website: "https://www.pellencst.com",
+    profiles: "Conception mécanique & 3D, Ingénieurs méthodes & matériaux, Data / IA / Computer vision, Automatisation & robotique, Génie des procédés",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Dépôt de CV ; Entretien RH ; Entretien N+1 / N+2 ; Anglais professionnel.",
+    description: "Depuis 2001, Pellenc ST conçoit et fabrique en France des équipements de tri intelligents et des services connectés destinés au tri des déchets et à l’industrie du recyclage. Avec un parc installé de plus de 3 500 machines dans le monde entier, l'entreprise s'impose comme un leader technologique reconnu alliant vision, IA et robotique industrielle.",
+    highlights: [
+      "Conception mécanique & 3D",
+      "Ingénieurs méthodes & matériaux",
+      "Data / IA / Computer vision",
+      "Automatisation & robotique"
+    ]
+  },
+  {
+    id: 140,
+    name: "Recycle Plastique",
+    logo: "/logos/recycle-plastique.png",
+    sector: "Recyclage & Économie circulaire",
+    domain: "Environnement",
+    yearCreated: 2019,
+    location: "France",
+    employees: "3 collaborateurs",
+    website: "https://www.recycle-plastique.fr",
+    profiles: "Profils engagés & résilients en transition écologique, Génie des matériaux & procédés de valorisation plastique, Gestion de projet environnement & RSE",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "Sélection sur CV et lettre de motivation ; Entretien d'équipe.",
+    description: "Entreprise engagée dans la transition écologique concrète, Recycle Plastique valorise et recycle les matières plastiques pour répondre aux défis majeurs de l'économie circulaire et préserver les ressources de la planète.",
+    highlights: [
+      "Profils engagés & résilients en transition écologique",
+      "Génie des matériaux & procédés de valorisation plastique",
+      "Gestion de projet environnement & RSE"
+    ]
+  },
+  {
+    id: 141,
+    name: "Cap Ingelec",
+    logo: "/logos/cap-ingelec.png",
+    sector: "Ingénierie & Bâtiments complexes",
+    domain: "BTP",
+    yearCreated: 1992,
+    location: "15 agences en France (dont Marseille/Aix) & International",
+    employees: "850",
+    chiffreAffaires: "680 M€",
+    website: "https://www.capingelec.com",
+    profiles: "Ingénieurs travaux, Ingénieurs études techniques, Chefs de projets ingénierie, Ingénieurs d'affaires",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "CV + lettre de motivation ; Entretien téléphonique & présentiel ; Anglais opérationnel requis.",
+    description: "Groupe d'ingénierie et réalisation spécialisé dans les bâtiments complexes, Cap Ingelec assure des missions clés en main sur des projets d'envergure dans les datacenters, l'énergie et l'industrie, tout en intégrant des démarches concrètes de réduction de l'empreinte environnementale.",
+    highlights: [
+      "Ingénieurs travaux",
+      "Ingénieurs études techniques",
+      "Chefs de projets ingénierie",
+      "Ingénieurs d'affaires"
+    ]
+  },
+  {
+    id: 142,
+    name: "Jifmar Offshore Services",
+    logo: "/logos/jifmar.png",
+    sector: "Transport",
+    domain: "Transport",
+    yearCreated: 2005,
+    location: "Aix-en-Provence (siège) — International",
+    employees: "850",
+    chiffreAffaires: "51 M€",
+    website: "https://www.jifmar.com",
+    profiles: "Chefs de projet maritime, Coordination d'opérations maritimes, Gestion des risques & Planification, Ingénieurs opérations & reporting",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "CV ; 3 entretiens ; Anglais professionnel requis.",
+    description: "Leader des services maritimes opérant sur trois continents, Jifmar Group déploie des solutions clés en main d'ingénierie et de travaux maritimes dans les énergies marines renouvelables, l'oil & gas, la défense et l'inspection sous-marine grâce à une flotte innovante.",
+    highlights: [
+      "Chefs de projet maritime",
+      "Coordination d'opérations maritimes",
+      "Gestion des risques & Planification",
+      "Ingénieurs opérations & reporting"
+    ]
+  },
+  {
+    id: 143,
+    name: "RTM",
+    logo: "/logos/rtm.png",
+    sector: "Mobilités & Transports urbains de voyageurs",
+    domain: "Transport",
+    yearCreated: 1950,
+    location: "Métropole Aix-Marseille-Provence",
+    employees: "587 collaborateurs (fonctions cadres/ingénierie)",
+    website: "https://www.rtm.fr",
+    profiles: "Ingénieurs exploitation & systèmes de transport, Ingénieurs maintenance, matériel roulant & infrastructures, Chefs de projets modernisation, signalisation & billettique, Ingénieurs systèmes d'information & data mobilité",
+    postTypes: [
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Candidature sur talents.rtm.fr (CV et lettre de motivation) ; Entretiens individuels ou croisés à Marseille ; Accompagnement et opportunités de mobilité interne.",
+    description: "Acteur historique de la mobilité métropolitaine, la RTM conçoit, modernise et exploite le réseau de transports en commun (métro, tramway, bus, transport à la demande) au service des habitants de la métropole d'Aix-Marseille-Provence, avec une politique dynamique d'innovation et d'évolution interne.",
+    highlights: [
+      "Ingénieurs exploitation & systèmes de transport",
+      "Ingénieurs maintenance, matériel roulant & infrastructures",
+      "Chefs de projets modernisation, signalisation & billettique",
+      "Ingénieurs systèmes d'information & data mobilité"
+    ]
+  },
+  {
+    id: 144,
+    name: "Doors3",
+    logo: "/logos/doors3.png",
+    sector: "Conseil tech : IA générative, Blockchain & Web3",
+    domain: "Numérique",
+    yearCreated: 2022,
+    location: "Marseille, Paris, Göteborg (Suède)",
+    employees: "9 collaborateurs",
+    chiffreAffaires: "1,5 M€",
+    website: "https://www.doors3.com",
+    profiles: "Consultants IA Générative, Consultants Blockchain & Crypto, Développeurs Full Stack, Business Developers / Sales Tech",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Dépôt de CV et lettre de motivation ; Entretiens de sélection.",
+    description: "Cabinet de conseil en technologies de rupture fondé à Marseille, Doors3 transforme les innovations émergentes (IA générative, blockchain, expériences immersives) en solutions business concrètes, de la vision stratégique au déploiement technique.",
+    highlights: [
+      "Consultants IA Générative",
+      "Consultants Blockchain & Crypto",
+      "Développeurs Full Stack",
+      "Business Developers / Sales Tech"
+    ]
+  },
+  {
+    id: 145,
+    name: "STMicroelectronics",
+    logo: "/logos/stmicroelectronics.png",
+    sector: "Industrie",
+    domain: "Numérique",
+    yearCreated: 1987,
+    location: "Internationale (sites en France : PACA, AURA...)",
+    employees: "48 000",
+    chiffreAffaires: "11,8 Md $",
+    website: "https://www.st.com",
+    profiles: "Électronique analogique et numérique, Microélectronique & Systèmes embarqués, Développement logiciel embarqué (C, C++, Python), Conception de circuits intégrés & Validation/test",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "CV et lettre de motivation ; Entretien RH ; Entretien Manager.",
+    description: "Acteur mondial de premier plan dans le secteur des semi-conducteurs, STMicroelectronics conçoit et fabrique des technologies essentielles qui rendent les objets plus intelligents, connectés et durables. L'entreprise façonne les solutions technologiques de pointe pour l'automobile, l'industrie et l'Internet des objets (IoT).",
+    highlights: [
+      "Électronique analogique et numérique",
+      "Microélectronique & Systèmes embarqués",
+      "Développement logiciel embarqué (C, C++, Python)",
+      "Conception de circuits intégrés & Validation/test"
+    ]
+  },
+  {
+    id: 146,
+    name: "Egis",
+    logo: "/logos/egis.png",
+    sector: "Ingénierie",
+    domain: "Ingénierie",
+    yearCreated: 1970,
+    location: "Siège à Paris — Présence dans 100+ pays",
+    employees: "24 000",
+    chiffreAffaires: "2,5 Md €",
+    website: "https://www.egis-group.com",
+    profiles: "Ingénieurs génie civil & bâtiment, Ingénieurs transports & mobilités, Ingénieurs énergie & environnement, Data, numérique & management de projet (BIM)",
+    postTypes: [
+      "Alternance",
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Entretien téléphonique ; Entretien RH ; Entretien opérationnel (étude de cas éventuelle).",
+    description: "Acteur international de premier plan de l'ingénierie de la construction, de l'architecture et des services à la mobilité, Egis conçoit des infrastructures intelligentes et durables dans les transports, le bâtiment, l'eau, l'environnement et l'énergie bas-carbone.",
+    highlights: [
+      "Ingénieurs génie civil & bâtiment",
+      "Ingénieurs transports & mobilités",
+      "Ingénieurs énergie & environnement",
+      "Data, numérique & management de projet (BIM)"
+    ]
+  },
+  {
+    id: 147,
+    name: "Groupe LGM",
+    logo: "/logos/lgm.png",
+    sector: "Ingénierie",
+    domain: "Ingénierie",
+    yearCreated: 1991,
+    location: "France & International",
+    employees: "1 600",
+    chiffreAffaires: "170 M€",
+    website: "https://www.lgm.fr",
+    profiles: "Ingénieurs & Chefs de projet, AMO / PMO / Contract managers, Ingénierie du soutien & MCO, Maîtrise des risques & Ingénierie système",
+    postTypes: [
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Candidature avec CV ; 2 étapes en 3 semaines maximum ; Entretiens en visio et sur site.",
+    description: "Le groupe LGM conçoit pour les grands groupes industriels des solutions innovantes visant à optimiser les performances des grands systèmes et infrastructures complexes en exploitation et maintenance : sûreté, gestion des risques, ingénierie électronique et logicielle.",
+    highlights: [
+      "Ingénieurs & Chefs de projet",
+      "AMO / PMO / Contract managers",
+      "Ingénierie du soutien & MCO",
+      "Maîtrise des risques & Ingénierie système"
+    ]
+  },
+  {
+    id: 148,
+    name: "Groupe REEL",
+    logo: "/logos/reel.png",
+    sector: "Industrie",
+    domain: "Ingénierie",
+    yearCreated: 1946,
+    location: "Siège en France — Présence internationale",
+    employees: "3 400",
+    chiffreAffaires: "600 M€",
+    website: "https://www.reel.fr",
+    profiles: "Automatisme & informatique industrielle, Conception & calculs mécaniques, Méthodes industrielles, Chargés d'affaires techniques juniors",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Sélection CV ; 1 à 3 entretiens techniques et RH.",
+    description: "Spécialiste de la conception, de la fabrication et de la maintenance de systèmes de levage et de manutention complexes de haute sécurité, le Groupe REEL intervient au cœur des filières les plus exigeantes : nucléaire, aéronautique, hydroélectricité, énergies marines et aluminium.",
+    highlights: [
+      "Automatisme & informatique industrielle",
+      "Conception & calculs mécaniques",
+      "Méthodes industrielles",
+      "Chargés d'affaires techniques juniors"
+    ]
+  },
+  {
+    id: 149,
+    name: "Apec",
+    logo: "/logos/apec.png",
+    sector: "Conseil & Accompagnement professionnel des cadres",
+    domain: "Formation",
+    yearCreated: 1960,
+    location: "Paris (siège) & centres en région (dont Marseille)",
+    employees: "1 200 collaborateurs",
+    website: "https://www.apec.fr",
+    profiles: "Jeunes diplômés ingénieurs & Bac+5, Consultants en évolution professionnelle, Chargés de relations entreprises & talents",
+    postTypes: [
+      "Alternance",
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Candidatures et accompagnement via apec.fr.",
+    description: "Acteur de référence du marché de l'emploi des cadres et des jeunes diplômés, l'Apec accompagne les ingénieurs et talents de l'enseignement supérieur dans la définition de leur trajectoire professionnelle, tout en conseillant les entreprises dans le sourcing et la réussite de leurs recrutements.",
+    highlights: [
+      "Jeunes diplômés ingénieurs & Bac+5",
+      "Consultants en évolution professionnelle",
+      "Chargés de relations entreprises & talents"
+    ]
+  },
+  {
+    id: 150,
+    name: "AVEC L'INDUSTRIE",
+    logo: "/logos/avec-l-industrie.png",
+    sector: "Compétences industrielles & OPCO",
+    domain: "Formation",
+    yearCreated: 2018,
+    location: "Échelle nationale (29 branches industrielles)",
+    employees: "732 collaborateurs",
+    website: "https://www.aveclindustrie.fr",
+    profiles: "Tous profils ingénieurs & scientifiques, Alternants & apprentis industriels, Métiers de la production, R&D & maintenance",
+    postTypes: [
+      "Alternance",
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Orientation vers les branches & entreprises partenaires.",
+    description: "Initiative d'OPCO 2i et de 29 branches professionnelles industrielles (chimie, métallurgie, énergies...), Avec l’Industrie® valorise auprès des jeunes talents une industrie moderne, durable et souveraine en finançant la formation, l'alternance et l'évolution des compétences techniques.",
+    highlights: [
+      "Tous profils ingénieurs & scientifiques",
+      "Alternants & apprentis industriels",
+      "Métiers de la production, R&D & maintenance"
+    ]
+  },
+  {
+    id: 151,
+    name: "emlyon business school",
+    logo: "/logos/emlyon.png",
+    sector: "Enseignement supérieur de management",
+    domain: "Formation",
+    yearCreated: 1872,
+    location: "Lyon & Paris (campus à Shanghai et Mumbai)",
+    employees: "500 collaborateurs — 9 375 étudiants",
+    chiffreAffaires: "112,5 M€",
+    website: "https://em-lyon.com",
+    profiles: "Étudiants Bac+3 à Bac+5 & jeunes ingénieurs, Stratégie, management & organisation, Finance, innovation & entrepreneuriat",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "Dépôt de CV & dossier de candidature sur le site officiel.",
+    description: "Triple accréditée (AACSB, EQUIS, AMBA), emlyon business school figure parmi les plus grandes écoles de commerce européennes. Elle propose plus de 20 programmes de Masters, MSc et Mastères Spécialisés complétant l'expertise scientifique par des compétences managériales et stratégiques.",
+    highlights: [
+      "Étudiants Bac+3 à Bac+5 & jeunes ingénieurs",
+      "Stratégie, management & organisation",
+      "Finance, innovation & entrepreneuriat"
+    ]
+  },
+  {
+    id: 152,
+    name: "ESSCA School of Management",
+    logo: "/logos/essca.png",
+    sector: "Grande École de Management",
+    domain: "Formation",
+    yearCreated: 1909,
+    location: "10 campus (Aix-en-Provence, Paris, Lyon, Angers, Bordeaux, Budapest, Shanghai...)",
+    employees: "500 collaborateurs — 8 000 étudiants",
+    website: "https://www.essca.fr",
+    profiles: "Profils scientifiques & ingénieurs (admissions parallèles), Finance d'entreprise, audit & conseil, Supply chain, logistique & commerce international, Marketing & entrepreneuriat",
+    postTypes: [
+      "Alternance"
+    ],
+    applicationMethod: "Dossier académique ; Entretien individuel de motivation.",
+    description: "Triple accréditée (AACSB, AMBA, EQUIS), l'ESSCA forme des managers responsables et ouverts sur le monde. Son Programme Grande École (grade de Master) et ses MSc permettent aux profils scientifiques d'acquérir une expertise ciblée en finance, conseil, supply chain, audit ou entrepreneuriat.",
+    highlights: [
+      "Profils scientifiques & ingénieurs (admissions parallèles)",
+      "Finance d'entreprise, audit & conseil",
+      "Supply chain, logistique & commerce international",
+      "Marketing & entrepreneuriat"
+    ]
+  },
+  {
+    id: 153,
+    name: "ESSEC Business School",
+    logo: "/logos/essec.png",
+    sector: "Grande École de Management",
+    domain: "Formation",
+    yearCreated: 1907,
+    location: "Cergy, Paris-La Défense, Singapour, Rabat",
+    employees: "2 000 collaborateurs & enseignants",
+    website: "https://www.essec.edu",
+    profiles: "Diplômés d'écoles d'ingénieurs (admissions sur titre), Finance, conseil en stratégie & transformation durable, Management de l'innovation & technologies",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "Admissions sur titre / Concours ; Dossier académique & épreuves de sélection.",
+    description: "Pionnière de l'enseignement supérieur du management et triple accréditée (AACSB, EQUIS, AMBA), l'ESSEC forme des dirigeants éclairés capables d'allier performance économique, créativité et impact sociétal positif grâce à une pédagogie d'excellence ouverte sur le monde.",
+    highlights: [
+      "Diplômés d'écoles d'ingénieurs (admissions sur titre)",
+      "Finance, conseil en stratégie & transformation durable",
+      "Management de l'innovation & technologies"
+    ]
+  },
+  {
+    id: 154,
+    name: "IAE Aix",
+    logo: "/logos/iae-aix.png",
+    sector: "Enseignement supérieur de management & IAE",
+    domain: "Formation",
+    yearCreated: 1955,
+    location: "Aix-en-Provence (13)",
+    employees: "80 collaborateurs",
+    website: "https://iae-aix.univ-amu.fr",
+    profiles: "Élèves et diplômés ingénieurs (double compétence), Management général & Pilotage stratégique, Gestion de projet complexe & Leadership",
+    postTypes: [
+      "Alternance"
+    ],
+    applicationMethod: "Candidature en ligne (gomovein) ; Admissibilité sur dossier académique (CV, LM) ; Entretien de sélection.",
+    description: "Composante universitaire d'excellence inspirée des business schools américaines, l’IAE Aix conjugue tradition et innovation managériale. Son programme MSc en Management Général prépare les profils scientifiques et ingénieurs à des carrières à haut potentiel, alliant agilité, leadership et vision stratégique transversale.",
+    highlights: [
+      "Élèves et diplômés ingénieurs (double compétence)",
+      "Management général & Pilotage stratégique",
+      "Gestion de projet complexe & Leadership"
+    ]
+  },
+  {
+    id: 155,
+    name: "ISAE-SUPAERO",
+    logo: "/logos/isae-supaero.png",
+    sector: "Enseignement supérieur — Aéronautique & Espace",
+    domain: "Formation",
+    yearCreated: 1909,
+    location: "Campus de 22 ha à Toulouse (31)",
+    employees: "1 900 étudiants & chercheurs",
+    website: "https://www.isae-supaero.fr",
+    profiles: "Élèves ingénieurs & diplômés Bac+5 (M2, ingénieur), Conception aéronautique, propulsion & systèmes spatiaux, Systèmes embarqués critiques, drones (UAV) & robotique, Essais en vol, certification, data & IA appliquée",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "Dossier de candidature en ligne (candidatures.tsaae.fr) ; Sélection sur dossier académique.",
+    description: "Référence mondiale de la formation des ingénieurs du secteur aérospatial, l'ISAE-SUPAERO dispose d'infrastructures de recherche uniques (souffleries, flotte de 9 avions, simulateurs, centre spatial étudiant). Elle propose 16 Mastères Spécialisés® conçus avec les industriels du secteur.",
+    highlights: [
+      "Élèves ingénieurs & diplômés Bac+5 (M2, ingénieur)",
+      "Conception aéronautique, propulsion & systèmes spatiaux",
+      "Systèmes embarqués critiques, drones (UAV) & robotique",
+      "Essais en vol, certification, data & IA appliquée"
+    ]
+  },
+  {
+    id: 156,
+    name: "ISEN Méditerranée",
+    logo: "/logos/isen.png",
+    sector: "Grande École d'Ingénieurs — Numérique & Technologies",
+    domain: "Formation",
+    location: "Campus à Marseille (Château-Gombert) & Toulon",
+    employees: "Non communiqué",
+    website: "https://www.isen-mediterranee.fr",
+    profiles: "Étudiants scientifiques Bac+2 à Bac+6, Ingénierie logicielle, IA & Cybersécurité, Systèmes embarqués, robotique & IoT, Smart energy & e-santé",
+    postTypes: [
+      "Alternance",
+      "Stage"
+    ],
+    applicationMethod: "Candidature en ligne via isen-mediterranee.fr ; Admissions sur dossier et concours.",
+    description: "Grande école d'ingénieurs habilitée CTI, l'ISEN Méditerranée forme des ingénieurs experts des transformations technologiques : IA, cybersécurité, systèmes embarqués, robotique, objets connectés et smart energy. Ancrée à Château-Gombert, elle favorise l'immersion terrain par une pédagogie par projets et l'apprentissage.",
+    highlights: [
+      "Étudiants scientifiques Bac+2 à Bac+6",
+      "Ingénierie logicielle, IA & Cybersécurité",
+      "Systèmes embarqués, robotique & IoT",
+      "Smart energy & e-santé"
+    ]
+  },
+  {
+    id: 157,
+    name: "KEDGE Business School",
+    logo: "/logos/kedge.png",
+    sector: "Grande École de Management",
+    domain: "Formation",
+    yearCreated: 2014,
+    location: "Marseille, Toulon, Bordeaux, Paris",
+    employees: "600 collaborateurs — 23 000 étudiants",
+    website: "https://kedge.edu",
+    profiles: "Étudiants ingénieurs Bac+3 à Bac+5 (double diplôme / MS), Leadership, négociation & stratégie, Supply chain, gestion de projet & business development",
+    postTypes: [
+      "Alternance"
+    ],
+    applicationMethod: "Candidature en ligne (join.kedge.edu) ; CV, bulletins, diplômes ; Entretien de motivation.",
+    description: "Dotée de la prestigieuse triple accréditation internationale (AACSB, EQUIS, AMBA), KEDGE Business School forme des leaders agiles et responsables. Elle propose des doubles compétences stratégiques aux élèves ingénieurs désireux de renforcer leur maîtrise du management et de l'entrepreneuriat.",
+    highlights: [
+      "Étudiants ingénieurs Bac+3 à Bac+5 (double diplôme / MS)",
+      "Leadership, négociation & stratégie",
+      "Supply chain, gestion de projet & business development"
+    ]
+  },
+  {
+    id: 158,
+    name: "Amnesty International",
+    logo: "/logos/amnesty-international.png",
+    sector: "Défense des droits humains & ONG",
+    domain: "Autre",
+    yearCreated: 2022,
+    location: "France & International",
+    employees: "Non communiqué",
+    website: "https://www.amnesty.fr",
+    profiles: "Tous profils engagés, Plaidoyer, recherche & communication, Gestion de projets associatifs & mobilisation",
+    postTypes: [
+      "Stage"
+    ],
+    applicationMethod: "Candidature via le site officiel amnesty.fr ; Entretien de motivation.",
+    description: "Mouvement mondial et indépendant, Amnesty International œuvre pour le respect de l'ensemble des droits énoncés dans la Déclaration universelle des droits de l'homme. L'organisation mène des recherches de terrain, sensibilise le public et engage des actions de plaidoyer pour prévenir et faire cesser les atteintes graves aux libertés fondamentales.",
+    highlights: [
+      "Tous profils engagés",
+      "Plaidoyer, recherche & communication",
+      "Gestion de projets associatifs & mobilisation"
+    ]
+  },
+  {
+    id: 159,
+    name: "COCA-COLA EUROPACIFIC PARTNERS",
+    logo: "/logos/ccep.png",
+    sector: "Agroalimentaire & Biens de consommation",
+    domain: "Autre",
+    location: "Présence dans 31 pays (usines et sites logistiques en France)",
+    employees: "39 000 collaborateurs",
+    website: "https://www.cocacolaep.com",
+    profiles: "Étudiants et diplômés niveau Master / Ingénieur, Ingénieurs production & excellence opérationnelle, Supply chain, logistique & maintenance industrielle, Qualité, sécurité alimentaire & RSE",
+    postTypes: [
+      "Alternance",
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Sélection sur CV ; Entretiens de recrutement.",
+    description: "Coca-Cola Europacific Partners (CCEP) embouteille, commercialise et distribue les boissons les plus emblématiques au monde auprès de 600 millions de consommateurs. Acteur industriel de premier plan, le groupe investit dans les technologies de pointe, la supply chain agile et la transition écologique des emballages.",
+    highlights: [
+      "Étudiants et diplômés niveau Master / Ingénieur",
+      "Ingénieurs production & excellence opérationnelle",
+      "Supply chain, logistique & maintenance industrielle",
+      "Qualité, sécurité alimentaire & RSE"
+    ]
+  },
+  {
+    id: 160,
+    name: "EMIS et EMIS Access",
+    logo: "/logos/emis.png",
+    sector: "Maintenance industrielle & Métallurgie",
+    domain: "Autre",
+    yearCreated: 1987,
+    location: "Vitrolles (13)",
+    employees: "170 collaborateurs",
+    chiffreAffaires: "≈ 47 M€",
+    website: "https://www.ponticelli.com",
+    profiles: "Ingénieurs qualité soudage, Ingénieurs travaux & conducteurs de travaux, Ingénieurs HSE, Ingénieurs études & méthodes",
+    postTypes: [
+      "Alternance",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "CV + lettre de motivation ; Entretiens de recrutement.",
+    description: "Filiales du groupe Ponticelli Frères, EMIS et EMIS ACCESS accompagnent les grands donneurs d'ordre industriels en maintenance, mécanique, métallurgie, nettoyage industriel, accès et calorifuge, au service des filières vitales de l'énergie, de l'eau et de la santé.",
+    highlights: [
+      "Ingénieurs qualité soudage",
+      "Ingénieurs travaux & conducteurs de travaux",
+      "Ingénieurs HSE",
+      "Ingénieurs études & méthodes"
+    ]
+  },
+  {
+    id: 161,
+    name: "France Chimie Méditerranée",
+    logo: "/logos/france-chimie-mediterranee.png",
+    sector: "Fédération professionnelle / Chimie",
+    domain: "Autre",
+    yearCreated: 1901,
+    location: "Régions PACA, Corse et Occitanie Est",
+    employees: "Représente +800 entreprises & 25 000 salariés",
+    chiffreAffaires: "Fédération (S.O.)",
+    website: "https://www.francechimie-mediterranee.fr",
+    profiles: "Ingénieurs procédés chimiques, Chimie des matériaux & formulation, HSE & Sécurité industrielle, Transition énergétique & décarbonation",
+    postTypes: [
+      "CDD",
+      "CDI"
+    ],
+    applicationMethod: "CV + lettre de motivation ; Mise en relation filière.",
+    description: "Organisation professionnelle de référence, France Chimie Méditerranée représente et accompagne l'ensemble de la filière chimique en PACA, Corse et Occitanie Est. Elle valorise les opportunités d'emploi, la transition écologique et l'innovation au cœur d'un tissu industriel régional stratégique.",
+    highlights: [
+      "Ingénieurs procédés chimiques",
+      "Chimie des matériaux & formulation",
+      "HSE & Sécurité industrielle",
+      "Transition énergétique & décarbonation"
+    ]
+  },
+  {
+    id: 162,
+    name: "NAOS",
+    logo: "/logos/naos.png",
+    sector: "Dermocosmétique & Écobiologie",
+    domain: "Autre",
+    yearCreated: 1977,
+    location: "Siège à Aix-en-Provence, Lyon, Paris & International (130 pays)",
+    employees: "3 500 collaborateurs",
+    chiffreAffaires: "900 M€",
+    website: "https://www.naos.com",
+    profiles: "Ingénieurs R&D formulation & Chimie du vivant, Ingénieurs procédés industriels, Packaging & Qualité, Supply chain, Achats & Opérations internationales, Marketing scientifique, Business & Fonctions supports",
+    postTypes: [
+      "Alternance",
+      "CDD",
+      "CDI",
+      "Stage"
+    ],
+    applicationMethod: "Candidature sur careers.naos.com ; Échange RH ; Entretien manager & experts métiers.",
+    description: "Entreprise à mission et créatrice des marques Bioderma, Institut Esthederm et État Pur, NAOS développe une approche scientifique pionnière : l'écobiologie, qui respecte l'écosystème cutané. Détenue par un fonds de dotation dédié au développement du potentiel humain, l'entreprise investit activement dans la R&D, l'industrie responsable et le soin du vivant.",
+    highlights: [
+      "Ingénieurs R&D formulation & Chimie du vivant",
+      "Ingénieurs procédés industriels, Packaging & Qualité",
+      "Supply chain, Achats & Opérations internationales",
+      "Marketing scientifique, Business & Fonctions supports"
+    ]
+  },
 ];
 
 export const allExposants = [parrain, ...partenaires, ...exposantsList].sort((a, b) =>
