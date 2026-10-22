@@ -1557,33 +1557,31 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
 function PlanSlide() {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-center px-10 md:px-20 pt-20 pb-16"
+      className="w-full h-full flex flex-col items-center justify-center px-14 sm:px-10 md:px-20 pt-10 md:pt-20 pb-5 md:pb-16"
       style={{ background: THEME.paper }}
     >
-      <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-3" style={{ color: THEME.royal }}>
+      <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-2 md:mb-3 text-center" style={{ color: THEME.royal }}>
         Orientation
       </p>
-      <h2 className="font-heading font-black text-5xl md:text-6xl tracking-tight mb-2" style={{ color: THEME.ink }}>
+      <h2 className="font-heading font-black text-2xl sm:text-5xl md:text-6xl tracking-tight mb-2 text-center" style={{ color: THEME.ink }}>
         PLAN DU FORUM
       </h2>
-      <div className="h-[3px] w-24 mb-10" style={{ background: THEME.royal }} />
+      <div className="h-[3px] w-24 mb-4 md:mb-8" style={{ background: THEME.royal }} />
 
-      <div
-        className="w-full max-w-5xl flex-1 max-h-[60vh] rounded-2xl flex items-center justify-center"
-        style={{ background: "white", border: `4px dashed ${THEME.rule}` }}
-      >
-        <div className="text-center px-6">
-          <p className="font-heading text-sm tracking-[0.3em] uppercase opacity-60" style={{ color: THEME.ink }}>
-            Emplacement réservé
-          </p>
-          <p className="mt-2 text-2xl font-heading font-bold" style={{ color: THEME.ink }}>
-            Plan du Forum FOCEEN 2026
-          </p>
-          <p className="mt-2 text-sm opacity-50" style={{ color: THEME.ink }}>
-            Image à insérer
-          </p>
-        </div>
+      <div className="w-full max-w-6xl flex-1 min-h-0 flex items-center justify-start md:justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
+        <img
+          src="/plan-foceen.jpg"
+          alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
+          loading="eager"
+          decoding="async"
+          className="object-contain w-full h-full max-h-[78vh] rounded-lg shadow-sm min-w-[900px] md:min-w-0"
+          style={{ border: `1px solid ${THEME.rule}` }}
+        />
       </div>
+
+      <p className="mt-2 md:mt-3 text-[10px] uppercase tracking-[0.25em] md:hidden" style={{ color: THEME.royal }}>
+        Faites glisser pour explorer le plan
+      </p>
     </div>
   );
 }
