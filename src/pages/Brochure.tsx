@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid, Quote, List, X } from "lucide-react";
+import { createPortal } from "react-dom";
+import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid, Quote, List, X, ZoomIn } from "lucide-react";
 import { useRef } from "react";
 import teamPhoto from "@/assets/teams/team26.jpg";
 
@@ -1426,17 +1427,17 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
         >
           Nos partenaires
         </p>
-        <div className="grid grid-cols-4 md:grid-cols-7 gap-2 md:gap-3 items-center">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
           {partners.map((p) => (
             <div
               key={p.name}
               title={p.name}
-              className={`flex items-center justify-center bg-white rounded-xl border border-border/50 shadow-sm p-2 h-14 md:h-20 ${p.name === "La Mie Câline" ? "col-start-2 col-span-2 md:col-start-auto md:col-span-1" : ""}`}
+              className="flex shrink-0 items-center justify-center bg-background rounded-xl border border-border/50 shadow-sm p-2 h-14 sm:h-16 md:h-20 w-[calc((100%-1rem)/3)] sm:w-[calc((100%-2.25rem)/4)] md:w-[calc((100%-4.5rem)/7)]"
             >
               <img
                 src={p.src}
                 alt={p.name}
-                className="object-contain max-h-[min(3.5rem,6.4vh)] sm:max-h-[min(4rem,6.4vh)] w-auto"
+                className="object-contain max-h-12 sm:max-h-14 max-w-full w-auto h-full"
                 loading="eager"
                 decoding="async"
               />
@@ -1600,9 +1601,18 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
 
 function PlanSlide() {
   const [zoom, setZoom] = useState(false);
+  useEffect(() => {
+    if (!zoom) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setZoom(false);
+      event.stopImmediatePropagation();
+    };
+    window.addEventListener("keydown", close, true);
+    return () => window.removeEventListener("keydown", close, true);
+  }, [zoom]);
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-center px-14 sm:px-8 md:px-4 pt-8 md:pt-12 pb-3 md:pb-6"
+      className="w-full h-full flex flex-col items-center justify-center px-2 sm:px-4 md:px-16 pt-14 md:pt-12 pb-28 md:pb-10"
       style={{ background: THEME.paper }}
     >
       <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-2 md:mb-3 text-center" style={{ color: THEME.royal }}>
@@ -1613,29 +1623,31 @@ function PlanSlide() {
       </h2>
       <div className="h-[3px] w-24 mb-3 md:mb-5" style={{ background: THEME.royal }} />
 
-      <div className="w-full flex-1 min-h-0 flex items-center justify-center md:overflow-visible">
-        <div onClick={() => { if (window.matchMedia("(max-width: 767px)").matches) setZoom(true); }} className="w-fit mx-auto shrink-0 max-w-full md:max-w-[calc(100%-9rem)] rounded-2xl border border-border/60 bg-white shadow-sm overflow-hidden p-1 sm:p-2">
+      <div className="w-full flex-1 min-h-0 flex items-center justify-center">
+        <button type="button" onClick={() => setZoom(true)} aria-label="Agrandir le plan du forum" className="block w-full h-full max-w-6xl mx-auto min-h-0 overflow-hidden cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <img
             src="/plan-foceen.jpg"
             alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
             loading="eager"
             decoding="async"
-            className="block aspect-[1145/816] w-auto max-h-[76vh] max-w-full object-contain rounded-xl"
+            className="block w-full h-full max-h-[72vh] md:max-h-[78vh] object-contain mx-auto"
           />
-        </div>
+        </button>
       </div>
 
 
-      <p className="mt-2 md:mt-3 text-[10px] uppercase tracking-[0.25em] md:hidden" style={{ color: THEME.royal }}>
-        Touchez le plan pour l'agrandir
-      </p>
-      {zoom && (
-        <div data-noswipe className="fixed inset-0 z-[60] md:hidden bg-foreground/95 overflow-auto overscroll-contain">
-          <button onClick={() => setZoom(false)} aria-label="Fermer le plan" className="fixed top-4 right-4 z-[61] w-11 h-11 rounded-full bg-background text-foreground flex items-center justify-center shadow-xl">
+      <button type="button" onClick={() => setZoom(true)} className="mt-2 shrink-0 inline-flex items-center gap-2 text-xs text-muted-foreground">
+        <ZoomIn className="w-4 h-4" /> Agrandir le plan
+      </button>
+      {zoom && createPortal(
+        <div data-noswipe role="dialog" aria-modal="true" aria-label="Plan du forum agrandi" className="fixed inset-0 z-[60] bg-foreground/95">
+          <button autoFocus onClick={() => setZoom(false)} aria-label="Fermer le plan" className="fixed top-4 right-4 z-[61] w-11 h-11 rounded-full bg-background text-foreground flex items-center justify-center shadow-xl">
             <X className="w-5 h-5" />
           </button>
-          <img src="/plan-foceen.jpg" alt="Plan du forum FOCEEN 2026 en plein écran" className="block max-w-none w-[1145px] h-auto m-4" />
-        </div>
+          <div className="w-full h-full overflow-auto overscroll-contain p-2 pt-16">
+            <img src="/plan-foceen.jpg" alt="Plan du forum FOCEEN 2026 en plein écran" className="block max-w-none w-[1145px] lg:w-full h-auto mx-auto" />
+          </div>
+        </div>, document.body
       )}
     </div>
   );
