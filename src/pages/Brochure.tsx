@@ -79,9 +79,10 @@ const partners = [
   { name: "Gomet'", src: "/logos/gomet.png" },
   { name: "Studyrama", src: "/logos/studyrama.png" },
   { name: "SNCF Réseau", src: "/logos/sncf-reseau.png" },
+  { name: "La Mie Câline", src: "/logo-la-mie-caline.png" },
 ];
 
-const sncf = make("SNCF Réseau", "Infrastructures & Gestion du réseau ferroviaire", "/logos/sncf-reseau.png", {
+const sncf = make("SNCF Réseau", "Infrastructures et Gestion du réseau ferroviaire", "/logos/sncf-reseau.png", {
   founded: "1938 (société anonyme du groupe SNCF depuis 2020)",
   location: "Ancrage national sur l'ensemble des territoires & Europe",
   revenue: "NC",
@@ -114,7 +115,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "BTP",
     companies: [
-      make("Bouygues Bâtiment Sud-Est", "BTP & Construction", "/logos/bouygues-batiment-sud-est.png", {
+      make("Bouygues Bâtiment Sud-Est", "BTP et Construction", "/logos/bouygues-batiment-sud-est.png", {
         founded: "1973",
         location: "Région Sud-Est",
         revenue: "380 M€",
@@ -125,7 +126,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Entretiens opérationnels"],
       }),
-      make("Eiffage", "BTP, Concessions & Énergie Systèmes", "/logos/eiffage.png", {
+      make("Eiffage", "BTP, Concessions et Énergie Systèmes", "/logos/eiffage.png", {
         founded: "1884",
         location: "France & Europe",
         revenue: "25,3 Md €",
@@ -147,7 +148,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["Préqualification RH (soft skills & motivation)", "Entretien opérationnel avec le tuteur"],
       }),
-      make("SMAC", "Enveloppe du bâtiment & Rénovation énergétique", "/logos/smac.png", {
+      make("SMAC", "Enveloppe du bâtiment et Rénovation énergétique", "/logos/smac.png", {
         founded: "2005",
         location: "70 agences en France & 4 filiales internationales",
         revenue: "500 M€",
@@ -158,7 +159,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Sélection sur CV", "2 entretiens opérationnels en agence"],
       }),
-      make("Vinci Construction", "BTP & Grands Projets", "/logos/vinci-construction.png", {
+      make("Vinci Construction", "BTP et Grands Projets", "/logos/vinci-construction.png", {
         founded: "2000",
         location: "France & International (100+ pays)",
         revenue: "32,1 Md €",
@@ -174,7 +175,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Énergie",
     companies: [
-      make("CEA", "Recherche & Énergies bas-carbone", "/logos/cea.png", {
+      make("CEA", "Recherche et Énergies bas-carbone", "/logos/cea.png", {
         founded: "1945",
         location: "10 centres en France (dont Cadarache - 13)",
         revenue: "6 Md € (Budget R&D)",
@@ -185,7 +186,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Candidature sur emploi.cea.fr (CV + LM)", "Entretiens scientifiques et RH"],
       }),
-      make("EDF", "Production & Fourniture d'énergie bas carbone", "/logos/edf.png", {
+      make("EDF", "Production et Fourniture d'énergie bas carbone", "/logos/edf.png", {
         founded: "1946",
         location: "2 000+ implantations en France & Présence à l'international",
         revenue: "113,3 Md €",
@@ -205,7 +206,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
           "Entretiens RH et opérationnels",
         ],
       }),
-      make("Enedis", "Distribution d'électricité & Réseaux intelligents", "/logos/enedis.png", {
+      make("Enedis", "Distribution d'électricité et Réseaux intelligents", "/logos/enedis.png", {
         founded: "2008",
         location: "Réseau national (95 % du territoire français) & Direction régionale PACA",
         revenue: "NC",
@@ -216,7 +217,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Candidature sur enedis.fr/hub-carriere", "Entretien avec un binôme métier / RH"],
       }),
-      make("EP2C Energy", "Conseil & Ingénierie de l'Énergie", "/logos/ep2c-energy.png", {
+      make("EP2C Energy", "Conseil et Ingénierie de l'Énergie", "/logos/ep2c-energy.png", {
         founded: "2014",
         location: "France & International",
         revenue: "102 M€",
@@ -238,7 +239,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Candidature sur le site carrières", "Tests d'anglais & d'auto-évaluation comportementale", "Parcours RH et 2 entretiens managers (3 maximum)"],
       }),
-      make("Groupe SNEF", "Génie électrique & Solutions multitechniques", "/logos/groupe-snef.png", {
+      make("Groupe SNEF", "Génie électrique et Solutions multitechniques", "/logos/groupe-snef.png", {
         founded: "1905",
         location: "Siège historique à Marseille — Présence dans 30+ pays",
         revenue: "2,2 Md €",
@@ -260,7 +261,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Entretien RH (tests de langue, personnalité & enquête administrative)", "Entretien manager opérationnel"],
       }),
-      make("Recycle Plastique", "Recyclage & Économie circulaire", "/logos/recycle-plastique.png", {
+      make("Recycle Plastique", "Recyclage et Économie circulaire", "/logos/recycle-plastique.png", {
         founded: "2019",
         location: "France",
         revenue: "NC",
@@ -271,7 +272,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Sélection sur CV et lettre de motivation", "Entretien d'équipe"],
       }),
-      make("Technip Energies", "Ingénierie & Technologies de l'Énergie", "/logos/technip-energies.png", {
+      make("Technip Energies", "Ingénierie et Technologies de l'Énergie", "/logos/technip-energies.png", {
         founded: "1958",
         location: "Présence internationale (35 pays)",
         revenue: "7,2 Md €",
@@ -282,7 +283,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV sur ten.com/careers", "Entretiens managers et RH (Français & Anglais)"],
       }),
-      make("TechnicAtome", "Nucléaire & Défense", "/logos/technicatome.jpg", {
+      make("TechnicAtome", "Nucléaire et Défense", "/logos/technicatome.jpg", {
         founded: "1972",
         location: "Aix-en-Provence, Cadarache, Toulon, Saclay, Bordeaux, Nantes, Brest & Cherbourg",
         revenue: "660 M€",
@@ -293,7 +294,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Échange téléphonique", "Entretiens managers opérationnels et RH"],
       }),
-      make("VINCI Energies", "Énergie & Transformation numérique", "/logos/vinci-energies.png", {
+      make("VINCI Energies", "Énergie et Transformation numérique", "/logos/vinci-energies.png", {
         founded: "1898",
         location: "France & International (2 200 entreprises)",
         revenue: "21,6 Md €",
@@ -304,7 +305,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "2 à 3 entretiens d'embauche (RH et opérationnels)"],
       }),
-      make("PAPREC", "Recyclage & Valorisation énergétique", "/logos/paprec.png", {
+      make("PAPREC", "Recyclage et Valorisation énergétique", "/logos/paprec.png", {
         founded: "1994",
         location: "La Seyne-sur-Mer — Présence nationale et internationale",
         revenue: "3,5 Md €",
@@ -331,7 +332,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["CV", "3 entretiens (Vitrolles ou Teams)", "Anglais impératif"],
       }),
-      make("EXAIL", "Robotique & Hautes technologies", "/logos/exail.png", {
+      make("EXAIL", "Robotique et Hautes technologies", "/logos/exail.png", {
         founded: "2022 (alliance ECA Group & iXblue)",
         location: "Présence internationale (80+ pays)",
         revenue: "370 M€",
@@ -353,7 +354,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDD", "CDI"],
         recruitment: ["CV + lettre de motivation", "Mise en relation filière"],
       }),
-      make("NAOS", "Dermocosmétique & Écobiologie", "/logos/naos.png", {
+      make("NAOS", "Dermocosmétique et Écobiologie", "/logos/naos.png", {
         founded: "1977",
         location: "Siège à Aix-en-Provence, Lyon, Paris & International (130 pays)",
         revenue: "900 M€",
@@ -364,7 +365,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Candidature sur careers.naos.com", "Échange RH", "Entretien manager & experts métiers"],
       }),
-      make("Onet Technologies", "Ingénierie & Services nucléaires", "/logos/onet.png", {
+      make("Onet Technologies", "Ingénierie et Services nucléaires", "/logos/onet.png", {
         founded: "2004",
         location: "Multi-sites en France (siège à Marseille)",
         revenue: "300 M€",
@@ -402,7 +403,18 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Ingénierie et Industrie",
     companies: [
-      make("AKKODIS", "Ingénierie & IT", "/logos/akkodis.png", {
+      make("THALES", "Défense, Aérospatial, Cyber et Digital", "/logos/thales.png", {
+        founded: "2000",
+        location: "Siège à Meudon (92) — Multi-sites en France & 68 pays",
+        revenue: "22,1 Md €",
+        employees: "85 000 collaborateurs",
+        description:
+          "Leader mondial des hautes technologies et de la Deep Tech, Thales conçoit des solutions d'exception en connectivité, big data, IA, cybersécurité et quantique pour accompagner les acteurs de la défense, de l'aérospatial, du spatial et du digital dans l'accomplissement de leurs missions critiques.",
+        profiles: ["Ingénierie systèmes, logicielle & matérielle", "IA, Cybersécurité & Facteurs humains", "Management de l'ingénierie & Projets", "Industrie, Offres & Service client"],
+        positions: ["Alternance", "Stage"],
+        recruitment: ["Candidature sur careers.thalesgroup.com", "Entretien responsable opérationnel", "Entretien RH & parcours d'intégration"],
+      }),
+      make("AKKODIS", "Ingénierie et IT", "/logos/akkodis.png", {
         founded: "2022",
         location: "30+ agences en France — Présence dans 30 pays",
         revenue: "4 Md €",
@@ -413,7 +425,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV (+ LM optionnelle)", "Pré-qualification téléphonique", "Entretien RH & Business Manager", "Entretien technique"],
       }),
-      make("ASSYSTEM", "Ingénierie & Nucléaire", "/logos/assystem.png", {
+      make("ASSYSTEM", "Ingénierie et Nucléaire", "/logos/assystem.png", {
         founded: "1966",
         location: "France & International (13 pays)",
         revenue: "656 M€",
@@ -435,7 +447,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI"],
         recruitment: ["Sélection sur CV", "Parcours de 3 à 4 entretiens de qualification"],
       }),
-      make("Bertin Technologies", "Instrumentation scientifique & Systèmes critiques", "/logos/bertin-technologies.png", {
+      make("Bertin Technologies", "Instrumentation scientifique et Systèmes critiques", "/logos/bertin-technologies.png", {
         founded: "1956",
         location: "France (Aix, Montigny, Grenoble, Pertuis...) & International (Europe, USA)",
         revenue: "178 M€",
@@ -446,7 +458,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage (opportunités de CDD/CDI en pré-embauche)"],
         recruitment: ["Candidature sur bertintechnologies.taleez.com", "Présélection sur CV", "Échange téléphonique RH", "Entretien technique avec manager / tuteur"],
       }),
-      make("Cap Ingelec", "Ingénierie & Bâtiments complexes", "/logos/cap-ingelec.png", {
+      make("Cap Ingelec", "Ingénierie et Bâtiments complexes", "/logos/cap-ingelec.png", {
         founded: "1992",
         location: "15 agences en France (dont Marseille/Aix) & International",
         revenue: "680 M€",
@@ -479,7 +491,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Entretien téléphonique", "Entretien RH", "Entretien opérationnel (étude de cas éventuelle)"],
       }),
-      make("EMIS et EMIS Access", "Maintenance industrielle & Métallurgie", "/logos/emis.png", {
+      make("EMIS et EMIS Access", "Maintenance industrielle et Métallurgie", "/logos/emis.png", {
         founded: "1987",
         location: "Vitrolles (13)",
         revenue: "≈ 47 M€",
@@ -490,7 +502,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretiens de recrutement"],
       }),
-      make("EODD Ingénieurs Conseils", "Conseil & Ingénierie environnementale", "/logos/eodd.png", {
+      make("EODD Ingénieurs Conseils", "Conseil et Ingénierie environnementale", "/logos/eodd.png", {
         founded: "1991",
         location: "13 agences nationales (France métropolitaine et outre-mer)",
         revenue: "30 M€",
@@ -501,7 +513,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["CV + lettre de motivation", "Entretien RH téléphonique", "Entretien opérationnel avec équipes métiers (présentiel/visio)"],
       }),
-      make("Inddigo", "Ingénierie & Conseil en transition écologique", "/logos/inddigo.png", {
+      make("Inddigo", "Ingénierie et Conseil en transition écologique", "/logos/inddigo.png", {
         founded: "1986",
         location: "Agences à l'échelle nationale (France)",
         revenue: "34,9 M€",
@@ -567,7 +579,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Information carrières & filières"],
         recruitment: ["Échanges sur stand / Orientation vers les entreprises adhérentes"],
       }),
-      make("Tractebel", "Ingénierie de l'énergie & Grandes infrastructures", "/logos/tractebel.png", {
+      make("Tractebel", "Ingénierie de l'énergie et Grandes infrastructures", "/logos/tractebel.png", {
         founded: "1994 (héritage Coyne et Bellier)",
         location: "France & International",
         revenue: "118 M€",
@@ -578,7 +590,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Sélection sur CV", "Entretiens techniques et RH"],
       }),
-      make("Exiom Partners", "Conseil en Management — Banque & Assurance", "/logos/exiom.png", {
+      make("Exiom Partners", "Conseil en Management — Banque et Assurance", "/logos/exiom.png", {
         founded: "2019",
         location: "Paris & Lyon — Rayonnement national",
         revenue: "30 M€",
@@ -589,7 +601,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Sélection sur CV et lettre de motivation (exiompartners.com)", "Entretiens de recrutement"],
       }),
-      make("RTM", "Mobilités & Transports urbains de voyageurs", "/logos/rtm.png", {
+      make("RTM", "Mobilités et Transports urbains de voyageurs", "/logos/rtm.png", {
         founded: "1950",
         location: "Métropole Aix-Marseille-Provence",
         revenue: "NC",
@@ -600,7 +612,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDD", "CDI", "Stage"],
         recruitment: ["Candidature sur talents.rtm.fr (CV et lettre de motivation)", "Entretiens individuels ou croisés à Marseille", "Accompagnement et opportunités de mobilité interne"],
       }),
-      make("Vulcain Engineering", "Conseil & Ingénierie de l'énergie et du nucléaire", "/logos/vulcain-engineering.png", {
+      make("Vulcain Engineering", "Conseil et Ingénierie de l'énergie et du nucléaire", "/logos/vulcain-engineering.png", {
         founded: "2005",
         location: "France (Marseille, Aix, Cadarache...) & International",
         revenue: "194 M€",
@@ -616,7 +628,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Numérique",
     companies: [
-      make("Atos", "Services du numérique & Conseil IT", "/logos/atos.png", {
+      make("Atos", "Services du numérique et Conseil IT", "/logos/atos.png", {
         founded: "1997",
         location: "Nombreuses implantations en France (Aix, Sophia, Paris...) & 54 pays",
         revenue: "7,2 Md €",
@@ -627,7 +639,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Candidature sur atos.net", "Présélection RH", "Entretien d'embauche"],
       }),
-      make("BPCE Solutions informatiques", "Ingénierie logicielle & Technologies bancaires", "/logos/bpce-si.png", {
+      make("BPCE Solutions informatiques", "Ingénierie logicielle et Technologies bancaires", "/logos/bpce-si.png", {
         founded: "2022",
         location: "18 sites en France (dont Aix-en-Provence)",
         revenue: "NC",
@@ -638,7 +650,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "2 entretiens (RH + manager métier)", "En présentiel ou visioconférence"],
       }),
-      make("CGI France", "Conseil & Services IT", "/logos/cgi.png", {
+      make("CGI France", "Conseil et Services IT", "/logos/cgi.png", {
         founded: "1976",
         location: "30+ agences en France & Présence dans 40 pays",
         revenue: "10,3 Md €",
@@ -649,7 +661,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage (pré-embauche)"],
         recruitment: ["Sélection CV", "Préqualification téléphonique", "Entretien RH", "1 à 2 entretiens techniques en visio"],
       }),
-      make("Dassault Systèmes", "Édition de logiciels 3D & Mondes virtuels", "/logos/dassault-systemes.png", {
+      make("Dassault Systèmes", "Édition de logiciels 3D et Mondes virtuels", "/logos/dassault-systemes.png", {
         founded: "1981 / 1996",
         location: "Aix-en-Provence (site régional) — Siège en France & International",
         revenue: "71,6 M€ (entité Provence) / 6 Md € (Groupe)",
@@ -660,7 +672,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["CV + LM", "Entretien Manager opérationnel", "Entretien RH (visio ou sur site)"],
       }),
-      make("Doors3", "Conseil tech : IA générative, Blockchain & Web3", "/logos/doors3.png", {
+      make("Doors3", "Conseil tech : IA générative, Blockchain et Web3", "/logos/doors3.png", {
         founded: "2022",
         location: "Marseille, Paris, Göteborg (Suède)",
         revenue: "1,5 M€",
@@ -693,7 +705,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["Sélection sur CV", "Test technique", "Entretien RH", "Entretien manager opérationnel"],
       }),
-      make("Onepoint", "Conseil & Transformation technologique", "/logos/onepoint.jpg", {
+      make("Onepoint", "Conseil et Transformation technologique", "/logos/onepoint.jpg", {
         founded: "2002",
         location: "France (Aix-en-Provence, Paris, Lyon...) & Monde (6 pays)",
         revenue: "500 M€",
@@ -742,7 +754,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Conseil",
     companies: [
-      make("AXA France", "Assurance & Services financiers", "/logos/axa.png", {
+      make("AXA France", "Assurance et Services financiers", "/logos/axa.png", {
         founded: "1957",
         location: "France & International",
         revenue: "29 Md € (France) / 110 Md € (Groupe)",
@@ -753,7 +765,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Dépôt de CV sur le site carrières", "Entretiens de sélection"],
       }),
-      make("Cap Finances", "Gestion de patrimoine & Conseil financier", "/logos/capfinances.png", {
+      make("Cap Finances", "Gestion de patrimoine et Conseil financier", "/logos/capfinances.png", {
         founded: "2004",
         location: "Implantation nationale (France)",
         revenue: "150 M€",
@@ -764,7 +776,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI"],
         recruitment: ["Sélection sur CV", "Entretien de présentation", "1/2 journée en immersion opérationnelle"],
       }),
-      make("Capgemini", "Conseil, Tech & Ingénierie", "/logos/capgemini.png", {
+      make("Capgemini", "Conseil, Tech et Ingénierie", "/logos/capgemini.png", {
         founded: "1967",
         location: "20+ villes en France — Présence dans 50 pays",
         revenue: "22,5 Md €",
@@ -775,7 +787,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage"],
         recruitment: ["CV + lettre de motivation", "Entretiens RH et opérationnels", "Anglais indispensable"],
       }),
-      make("Deloitte", "Audit, Conseil & Stratégie", "/logos/deloitte.png", {
+      make("Deloitte", "Audit, Conseil et Stratégie", "/logos/deloitte.png", {
         founded: "1845",
         location: "17 bureaux en France — Présence dans 150+ pays",
         revenue: "NC",
@@ -786,7 +798,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDI", "Stage"],
         recruitment: ["Sélection sur CV", "Entretiens de recrutement RH et opérationnels"],
       }),
-      make("EY Services France", "Audit, Conseil & Stratégie", "/logos/ey.png", {
+      make("EY Services France", "Audit, Conseil et Stratégie", "/logos/ey.png", {
         founded: "1989",
         location: "17 bureaux en France (siège Paris-La Défense) — 145+ pays",
         revenue: "53,2 Md $ (Groupe)",
@@ -808,7 +820,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI"],
         recruitment: ["Sélection sur CV", "2 ou 3 entretiens selon le poste"],
       }),
-      make("IKOS", "Ingénierie Ferroviaire & Énergie", "/logos/ikos.jpg", {
+      make("IKOS", "Ingénierie Ferroviaire et Énergie", "/logos/ikos.jpg", {
         founded: "2005",
         location: "33 bureaux dans 15 pays (Marseille, Lyon, Paris, Nantes, Lille...)",
         revenue: "120 M€",
@@ -819,7 +831,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage", "VIE"],
         recruitment: ["Sélection sur CV", "Entretien RH", "Entretien technique avec le manager métier"],
       }),
-      make("KPMG", "Audit, Conseil & Expertise comptable", "/logos/kpmg.jpg", {
+      make("KPMG", "Audit, Conseil et Expertise comptable", "/logos/kpmg.jpg", {
         founded: "1922",
         location: "Présence nationale (nombreux bureaux en région et à Paris)",
         revenue: "1,55 Md €",
@@ -830,7 +842,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Candidature sur kpmg.com/carrieres", "Préqualification téléphonique RH", "Tests de personnalité et de langues", "2 entretiens managériaux avec étude de cas + entretien avec un associé"],
       }),
-      make("Oresys", "Conseil en management & organisation", "/logos/oresys.png", {
+      make("Oresys", "Conseil en management et organisation", "/logos/oresys.png", {
         founded: "1981",
         location: "Marseille, Paris, Lyon, Lille, Nantes, Toulouse, Strasbourg, Suisse",
         revenue: "65 M€",
@@ -841,7 +853,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDI", "Stage"],
         recruitment: ["3 entretiens de motivation conduits directement avec des consultants"],
       }),
-      make("Talisker Consulting", "Conseil en management & Transformation", "/logos/talisker.png", {
+      make("Talisker Consulting", "Conseil en management et Transformation", "/logos/talisker.png", {
         founded: "2006",
         location: "France & International",
         revenue: "7,5 M€",
@@ -868,7 +880,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDD", "CDI"],
         recruitment: ["CV + lettre de motivation", "Entretiens adaptés au poste", "Possibilité de concours civils/militaires"],
       }),
-      make("Marine Nationale", "Défense & Sécurité maritime", "/logos/marine-nationale.png", {
+      make("Marine Nationale", "Défense et Sécurité maritime", "/logos/marine-nationale.png", {
         founded: "1326",
         location: "Façades maritimes françaises (Toulon, Brest, Cherbourg) & Déploiements mondiaux",
         revenue: "S.O. (Forces Armées)",
@@ -879,7 +891,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["CDD (Contrats d'officier)", "CDI (Officier de carrière)"],
         recruitment: ["Dépôt CV + lettre de motivation", "Entretien en CIRFA", "Visite médicale d'aptitude", "Entretien d'unité opérationnelle"],
       }),
-      make("Ministère des Armées", "Défense & Renseignement", "/logos/ministere-armees.png", {
+      make("Ministère des Armées", "Défense et Renseignement", "/logos/ministere-armees.png", {
         founded: "1982",
         location: "Siège à Paris (avec missions France & étranger)",
         revenue: "S.O. (Service de l'État)",
@@ -890,23 +902,13 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDD", "CDI"],
         recruitment: ["Dépôt CV + lettre de motivation", "Processus de sélection avec habilitation de sécurité défense", "Confidentialité requise"],
       }),
-      make("THALES", "Défense, Aérospatial, Cyber & Digital", "/logos/thales.png", {
-        founded: "2000",
-        location: "Siège à Meudon (92) — Multi-sites en France & 68 pays",
-        revenue: "22,1 Md €",
-        employees: "85 000 collaborateurs",
-        description:
-          "Leader mondial des hautes technologies et de la Deep Tech, Thales conçoit des solutions d'exception en connectivité, big data, IA, cybersécurité et quantique pour accompagner les acteurs de la défense, de l'aérospatial, du spatial et du digital dans l'accomplissement de leurs missions critiques.",
-        profiles: ["Ingénierie systèmes, logicielle & matérielle", "IA, Cybersécurité & Facteurs humains", "Management de l'ingénierie & Projets", "Industrie, Offres & Service client"],
-        positions: ["Alternance", "Stage"],
-        recruitment: ["Candidature sur careers.thalesgroup.com", "Entretien responsable opérationnel", "Entretien RH & parcours d'intégration"],
-      }),
+
     ],
   },
   {
     name: "Transport",
     companies: [
-      make("CMA CGM", "Transport maritime & Logistique globale", "/logos/cma-cgm.png", {
+      make("CMA CGM", "Transport maritime et Logistique globale", "/logos/cma-cgm.png", {
         founded: "1978",
         location: "Siège mondial à Marseille (13) — Présence dans 177 pays",
         revenue: "55,5 Md $",
@@ -928,7 +930,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Stage", "Alternance", "CDI"],
         recruitment: ["CV", "3 entretiens", "Anglais professionnel requis"],
       }),
-      make("MB92 La Ciotat", "Maintenance navale & Superyachts", "/logos/mb92.png", {
+      make("MB92 La Ciotat", "Maintenance navale et Superyachts", "/logos/mb92.png", {
         founded: "1999",
         location: "Chantier naval de La Ciotat (13)",
         revenue: "152 M€",
@@ -944,7 +946,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Agroalimentaire",
     companies: [
-      make("COCA-COLA EUROPACIFIC PARTNERS", "Agroalimentaire & Biens de consommation", "/logos/ccep.png", {
+      make("COCA-COLA EUROPACIFIC PARTNERS", "Agroalimentaire et Biens de consommation", "/logos/ccep.png", {
         founded: "NC",
         location: "Présence dans 31 pays (usines et sites logistiques en France)",
         revenue: "NC",
@@ -971,7 +973,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
   {
     name: "Formation",
     companies: [
-      make("Apec", "Conseil & Accompagnement professionnel des cadres", "/logos/apec.png", {
+      make("Apec", "Conseil et Accompagnement professionnel des cadres", "/logos/apec.png", {
         founded: "1960",
         location: "Paris (siège) & centres en région (dont Marseille)",
         revenue: "NC",
@@ -982,7 +984,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "CDD", "CDI", "Stage"],
         recruitment: ["Candidatures et accompagnement via apec.fr"],
       }),
-      make("AVEC L'INDUSTRIE", "Compétences industrielles & OPCO", "/logos/avec-l-industrie.png", {
+      make("AVEC L'INDUSTRIE", "Compétences industrielles et OPCO", "/logos/avec-l-industrie.png", {
         founded: "2018",
         location: "Échelle nationale (29 branches industrielles)",
         revenue: "NC",
@@ -1023,7 +1025,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage", "Mastères Spécialisés®"],
         recruitment: ["Admissions sur titre / Concours", "Dossier académique & épreuves de sélection"],
       }),
-      make("IAE Aix", "Enseignement supérieur de management & IAE", "/logos/iae-aix.png", {
+      make("IAE Aix", "Enseignement supérieur de management et IAE", "/logos/iae-aix.png", {
         founded: "1955",
         location: "Aix-en-Provence (13)",
         revenue: "NC",
@@ -1034,7 +1036,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance"],
         recruitment: ["Candidature en ligne (gomovein)", "Admissibilité sur dossier académique (CV, LM)", "Entretien de sélection"],
       }),
-      make("ISAE-SUPAERO", "Enseignement supérieur — Aéronautique & Espace", "/logos/isae-supaero.png", {
+      make("ISAE-SUPAERO", "Enseignement supérieur — Aéronautique et Espace", "/logos/isae-supaero.png", {
         founded: "1909",
         location: "Campus de 22 ha à Toulouse (31)",
         revenue: "NC",
@@ -1044,7 +1046,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Mastères Spécialisés®", "Alternance", "Stage"],
         recruitment: ["Dossier de candidature en ligne (candidatures.tsaae.fr)", "Sélection sur dossier académique"],
       }),
-      make("ISEN Méditerranée", "Grande École d'Ingénieurs — Numérique & Technologies", "/logos/isen.png", {
+      make("ISEN Méditerranée", "Grande École d'Ingénieurs — Numérique et Technologies", "/logos/isen.png", {
         founded: "NC",
         location: "Campus à Marseille (Château-Gombert) & Toulon",
         revenue: "NC",
@@ -1068,11 +1070,11 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
     ],
   },
   {
-    name: "Associations & ONG",
+    name: "Associations et ONG",
     companies: [
       make(
         "Amnesty International",
-        "Défense des droits humains & ONG",
+        "Défense des droits humains et ONG",
         "/logos/amnesty-international.png",
         {
           founded: "2022 (groupe local)",
@@ -1099,13 +1101,13 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
 
 /* Official category mapping — single source for slide sectors AND index groups (sorted A→Z). */
 const CATEGORY_MAP: { label: string; names: string[] }[] = [
-  { label: "Audit & Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "Exiom Partners", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
-  { label: "Énergie & Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
-  { label: "BTP & Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
-  { label: "Transports & Systèmes embarqués", names: ["CMA CGM", "IKOS", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
-  { label: "Informatique, IT & Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Dassault Systèmes", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
-  { label: "Défense", names: ["DGA", "Marine Nationale", "Ministère des Armées", "Naval Group", "THALES"] },
-  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "Tractebel", "Vulcain Engineering"] },
+  { label: "Audit et Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "Exiom Partners", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
+  { label: "Énergie et Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
+  { label: "BTP et Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
+  { label: "Transports et Systèmes embarqués", names: ["CMA CGM", "IKOS", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
+  { label: "Informatique, IT et Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Dassault Systèmes", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
+  { label: "Défense", names: ["DGA", "Marine Nationale", "Ministère des Armées", "Naval Group"] },
+  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "THALES", "Tractebel", "Vulcain Engineering"] },
   { label: "Formation", names: ["Apec", "AVEC L'INDUSTRIE", "emlyon business school", "ESSCA School of Management", "ESSEC Business School", "IAE Aix", "ISEN Méditerranée", "KEDGE Business School", "ISAE-SUPAERO"] },
   { label: "Autre", names: ["Amnesty International", "COCA-COLA EUROPACIFIC PARTNERS", "EMIS et EMIS Access", "France Chimie Méditerranée", "HEINEKEN", "NAOS"] },
 ];
@@ -1378,7 +1380,7 @@ function ArrowButton({
 function CoverSlide({ onConsult }: { onConsult: () => void }) {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-10 pb-8"
+      className="w-full h-full flex flex-col items-center justify-between px-6 md:px-12 pt-14 md:pt-10 pb-28 md:pb-8"
       style={{ background: THEME.paper, color: THEME.ink }}
     >
       {/* Top pill */}
@@ -1396,14 +1398,16 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
 
       {/* Middle — logo + title + CTA */}
       <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-3 md:gap-4 w-full">
-        <div className="flex items-center justify-center">
+        <div className="relative shrink-0 w-64 sm:w-80 md:w-96 max-w-[85vw] h-24 sm:h-28 md:h-36 max-h-[24vh] overflow-hidden">
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-16 md:h-24 object-contain"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] max-w-none h-auto object-contain"
+            loading="eager"
+            decoding="async"
           />
         </div>
-        <h1 className="font-heading font-black text-center leading-[0.95] text-5xl md:text-6xl xl:text-[110px] tracking-tight">
+        <h1 className="font-heading font-black text-center leading-[0.95] text-4xl sm:text-5xl md:text-6xl xl:text-[110px] tracking-tight">
           BROCHURE
           <br />
           ENTREPRISES
@@ -1434,12 +1438,12 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
         >
           Nos partenaires
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3 items-center">
+        <div className="grid grid-cols-4 md:grid-cols-7 gap-2 md:gap-3 items-center">
           {partners.map((p) => (
             <div
               key={p.name}
               title={p.name}
-              className="flex items-center justify-center bg-white rounded-xl border border-border/50 shadow-sm p-2"
+              className={`flex items-center justify-center bg-white rounded-xl border border-border/50 shadow-sm p-2 h-14 md:h-20 ${p.name === "La Mie Câline" ? "col-start-2 col-span-2 md:col-start-auto md:col-span-1" : ""}`}
             >
               <img
                 src={p.src}
