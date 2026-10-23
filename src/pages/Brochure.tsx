@@ -1738,8 +1738,9 @@ function WordSlide({
 }) {
   const isContain = imageFit === "contain";
   return (
-    <div className="w-full h-full grid lg:grid-cols-[1fr_1.3fr] overflow-hidden" style={{ background: THEME.paper }}>
-      <div className="flex items-center justify-center px-10 md:px-16 py-20" style={{ background: THEME.royal }}>
+    <div className="w-full h-full grid content-start md:content-normal lg:grid-cols-[1fr_1.3fr] max-h-[calc(100vh-140px)] mt-12 md:mt-0 overflow-y-auto overscroll-contain touch-pan-y pb-20 md:max-h-none md:h-full md:overflow-hidden md:pb-0 brochure-scroll" style={{ background: THEME.paper }}>
+      <div className="flex items-center justify-center px-6 py-4 md:px-16 md:py-20" style={{ background: THEME.royal }}>
+        <div className="w-28 md:w-full flex justify-center">
         {image ? (
           <div
             className={
@@ -1754,7 +1755,7 @@ function WordSlide({
               alt={imageAlt ?? ""}
               className={
                 isContain
-                  ? "w-full h-auto max-h-[55vh] object-contain"
+                  ? "w-full h-auto max-h-36 md:max-h-[55vh] object-contain"
                   : `w-full h-full object-cover ${imagePosition}`
               }
             />
@@ -1767,14 +1768,15 @@ function WordSlide({
             <span className="text-[11px] tracking-[0.4em] uppercase font-heading text-white/80">Photo</span>
           </div>
         )}
+        </div>
       </div>
 
-      <div className="flex flex-col px-10 md:px-20 py-16 min-h-0 overflow-hidden">
+      <div className="flex flex-col px-6 py-6 md:px-20 md:py-16 md:min-h-0 md:overflow-hidden">
         <div className="shrink-0">
           <p className="text-[11px] tracking-[0.45em] uppercase font-heading mb-4" style={{ color: THEME.royal }}>
             {tag}
           </p>
-          <h2 className="font-heading font-black text-4xl md:text-5xl tracking-tight" style={{ color: THEME.ink }}>
+          <h2 className="font-heading font-black text-2xl sm:text-4xl md:text-5xl tracking-tight" style={{ color: THEME.ink }}>
             {title}
           </h2>
           <div className="mt-4 h-[3px] w-20" style={{ background: THEME.royal }} />
@@ -1786,9 +1788,9 @@ function WordSlide({
             <Quote className="w-7 h-7 md:w-12 md:h-12 fill-current rotate-180" strokeWidth={0} />
           </div>
         </div>
-        <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll mt-2">
+        <div className="md:flex-1 md:min-h-0 md:overflow-y-auto pr-3 brochure-scroll mt-2">
           {(Array.isArray(text) ? text : [text]).map((t, k) => (
-            <p key={k} className="text-base md:text-lg leading-relaxed italic max-w-xl mb-4" style={{ color: THEME.ink }}>
+            <p key={k} className="text-xs sm:text-sm md:text-lg leading-relaxed italic max-w-xl mb-4" style={{ color: THEME.ink }}>
               {t}
             </p>
           ))}
@@ -1852,7 +1854,7 @@ function MotDirectriceSlide() {
 function MotEquipeSlide() {
   return (
     <div
-      className="w-full h-full overflow-y-auto brochure-scroll flex flex-col items-center pt-6 pb-20 px-4 md:px-12"
+      className="w-full h-full overflow-y-auto overscroll-contain touch-pan-y brochure-scroll flex flex-col items-center pt-14 pb-28 md:pt-6 md:pb-20 px-4 md:px-12"
       style={{ background: THEME.paper }}
     >
       {/* Titre */}
@@ -1876,7 +1878,7 @@ function MotEquipeSlide() {
       <img
         src={teamPhoto}
         alt="Équipe FOCEEN 2026"
-        className="w-full max-w-2xl md:max-w-3xl max-h-[420px] object-cover rounded-2xl shadow-lg my-6 mx-auto"
+        className="w-full max-w-2xl md:max-w-3xl max-h-36 md:max-h-[420px] object-cover rounded-2xl shadow-lg my-6 mx-auto"
         style={{ border: `2px solid ${THEME.royal}` }}
       />
 
@@ -1890,7 +1892,7 @@ function MotEquipeSlide() {
           <Quote className="w-6 h-6 md:w-11 md:h-11 fill-current rotate-180" strokeWidth={0} />
         </div>
         <p
-          className="text-base md:text-lg leading-relaxed italic text-center"
+          className="text-xs sm:text-sm md:text-lg leading-relaxed italic text-center"
           style={{ color: THEME.ink }}
         >
           Pendant un an, notre équipe d'élèves-ingénieurs a porté l'ambition de
@@ -1928,7 +1930,7 @@ function MotEquipeSlide() {
 function DividerSlide({ label }: { label: string }) {
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-center px-10"
+      className="w-full h-full flex flex-col items-center justify-center px-4 md:px-10"
       style={{ background: THEME.royal, color: "#FFFFFF" }}
     >
       <div
@@ -1939,7 +1941,7 @@ function DividerSlide({ label }: { label: string }) {
         }}
       />
       <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-8 text-white/70">— Secteur —</p>
-      <h2 className="font-heading font-black tracking-[0.12em] uppercase text-6xl md:text-8xl xl:text-[140px] text-center leading-[0.95]">
+      <h2 className="font-heading font-black tracking-[0.04em] sm:tracking-[0.08em] md:tracking-[0.12em] uppercase text-2xl sm:text-3xl md:text-8xl xl:text-[140px] text-center leading-tight md:leading-[0.95] break-words hyphens-auto max-w-full px-4 md:px-0">
         {label}
       </h2>
       <div className="mt-10 h-[3px] w-40 bg-white/70" />
