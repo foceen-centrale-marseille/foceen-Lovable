@@ -37,6 +37,42 @@ const Exposants = () => {
         </div>
       </section>
 
+      {/* ── BROCHURE OFFICIELLE ── */}
+      <section className="bg-background pt-10 pb-2">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="relative overflow-hidden bg-card border border-cyan/40 rounded-2xl shadow-lg p-6 sm:p-8"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan/10 via-transparent to-transparent pointer-events-none" />
+            <div className="relative flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex items-center justify-center w-16 h-16 shrink-0 rounded-2xl bg-cyan/15 border border-cyan/30">
+                <BookOpen size={30} className="text-cyan" />
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-heading font-bold uppercase tracking-[0.2em] text-cyan mb-2">
+                  Brochure officielle 2026
+                </p>
+                <p className="text-base sm:text-lg font-body text-muted-foreground leading-relaxed">
+                  Explorez en détail l'ensemble des entreprises présentes cette année : opportunités de stages, alternances, premiers emplois et clés pour réussir vos échanges.
+                </p>
+              </div>
+              <Link
+                to="/brochure"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-cyan text-primary-foreground font-heading font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-transform shadow-md whitespace-nowrap"
+              >
+                Consulter la brochure interactive
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── PARRAIN ── */}
       <section className="py-14 bg-background">
         <div className="max-w-6xl mx-auto px-4">
