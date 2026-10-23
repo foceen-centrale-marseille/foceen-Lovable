@@ -1398,11 +1398,11 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
 
       {/* Middle — logo + title + CTA */}
       <div className="flex-1 min-h-0 flex flex-col items-center justify-center gap-3 md:gap-4 w-full">
-        <div className="flex items-center justify-center">
+        <div className="relative shrink-0 w-64 sm:w-80 md:w-96 max-w-[85vw] h-24 sm:h-28 md:h-36 max-h-[24vh] overflow-hidden">
           <img
             src="/logo-foceen.png"
             alt="FOCEEN"
-            className="h-36 sm:h-48 md:h-56 max-h-[24vh] w-auto max-w-[85vw] object-contain"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220%] max-w-none h-auto object-contain"
             loading="eager"
             decoding="async"
           />
