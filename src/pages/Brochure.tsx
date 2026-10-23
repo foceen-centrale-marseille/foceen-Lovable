@@ -590,17 +590,6 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Sélection sur CV", "Entretiens techniques et RH"],
       }),
-      make("Exiom Partners", "Conseil en Management — Banque et Assurance", "/logos/exiom.png", {
-        founded: "2019",
-        location: "Paris & Lyon — Rayonnement national",
-        revenue: "30 M€",
-        employees: "200 collaborateurs",
-        description:
-          "Cabinet de conseil en management fondé en 2019, Exiom Partners accompagne les acteurs majeurs de la banque et de l'assurance dans leurs grands enjeux stratégiques : transformation opérationnelle, modélisation des risques, organisation et performance financière.",
-        profiles: ["Actuaires & Ingénieurs financiers quantitatifs (Quant)", "Consultants en organisation & transformation bancaire", "Profils ingénieurs généralistes & Data / Risques"],
-        positions: ["Alternance", "CDI", "Stage"],
-        recruitment: ["Sélection sur CV et lettre de motivation (exiompartners.com)", "Entretiens de recrutement"],
-      }),
       make("RTM", "Mobilités et Transports urbains de voyageurs", "/logos/rtm.png", {
         founded: "1950",
         location: "Métropole Aix-Marseille-Provence",
@@ -1101,7 +1090,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
 
 /* Official category mapping — single source for slide sectors AND index groups (sorted A→Z). */
 const CATEGORY_MAP: { label: string; names: string[] }[] = [
-  { label: "Audit et Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "Exiom Partners", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
+  { label: "Audit et Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
   { label: "Énergie et Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
   { label: "BTP et Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
   { label: "Transports et Systèmes embarqués", names: ["CMA CGM", "IKOS", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
@@ -1163,7 +1152,6 @@ const slides: Slide[] = (() => {
     { kind: "mot-parrain" },
     { kind: "mot-directrice" },
     { kind: "mot-equipe" },
-    { kind: "divider", label: "Entreprises Partenaires", subtitle: `Découvrez nos ${seen.size} partenaires` },
   ];
   sectors.forEach((s) => {
     arr.push({ kind: "divider", label: s.name });
@@ -1478,14 +1466,11 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
     { num: "04", title: "Le mot du Parrain", slide: at("mot-parrain") },
     { num: "05", title: "Le mot de la directrice", slide: at("mot-directrice") },
     { num: "06", title: "Le mot de l'équipe FOCEEN", slide: at("mot-equipe") },
-    {
-      num: "07",
-      title: "Entreprises Partenaires",
-      slide: at("mot-equipe") + 1,
-      child: [
-                ...sectorEntries.map((s) => ({ name: s.name, slide: s.slide, count: s.count })),
-      ],
-    },
+    ...sectorEntries.filter((s) => s.slide >= 0).map((s, index) => ({
+      num: String(index + 7).padStart(2, "0"),
+      title: s.name,
+      slide: s.slide,
+    })),
   ];
 
   return (
