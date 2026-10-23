@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid, Quote, List, X } from "lucide-react";
+import { useRef } from "react";
 import teamPhoto from "@/assets/teams/team26.jpg";
 
 
@@ -1224,6 +1225,23 @@ export default function Brochure() {
     return () => window.removeEventListener("keydown", h);
   }, [next, prev, go, total]);
 
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    if ((e.target as HTMLElement).closest("[data-noswipe]")) { touchStart.current = null; return; }
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const s0 = touchStart.current;
+    touchStart.current = null;
+    if (!s0) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - s0.x;
+    const dy = t.clientY - s0.y;
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    if (dx < 0) next(); else prev();
+  };
+
   const current = slides[i];
   const blue = isBlueSlide(current);
   const chromeColor = blue ? "#FFFFFF" : THEME.ink;
@@ -1233,6 +1251,8 @@ export default function Brochure() {
       className="fixed inset-0 w-screen h-screen overflow-hidden font-body select-none"
       style={{ background: blue ? THEME.royal : THEME.paper, color: THEME.ink }}
       lang="fr"
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -1284,12 +1304,31 @@ export default function Brochure() {
       </div>
 
       <div
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] font-heading z-40"
+        className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] font-heading z-40"
         style={{ color: chromeColor }}
       >
         <span className="font-bold">{String(i + 1).padStart(2, "0")}</span>
         <span className="opacity-40 mx-2">/</span>
         <span className="opacity-60">{String(total).padStart(2, "0")}</span>
+      </div>
+
+      {/* Mobile thumb bar */}
+      <div
+        data-noswipe
+        className="fixed bottom-4 left-4 right-4 z-50 md:hidden bg-background/95 backdrop-blur border border-border/80 shadow-xl rounded-2xl px-4 py-2.5 flex items-center justify-between text-foreground"
+      >
+        <button onClick={prev} disabled={i === 0} aria-label="Page précédente" className="w-10 h-10 rounded-full flex items-center justify-center disabled:opacity-30 active:bg-muted">
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <span className="font-heading font-semibold text-sm tabular-nums">
+          {i + 1} / {total}
+        </span>
+        <button onClick={() => go(slides.findIndex((sl) => sl.kind === "toc"))} aria-label="Sommaire" className="w-10 h-10 rounded-full flex items-center justify-center active:bg-muted">
+          <List className="w-5 h-5" />
+        </button>
+        <button onClick={next} disabled={i === total - 1} aria-label="Page suivante" className="w-10 h-10 rounded-full flex items-center justify-center disabled:opacity-30 active:bg-muted">
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
     </div>
   );
@@ -1318,7 +1357,7 @@ function ArrowButton({
       aria-label={side === "left" ? "Page précédente" : "Page suivante"}
       className={`group absolute top-1/2 -translate-y-1/2 ${
         side === "left" ? "left-3 md:left-6" : "right-3 md:right-6"
-      } w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 z-50 backdrop-blur-sm ${
+      } w-11 h-11 md:w-12 md:h-12 rounded-full hidden md:flex items-center justify-center transition-all duration-300 z-50 backdrop-blur-sm ${
         disabled ? "opacity-20 cursor-not-allowed" : "hover:scale-110"
       }`}
       style={{
@@ -1571,6 +1610,7 @@ function IndexSlide({ onPick }: { onPick: (slide: number) => void }) {
 /* ------------------------------------------------------------------ */
 
 function PlanSlide() {
+  const [zoom, setZoom] = useState(false);
   return (
     <div
       className="w-full h-full flex flex-col items-center justify-center px-14 sm:px-8 md:px-4 pt-8 md:pt-12 pb-3 md:pb-6"
@@ -1584,22 +1624,30 @@ function PlanSlide() {
       </h2>
       <div className="h-[3px] w-24 mb-3 md:mb-5" style={{ background: THEME.royal }} />
 
-      <div className="w-full flex-1 min-h-0 flex items-center justify-start md:justify-center overflow-x-auto overscroll-x-contain md:overflow-visible">
-        <div className="w-fit mx-auto shrink-0 max-w-none md:max-w-[calc(100%-9rem)] rounded-2xl border border-border/60 bg-white shadow-sm overflow-hidden p-1 sm:p-2">
+      <div className="w-full flex-1 min-h-0 flex items-center justify-center md:overflow-visible">
+        <div onClick={() => { if (window.matchMedia("(max-width: 767px)").matches) setZoom(true); }} className="w-fit mx-auto shrink-0 max-w-full md:max-w-[calc(100%-9rem)] rounded-2xl border border-border/60 bg-white shadow-sm overflow-hidden p-1 sm:p-2">
           <img
             src="/plan-foceen.jpg"
             alt="Plan du forum FOCEEN 2026 — étages 0 et 1, stands numérotés et légende par secteur d'activité"
             loading="eager"
             decoding="async"
-            className="block aspect-[1145/816] w-auto max-h-[76vh] max-w-full object-contain rounded-xl min-w-[900px] md:min-w-0"
+            className="block aspect-[1145/816] w-auto max-h-[76vh] max-w-full object-contain rounded-xl"
           />
         </div>
       </div>
 
 
       <p className="mt-2 md:mt-3 text-[10px] uppercase tracking-[0.25em] md:hidden" style={{ color: THEME.royal }}>
-        Faites glisser pour explorer le plan
+        Touchez le plan pour l'agrandir
       </p>
+      {zoom && (
+        <div data-noswipe className="fixed inset-0 z-[60] md:hidden bg-foreground/95 overflow-auto overscroll-contain">
+          <button onClick={() => setZoom(false)} aria-label="Fermer le plan" className="fixed top-4 right-4 z-[61] w-11 h-11 rounded-full bg-background text-foreground flex items-center justify-center shadow-xl">
+            <X className="w-5 h-5" />
+          </button>
+          <img src="/plan-foceen.jpg" alt="Plan du forum FOCEEN 2026 en plein écran" className="block max-w-none w-[1145px] h-auto m-4" />
+        </div>
+      )}
     </div>
   );
 }
@@ -1731,11 +1779,11 @@ function WordSlide({
           </h2>
           <div className="mt-4 h-[3px] w-20" style={{ background: THEME.royal }} />
           <div
-            className="mt-6 opacity-30"
+            className="mt-3 md:mt-6 opacity-30"
             style={{ color: THEME.royal }}
             aria-hidden="true"
           >
-            <Quote className="w-9 h-9 md:w-12 md:h-12 fill-current rotate-180" strokeWidth={0} />
+            <Quote className="w-7 h-7 md:w-12 md:h-12 fill-current rotate-180" strokeWidth={0} />
           </div>
         </div>
         <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll mt-2">
@@ -1745,7 +1793,7 @@ function WordSlide({
             </p>
           ))}
           <div className="flex justify-end mt-2" aria-hidden="true" style={{ color: THEME.royal }}>
-            <Quote className="w-9 h-9 md:w-12 md:h-12 fill-current" strokeWidth={0} />
+            <Quote className="w-7 h-7 md:w-12 md:h-12 fill-current" strokeWidth={0} />
           </div>
         </div>
         <div className="mt-6 flex items-center gap-3 shrink-0">
@@ -1839,7 +1887,7 @@ function MotEquipeSlide() {
           style={{ color: THEME.royal }}
           aria-hidden="true"
         >
-          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current rotate-180" strokeWidth={0} />
+          <Quote className="w-6 h-6 md:w-11 md:h-11 fill-current rotate-180" strokeWidth={0} />
         </div>
         <p
           className="text-base md:text-lg leading-relaxed italic text-center"
@@ -1856,7 +1904,7 @@ function MotEquipeSlide() {
           professionnel.
         </p>
         <div className="self-end mt-1 opacity-30" style={{ color: THEME.royal }} aria-hidden="true">
-          <Quote className="w-8 h-8 md:w-11 md:h-11 fill-current" strokeWidth={0} />
+          <Quote className="w-6 h-6 md:w-11 md:h-11 fill-current" strokeWidth={0} />
         </div>
         <div className="mt-6 flex items-center gap-3 shrink-0">
           <div className="h-px w-10" style={{ background: THEME.royal }} />
@@ -1914,7 +1962,7 @@ function CompanySlide({
 }) {
   return (
     <div
-      className="w-full h-full flex flex-col items-center px-4 md:px-8 pt-14 pb-14 overflow-hidden"
+      className="w-full h-full flex flex-col items-center px-4 md:px-8 pt-14 pb-24 md:pb-14 overflow-hidden"
       style={{ background: THEME.paper }}
     >
       {/* Sector pill */}
@@ -1936,7 +1984,7 @@ function CompanySlide({
 
       {/* Centered white card */}
       <div
-        className="w-full max-w-6xl flex-1 min-h-0 rounded-[24px] bg-white shadow-[0_20px_50px_-25px_rgba(11,31,58,0.35)] flex flex-col overflow-hidden"
+        className="w-full max-w-6xl flex-1 min-h-0 max-h-[75vh] overflow-y-auto md:max-h-none md:overflow-hidden pr-1 md:pr-0 rounded-[24px] bg-white shadow-[0_20px_50px_-25px_rgba(11,31,58,0.35)] flex flex-col brochure-scroll"
         style={{ border: `2px solid ${THEME.royal}` }}
       >
         {/* Header — logo + key info */}
@@ -1989,10 +2037,10 @@ function CompanySlide({
         </div>
 
         {/* Body — two columns */}
-        <div className="flex-1 min-h-0 grid grid-cols-12 gap-0">
+        <div className="md:flex-1 md:min-h-0 flex flex-col md:grid md:grid-cols-12 gap-0">
           {/* LEFT — Présentation (scrolls internally) */}
           <div
-            className="col-span-12 md:col-span-7 p-5 md:p-7 flex flex-col min-h-0"
+            className="col-span-12 md:col-span-7 p-5 md:p-7 flex flex-col md:min-h-0"
             style={{ borderRight: `1px solid ${THEME.rule}` }}
           >
             <p
@@ -2001,7 +2049,7 @@ function CompanySlide({
             >
               <span>›</span> Présentation de l'entreprise
             </p>
-            <div className="flex-1 min-h-0 overflow-y-auto pr-3 brochure-scroll">
+            <div className="md:flex-1 md:min-h-0 md:overflow-y-auto pr-3 brochure-scroll">
               <p className="text-sm md:text-[15px] leading-relaxed" style={{ color: THEME.ink }}>
                 {company.description}
               </p>
@@ -2009,7 +2057,7 @@ function CompanySlide({
           </div>
 
           {/* RIGHT — Profiles / Positions / Recruitment stacked */}
-          <div className="col-span-12 md:col-span-5 p-5 md:p-7 flex flex-col gap-5 min-h-0 overflow-y-auto brochure-scroll">
+          <div className="col-span-12 md:col-span-5 p-5 md:p-7 flex flex-col gap-5 md:min-h-0 md:overflow-y-auto brochure-scroll">
             <SmallBlock title="Profils recherchés">
               <ul className="space-y-1.5">
                 {company.profiles.map((p) => (
