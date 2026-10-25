@@ -12,3 +12,8 @@
 ## Phrase d’accroche Exposants
 - [x] Remplacer la phrase d’accroche par la version 19ème édition.
 - [x] Vérifier l’affichage et publier ; publication demandée.
+## Partenaires : ADF et CEA retirés de la liste partenaires
+- [x] Retirer Groupe ADF (id 50) et CEA (id 5) du tableau `partenaires`.
+- [x] Conserver les deux fiches dans `exposantsList` (donc dans `allExposants`) avec leurs secteurs.
+- [x] Vérifier affichage (accueil + exposants), filtres et tests ; tests verts.
+- [ ] Publier sur le site public.
