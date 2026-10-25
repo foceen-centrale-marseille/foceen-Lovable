@@ -26,7 +26,7 @@ export default function PartnersSection() {
         <h2 className="text-3xl font-heading font-bold text-center text-foreground mb-8">NOS PARTENAIRES</h2>
         <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
           {partenaires.map((p) => (
-            <a key={p.id} href={p.website} target="_blank" rel="noopener noreferrer" aria-label={p.name} className="w-36 sm:w-44 h-24 bg-card rounded-lg flex items-center justify-center border border-border p-3 hover:border-cyan transition-colors">
+            <a key={p.id} href={p.website} target="_blank" rel="noopener noreferrer" aria-label={p.name} className="w-[calc(50%-0.375rem)] max-w-44 sm:w-44 h-24 bg-card rounded-lg flex items-center justify-center border border-border p-3 hover:border-cyan transition-colors">
               <img src={p.logo} alt={p.name} className="object-contain max-h-12 sm:max-h-14 max-w-full w-auto" loading="lazy" decoding="async" />
             </a>
           ))}

@@ -5,6 +5,6 @@
 - [x] Demander la publication du site public.
 
 ## Partenaires et Infos pratiques 2026
-- [ ] Synchroniser les partenaires de l’accueil et de la page Exposants.
-- [ ] Actualiser les documents et les sept événements du programme.
+- [x] Synchroniser les partenaires de l’accueil et de la page Exposants.
+- [x] Actualiser les documents et les sept événements du programme.
 - [ ] Vérifier les liens et l’affichage mobile et ordinateur, puis publier.

@@ -40,7 +40,7 @@ const InfosPratiques = () => {
               Les indispensables pour préparer au mieux le forum
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="h-auto whitespace-normal py-4">
+              <Button asChild className="h-auto whitespace-normal gap-3 px-6 py-4 rounded-lg font-heading font-semibold">
               <a
                 href={guideAsset.url}
                 target="_blank"
@@ -52,7 +52,7 @@ const InfosPratiques = () => {
                 <FileText size={18} className="opacity-60" />
               </a>
               </Button>
-              <Button asChild className="h-auto whitespace-normal py-4">
+              <Button asChild className="h-auto whitespace-normal gap-3 px-6 py-4 rounded-lg font-heading font-semibold bg-cyan text-primary hover:bg-cyan/90">
               <a
                 href="/brochure"
                 target="_blank"
