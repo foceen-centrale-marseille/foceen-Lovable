@@ -7,4 +7,4 @@
 ## Partenaires et Infos pratiques 2026
 - [x] Synchroniser les partenaires de l’accueil et de la page Exposants.
 - [x] Actualiser les documents et les sept événements du programme.
-- [ ] Vérifier les liens et l’affichage mobile et ordinateur, puis publier.
+- [x] Vérifier les liens, les 22 tests et l’affichage mobile et ordinateur ; publication demandée.
