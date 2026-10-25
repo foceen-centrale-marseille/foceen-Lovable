@@ -1,21 +1,4 @@
-const parrain = {
-  name: "SNCF Réseau",
-  src: "/logos/sncf-reseau.png",
-  website: "https://www.sncf-reseau.com/fr",
-  description:
-    "Gestionnaire du réseau ferré national, SNCF Réseau entretient, modernise et sécurise plus de 28 000 km de lignes pour accélérer la décarbonation des mobilités et façonner les transports ferroviaires durables de demain.",
-};
-
-const partenaires = [
-  { name: "Métropole Aix-Marseille Provence", src: "/logo-metropole-aix-marseille.png" },
-  { name: "Batiactu", src: "/81792a_3e8f982fc8a6497ca46a98b487517d35~mv2.png" },
-  { name: "Haribo", src: "/png-clipart-logo-haribo-of-america-brand-bear-bear-animals-text.png" },
-  { name: "Min. Enseignement Sup.", src: "/logo-ministere.png" },
-  { name: "La Mie Câline", src: "/logo-la-mie-caline.png" },
-  { name: "Cafés Richard", src: "/logo-cafes-richard.png" },
-  { name: "Gomet'", src: "/logo-gomet.png" },
-  { name: "Studyrama", src: "/752_ckeditor_agenda_53966_637f4194bed9f_1.png" },
-];
+import { parrain, partenaires } from "@/data/exhibitors";
 
 
 export default function PartnersSection() {
@@ -24,9 +7,9 @@ export default function PartnersSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-heading font-bold text-center text-foreground mb-4">PARRAIN</h2>
         <div className="flex flex-col items-center mb-12">
-          <a href={parrain.website} target="_blank" rel="noopener noreferrer" className="w-72 h-32 bg-white rounded-lg flex items-center justify-center border border-border p-1 hover:opacity-80 transition-opacity">
+          <a href={parrain.website} target="_blank" rel="noopener noreferrer" className="w-72 h-32 bg-card rounded-lg flex items-center justify-center border border-border p-1 hover:opacity-80 transition-opacity">
             <img
-              src={parrain.src}
+              src={parrain.logo}
               alt="Logo SNCF Réseau"
               width={800}
               height={800}
@@ -41,11 +24,11 @@ export default function PartnersSection() {
 
 
         <h2 className="text-3xl font-heading font-bold text-center text-foreground mb-8">NOS PARTENAIRES</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-items-center">
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
           {partenaires.map((p) => (
-            <div key={p.name} className="w-36 h-20 bg-white rounded-lg flex items-center justify-center border border-border p-2">
-              <img src={p.src} alt={p.name} className="object-contain h-16 w-auto" loading="lazy" decoding="async" />
-            </div>
+            <a key={p.id} href={p.website} target="_blank" rel="noopener noreferrer" aria-label={p.name} className="w-36 sm:w-44 h-24 bg-card rounded-lg flex items-center justify-center border border-border p-3 hover:border-cyan transition-colors">
+              <img src={p.logo} alt={p.name} className="object-contain max-h-12 sm:max-h-14 max-w-full w-auto" loading="lazy" decoding="async" />
+            </a>
           ))}
         </div>
       </div>

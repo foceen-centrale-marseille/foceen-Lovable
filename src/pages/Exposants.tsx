@@ -108,7 +108,7 @@ const Exposants = () => {
               className="w-44 h-24 bg-card rounded-lg flex items-center justify-center border border-border p-3 cursor-pointer hover:border-cyan hover:shadow-md transition-all">
 
                 {p.logo ?
-              <img src={p.logo} alt={p.name} className="object-contain h-16 w-auto" loading="lazy" decoding="async" /> :
+              <img src={p.logo} alt={p.name} className="object-contain max-h-12 sm:max-h-14 max-w-full w-auto" loading="lazy" decoding="async" /> :
 
               <span className="text-sm font-heading text-foreground text-center">{p.name}</span>
               }
