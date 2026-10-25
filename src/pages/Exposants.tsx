@@ -30,9 +30,7 @@ const Exposants = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Building2 size={48} className="text-cyan mx-auto mb-4" />
             <h1 className="text-4xl font-heading font-bold mb-4">EXPOSANTS</h1>
-            <p className="text-lg font-body text-primary-foreground/80">Découvrez les entreprises qui nous ont fait confiance lors de la 18ème édition leurs offres de stages et d'emplois.
-
-            </p>
+            <p className="text-lg font-body text-primary-foreground/80">Découvrez les entreprises qui nous font confiance lors de cette 19ème édition, leurs offres de stages et d'emplois.</p>
           </motion.div>
         </div>
       </section>
