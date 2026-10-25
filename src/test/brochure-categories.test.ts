@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import ts from "typescript";
 import { allExposants, DOMAINS, exposantsList } from "@/data/exhibitors";
 
-const source = readFileSync(new URL("../pages/Brochure.tsx", import.meta.url), "utf8");
+const source = readFileSync("src/pages/Brochure.tsx", "utf8");
 const data = source.slice(source.indexOf("type Company ="), source.indexOf("export default function Brochure"));
 const compiled = ts.transpileModule(data, { compilerOptions: { target: ts.ScriptTarget.ES2020 } }).outputText;
 const brochure = new Function(`${compiled}; return { slides, SECTORS, groupedIndex };`)() as {
