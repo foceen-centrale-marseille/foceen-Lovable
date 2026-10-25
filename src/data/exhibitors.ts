@@ -4,6 +4,7 @@
 
 export type Exposant = {
   id: number;
+  partnerOnly?: boolean;
   name: string;
   logo?: string;
   sector: string;
@@ -109,6 +110,102 @@ export const partenaires: Exposant[] = [
       "Les technologies pour la médecine du futur",
       "La défense et la sécurité",
     ],
+  },
+  {
+    "id": 163,
+    "partnerOnly": true,
+    "name": "Batiactu",
+    "logo": "/logos/batiactu.png",
+    "sector": "Média du bâtiment et de la construction",
+    "domain": "Autre",
+    "location": "Non communiqué",
+    "employees": "Non communiqué",
+    "website": "https://www.batiactu.com",
+    "profiles": "Non communiqué",
+    "postTypes": [],
+    "applicationMethod": "Non communiqué",
+    "description": "Batiactu est partenaire officiel du Forum FOCEEN 2026.",
+    "highlights": []
+  },
+  {
+    "id": 164,
+    "partnerOnly": true,
+    "name": "Le Monde des Grandes Écoles et Universités",
+    "logo": "/logos/monde-grandes-ecoles.png",
+    "sector": "Média des grandes écoles et universités",
+    "domain": "Autre",
+    "location": "Non communiqué",
+    "employees": "Non communiqué",
+    "website": "https://www.mondedesgrandesecoles.fr",
+    "profiles": "Non communiqué",
+    "postTypes": [],
+    "applicationMethod": "Non communiqué",
+    "description": "Le Monde des Grandes Écoles et Universités est partenaire officiel du Forum FOCEEN 2026.",
+    "highlights": []
+  },
+  {
+    "id": 165,
+    "partnerOnly": true,
+    "name": "Haribo",
+    "logo": "/logos/haribo.png",
+    "sector": "Confiserie",
+    "domain": "Autre",
+    "location": "Non communiqué",
+    "employees": "Non communiqué",
+    "website": "https://www.haribo.com/fr-fr",
+    "profiles": "Non communiqué",
+    "postTypes": [],
+    "applicationMethod": "Non communiqué",
+    "description": "Haribo est partenaire officiel du Forum FOCEEN 2026.",
+    "highlights": []
+  },
+  {
+    "id": 166,
+    "partnerOnly": true,
+    "name": "Gomet'",
+    "logo": "/logos/gomet.png",
+    "sector": "Média local",
+    "domain": "Autre",
+    "location": "Non communiqué",
+    "employees": "Non communiqué",
+    "website": "https://gomet.net",
+    "profiles": "Non communiqué",
+    "postTypes": [],
+    "applicationMethod": "Non communiqué",
+    "description": "Gomet' est partenaire officiel du Forum FOCEEN 2026.",
+    "highlights": []
+  },
+  {
+    "id": 167,
+    "partnerOnly": true,
+    "name": "Studyrama",
+    "logo": "/logos/studyrama.png",
+    "sector": "Information et orientation",
+    "domain": "Autre",
+    "location": "Non communiqué",
+    "employees": "Non communiqué",
+    "website": "https://www.studyrama.com",
+    "profiles": "Non communiqué",
+    "postTypes": [],
+    "applicationMethod": "Non communiqué",
+    "description": "Studyrama est partenaire officiel du Forum FOCEEN 2026.",
+    "highlights": []
+  },
+  {
+    "id": 168,
+    "partnerOnly": true,
+    "name": "La Mie Câline",
+    "logo": "/logo-la-mie-caline.png",
+    "sector": "Boulangerie et restauration",
+    "domain": "Autre",
+    "location": "Non communiqué",
+    "employees": "Non communiqué",
+    "website": "https://www.lamiecaline.com",
+    "profiles": "Non communiqué",
+    "postTypes": [],
+    "applicationMethod": "Non communiqué",
+    "description": "La Mie Câline est partenaire officiel du Forum FOCEEN 2026.",
+    "highlights": []
   },
 ];
 
@@ -1574,7 +1671,7 @@ export const exposantsList: Exposant[] = [
   },
 ];
 
-export const allExposants = [parrain, ...partenaires, ...exposantsList].sort((a, b) =>
+export const allExposants = [parrain, ...partenaires.filter((partner) => !partner.partnerOnly), ...exposantsList].sort((a, b) =>
   a.name.localeCompare(b.name, "fr")
 );
 
