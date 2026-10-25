@@ -6,11 +6,16 @@ describe("Official site partners", () => {
   it("retains SNCF Réseau as the sponsor", () => {
     expect(parrain.name).toBe("SNCF Réseau");
   });
-  it("has exactly the eight requested partners", () => {
+  it("has exactly the six official partners", () => {
     expect(partenaires.map((partner) => partner.name)).toEqual([
-      "Groupe ADF", "CEA", "Batiactu", "Le Monde des Grandes Écoles et Universités",
+      "Batiactu", "Le Monde des Grandes Écoles et Universités",
       "Haribo", "Gomet'", "Studyrama", "La Mie Câline",
     ]);
+  });
+  it("keeps Groupe ADF and CEA as exhibitors in their sectors", () => {
+    expect(partenaires.some((p) => p.name === "Groupe ADF" || p.name === "CEA")).toBe(false);
+    expect(allExposants.find((e) => e.name === "Groupe ADF")?.domain).toBe("Ingénierie et Industrie");
+    expect(allExposants.find((e) => e.name === "CEA")?.domain).toBe("Énergie et Environnement");
   });
   it("does not turn partner-only records into recruiting exhibitors", () => {
     for (const partner of partenaires.filter((entry) => entry.partnerOnly)) {
