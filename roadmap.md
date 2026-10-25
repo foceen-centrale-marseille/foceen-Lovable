@@ -16,4 +16,4 @@
 - [x] Retirer Groupe ADF (id 50) et CEA (id 5) du tableau `partenaires`.
 - [x] Conserver les deux fiches dans `exposantsList` (donc dans `allExposants`) avec leurs secteurs.
 - [x] Vérifier affichage (accueil + exposants), filtres et tests ; tests verts.
-- [ ] Publier sur le site public.
+- [x] Publier sur le site public ; publication demandée et contrôlée en ligne.
