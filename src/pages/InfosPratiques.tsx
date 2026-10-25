@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { MapPin, Clock, Train, Info, Download, FileText, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import MapSection from "@/components/MapSection";
+import { Button } from "@/components/ui/button";
+import guideAsset from "@/assets/Guide_eleve_2026.pdf.asset.json";
+import { programme } from "@/data/programme";
 
 const InfosPratiques = () => {
   return (
@@ -34,11 +37,12 @@ const InfosPratiques = () => {
             className="text-center"
           >
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8">
-              RETOUR SUR LA 18<sup>ème</sup> EDITION
+              Les indispensables pour préparer au mieux le forum
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild className="h-auto whitespace-normal py-4">
               <a
-                href="/documents/Guide_eleve.pdf"
+                href={guideAsset.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-colors"
@@ -47,8 +51,10 @@ const InfosPratiques = () => {
                 Guide élève
                 <FileText size={18} className="opacity-60" />
               </a>
+              </Button>
+              <Button asChild className="h-auto whitespace-normal py-4">
               <a
-                href="/documents/Brochure_entreprise.pdf"
+                href="/brochure"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-cyan text-primary px-6 py-4 rounded-lg font-heading font-semibold hover:bg-cyan/90 transition-colors"
@@ -57,6 +63,7 @@ const InfosPratiques = () => {
                 Brochure entreprise
                 <FileText size={18} className="opacity-60" />
               </a>
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -138,85 +145,32 @@ const InfosPratiques = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2 text-center">
-              DEROULE DE LA 18<sup>ème</sup> EDITION
+              Déroulé de la 19<sup>ème</sup> édition
             </h2>
             <p className="text-center text-lg font-heading font-semibold text-cyan mb-12">PROGRAMME</p>
 
-            {/* Conférences */}
-            <div className="mb-12">
-              <h3 className="text-xl font-heading font-bold text-foreground mb-6 border-l-4 border-cyan pl-4">
-                Conférences
-              </h3>
-              <div className="space-y-4">
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <span className="text-sm font-heading font-semibold text-cyan">11:00 – 12:00</span>
-                  <h4 className="font-heading font-semibold text-foreground mt-1">Conférence Pernod Ricard</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">
-                    Piloter le cycle de vie d'un produit : l'exemple d'une bouteille de Ricard
-                  </p>
-                </div>
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <span className="text-sm font-heading font-semibold text-cyan">13:30 – 14:30</span>
-                  <h4 className="font-heading font-semibold text-foreground mt-1">Conférence Dassault Systèmes</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">
-                    L'impression 3D, quand design et fabrication s'accordent
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Tables rondes */}
-            <div>
-              <h3 className="text-xl font-heading font-bold text-foreground mb-6 border-l-4 border-cyan pl-4">
-                Tables Rondes
-              </h3>
-              <div className="space-y-4">
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <div className="flex flex-wrap items-center gap-3 mb-1">
-                    <span className="text-sm font-heading font-semibold text-cyan">10:00 – 11:00</span>
-                    <span className="text-xs bg-muted px-2 py-0.5 rounded font-body text-muted-foreground">Salle Sormiou</span>
-                  </div>
-                  <h4 className="font-heading font-semibold text-foreground">"Protection des infrastructures maritimes critiques"</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">par Thales</p>
-                </div>
-
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <div className="flex flex-wrap items-center gap-3 mb-1">
-                    <span className="text-sm font-heading font-semibold text-cyan">10:00 – 10:30</span>
-                    <span className="text-xs bg-muted px-2 py-0.5 rounded font-body text-muted-foreground">Salle Morgiou</span>
-                  </div>
-                  <h4 className="font-heading font-semibold text-foreground">"Au cœur de la transition énergétique"</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">par Vinci Energies</p>
-                </div>
-
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <div className="flex flex-wrap items-center gap-3 mb-1">
-                    <span className="text-sm font-heading font-semibold text-cyan">10:45 – 11:15</span>
-                    <span className="text-xs bg-muted px-2 py-0.5 rounded font-body text-muted-foreground">Salle Morgiou</span>
-                  </div>
-                  <h4 className="font-heading font-semibold text-foreground">"Naviguer entre normes, données et projets pour sécuriser la transformation digitale"</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">par EY</p>
-                </div>
-
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <div className="flex flex-wrap items-center gap-3 mb-1">
-                    <span className="text-sm font-heading font-semibold text-cyan">13:30 – 14:30</span>
-                    <span className="text-xs bg-muted px-2 py-0.5 rounded font-body text-muted-foreground">Salle Sormiou</span>
-                  </div>
-                  <h4 className="font-heading font-semibold text-foreground">"Data et sport – Projet Zéphir"</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">par BPCE-SI</p>
-                </div>
-
-                <div className="bg-card p-5 rounded-lg border border-border">
-                  <div className="flex flex-wrap items-center gap-3 mb-1">
-                    <span className="text-sm font-heading font-semibold text-cyan">13:30 – 14:30</span>
-                    <span className="text-xs bg-muted px-2 py-0.5 rounded font-body text-muted-foreground">Salle Morgiou</span>
-                  </div>
-                  <h4 className="font-heading font-semibold text-foreground">"L'ingénierie système appliquée aux bâtiments de combat"</h4>
-                  <p className="text-muted-foreground font-body text-sm mt-1">par NAVAL GROUP</p>
+            {([
+              { category: "conference", title: "Conférences" },
+              { category: "table-ronde", title: "Tables Rondes" },
+              { category: "animation", title: "Animations" },
+            ] as const).map(({ category, title }) => (
+              <div key={category} className="mb-12 last:mb-0">
+                <h3 className="text-xl font-heading font-bold text-foreground mb-6 border-l-4 border-cyan pl-4">
+                  {title}
+                </h3>
+                <div className="space-y-4">
+                  {programme.filter((event) => event.category === category).map((event) => (
+                    <div key={event.name} className="bg-card p-5 rounded-lg border border-border">
+                      <div className="flex flex-wrap items-center gap-3 mb-1">
+                        <span className="text-sm font-heading font-semibold text-cyan">{event.time}</span>
+                        {event.room && <span className="text-xs bg-muted px-2 py-0.5 rounded font-body text-muted-foreground">{event.room}</span>}
+                      </div>
+                      <h4 className="font-heading font-semibold text-foreground break-words">{event.name}</h4>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </section>
