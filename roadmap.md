@@ -8,3 +8,7 @@
 - [x] Synchroniser les partenaires de l’accueil et de la page Exposants.
 - [x] Actualiser les documents et les sept événements du programme.
 - [x] Vérifier les liens, les 22 tests et l’affichage mobile et ordinateur ; publication demandée.
+
+## Phrase d’accroche Exposants
+- [x] Remplacer la phrase d’accroche par la version 19ème édition.
+- [x] Vérifier l’affichage et publier ; publication demandée.
