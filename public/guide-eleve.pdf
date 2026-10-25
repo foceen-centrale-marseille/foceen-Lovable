@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>FOCEEN</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="description" content="FOCEEN Connect - Le forum des grandes écoles d'ingénieurs" />
+    <meta name="author" content="FOCEEN" />
+
+    <meta property="og:title" content="FOCEEN" />
+    <meta property="og:description" content="FOCEEN Connect - Le forum des grandes écoles d'ingénieurs" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- GitHub Pages SPA redirect handling -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx?t=1792943076233"></script>
+  </body>
+</html>
