@@ -21,4 +21,4 @@
 ## Guide élève : lien direct
 - [x] Pointer le bouton « Guide élève » vers /guide-eleve.pdf (target, rel, download).
 - [x] Déposer le PDF du guide à cette adresse ; vérifié 200, application/pdf, attributs exacts.
-- [ ] Publier sur le site public.
+- [x] Publier sur le site public ; publication demandée et contrôlée en ligne.
