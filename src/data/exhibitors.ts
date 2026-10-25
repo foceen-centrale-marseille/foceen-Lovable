@@ -64,54 +64,6 @@ export const parrain: Exposant = {
 
 export const partenaires: Exposant[] = [
   {
-    id: 50,
-    name: "Groupe ADF",
-    logo: "/logos/groupe-adf.png",
-    sector: "Industrie",
-    domain: "Ingénierie et Industrie",
-    yearCreated: 1962,
-    location: "Echelle internationale",
-    employees: "4 900",
-    chiffreAffaires: "640 millions d'euros",
-    website: "https://www.groupeadf.com/fr/groupe/groupe-adf",
-    websiteCarriere: "https://careers.groupeadf.com/",
-    profiles: "Esprit d'équipe et coopération, Rigueur et sens des responsabilités, Réactivité et adaptabilité, Culture sécurité, Orientation client, Leadership terrain",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod:
-      "Entretien téléphonique RH après sélection du CV et de la lettre de motivation, un entretien avec le responsable opérationnel par la suite.",
-    description:
-      "Nos équipes répondent aux besoins d'ingénierie pour imaginer et concevoir les solutions du futur, réaliser des projets et des équipements innovants, et assurer un support quotidien à la production et à la maintenance tout en relevant les défis de la transition énergétique et de la digitalisation des opérations.",
-    highlights: [
-      "Solutions d'ingénierie innovantes",
-      "Présence internationale",
-      "Transition énergétique et digitalisation",
-    ],
-  },
-  {
-    id: 5,
-    name: "CEA",
-    logo: "/logos/cea.png",
-    sector: "Transition énergétique, transition numérique, médecine du futur, défense et sécurité, assainissement démantèlement",
-    domain: "Énergie et Environnement",
-    yearCreated: 1945,
-    location: "Centre de CADARACHE – 13108 Saint Paul Lez Durance",
-    employees: "21 500",
-    website: "https://www.cea.fr",
-    websiteCarriere: "https://www.emploi.cea.fr",
-    profiles: "Ingénieurs et techniciens",
-    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
-    applicationMethod:
-      "Dépôt de candidatures spontanées ou réponses des offres via le site de recrutements (CV+LM). Entretiens internes et externes (dont cabinets de recrutements).",
-    description:
-      "Le CEA est un acteur majeur de la recherche, au service de l'État, de l'économie et des citoyens. S'appuyant sur une recherche fondamentale d'excellence, il apporte des solutions concrètes à leurs besoins dans quatre domaines principaux :",
-    highlights: [
-      "Les énergies bas carbone (nucléaire et renouvelables)",
-      "Le numérique",
-      "Les technologies pour la médecine du futur",
-      "La défense et la sécurité",
-    ],
-  },
-  {
     "id": 163,
     "partnerOnly": true,
     "name": "Batiactu",
@@ -210,6 +162,54 @@ export const partenaires: Exposant[] = [
 ];
 
 export const exposantsList: Exposant[] = [
+  {
+    id: 50,
+    name: "Groupe ADF",
+    logo: "/logos/groupe-adf.png",
+    sector: "Industrie",
+    domain: "Ingénierie et Industrie",
+    yearCreated: 1962,
+    location: "Echelle internationale",
+    employees: "4 900",
+    chiffreAffaires: "640 millions d'euros",
+    website: "https://www.groupeadf.com/fr/groupe/groupe-adf",
+    websiteCarriere: "https://careers.groupeadf.com/",
+    profiles: "Esprit d'équipe et coopération, Rigueur et sens des responsabilités, Réactivité et adaptabilité, Culture sécurité, Orientation client, Leadership terrain",
+    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
+    applicationMethod:
+      "Entretien téléphonique RH après sélection du CV et de la lettre de motivation, un entretien avec le responsable opérationnel par la suite.",
+    description:
+      "Nos équipes répondent aux besoins d'ingénierie pour imaginer et concevoir les solutions du futur, réaliser des projets et des équipements innovants, et assurer un support quotidien à la production et à la maintenance tout en relevant les défis de la transition énergétique et de la digitalisation des opérations.",
+    highlights: [
+      "Solutions d'ingénierie innovantes",
+      "Présence internationale",
+      "Transition énergétique et digitalisation",
+    ],
+  },
+  {
+    id: 5,
+    name: "CEA",
+    logo: "/logos/cea.png",
+    sector: "Transition énergétique, transition numérique, médecine du futur, défense et sécurité, assainissement démantèlement",
+    domain: "Énergie et Environnement",
+    yearCreated: 1945,
+    location: "Centre de CADARACHE – 13108 Saint Paul Lez Durance",
+    employees: "21 500",
+    website: "https://www.cea.fr",
+    websiteCarriere: "https://www.emploi.cea.fr",
+    profiles: "Ingénieurs et techniciens",
+    postTypes: ["Alternance", "CDD", "CDI", "Stage"],
+    applicationMethod:
+      "Dépôt de candidatures spontanées ou réponses des offres via le site de recrutements (CV+LM). Entretiens internes et externes (dont cabinets de recrutements).",
+    description:
+      "Le CEA est un acteur majeur de la recherche, au service de l'État, de l'économie et des citoyens. S'appuyant sur une recherche fondamentale d'excellence, il apporte des solutions concrètes à leurs besoins dans quatre domaines principaux :",
+    highlights: [
+      "Les énergies bas carbone (nucléaire et renouvelables)",
+      "Le numérique",
+      "Les technologies pour la médecine du futur",
+      "La défense et la sécurité",
+    ],
+  },
   // ── Fiches intégrées depuis les documents reçus ──
   {
     id: 53,
