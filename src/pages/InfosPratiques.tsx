@@ -3,7 +3,6 @@ import { MapPin, Clock, Train, Info, Download, FileText, ArrowRight } from "luci
 import { Link } from "react-router-dom";
 import MapSection from "@/components/MapSection";
 import { Button } from "@/components/ui/button";
-import guideAsset from "@/assets/Guide_eleve_2026.pdf.asset.json";
 import { programme } from "@/data/programme";
 
 const InfosPratiques = () => {
@@ -42,9 +41,10 @@ const InfosPratiques = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="h-auto whitespace-normal gap-3 px-6 py-4 rounded-lg font-heading font-semibold">
               <a
-                href={guideAsset.url}
+                href="/guide-eleve.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Guide-Eleve-FOCEEN-2026.pdf"
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-colors"
               >
                 <Download size={20} />
