@@ -1091,15 +1091,15 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
 
 /* Official category mapping — single source for slide sectors AND index groups (sorted A→Z). */
 const CATEGORY_MAP: { label: string; names: string[] }[] = [
-  { label: "Audit et Conseil", names: ["AXA France", "Cap Finances", "Capgemini", "Deloitte", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
-  { label: "Énergie et Environnement", names: ["ASSYSTEM", "CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
+  { label: "Audit et Conseil", names: ["Cap Finances", "Capgemini", "Deloitte", "EY Services France", "Forvis Mazars", "KPMG", "Onepoint", "Oresys", "Talisker Consulting"] },
+  { label: "Énergie et Environnement", names: ["CEA", "ECIA", "EDF", "Enedis", "EODD Ingénieurs Conseils", "EP2C Energy", "Framatome", "Groupe SNEF", "Inddigo", "NAOS", "Onet Technologies", "Orano", "PAPREC", "Pellenc ST", "Recycle Plastique", "TechnicAtome", "Technip Energies", "VINCI Energies"] },
   { label: "BTP et Construction", names: ["Bouygues Bâtiment Sud-Est", "Cap Ingelec", "Eiffage", "RAZEL-BEC", "SMAC", "Vinci Construction"] },
   { label: "Transports et Systèmes embarqués", names: ["CMA CGM", "IKOS", "Jifmar Offshore Services", "MB92 La Ciotat", "RTM", "SNCF Réseau"] },
   { label: "Informatique, IT et Média", names: ["Atos", "BPCE Solutions informatiques", "CGI France", "Dassault Systèmes", "Doors3", "LUCCA", "Murex", "Orange", "Sopra Steria", "STMicroelectronics", "Viveris"] },
   { label: "Défense", names: ["DGA", "Marine Nationale", "Ministère des Armées", "Naval Group"] },
-  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "THALES", "Tractebel", "Vulcain Engineering"] },
-  { label: "Formation", names: ["Apec", "AVEC L'INDUSTRIE", "emlyon business school", "ESSCA School of Management", "ESSEC Business School", "IAE Aix", "ISEN Méditerranée", "KEDGE Business School", "ISAE-SUPAERO"] },
-  { label: "Autre", names: ["Amnesty International", "COCA-COLA EUROPACIFIC PARTNERS", "EMIS et EMIS Access", "France Chimie Méditerranée", "HEINEKEN", "NAOS"] },
+  { label: "Ingénierie et Industrie", names: ["Groupe ADF", "AKKODIS", "ASSYSTEM", "EMIS et EMIS Access", "Bee Engineering", "Bertin Technologies", "Egis", "EXAIL", "Groupe LGM", "Groupe Ortec", "Groupe REEL", "Setec", "Syntec-Ingénierie", "THALES", "Tractebel", "Vulcain Engineering"] },
+  { label: "Formation", names: ["Apec", "emlyon business school", "ESSCA School of Management", "ESSEC Business School", "IAE Aix", "ISEN Méditerranée", "KEDGE Business School", "ISAE-SUPAERO"] },
+  { label: "Autre", names: ["Amnesty International", "AVEC L'INDUSTRIE", "AXA France", "COCA-COLA EUROPACIFIC PARTNERS", "France Chimie Méditerranée", "HEINEKEN"] },
 ];
 
 const SECTORS: { name: string; companies: Company[] }[] = (() => {
@@ -1114,7 +1114,8 @@ const SECTORS: { name: string; companies: Company[] }[] = (() => {
       .sort((a, b) => a.name.localeCompare(b.name, "fr")),
   }));
   // Safety net: any unmapped fiche (never the sponsor, which has its own slide) goes to "Autre".
-  const autre = out.find((g) => g.name === "Autre")!;
+  const autre = out.find((g) => g.name === "Autre");
+  if (!autre) return out;
   pool.forEach((c) => { if (!placed.has(c.name) && c.name !== sncf.name) autre.companies.push(c); });
   autre.companies.sort((a, b) => a.name.localeCompare(b.name, "fr"));
   return out;
@@ -1131,7 +1132,6 @@ type Slide =
   | { kind: "plan" }
   | { kind: "sncf-fiche" }
   | { kind: "mot-parrain" }
-  | { kind: "mot-directrice" }
   | { kind: "mot-equipe" }
   | { kind: "divider"; label: string; subtitle?: string }
   | { kind: "company"; company: Company; sector?: string };
@@ -1151,7 +1151,6 @@ const slides: Slide[] = (() => {
     { kind: "plan" },
     { kind: "sncf-fiche" },
     { kind: "mot-parrain" },
-    { kind: "mot-directrice" },
     { kind: "mot-equipe" },
   ];
   sectors.forEach((s) => {
@@ -1260,7 +1259,6 @@ export default function Brochure() {
           {current.kind === "plan" && <PlanSlide />}
           {current.kind === "sncf-fiche" && <SncfFicheSlide />}
           {current.kind === "mot-parrain" && <MotParrainSlide />}
-          {current.kind === "mot-directrice" && <MotDirectriceSlide />}
           {current.kind === "mot-equipe" && <MotEquipeSlide />}
           {current.kind === "divider" && <DividerSlide label={current.label} />}
           {current.kind === "company" && (
@@ -1460,19 +1458,20 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
   });
 
   const at = (k: Slide["kind"]) => slides.findIndex((sl) => sl.kind === k);
-  const items: { num: string; title: string; slide: number; child?: { name: string; slide: number; count?: number }[] }[] = [
-    { num: "01", title: "Index des entreprises", slide: at("index") },
-    { num: "02", title: "Plan du Forum", slide: at("plan") },
-    { num: "03", title: "Le Parrain — SNCF Réseau", slide: at("sncf-fiche") },
-    { num: "04", title: "Le mot du Parrain", slide: at("mot-parrain") },
-    { num: "05", title: "Le mot de la directrice", slide: at("mot-directrice") },
-    { num: "06", title: "Le mot de l'équipe FOCEEN", slide: at("mot-equipe") },
-    ...sectorEntries.filter((s) => s.slide >= 0).map((s, index) => ({
-      num: String(index + 7).padStart(2, "0"),
-      title: s.name,
-      slide: s.slide,
-    })),
+  const introEntries: { title: string; kind: Slide["kind"] }[] = [
+    { title: "Index des entreprises", kind: "index" },
+    { title: "Plan du Forum", kind: "plan" },
+    { title: "Le Parrain — SNCF Réseau", kind: "sncf-fiche" },
+    { title: "Le mot du Parrain", kind: "mot-parrain" },
+    { title: "Le mot de l'équipe FOCEEN", kind: "mot-equipe" },
   ];
+  const items: { num: string; title: string; slide: number; child?: { name: string; slide: number; count?: number }[] }[] = [
+    ...introEntries.map((entry) => ({ title: entry.title, slide: at(entry.kind) })),
+    ...sectorEntries.map((entry) => ({ title: entry.name, slide: entry.slide })),
+  ].filter((entry) => entry.slide >= 0).map((entry, index) => ({
+    ...entry,
+    num: String(index + 1).padStart(2, "0"),
+  }));
 
   return (
     <div className="w-full h-full flex flex-col px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
@@ -1824,30 +1823,6 @@ function MotParrainSlide() {
       image="/parrain-sncf-reseau.jpg"
       imageAlt="Voies ferrées au soleil couchant avec le logo SNCF Réseau"
       imageAspect="aspect-[3/2]"
-    />
-  );
-}
-
-function MotDirectriceSlide() {
-  return (
-    <WordSlide
-      tag="Le mot de la directrice"
-      title="Le mot de la directrice"
-      text={[
-        "Le Forum Centrale Méditerranée Entreprises (FOCEEN) s’impose, année après année, comme un rendez-vous incontournable de rencontre et de dialogue, entre les entreprises, les étudiants et les jeunes diplômés de la région Sud. C’est le plus grand forum de recrutement ingénieur du Sud-Est et il incarne pleinement notre ambition : rapprocher les élèves ingénieures des réalités et des besoins économiques du territoire.",
-        "Dans un contexte marqué par des défis technologiques, environnementaux et industriels, l’ingénierie joue un rôle central. À Centrale Méditerranée, nous portons une conviction forte : former des ingénieurs capables de comprendre la complexité du monde, d’innover et d’agir avec responsabilité pour accompagner les grandes transitions. L’enjeu est clair : répondre aux attentes croissantes en compétences scientifiques et techniques, tout en préparant des profils engagés, agiles et ouverts.",
-        "Le FOCEEN s’inscrit pleinement dans cette dynamique, en résonance avec les priorités portées par la Région Sud, notamment à travers le Plan Ingénieurs Sud, qui vise à renforcer l’attractivité des formations scientifiques et à répondre aux enjeux en compétences des entreprises régionales. Ce forum est une illustration concrète de cette mobilisation collective au service de l’emploi des jeunes et du développement économique régional, en lien étroit avec les Grandes Écoles et l’ensemble des acteurs socio-économiques.",
-        "Organisé par les élèves ingénieurs de Centrale Méditerranée avec un engagement remarquable, le FOCEEN est également un véritable terrain d’apprentissage. De la conception à la mise en œuvre, ils mobilisent avec exigence leurs compétences en gestion de projet, stratégie, partenariats, communication et management, démontrant leur capacité à conduire des projets complexes et collectifs.",
-        "Pour cette nouvelle édition, plusieurs milliers d’étudiants et de jeunes diplômés auront l’opportunité d’échanger avec des entreprises de tous secteurs, de découvrir les métiers en évolution, de préciser leurs projets professionnels et de saisir des opportunités de stages et d’emplois. Au-delà du recrutement, le FOCEEN contribue à faire émerger les vocations, à éclairer les parcours et à renforcer durablement les liens entre formation et emploi.",
-        "Je tiens à remercier chaleureusement l’ensemble des partenaires, entreprises, institutions et acteurs engagés aux côtés de l’École pour faire de cet événement un succès. Leur engagement fidèle est essentiel pour accompagner les élèves et jeunes diplômés et construire collectivement l’avenir de notre territoire. Ensemble, nous contribuons concrètement à l’emploi des jeunes et au dynamisme de la région Sud.",
-      ]}
-      author="Carole Deumié"
-      role="Directrice de l’École Centrale Méditerranée"
-      image="/directrice-carole-deumie.jpg"
-      imageAlt="Portrait de Carole Deumié, Directrice de l’École Centrale Méditerranée"
-      imageAspect="aspect-[4/5]"
-      imagePosition="object-top"
-      imageMaxW="max-w-[260px] sm:max-w-[320px]"
     />
   );
 }

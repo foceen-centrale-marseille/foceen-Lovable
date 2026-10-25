@@ -23,19 +23,13 @@ export type Exposant = {
 
 export const DOMAINS = [
   "Tous",
-  "BTP",
-  "Énergie",
-  "Agroalimentaire",
-  "Numérique",
-  "Conseil",
+  "Audit et Conseil",
+  "BTP et Construction",
+  "Énergie et Environnement",
+  "Informatique, IT et Média",
+  "Ingénierie et Industrie",
+  "Transports et Systèmes embarqués",
   "Défense",
-  "Transport",
-  "Environnement",
-  "Industrie",
-  "Finance",
-  "Banque / Assurance",
-  "Audit & Conseil",
-  "Ingénierie",
   "Formation",
   "Autre",
 ];
@@ -45,7 +39,7 @@ export const parrain: Exposant = {
   name: "SNCF Réseau",
   logo: "/logos/sncf-reseau.png",
   sector: "Leader des mobilités durables et acteur de la transition écologique",
-  domain: "Transport",
+  domain: "Transports et Systèmes embarqués",
   yearCreated: 1938,
   location: "Présent sur l'ensemble du territoire français",
   employees: "50 000 collaborateurs",
@@ -73,7 +67,7 @@ export const partenaires: Exposant[] = [
     name: "Groupe ADF",
     logo: "/logos/groupe-adf.png",
     sector: "Industrie",
-    domain: "Industrie",
+    domain: "Ingénierie et Industrie",
     yearCreated: 1962,
     location: "Echelle internationale",
     employees: "4 900",
@@ -97,7 +91,7 @@ export const partenaires: Exposant[] = [
     name: "CEA",
     logo: "/logos/cea.png",
     sector: "Transition énergétique, transition numérique, médecine du futur, défense et sécurité, assainissement démantèlement",
-    domain: "Énergie",
+    domain: "Énergie et Environnement",
     yearCreated: 1945,
     location: "Centre de CADARACHE – 13108 Saint Paul Lez Durance",
     employees: "21 500",
@@ -125,7 +119,7 @@ export const exposantsList: Exposant[] = [
     name: "Bee Engineering",
     logo: "/logos/bee-engineering.jpg",
     sector: "Conseil en ingénierie (énergie, industrie, procédés, infrastructures, transports)",
-    domain: "Conseil",
+    domain: "Ingénierie et Industrie",
     yearCreated: 2010,
     location: "11 villes : Annecy, Aix-en-Provence, Bordeaux, Grenoble, Lyon, Mulhouse, Nantes, Paris, Rennes, Rouen et Toulouse",
     employees: "1 000",
@@ -150,7 +144,7 @@ export const exposantsList: Exposant[] = [
     name: "BPCE Solutions Informatiques",
     logo: "/logos/bpce.png",
     sector: "Conseil en systèmes et logiciels informatiques",
-    domain: "Conseil",
+    domain: "Informatique, IT et Média",
     yearCreated: 2022,
     location: "Toulouse, Aix-en-Provence, Bordeaux, Nantes, Paris, Lyon, Lille...",
     employees: "2 400",
@@ -174,7 +168,7 @@ export const exposantsList: Exposant[] = [
     name: "Capgemini",
     logo: "/logos/capgemini.png",
     sector: "Consulting, Services de technologie et d'ingénierie",
-    domain: "Conseil",
+    domain: "Audit et Conseil",
     yearCreated: 1967,
     location: "50 pays, plus de 20 villes en France",
     employees: "340 000",
@@ -199,7 +193,7 @@ export const exposantsList: Exposant[] = [
     name: "CGI France SAS",
     logo: "/logos/cgi.png",
     sector: "Leader mondial du conseil et des services numériques (Business consulting, Intégration de systèmes, Business solutions, Managed IT services)",
-    domain: "Conseil",
+    domain: "Informatique, IT et Média",
     yearCreated: undefined,
     location: "Puteaux – La Défense",
     employees: "104 500",
@@ -224,7 +218,7 @@ export const exposantsList: Exposant[] = [
     name: "Deloitte",
     logo: "/logos/deloitte.png",
     sector: "Audit & Conseil",
-    domain: "Conseil",
+    domain: "Audit et Conseil",
     yearCreated: 1845,
     location: "Internationale",
     employees: "8 000",
@@ -244,33 +238,9 @@ export const exposantsList: Exposant[] = [
       "Offre pluridisciplinaire la plus complète du marché",
     ],
   },
-  {
-    id: 57,
-    name: "Exiom Partners",
-    logo: "/logos/exiom.png",
-    sector: "Conseil en banque / assurance",
-    domain: "Conseil",
-    yearCreated: 2019,
-    location: "France",
-    employees: "200",
-    chiffreAffaires: "29 millions d'euros",
-    website: "https://www.exiompartners.com/",
-    profiles: "Actuaires / quant / ingénieurs",
-    postTypes: ["Alternance", "CDI", "Stage"],
-    applicationMethod:
-      "CV, 3 entretiens (1 de motivation, 1 technique, 1 avec un associé) en Teams ou en présentiel.",
-    description:
-      "Cabinet de conseil créé en 2019, Exiom Partners est spécialisé dans le conseil en management auprès des acteurs des services financiers, des établissements bancaires et des organismes d'assurance. Nous visons à répondre aux problématiques de nos clients en leur apportant un conseil sur-mesure et d'excellence. Nos valeurs sont garantes de la qualité et de la pérennité de notre service et participent au développement de nos talents. Nous portons un modèle de management innovant qui met l'accent sur la confiance et l'esprit entrepreneurial.",
-    highlights: [
-      "Conseil sur-mesure en services financiers",
-      "Management innovant basé sur la confiance",
-      "Approche inédite des plans de carrière",
-    ],
-  },
-
   // ── EY ──
   {
-    id: 58, name: "EY", logo: "/logos/ey.png", sector: "Audit et Conseil", domain: "Conseil", yearCreated: 1989,
+    id: 58, name: "EY", logo: "/logos/ey.png", sector: "Audit et Conseil", domain: "Audit et Conseil", yearCreated: 1989,
     location: "Paris, Lyon, Marseille, Toulouse, Lille, Strasbourg, Bordeaux, Nantes, Rennes, Nice, Rouen, Nancy, Montpellier",
     employees: "7 000", chiffreAffaires: "1,499 milliards d'euros",
     website: "https://www.ey.com/fr_fr", websiteCarriere: "https://www.ey.com/fr_fr/careers",
@@ -282,7 +252,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Forvis Mazars ──
   {
-    id: 59, name: "Forvis Mazars", logo: "/logos/forvis-mazars.jpg", sector: "Audit / Conseil", domain: "Conseil", yearCreated: 1945,
+    id: 59, name: "Forvis Mazars", logo: "/logos/forvis-mazars.jpg", sector: "Audit / Conseil", domain: "Audit et Conseil", yearCreated: 1945,
     location: "31 bureaux en France, +100 pays", employees: "45 000", chiffreAffaires: "5,2 milliards d'euros",
     website: "https://www.forvismazars.com/fr/fr", websiteCarriere: "https://recrutement-fr.forvismazars.com/offres-emploi",
     profiles: "Stages de césure, stages de fin d'études, apprentissage et CDI. Plus de 1000 stagiaires et jeunes diplômés recrutés chaque année.",
@@ -293,7 +263,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── KPMG ──
   {
-    id: 60, name: "KPMG", logo: "/logos/kpmg.jpg", sector: "Audit & Conseil", domain: "Conseil", yearCreated: 1922,
+    id: 60, name: "KPMG", logo: "/logos/kpmg.jpg", sector: "Audit & Conseil", domain: "Audit et Conseil", yearCreated: 1922,
     location: "190 bureaux en France", employees: "11 000", chiffreAffaires: "1,47 milliard d'euros",
     website: "https://kpmg.com/fr/fr.html", websiteCarriere: "https://kpmg.com/fr/fr/carrieres.html",
     profiles: "Jeune diplômé ou diplômé d'une école d'ingénieurs. Métiers innovants : D&A, cybersécurité, deal advisory, transformation digitale.",
@@ -304,7 +274,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Onepoint ──
   {
-    id: 62, name: "Onepoint", logo: "/logos/onepoint.jpg", sector: "Conseil", domain: "Conseil", yearCreated: 2002,
+    id: 62, name: "Onepoint", logo: "/logos/onepoint.jpg", sector: "Conseil", domain: "Audit et Conseil", yearCreated: 2002,
     location: "France : Paris, Bordeaux, Toulouse, Nantes, Rennes, Lyon, Aix-en-Provence, Strasbourg. Monde : Australie, Belgique, Canada, Malaisie, Maroc, Singapour",
     employees: "3 500", chiffreAffaires: "500 millions d'euros",
     website: "https://www.groupeonepoint.com/fr/", websiteCarriere: "https://www.groupeonepoint.com/fr/nous-rejoindre/",
@@ -316,7 +286,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Oresys ──
   {
-    id: 63, name: "Oresys", logo: "/logos/oresys.png", sector: "Conseil en management, organisation et transformation", domain: "Conseil", yearCreated: 1981,
+    id: 63, name: "Oresys", logo: "/logos/oresys.png", sector: "Conseil en management, organisation et transformation", domain: "Audit et Conseil", yearCreated: 1981,
     location: "Paris, Lille, Lyon, Marseille, Nantes, Toulouse, Lausanne",
     employees: "370", chiffreAffaires: "67 millions d'euros",
     website: "https://www.oresys.eu/", websiteCarriere: "https://www.oresys-recrute.eu/",
@@ -330,7 +300,7 @@ export const exposantsList: Exposant[] = [
   {
     id: 14, name: "Sopra Steria", logo: "/logos/sopra-steria.png",
     sector: "Conseil en transformation digitale, Intégration de systèmes, Cybersécurité, Infrastructure management, PLM",
-    domain: "Conseil", yearCreated: 1968,
+    domain: "Informatique, IT et Média", yearCreated: 1968,
     location: "Europe, près de 30 pays", employees: "50 000", chiffreAffaires: "5,8 milliards d'euros",
     website: "https://www.soprasteria.com/fr",
     profiles: "Consultants, Développeurs...",
@@ -341,7 +311,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Viveris ──
   {
-    id: 66, name: "Viveris", logo: "/logos/viveris.png", sector: "Conseil et Ingénierie Informatique", domain: "Conseil", yearCreated: 1986,
+    id: 66, name: "Viveris", logo: "/logos/viveris.png", sector: "Conseil et Ingénierie Informatique", domain: "Informatique, IT et Média", yearCreated: 1986,
     location: "Montpellier, Aix-en-Provence, Lyon, Grenoble, Toulouse, Paris, Strasbourg, Lille, Bruxelles, Casablanca",
     employees: "930", chiffreAffaires: "97 millions d'euros",
     website: "https://www.viveris.fr/", websiteCarriere: "https://www.viveris.fr/nous-rejoindre/",
@@ -353,7 +323,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Bouygues Bâtiment Sud-Est ──
   {
-    id: 68, name: "Bouygues Bâtiment Sud-Est", logo: "/logos/bouygues-batiment.jpg", sector: "Construction", domain: "BTP", yearCreated: 1973,
+    id: 68, name: "Bouygues Bâtiment Sud-Est", logo: "/logos/bouygues-batiment.jpg", sector: "Construction", domain: "BTP et Construction", yearCreated: 1973,
     location: "Sud-Est de la France", employees: "950", chiffreAffaires: "380 millions d'euros",
     website: "https://www.bouygues-batiment-sud-est.fr/",
     profiles: "Dynamisme, curiosité, envie d'apprendre, esprit d'équipe",
@@ -368,7 +338,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── EDF ──
   {
-    id: 70, name: "EDF", logo: "/logos/edf.png", sector: "Énergie", domain: "Énergie", yearCreated: 1949,
+    id: 70, name: "EDF", logo: "/logos/edf.png", sector: "Énergie", domain: "Énergie et Environnement", yearCreated: 1949,
     location: "Internationale", employees: "191 000", chiffreAffaires: "118,7 milliards d'euros",
     website: "https://www.edf.fr", websiteCarriere: "https://www.edf.fr/edf-recrute",
     profiles: "Tous profils d'ingénierie",
@@ -384,7 +354,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Eiffage ──
   {
-    id: 71, name: "Eiffage", logo: "/logos/eiffage.png", sector: "BTP, Énergie et Systèmes et Concessions", domain: "BTP", yearCreated: 1884,
+    id: 71, name: "Eiffage", logo: "/logos/eiffage.png", sector: "BTP, Énergie et Systèmes et Concessions", domain: "BTP et Construction", yearCreated: 1884,
     location: "Présent dans 50 pays sur les 5 continents", employees: "84 400", chiffreAffaires: "23,4 milliards d'euros",
     website: "https://www.eiffage.com/", websiteCarriere: "https://www.eiffage.com/carrieres",
     profiles: "Travaux (Bâtiment, Génie Civil, Route, Rail, Métal), Études (Prix, Méthodes et/ou Structures), Gestion de Projets, Prévention, Affaires. Candidats motivés ayant une réelle appétence pour le BTP, les Énergies et Systèmes et/ou des Concessions.",
@@ -400,7 +370,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Orano Support ──
   {
-    id: 75, name: "Orano Support", logo: "/logos/orano.png", sector: "Secteur de l'énergie nucléaire", domain: "Énergie", yearCreated: 2018,
+    id: 75, name: "Orano Support", logo: "/logos/orano.png", sector: "Secteur de l'énergie nucléaire", domain: "Énergie et Environnement", yearCreated: 2018,
     location: "Internationale", employees: "17 500", chiffreAffaires: "4,7 milliards d'euros",
     website: "https://www.orano.group/fr", websiteCarriere: "https://www.orano.group/jobs/fr",
     profiles: "Soft Skills : Gestion du temps, Communication, Adaptabilité, Initiative, Organisation, Curiosité, Polyvalence, Autonomie",
@@ -416,7 +386,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Paprec ──
   {
-    id: 76, name: "Paprec", logo: "/logos/paprec.png", sector: "Recyclage et valorisation énergétique des déchets", domain: "Environnement", yearCreated: 1994,
+    id: 76, name: "Paprec", logo: "/logos/paprec.png", sector: "Recyclage et valorisation énergétique des déchets", domain: "Énergie et Environnement", yearCreated: 1994,
     location: "La Seyne sur Mer, Paris, Nantes, Toulouse, Lyon", employees: "16 000", chiffreAffaires: "3 milliards d'euros",
     website: "http://www.paprec.com", websiteCarriere: "https://recrutement.paprec.com/fr",
     profiles: "Ingénieurs (process, calcul, chaudière, planning, électricité, génie civil…)",
@@ -432,7 +402,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Razel-Bec ──
   {
-    id: 77, name: "Razel-Bec", logo: "/logos/razel-bec.jpg", sector: "Construction - Travaux Publics", domain: "BTP", yearCreated: 1880,
+    id: 77, name: "Razel-Bec", logo: "/logos/razel-bec.jpg", sector: "Construction - Travaux Publics", domain: "BTP et Construction", yearCreated: 1880,
     location: "9 implantations dans le monde", employees: "4 500", chiffreAffaires: "1 milliard d'euros",
     website: "https://razel-bec.fayat.com/",
     profiles: "Nombreux profils en stage dans nos principaux domaines : travaux, études, matériel, qualité, santé et environnement. Offres de CDI pour les jeunes diplômés.",
@@ -443,7 +413,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Setec ──
   {
-    id: 79, name: "Setec", logo: "/logos/setec.jpg", sector: "Ingénierie multisectorielle", domain: "Conseil", yearCreated: 1957,
+    id: 79, name: "Setec", logo: "/logos/setec.jpg", sector: "Ingénierie multisectorielle", domain: "Ingénierie et Industrie", yearCreated: 1957,
     location: "France : Paris, Lyon, Vitrolles, Bordeaux, Toulouse et Nantes. Monde : Europe, Afrique, Amérique latine, Amérique du Nord et Arabie Saoudite",
     employees: "4 000", chiffreAffaires: "547 millions d'euros (2024)",
     website: "https://www.setec.fr/", websiteCarriere: "https://setec.nous-recrutons.fr/offres-emploi/",
@@ -455,7 +425,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── SMAC ──
   {
-    id: 80, name: "SMAC", logo: "/logos/smac.webp", sector: "BTP", domain: "BTP", yearCreated: 1884,
+    id: 80, name: "SMAC", logo: "/logos/smac.webp", sector: "BTP", domain: "BTP et Construction", yearCreated: 1884,
     location: "Nationale et internationale", employees: "2 400", chiffreAffaires: "450 millions d'euros",
     website: "https://www.smac-sa.com", websiteCarriere: "https://www.smac-sa.com/carriere/",
     profiles: "Conducteur de travaux H/F, Chargé d'affaires H/F, Chargé études de prix H/F, Chargé étude méthodes H/F",
@@ -466,7 +436,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── TechnicAtome ──
   {
-    id: 81, name: "TechnicAtome", logo: "/logos/technicatome.jpg", sector: "Défense / Nucléaire", domain: "Défense", yearCreated: 1972,
+    id: 81, name: "TechnicAtome", logo: "/logos/technicatome.jpg", sector: "Défense / Nucléaire", domain: "Énergie et Environnement", yearCreated: 1972,
     location: "Nationale : Aix-en Provence, Cadarache, Saclay, Toulon, Bordeaux, Nantes, Brest et Cherbourg",
     employees: "2 100", chiffreAffaires: "633 millions d'euros",
     website: "https://www.technicatome.com", websiteCarriere: "https://technicatome.beekome.com/fr",
@@ -478,7 +448,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Technip Energies ──
   {
-    id: 82, name: "Technip Energies", logo: "/logos/technip-energies.png", sector: "Ingénierie, études techniques", domain: "Énergie", yearCreated: 1967,
+    id: 82, name: "Technip Energies", logo: "/logos/technip-energies.png", sector: "Ingénierie, études techniques", domain: "Énergie et Environnement", yearCreated: 1967,
     location: "34 pays", employees: "17 000", chiffreAffaires: "7 milliards d'euros",
     website: "https://www.ten.com/en", websiteCarriere: "https://www.ten.com/en/careers",
     profiles: "Tous types de profils.",
@@ -489,7 +459,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── VINCI Construction ──
   {
-    id: 83, name: "VINCI Construction", logo: "/logos/vinci-construction.png", sector: "BTP Construction", domain: "BTP", yearCreated: 2000,
+    id: 83, name: "VINCI Construction", logo: "/logos/vinci-construction.png", sector: "BTP Construction", domain: "BTP et Construction", yearCreated: 2000,
     location: "Régionale, Nationale et Internationale", employees: "117 000", chiffreAffaires: "31,8 milliards d'euros",
     website: "https://vinci-construction.com/fr/", websiteCarriere: "https://jobs.vinci.com/fr",
     profiles: "Valeurs : Engager pour la sécurité, Engager pour l'environnement, Engagés pour l'exemplarité",
@@ -501,7 +471,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Exposants avec fiches complètes ──
   {
-    id: 15, name: "Thales", logo: "/logos/thales.png", sector: "Défense, Aérospatial, Cyber et Digital", domain: "Défense", yearCreated: 2000,
+    id: 15, name: "Thales", logo: "/logos/thales.png", sector: "Défense, Aérospatial, Cyber et Digital", domain: "Ingénierie et Industrie", yearCreated: 2000,
     location: "68 pays, une quarantaine de sites en France", employees: "83 000", chiffreAffaires: "20,6 milliards d'euros",
     website: "https://www.thalesgroup.com/en", websiteCarriere: "https://careers.thalesgroup.com/",
     profiles: "Tous profils ingénieurs : défense, aérospatial, cybersécurité, digital, IA, Big data",
@@ -512,7 +482,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Vulcain Engineering Group ──
   {
-    id: 85, name: "Vulcain Engineering Group", logo: "/logos/vulcain.svg", sector: "Services d'ingénierie et de conseil", domain: "Énergie", yearCreated: 2005,
+    id: 85, name: "Vulcain Engineering Group", logo: "/logos/vulcain.svg", sector: "Services d'ingénierie et de conseil", domain: "Ingénierie et Industrie", yearCreated: 2005,
     location: "Présent sur toute la France et dans 16 pays du monde", employees: "6 000", chiffreAffaires: "630 millions d'euros",
     website: "https://www.vulcain-eng.com/", profiles: "Essentiellement des ingénieurs de formation",
     postTypes: ["CDI", "Stage"],
@@ -522,7 +492,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── ATOS ──
   {
-    id: 86, name: "ATOS", logo: "/logos/atos.png", sector: "ESN - Entreprise de service du numérique", domain: "Numérique", yearCreated: 1997,
+    id: 86, name: "ATOS", logo: "/logos/atos.png", sector: "ESN - Entreprise de service du numérique", domain: "Informatique, IT et Média", yearCreated: 1997,
     location: "Implantations en France métropolitaine et Outre-Mer : Paris, Lille, Caen, Rouen, Rennes, Angers, Nantes, Metz, Strasbourg, Tours, Clermont-Ferrand, Lyon, Bordeaux, Toulouse, Grenoble, Montpellier, Aix-en-Provence, Sophia-Antipolis, Toulon",
     employees: "10 130", chiffreAffaires: "9,6 milliards d'euros",
     website: "https://atos.net/fr/rejoignez-nous", websiteCarriere: "https://atos.net/advancing-what-matters/fr/rejoignez-nous",
@@ -534,7 +504,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Dassault Systèmes ──
   {
-    id: 87, name: "Dassault Systèmes", logo: "/logos/dassault-systemes.png", sector: "Éditeur de logiciels 3D", domain: "Numérique", yearCreated: 1981,
+    id: 87, name: "Dassault Systèmes", logo: "/logos/dassault-systemes.png", sector: "Éditeur de logiciels 3D", domain: "Informatique, IT et Média", yearCreated: 1981,
     location: "En France : Île-de-France, Bretagne, Auvergne Rhône Alpes, Occitanie, Provence Alpes Côte d'Azur. 195 bureaux dans le monde.",
     employees: "23 800", chiffreAffaires: "5,95 milliards d'euros",
     website: "https://www.3ds.com/fr/", websiteCarriere: "https://www.3ds.com/fr/careers",
@@ -546,7 +516,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Lucca ──
   {
-    id: 89, name: "Lucca", logo: "/logos/lucca.png", sector: "Tech/SaaS", domain: "Numérique", yearCreated: 2002,
+    id: 89, name: "Lucca", logo: "/logos/lucca.png", sector: "Tech/SaaS", domain: "Informatique, IT et Média", yearCreated: 2002,
     location: "Paris, Nantes, Marseille, Barcelone, Toulouse, Genève, Munich, Bordeaux", employees: "800",
     website: "https://www.lucca.fr/", profiles: "Product Manager, SRE, UI Developer, Full stack software engineer, back-end engineer, front-end engineer",
     postTypes: ["Alternance", "CDD", "CDI", "Stage"],
@@ -556,7 +526,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Murex ──
   {
-    id: 90, name: "Murex", logo: "/logos/murex.png", sector: "Fintech", domain: "Numérique", yearCreated: 1986,
+    id: 90, name: "Murex", logo: "/logos/murex.png", sector: "Fintech", domain: "Informatique, IT et Média", yearCreated: 1986,
     location: "Paris, France – 19 bureaux à l'international", employees: "3 000", chiffreAffaires: "791 millions d'euros",
     website: "https://www.murex.com/en", websiteCarriere: "https://murex.wd3.myworkdayjobs.com/MurexCareerPage1",
     profiles: "Ingénierie Financière (finance quantitative), Ingénierie Information (software development, C++ / Java)",
@@ -567,7 +537,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Orange SA ──
   {
-    id: 91, name: "Orange SA", logo: "/logos/orange.png", sector: "Télécommunications multiservices - IT & Innovation", domain: "Numérique", yearCreated: 1988,
+    id: 91, name: "Orange SA", logo: "/logos/orange.png", sector: "Télécommunications multiservices - IT & Innovation", domain: "Informatique, IT et Média", yearCreated: 1988,
     location: "Orange Massalia Bât C, 93 rue Felix Pyat 13003 Marseille", employees: "130 000", chiffreAffaires: "43 milliards d'euros",
     website: "https://www.orange.fr/portail", websiteCarriere: "https://orange.jobs/site/fr-home/",
     profiles: "IA, cybersécurité, big data, IoT, virtualisation des réseaux, Cloud, 5G, fonctions support",
@@ -578,7 +548,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Akkodis ──
   {
-    id: 92, name: "Akkodis", logo: "/logos/akkodis.png", sector: "Ingénierie industrie / IT / Défense", domain: "Ingénierie", yearCreated: 2022,
+    id: 92, name: "Akkodis", logo: "/logos/akkodis.png", sector: "Ingénierie industrie / IT / Défense", domain: "Ingénierie et Industrie", yearCreated: 2022,
     location: "30 pays", employees: "2 000 (France : 9 000)", chiffreAffaires: "4 milliards d'euros",
     website: "https://www.akkodis.com/fr/", websiteCarriere: "https://www.akkodis.com/fr-fr/emplois/",
     profiles: "Ingénierie système, Ingénierie mécanique, Développement / Conception logiciel, Soutien logistique intégré",
@@ -589,7 +559,7 @@ export const exposantsList: Exposant[] = [
   },
   // ── Assystem ──
   {
-    id: 93, name: "Assystem", logo: "/logos/assystem.png", sector: "Bureau d'études", domain: "Ingénierie", yearCreated: 1966,
+    id: 93, name: "Assystem", logo: "/logos/assystem.png", sector: "Bureau d'études", domain: "Ingénierie et Industrie", yearCreated: 1966,
     location: "Internationale – 12 pays (Europe, Moyen-Orient, Asie)", employees: "8 000", chiffreAffaires: "611 millions d'euros",
     website: "https://www.assystem.com/fr/", profiles: "Ingénieurs Projets, PMO, Études, Fonctionnement, Démantèlement, Sûreté Nucléaire, Électricité, Mécaniques, Génie Civil, Risques, Automatisme, Systèmes, Informatique, Data Scientist, IA, I&C",
     postTypes: ["Alternance", "CDI", "Stage"],
@@ -600,7 +570,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Bertin Technologies ──
   {
-    id: 106, name: "Bertin Technologies", logo: "/logos/bertin-technologies.webp", sector: "Instrumentation industrielle et scientifique", domain: "Industrie", yearCreated: 1956,
+    id: 106, name: "Bertin Technologies", logo: "/logos/bertin-technologies.webp", sector: "Instrumentation industrielle et scientifique", domain: "Ingénierie et Industrie", yearCreated: 1956,
     location: "155, rue Louis Armand – 13290 Aix-en-Provence",
     employees: "1 000", chiffreAffaires: "178 millions d'euros",
     website: "https://www.bertin-technologies.com/",
@@ -613,7 +583,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Exail SAS ──
   {
-    id: 109, name: "Exail SAS", logo: "/logos/exail.png", sector: "Technologies de pointe (robotique, maritime, navigation, aéronautique, spatial, photonique)", domain: "Industrie", yearCreated: 2000,
+    id: 109, name: "Exail SAS", logo: "/logos/exail.png", sector: "Technologies de pointe (robotique, maritime, navigation, aéronautique, spatial, photonique)", domain: "Ingénierie et Industrie", yearCreated: 2000,
     location: "Saint-Germain-en-Laye 78100 – Échelle internationale (80+ pays)",
     employees: "2 000",
     website: "https://www.exail.com", websiteCarriere: "https://www.exail.com/careers",
@@ -626,7 +596,7 @@ export const exposantsList: Exposant[] = [
 
   // ── IKOS ──
   {
-    id: 110, name: "IKOS", logo: "/logos/ikos.jpg", sector: "Ingénierie Ferroviaire & Energie", domain: "Ingénierie", yearCreated: 2005,
+    id: 110, name: "IKOS", logo: "/logos/ikos.jpg", sector: "Ingénierie Ferroviaire & Energie", domain: "Transports et Systèmes embarqués", yearCreated: 2005,
     location: "28 bureaux dans 13 pays (France, Espagne, Belgique, Allemagne, Suisse, Suède, Italie, Angleterre, États-Unis, Canada, Maroc, Portugal, Israël)",
     employees: "1 750", chiffreAffaires: "11 368 millions d'euros",
     website: "https://www.ikosconsulting.com/",
@@ -639,7 +609,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Onet Technologies ──
   {
-    id: 111, name: "Onet Technologies", logo: "/logos/onet.png", sector: "Ingénierie et maintenance nucléaire", domain: "Ingénierie", yearCreated: 1999,
+    id: 111, name: "Onet Technologies", logo: "/logos/onet.png", sector: "Ingénierie et maintenance nucléaire", domain: "Énergie et Environnement", yearCreated: 1999,
     location: "France, USA, Angleterre, Italie, Canada, Japon – 30 implantations en France",
     employees: "3 000", chiffreAffaires: "280 millions d'euros",
     website: "https://www.groupeonet.com/", websiteCarriere: "https://www.onetrecrute.com/offre-de-emploi/liste-offres.aspx",
@@ -652,7 +622,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Ortec Group ──
   {
-    id: 112, name: "Ortec Group", logo: "/logos/ortec-group.png", sector: "Ingénierie et services industriels (Engineering, Contracting, Global Services, Energies)", domain: "Industrie", yearCreated: 1992,
+    id: 112, name: "Ortec Group", logo: "/logos/ortec-group.png", sector: "Ingénierie et services industriels (Engineering, Contracting, Global Services, Energies)", domain: "Ingénierie et Industrie", yearCreated: 1992,
     location: "Siège : Aix-en-Provence – Implantation internationale",
     employees: "15 000", chiffreAffaires: "1,4 milliard d'euros",
     website: "https://ortec-group.com/", websiteCarriere: "https://ortec-group.com/carrieres/",
@@ -665,7 +635,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Syntec-Ingénierie ──
   {
-    id: 114, name: "Syntec-Ingénierie", logo: "/logos/syntec-ingenierie.png", sector: "Fédération professionnelle de l'ingénierie", domain: "Ingénierie", yearCreated: 1990,
+    id: 114, name: "Syntec-Ingénierie", logo: "/logos/syntec-ingenierie.png", sector: "Fédération professionnelle de l'ingénierie", domain: "Ingénierie et Industrie", yearCreated: 1990,
     location: "22, rue Joubert – 75009 Paris",
     employees: "15",
     website: "https://www.syntec-ingenierie.fr",
@@ -678,7 +648,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Tractebel Engineering ──
   {
-    id: 115, name: "Tractebel Engineering", sector: "Ingénierie", domain: "Ingénierie", yearCreated: 1950, logo: "/logos/tractebel.png",
+    id: 115, name: "Tractebel Engineering", sector: "Ingénierie", domain: "Ingénierie et Industrie", yearCreated: 1950, logo: "/logos/tractebel.png",
     location: "Paris, Lyon et Marseille",
     employees: "850", chiffreAffaires: "142 millions d'euros",
     website: "https://tractebel-engie.com/fr-fr/", websiteCarriere: "https://tractebel-engie.com/fr-fr/carrieres/",
@@ -691,7 +661,7 @@ export const exposantsList: Exposant[] = [
 
   // ── CMA CGM ──
   {
-    id: 116, name: "CMA CGM", sector: "Transports et logistiques", domain: "Transport", yearCreated: 1978, logo: "/logos/cma-cgm.png",
+    id: 116, name: "CMA CGM", sector: "Transports et logistiques", domain: "Transports et Systèmes embarqués", yearCreated: 1978, logo: "/logos/cma-cgm.png",
     location: "Marseille (siège) – 177 pays",
     employees: "160 000", chiffreAffaires: "55,5 milliards de dollars",
     website: "https://www.cmacgm-group.com/fr", websiteCarriere: "https://jobs.cmacgm-group.com/",
@@ -704,7 +674,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Framatome ──
   {
-    id: 117, name: "Framatome", sector: "Nucléaire", domain: "Énergie", yearCreated: 1958, logo: "/logos/framatome.png",
+    id: 117, name: "Framatome", sector: "Nucléaire", domain: "Énergie et Environnement", yearCreated: 1958, logo: "/logos/framatome.png",
     location: "Internationale",
     employees: "20 000", chiffreAffaires: "4 676 millions d'euros",
     website: "https://www.framatome.com/fr/", websiteCarriere: "https://framatome-career.talent-soft.com/",
@@ -717,7 +687,7 @@ export const exposantsList: Exposant[] = [
 
   // ── Groupe SNEF ──
   {
-    id: 118, name: "Groupe SNEF", sector: "Industrie, Marine, Infrastructure & Sécurité, Nucléaire, Naval", domain: "Industrie", yearCreated: 1905, logo: "/logos/groupe-snef.png",
+    id: 118, name: "Groupe SNEF", sector: "Industrie, Marine, Infrastructure & Sécurité, Nucléaire, Naval", domain: "Énergie et Environnement", yearCreated: 1905, logo: "/logos/groupe-snef.png",
     location: "Nationale & Internationale",
     employees: "15 173", chiffreAffaires: "2 milliards d'euros",
     website: "https://www.snef.fr/", websiteCarriere: "https://www.snef.fr/carrieres/page_recrute_offres.php",
@@ -756,7 +726,7 @@ export const exposantsList: Exposant[] = [
 
   // ── MB92 La Ciotat ──
   {
-    id: 121, name: "MB92 La Ciotat", sector: "Réparation Navale", domain: "Industrie", yearCreated: 1998, logo: "/logos/mb92.png",
+    id: 121, name: "MB92 La Ciotat", sector: "Réparation Navale", domain: "Transports et Systèmes embarqués", yearCreated: 1998, logo: "/logos/mb92.png",
     location: "La Ciotat",
     employees: "180", chiffreAffaires: "121 millions d'euros",
     website: "https://mb92.com", websiteCarriere: "https://mb92.com/careers",
@@ -783,7 +753,7 @@ export const exposantsList: Exposant[] = [
 
   // ── NAVAL GROUP ──
   {
-    id: 125, name: "Naval Group", sector: "Industrie et Naval de défense", domain: "Industrie", yearCreated: 2003, logo: "/logos/naval-group.png",
+    id: 125, name: "Naval Group", sector: "Industrie et Naval de défense", domain: "Défense", yearCreated: 2003, logo: "/logos/naval-group.png",
     location: "Toulon, Ollioules, Saint-Tropez, Nantes, Ruelle, Brest, Cherbourg, Lorient et Paris",
     employees: "16 722", chiffreAffaires: "4,355 milliards d'euros",
     website: "https://www.naval-group.com/fr/", websiteCarriere: "https://www.naval-group.com/fr/nous-rejoindre",
@@ -796,7 +766,7 @@ export const exposantsList: Exposant[] = [
 
   // ── AXA FRANCE ──
   {
-    id: 126, name: "AXA France", sector: "Assurance", domain: "Banque / Assurance", yearCreated: 1985, logo: "/logos/axa.png",
+    id: 126, name: "AXA France", sector: "Assurance", domain: "Autre", yearCreated: 1985, logo: "/logos/axa.png",
     location: "France – Groupe présent dans 51 pays",
     employees: "34 000", chiffreAffaires: "29 milliards d'euros",
     website: "https://recrutement.axa.fr/axa-et-vous/notre-identite",
@@ -810,7 +780,7 @@ export const exposantsList: Exposant[] = [
 
   // ── HEINEKEN FRANCE ──
   {
-    id: 128, name: "HEINEKEN France", sector: "Agroalimentaire", domain: "Agroalimentaire", yearCreated: 1864, logo: "/logos/heineken.png",
+    id: 128, name: "HEINEKEN France", sector: "Agroalimentaire", domain: "Autre", yearCreated: 1864, logo: "/logos/heineken.png",
     location: "Mons-en-Barœul, Schiltigheim, Marseille – 71 sites de distribution en France",
     employees: "3 700", chiffreAffaires: "29,82 milliards d'euros (groupe)",
     website: "https://www.heinekenfrance.fr/", websiteCarriere: "https://www.heinekenfrance.fr/rejoignez-nous/",
@@ -823,7 +793,7 @@ export const exposantsList: Exposant[] = [
 
   // ── VINCI ENERGIES ──
   {
-    id: 131, name: "VINCI Energies", sector: "Efficacité énergétique et énergies renouvelables", domain: "Énergie", yearCreated: 1918, logo: "/Logo_VE_bleu_Rouge.png",
+    id: 131, name: "VINCI Energies", sector: "Efficacité énergétique et énergies renouvelables", domain: "Énergie et Environnement", yearCreated: 1918, logo: "/Logo_VE_bleu_Rouge.png",
     location: "61 pays",
     employees: "102 600 collaborateurs, 2 100 entreprises", chiffreAffaires: "20,4 milliards d'euros (2024)",
     website: "https://www.vinci-energies.com",
@@ -840,7 +810,7 @@ export const exposantsList: Exposant[] = [
     name: "Cap Finances",
     logo: "/logos/capfinances.png",
     sector: "Gestion de patrimoine & Conseil financier",
-    domain: "Audit & Conseil",
+    domain: "Audit et Conseil",
     yearCreated: 2004,
     location: "Implantation nationale (France)",
     employees: "150 collaborateurs — 1 400 conseillers partenaires",
@@ -863,7 +833,7 @@ export const exposantsList: Exposant[] = [
     name: "Talisker Consulting",
     logo: "/logos/talisker.png",
     sector: "Conseil en management & Transformation",
-    domain: "Audit & Conseil",
+    domain: "Audit et Conseil",
     yearCreated: 2006,
     location: "France & International",
     employees: "47 collaborateurs",
@@ -888,7 +858,7 @@ export const exposantsList: Exposant[] = [
     name: "ECIA",
     logo: "/logos/ecia.png",
     sector: "Ingénierie Nucléaire",
-    domain: "Énergie",
+    domain: "Énergie et Environnement",
     yearCreated: 2007,
     location: "Venelles, Bagnols-sur-Cèze, Bollène, Lyon, Cherbourg, Nantes",
     employees: "180 collaborateurs",
@@ -914,7 +884,7 @@ export const exposantsList: Exposant[] = [
     name: "Enedis",
     logo: "/logos/enedis.png",
     sector: "Distribution d'électricité & Réseaux intelligents",
-    domain: "Énergie",
+    domain: "Énergie et Environnement",
     yearCreated: 2008,
     location: "Réseau national (95 % du territoire français) & Direction régionale PACA",
     employees: "42 000 collaborateurs",
@@ -938,7 +908,7 @@ export const exposantsList: Exposant[] = [
     name: "EODD Ingénieurs Conseils",
     logo: "/logos/eodd.png",
     sector: "Conseil & Ingénierie environnementale",
-    domain: "Environnement",
+    domain: "Énergie et Environnement",
     yearCreated: 1991,
     location: "13 agences nationales (France métropolitaine et outre-mer)",
     employees: "320 collaborateurs",
@@ -964,7 +934,7 @@ export const exposantsList: Exposant[] = [
     name: "EP2C Energy",
     logo: "/logos/ep2c-energy.png",
     sector: "Conseil & Ingénierie de l'Énergie",
-    domain: "Énergie",
+    domain: "Énergie et Environnement",
     yearCreated: 2014,
     location: "France & International",
     employees: "650 collaborateurs",
@@ -988,7 +958,7 @@ export const exposantsList: Exposant[] = [
     name: "Inddigo",
     logo: "/logos/inddigo.png",
     sector: "Ingénierie & Conseil en transition écologique",
-    domain: "Environnement",
+    domain: "Énergie et Environnement",
     yearCreated: 1986,
     location: "Agences à l'échelle nationale (France)",
     employees: "460 collaborateurs",
@@ -1015,7 +985,7 @@ export const exposantsList: Exposant[] = [
     name: "Pellenc ST",
     logo: "/logos/pellenc-st.png",
     sector: "Industrie",
-    domain: "Environnement",
+    domain: "Énergie et Environnement",
     yearCreated: 2001,
     location: "Pertuis (84) / International",
     employees: "330",
@@ -1041,7 +1011,7 @@ export const exposantsList: Exposant[] = [
     name: "Recycle Plastique",
     logo: "/logos/recycle-plastique.png",
     sector: "Recyclage & Économie circulaire",
-    domain: "Environnement",
+    domain: "Énergie et Environnement",
     yearCreated: 2019,
     location: "France",
     employees: "3 collaborateurs",
@@ -1064,7 +1034,7 @@ export const exposantsList: Exposant[] = [
     name: "Cap Ingelec",
     logo: "/logos/cap-ingelec.png",
     sector: "Ingénierie & Bâtiments complexes",
-    domain: "BTP",
+    domain: "BTP et Construction",
     yearCreated: 1992,
     location: "15 agences en France (dont Marseille/Aix) & International",
     employees: "850",
@@ -1090,7 +1060,7 @@ export const exposantsList: Exposant[] = [
     name: "Jifmar Offshore Services",
     logo: "/logos/jifmar.png",
     sector: "Transport",
-    domain: "Transport",
+    domain: "Transports et Systèmes embarqués",
     yearCreated: 2005,
     location: "Aix-en-Provence (siège) — International",
     employees: "850",
@@ -1116,7 +1086,7 @@ export const exposantsList: Exposant[] = [
     name: "RTM",
     logo: "/logos/rtm.png",
     sector: "Mobilités & Transports urbains de voyageurs",
-    domain: "Transport",
+    domain: "Transports et Systèmes embarqués",
     yearCreated: 1950,
     location: "Métropole Aix-Marseille-Provence",
     employees: "587 collaborateurs (fonctions cadres/ingénierie)",
@@ -1141,7 +1111,7 @@ export const exposantsList: Exposant[] = [
     name: "Doors3",
     logo: "/logos/doors3.png",
     sector: "Conseil tech : IA générative, Blockchain & Web3",
-    domain: "Numérique",
+    domain: "Informatique, IT et Média",
     yearCreated: 2022,
     location: "Marseille, Paris, Göteborg (Suède)",
     employees: "9 collaborateurs",
@@ -1167,7 +1137,7 @@ export const exposantsList: Exposant[] = [
     name: "STMicroelectronics",
     logo: "/logos/stmicroelectronics.png",
     sector: "Industrie",
-    domain: "Numérique",
+    domain: "Informatique, IT et Média",
     yearCreated: 1987,
     location: "Internationale (sites en France : PACA, AURA...)",
     employees: "48 000",
@@ -1192,7 +1162,7 @@ export const exposantsList: Exposant[] = [
     name: "Egis",
     logo: "/logos/egis.png",
     sector: "Ingénierie",
-    domain: "Ingénierie",
+    domain: "Ingénierie et Industrie",
     yearCreated: 1970,
     location: "Siège à Paris — Présence dans 100+ pays",
     employees: "24 000",
@@ -1219,7 +1189,7 @@ export const exposantsList: Exposant[] = [
     name: "Groupe LGM",
     logo: "/logos/lgm.png",
     sector: "Ingénierie",
-    domain: "Ingénierie",
+    domain: "Ingénierie et Industrie",
     yearCreated: 1991,
     location: "France & International",
     employees: "1 600",
@@ -1245,7 +1215,7 @@ export const exposantsList: Exposant[] = [
     name: "Groupe REEL",
     logo: "/logos/reel.png",
     sector: "Industrie",
-    domain: "Ingénierie",
+    domain: "Ingénierie et Industrie",
     yearCreated: 1946,
     location: "Siège en France — Présence internationale",
     employees: "3 400",
@@ -1296,7 +1266,7 @@ export const exposantsList: Exposant[] = [
     name: "AVEC L'INDUSTRIE",
     logo: "/logos/avec-l-industrie.png",
     sector: "Compétences industrielles & OPCO",
-    domain: "Formation",
+    domain: "Autre",
     yearCreated: 2018,
     location: "Échelle nationale (29 branches industrielles)",
     employees: "732 collaborateurs",
@@ -1529,7 +1499,7 @@ export const exposantsList: Exposant[] = [
     name: "EMIS et EMIS Access",
     logo: "/logos/emis.png",
     sector: "Maintenance industrielle & Métallurgie",
-    domain: "Autre",
+    domain: "Ingénierie et Industrie",
     yearCreated: 1987,
     location: "Vitrolles (13)",
     employees: "170 collaborateurs",
@@ -1580,7 +1550,7 @@ export const exposantsList: Exposant[] = [
     name: "NAOS",
     logo: "/logos/naos.png",
     sector: "Dermocosmétique & Écobiologie",
-    domain: "Autre",
+    domain: "Énergie et Environnement",
     yearCreated: 1977,
     location: "Siège à Aix-en-Provence, Lyon, Paris & International (130 pays)",
     employees: "3 500 collaborateurs",
