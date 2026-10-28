@@ -1501,7 +1501,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
 
   return (
     <div
-      className="w-full h-full flex flex-col justify-between px-6 md:px-16 py-8 md:py-14"
+      className="w-full h-full flex flex-col justify-between px-6 md:px-16 pt-8 md:pt-12 pb-24 md:pb-20"
       style={{ background: THEME.paper }}
     >
       <div className="shrink-0">
