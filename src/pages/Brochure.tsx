@@ -1499,8 +1499,11 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
     }));
 
   return (
-    <div className="w-full h-full flex flex-col px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
-      <div className="mb-8">
+    <div
+      className="w-full h-full flex flex-col justify-between px-6 md:px-16 py-8 md:py-14"
+      style={{ background: THEME.paper }}
+    >
+      <div className="shrink-0">
         <p className="text-[11px] tracking-[0.5em] uppercase font-heading mb-2" style={{ color: THEME.royal }}>
           Sommaire
         </p>
@@ -1510,32 +1513,40 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
         <div className="mt-4 h-[3px] w-24" style={{ background: THEME.royal }} />
       </div>
 
-      <div className="flex-1 flex items-center justify-center">
-        <ol className="w-full max-w-xl mx-auto space-y-4 py-8">
-          {items.map((it) => (
-            <li key={it.num}>
-              <button
-                onClick={() => onJump(it.slide)}
-                className="group w-full flex items-baseline gap-5 text-left py-2 border-b transition-colors"
-                style={{ borderColor: THEME.rule }}
+      <ol className="w-full max-w-4xl md:max-w-5xl mx-auto flex-1 flex flex-col justify-center gap-3 md:gap-6 py-6 md:py-10">
+        {items.map((it) => (
+          <li key={it.num}>
+            <button
+              onClick={() => onJump(it.slide)}
+              className="group w-full flex items-center gap-3 md:gap-6 text-left p-3 md:p-6 rounded-2xl border transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
+              style={{ borderColor: THEME.rule, background: THEME.card }}
+            >
+              <span
+                className="font-heading font-bold text-xl md:text-2xl shrink-0 w-9 h-9 md:w-14 md:h-14 rounded-full flex items-center justify-center"
+                style={{ background: THEME.royal, color: THEME.paper }}
               >
-                <span className="font-heading font-bold text-2xl shrink-0" style={{ color: THEME.royal }}>
-                  {it.num}
-                </span>
-                <span
-                  className="font-heading font-semibold text-lg md:text-xl flex-1 group-hover:opacity-70 transition-opacity"
-                  style={{ color: THEME.ink }}
-                >
-                  {it.title}
-                </span>
-                <span className="font-heading text-sm tracking-widest" style={{ color: THEME.ink, opacity: 0.5 }}>
-                  p. {String(it.slide + 1).padStart(2, "0")}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ol>
-      </div>
+                {it.num}
+              </span>
+              <span
+                className="font-heading font-semibold text-base md:text-2xl flex-1"
+                style={{ color: THEME.ink }}
+              >
+                {it.title}
+              </span>
+              <span
+                className="font-heading font-bold text-xs md:text-lg tracking-widest shrink-0"
+                style={{ color: THEME.royal }}
+              >
+                p. {String(it.slide + 1).padStart(2, "0")}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      <p className="shrink-0 text-[11px] md:text-sm tracking-[0.2em] uppercase text-center" style={{ color: THEME.royal, opacity: 0.6 }}>
+        Cliquez sur une ligne pour accéder à la page
+      </p>
     </div>
   );
 }
