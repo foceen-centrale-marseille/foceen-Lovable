@@ -16,6 +16,7 @@ const THEME = {
   royalDeep: "#13365C",
   gold: "#C9A24B",
   paper: "#F6F1E7",
+  card: "#FFFCF5",
   rule: "#D9CBA8",
 };
 
