@@ -1514,7 +1514,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
         <div className="mt-4 h-[3px] w-24" style={{ background: THEME.royal }} />
       </div>
 
-      <ol className="w-full max-w-4xl md:max-w-5xl mx-auto flex-1 flex flex-col justify-center gap-3 md:gap-6 py-6 md:py-10">
+      <ol className="w-full max-w-4xl md:max-w-5xl mx-auto flex-1 flex flex-col justify-center gap-3 md:gap-5 py-2 md:py-4">
         {items.map((it) => (
           <li key={it.num}>
             <button
