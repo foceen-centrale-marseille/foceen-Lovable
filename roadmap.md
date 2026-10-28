@@ -18,6 +18,11 @@
 - [x] Vérifier affichage (accueil + exposants), filtres et tests ; tests verts.
 - [x] Publier sur le site public ; publication demandée et contrôlée en ligne.
 
+## Pop-up pub : taille maximisée
+- [x] Agrandir la modale (overlay p-2 sm:p-4, max-w-[96vw] md:max-w-2xl lg:max-w-3xl, max-h-[96vh], img max-h-[92vh], croix repositionnée).
+- [x] Vérifier absence de scroll horizontal et fermeture sur desktop et mobile.
+- [ ] Publier sur le site public.
+
 ## Guide élève : lien direct
 - [x] Pointer le bouton « Guide élève » vers /guide-eleve.pdf (target, rel, download).
 - [x] Déposer le PDF du guide à cette adresse ; vérifié 200, application/pdf, attributs exacts.
