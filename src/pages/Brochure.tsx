@@ -1519,7 +1519,7 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
           <li key={it.num}>
             <button
               onClick={() => onJump(it.slide)}
-              className="group w-full flex items-center gap-3 md:gap-6 text-left p-3 md:p-6 rounded-2xl border transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
+              className="group w-full flex items-center gap-3 md:gap-6 text-left p-3 md:p-5 rounded-2xl border transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
               style={{ borderColor: THEME.rule, background: THEME.card }}
             >
               <span
