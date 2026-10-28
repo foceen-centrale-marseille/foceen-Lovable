@@ -1198,6 +1198,20 @@ const isBlueSlide = (s: Slide) => s.kind === "divider";
 
 export default function Brochure() {
   const [i, setI] = useState(0);
+  const [showAdModal, setShowAdModal] = useState(false);
+  const [adAlreadyShown, setAdAlreadyShown] = useState(() => {
+    try { return sessionStorage.getItem("foceen-ad-shown") === "1"; } catch { return false; }
+  });
+  useEffect(() => {
+    if (adAlreadyShown) return;
+    const t = window.setTimeout(() => setShowAdModal(true), 30000);
+    return () => window.clearTimeout(t);
+  }, [adAlreadyShown]);
+  const closeAd = () => {
+    setShowAdModal(false);
+    setAdAlreadyShown(true);
+    try { sessionStorage.setItem("foceen-ad-shown", "1"); } catch { /* ignore */ }
+  };
   const total = slides.length;
 
   const go = useCallback((n: number) => setI(() => Math.max(0, Math.min(total - 1, n))), [total]);
@@ -1319,6 +1333,22 @@ export default function Brochure() {
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
+
+      {showAdModal && (
+        <div role="dialog" aria-modal="true" aria-label="Publicité partenaire" className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-300">
+          <div className="relative max-h-[88vh] max-w-[90vw] md:max-w-lg flex flex-col items-center justify-center">
+            <button
+              type="button"
+              onClick={closeAd}
+              aria-label="Fermer la publicité"
+              className="absolute -top-3 -right-3 md:top-2 md:right-2 z-10 p-2 rounded-full bg-background/90 text-foreground shadow-xl hover:bg-destructive hover:text-white transition-colors cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <img src="/pub-partenaire.png" alt="Partenaire Forum FOCEEN" className="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
