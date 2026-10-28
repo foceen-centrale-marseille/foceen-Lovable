@@ -218,7 +218,7 @@ const RAW_SECTORS: { name: string; companies: Company[] }[] = [
         positions: ["Alternance", "Stage"],
         recruitment: ["Candidature sur enedis.fr/hub-carriere", "Entretien avec un binôme métier / RH"],
       }),
-      make("EP2C Energy", "Conseil et Ingénierie de l'Énergie", "/logos/ep2c-energy.png", {
+      make("EP2C Energy", "Conseil et Ingénierie de l'Énergie", "/logos/ep2c.png", {
         founded: "2014",
         location: "France & International",
         revenue: "102 M€",

@@ -1029,7 +1029,7 @@ export const exposantsList: Exposant[] = [
   {
     id: 137,
     name: "EP2C Energy",
-    logo: "/logos/ep2c-energy.png",
+    logo: "/logos/ep2c.png",
     sector: "Conseil & Ingénierie de l'Énergie",
     domain: "Énergie et Environnement",
     yearCreated: 2014,
