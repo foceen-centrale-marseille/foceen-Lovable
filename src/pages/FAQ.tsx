@@ -17,6 +17,10 @@ const etudiants: QA[] = [
     a: "Oui, l'accès est 100 % gratuit. Le forum s'adresse en priorité aux étudiants et diplômés de Centrale Méditerranée mais accueille également les profils d'autres grandes écoles d'ingénieurs ou de commerce ainsi que les universités.",
   },
   {
+    q: "Le forum est-il réservé uniquement aux étudiants ?",
+    a: "Le forum est principalement dirigé vers des étudiants post-bac mais il reste un forum de recrutement. Vous pouvez donc vous inscrire en cochant étudiants puis autre dans les écoles proposées. Vous aurez l'occasion d'échanger avec les entreprises présentes et voir si votre profil les intéresse.",
+  },
+  {
     q: "Étant étudiant, faut-il obligatoirement s'inscrire en amont pour venir ?",
     a: (
       <>
