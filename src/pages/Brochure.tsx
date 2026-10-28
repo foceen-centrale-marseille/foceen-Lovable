@@ -1335,17 +1335,17 @@ export default function Brochure() {
       </div>
 
       {showAdModal && (
-        <div role="dialog" aria-modal="true" aria-label="Publicité partenaire" className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-300">
-          <div className="relative max-h-[88vh] max-w-[90vw] md:max-w-lg flex flex-col items-center justify-center">
+        <div role="dialog" aria-modal="true" aria-label="Publicité partenaire" className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-2 sm:p-4 animate-in fade-in duration-300">
+          <div className="relative max-h-[96vh] max-w-[96vw] md:max-w-2xl lg:max-w-3xl flex flex-col items-center justify-center">
             <button
               type="button"
               onClick={closeAd}
               aria-label="Fermer la publicité"
-              className="absolute -top-3 -right-3 md:top-2 md:right-2 z-10 p-2 rounded-full bg-background/90 text-foreground shadow-xl hover:bg-destructive hover:text-white transition-colors cursor-pointer"
+              className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 p-2 sm:p-2.5 rounded-full bg-black/75 hover:bg-destructive text-white shadow-2xl backdrop-blur-md transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
-            <img src="/pub-partenaire.png" alt="Partenaire Forum FOCEEN" className="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl" />
+            <img src="/pub-partenaire.png" alt="Partenaire Forum FOCEEN" className="w-auto h-auto max-w-full max-h-[92vh] object-contain rounded-xl shadow-2xl" />
           </div>
         </div>
       )}
