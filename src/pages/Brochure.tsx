@@ -1515,8 +1515,8 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
         <div className="mt-4 h-[3px] w-24" style={{ background: THEME.royal }} />
       </div>
 
-      <div className="flex-1 overflow-auto pr-2">
-        <ol className="space-y-3">
+      <div className="flex-1 flex items-center justify-center">
+        <ol className="w-full max-w-xl mx-auto space-y-4 py-8">
           {items.map((it) => (
             <li key={it.num}>
               <button
@@ -1537,24 +1537,6 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
                   p. {String(it.slide + 1).padStart(2, "0")}
                 </span>
               </button>
-              {it.child && (
-                <ul className="mt-2 ml-12 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-1.5">
-                  {it.child.map((c) => (
-                    <li key={c.name}>
-                      <button
-                        onClick={() => onJump(c.slide)}
-                        className="text-xs md:text-sm hover:opacity-70 transition-opacity flex items-center gap-2 w-full text-left"
-                        style={{ color: THEME.ink }}
-                      >
-                        <span style={{ color: THEME.royal }}>›</span>
-                        <span className="flex-1 truncate">{c.name}</span>
-                        {c.count != null && <span className="opacity-50 text-[10px]">({c.count})</span>}
-                        <span className="opacity-40 text-[10px]">{String(c.slide + 1).padStart(2, "0")}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </li>
           ))}
         </ol>
