@@ -1482,11 +1482,6 @@ function CoverSlide({ onConsult }: { onConsult: () => void }) {
 /* ------------------------------------------------------------------ */
 
 function TocSlide({ onJump }: { onJump: (n: number) => void }) {
-  const sectorEntries = SECTORS.map((s) => {
-    const idx = slides.findIndex((sl) => sl.kind === "divider" && sl.label === s.name);
-    return { name: s.name, slide: idx, count: s.companies.length };
-  });
-
   const at = (k: Slide["kind"]) => slides.findIndex((sl) => sl.kind === k);
   const introEntries: { title: string; kind: Slide["kind"] }[] = [
     { title: "Index des entreprises", kind: "index" },
@@ -1495,13 +1490,13 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
     { title: "Le mot du Parrain", kind: "mot-parrain" },
     { title: "Le mot de l'équipe FOCEEN", kind: "mot-equipe" },
   ];
-  const items: { num: string; title: string; slide: number; child?: { name: string; slide: number; count?: number }[] }[] = [
-    ...introEntries.map((entry) => ({ title: entry.title, slide: at(entry.kind) })),
-    ...sectorEntries.map((entry) => ({ title: entry.name, slide: entry.slide })),
-  ].filter((entry) => entry.slide >= 0).map((entry, index) => ({
-    ...entry,
-    num: String(index + 1).padStart(2, "0"),
-  }));
+  const items: { num: string; title: string; slide: number }[] = introEntries
+    .map((entry) => ({ title: entry.title, slide: at(entry.kind) }))
+    .filter((entry) => entry.slide >= 0)
+    .map((entry, index) => ({
+      ...entry,
+      num: String(index + 1).padStart(2, "0"),
+    }));
 
   return (
     <div className="w-full h-full flex flex-col px-10 md:px-20 pt-20 pb-16" style={{ background: THEME.paper }}>
