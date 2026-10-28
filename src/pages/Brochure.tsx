@@ -1544,10 +1544,6 @@ function TocSlide({ onJump }: { onJump: (n: number) => void }) {
           </li>
         ))}
       </ol>
-
-      <p className="shrink-0 text-[11px] md:text-sm tracking-[0.2em] uppercase text-center" style={{ color: THEME.royal, opacity: 0.6 }}>
-        Cliquez sur une ligne pour accéder à la page
-      </p>
     </div>
   );
 }
