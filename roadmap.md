@@ -1,7 +1,6 @@
-## Mise à jour brochure et exposants
 ## Publicités séquentielles de la brochure
 - [x] Ajouter Capfinances en deuxième affiche, avec fermeture uniquement sur celle-ci.
-- [ ] Vérifier navigation, délai, fermeture et absence de débordement sur ordinateur et mobile.
+- [x] Vérifier navigation, délai, fermeture et absence de débordement sur ordinateur et mobile.
 - [ ] Publier et contrôler la version publique.
 
 ## Mise à jour brochure et exposants
