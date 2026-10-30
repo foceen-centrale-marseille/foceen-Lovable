@@ -1200,6 +1200,8 @@ const isBlueSlide = (s: Slide) => s.kind === "divider";
 export default function Brochure() {
   const [i, setI] = useState(0);
   const [showAdModal, setShowAdModal] = useState(false);
+  const [currentAdIndex, setCurrentAdIndex] = useState(0);
+  const adTouchX = useRef<number | null>(null);
   const [adAlreadyShown, setAdAlreadyShown] = useState(() => {
     try { return sessionStorage.getItem("foceen-ad-shown") === "1"; } catch { return false; }
   });
@@ -1221,6 +1223,11 @@ export default function Brochure() {
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
+      if (showAdModal) {
+        if (e.key === "ArrowRight") setCurrentAdIndex(1);
+        else if (e.key === "ArrowLeft") setCurrentAdIndex(0);
+        return;
+      }
       if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") next();
       else if (e.key === "ArrowLeft" || e.key === "PageUp") prev();
       else if (e.key === "Home") go(0);
@@ -1228,7 +1235,7 @@ export default function Brochure() {
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
-  }, [next, prev, go, total]);
+  }, [next, prev, go, total, showAdModal]);
 
   const touchStart = useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -1336,17 +1343,72 @@ export default function Brochure() {
       </div>
 
       {showAdModal && (
-        <div role="dialog" aria-modal="true" aria-label="Publicité partenaire" className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-sm p-2 sm:p-4 animate-in fade-in duration-300">
+        <div
+          data-noswipe
+          role="dialog"
+          aria-modal="true"
+          aria-label="Publicités partenaires"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-sm p-2 sm:p-4 overflow-hidden animate-in fade-in duration-300"
+          onTouchStart={(e) => { adTouchX.current = e.touches[0].clientX; }}
+          onTouchEnd={(e) => {
+            const s0 = adTouchX.current;
+            adTouchX.current = null;
+            if (s0 === null) return;
+            const dx = e.changedTouches[0].clientX - s0;
+            if (dx < -50) setCurrentAdIndex(1);
+            else if (dx > 50) setCurrentAdIndex(0);
+          }}
+        >
           <div className="relative flex items-center justify-center max-w-[95vw] max-h-[92vh] aspect-[1/1.414]" style={{ width: "min(95vw, calc(92vh / 1.414))" }}>
-            <button
-              type="button"
-              onClick={closeAd}
-              aria-label="Fermer la publicité"
-              className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 p-2 sm:p-2.5 rounded-full bg-black/80 hover:bg-destructive text-white shadow-2xl backdrop-blur-md transition-colors cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <img src="/pub-partenaire.png" alt="Publicité Partenaire" className="w-full h-full object-contain rounded-xl shadow-2xl" />
+            <div className="w-full h-full overflow-hidden rounded-xl">
+              <div
+                className="flex w-[200%] h-full transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(-${currentAdIndex * 50}%)` }}
+              >
+                <div className="w-1/2 h-full shrink-0">
+                  <img src="/pub-partenaire.png" alt="Publicité Syntec-Ingénierie" loading="eager" className="w-full h-full object-contain rounded-xl shadow-2xl" />
+                </div>
+                <div className="w-1/2 h-full shrink-0">
+                  <img src="/pub-partenaire-2.png" alt="Publicité Capfinances" loading="eager" className="w-full h-full object-contain rounded-xl shadow-2xl" />
+                </div>
+              </div>
+            </div>
+
+            {currentAdIndex === 0 ? (
+              <button
+                type="button"
+                onClick={() => setCurrentAdIndex(1)}
+                className="absolute bottom-10 right-2 sm:bottom-12 sm:right-3 z-20 inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2.5 text-sm font-heading font-semibold text-accent-foreground shadow-2xl hover:scale-105 transition-transform cursor-pointer"
+              >
+                Page suivante
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={closeAd}
+                  aria-label="Fermer la publicité"
+                  className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 p-2 sm:p-2.5 rounded-full bg-black/80 hover:bg-destructive text-white shadow-2xl backdrop-blur-md transition-colors cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentAdIndex(0)}
+                  aria-label="Publicité précédente"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-colors cursor-pointer"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+              </>
+            )}
+
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-2 rounded-full bg-black/50 px-3 py-1.5" aria-label={`Publicité ${currentAdIndex + 1} sur 2`}>
+              {[0, 1].map((n) => (
+                <span key={n} className={`h-2 rounded-full transition-all duration-300 ${n === currentAdIndex ? "w-5 bg-accent" : "w-2 bg-white/50"}`} />
+              ))}
+            </div>
           </div>
         </div>
       )}
