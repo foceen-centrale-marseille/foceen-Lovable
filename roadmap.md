@@ -1,8 +1,7 @@
-## Mise à jour brochure et exposants
 ## Publicités séquentielles de la brochure
 - [x] Ajouter Capfinances en deuxième affiche, avec fermeture uniquement sur celle-ci.
-- [ ] Vérifier navigation, délai, fermeture et absence de débordement sur ordinateur et mobile.
-- [ ] Publier et contrôler la version publique.
+- [x] Vérifier navigation, délai, fermeture et absence de débordement sur ordinateur et mobile.
+- [ ] Publication demandée ; le contrôle public ne montre pas encore le nouveau bouton, confirmation du déploiement en attente.
 
 ## Mise à jour brochure et exposants
 - [x] Supprimer le mot de la directrice et harmoniser les catégories de la brochure.
