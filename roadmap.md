@@ -1,4 +1,10 @@
 ## Mise à jour brochure et exposants
+## Publicités séquentielles de la brochure
+- [x] Ajouter Capfinances en deuxième affiche, avec fermeture uniquement sur celle-ci.
+- [ ] Vérifier navigation, délai, fermeture et absence de débordement sur ordinateur et mobile.
+- [ ] Publier et contrôler la version publique.
+
+## Mise à jour brochure et exposants
 - [x] Supprimer le mot de la directrice et harmoniser les catégories de la brochure.
 - [x] Supprimer Exiom et aligner tous les domaines des exposants.
 - [x] Vérifier les filtres, les liens et la pagination.

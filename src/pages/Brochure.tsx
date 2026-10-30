@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, ChevronRight as ArrowSmall, LayoutGrid, Quote, List, X, ZoomIn } from "lucide-react";
 import { useRef } from "react";
 import teamPhoto from "@/assets/teams/team26.jpg";
+import { Button } from "@/components/ui/button";
 
 
 /* ------------------------------------------------------------------ */
@@ -1201,7 +1202,8 @@ export default function Brochure() {
   const [i, setI] = useState(0);
   const [showAdModal, setShowAdModal] = useState(false);
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
-  const adTouchX = useRef<number | null>(null);
+  const adTouchStart = useRef<{ x: number; y: number } | null>(null);
+  const adDialogRef = useRef<HTMLDivElement>(null);
   const [adAlreadyShown, setAdAlreadyShown] = useState(() => {
     try { return sessionStorage.getItem("foceen-ad-shown") === "1"; } catch { return false; }
   });
@@ -1210,7 +1212,16 @@ export default function Brochure() {
     const t = window.setTimeout(() => setShowAdModal(true), 30000);
     return () => window.clearTimeout(t);
   }, [adAlreadyShown]);
+  useEffect(() => {
+    if (!showAdModal) return;
+    const previousFocus = document.activeElement;
+    adDialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    return () => {
+      if (previousFocus instanceof HTMLElement) previousFocus.focus();
+    };
+  }, [showAdModal, currentAdIndex]);
   const closeAd = () => {
+    if (currentAdIndex !== 1) return;
     setShowAdModal(false);
     setAdAlreadyShown(true);
     try { sessionStorage.setItem("foceen-ad-shown", "1"); } catch { /* ignore */ }
@@ -1224,6 +1235,15 @@ export default function Brochure() {
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
       if (showAdModal) {
+        if (e.key === "Tab") {
+          const buttons = adDialogRef.current?.querySelectorAll<HTMLButtonElement>("button");
+          if (buttons?.length) {
+            const active = Array.from(buttons).indexOf(document.activeElement as HTMLButtonElement);
+            const target = (active + (e.shiftKey ? -1 : 1) + buttons.length) % buttons.length;
+            e.preventDefault();
+            buttons[target]?.focus();
+          }
+        }
         if (e.key === "ArrowRight") setCurrentAdIndex(1);
         else if (e.key === "ArrowLeft") setCurrentAdIndex(0);
         return;
@@ -1344,25 +1364,31 @@ export default function Brochure() {
 
       {showAdModal && (
         <div
+          ref={adDialogRef}
           data-noswipe
           role="dialog"
           aria-modal="true"
           aria-label="Publicités partenaires"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-sm p-2 sm:p-4 overflow-hidden animate-in fade-in duration-300"
-          onTouchStart={(e) => { adTouchX.current = e.touches[0].clientX; }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/85 backdrop-blur-sm p-2 sm:p-4 overflow-hidden animate-in fade-in duration-300 motion-reduce:animate-none"
+          onTouchStart={(e) => {
+            const touch = e.touches[0];
+            adTouchStart.current = touch ? { x: touch.clientX, y: touch.clientY } : null;
+          }}
           onTouchEnd={(e) => {
-            const s0 = adTouchX.current;
-            adTouchX.current = null;
-            if (s0 === null) return;
-            const dx = e.changedTouches[0].clientX - s0;
+            const s0 = adTouchStart.current;
+            const touch = e.changedTouches[0];
+            adTouchStart.current = null;
+            if (!s0 || !touch) return;
+            const dx = touch.clientX - s0.x;
+            if (Math.abs(dx) < Math.abs(touch.clientY - s0.y) * 1.5) return;
             if (dx < -50) setCurrentAdIndex(1);
             else if (dx > 50) setCurrentAdIndex(0);
           }}
         >
-          <div className="relative flex items-center justify-center max-w-[95vw] max-h-[92vh] aspect-[1/1.414]" style={{ width: "min(95vw, calc(92vh / 1.414))" }}>
+          <div className="relative flex items-center justify-center w-[min(95vw,calc(92vh/1.414))] max-w-[95vw] max-h-[92vh] aspect-[1/1.414]">
             <div className="w-full h-full overflow-hidden rounded-xl">
               <div
-                className="flex w-[200%] h-full transition-transform duration-300 ease-out"
+                className="flex w-[200%] h-full transition-transform duration-300 ease-out motion-reduce:transition-none"
                 style={{ transform: `translateX(-${currentAdIndex * 50}%)` }}
               >
                 <div className="w-1/2 h-full shrink-0">
@@ -1375,38 +1401,40 @@ export default function Brochure() {
             </div>
 
             {currentAdIndex === 0 ? (
-              <button
+              <Button
                 type="button"
                 onClick={() => setCurrentAdIndex(1)}
                 className="absolute bottom-10 right-2 sm:bottom-12 sm:right-3 z-20 inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2.5 text-sm font-heading font-semibold text-accent-foreground shadow-2xl hover:scale-105 transition-transform cursor-pointer"
               >
                 Page suivante
                 <ChevronRight className="w-5 h-5" />
-              </button>
+              </Button>
             ) : (
               <>
-                <button
+                <Button
                   type="button"
+                  size="icon"
                   onClick={closeAd}
                   aria-label="Fermer la publicité"
-                  className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 p-2 sm:p-2.5 rounded-full bg-black/80 hover:bg-destructive text-white shadow-2xl backdrop-blur-md transition-colors cursor-pointer"
+                  className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 p-2 sm:p-2.5 rounded-full bg-foreground/80 hover:bg-destructive text-background shadow-2xl backdrop-blur-md transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
-                </button>
-                <button
+                </Button>
+                <Button
                   type="button"
+                  size="icon"
                   onClick={() => setCurrentAdIndex(0)}
                   aria-label="Publicité précédente"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-colors cursor-pointer"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-foreground/50 hover:bg-foreground/80 text-background transition-colors cursor-pointer"
                 >
                   <ChevronLeft className="w-5 h-5" />
-                </button>
+                </Button>
               </>
             )}
 
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-2 rounded-full bg-black/50 px-3 py-1.5" aria-label={`Publicité ${currentAdIndex + 1} sur 2`}>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-2 rounded-full bg-foreground/50 px-3 py-1.5" aria-label={`Publicité ${currentAdIndex + 1} sur 2`}>
               {[0, 1].map((n) => (
-                <span key={n} className={`h-2 rounded-full transition-all duration-300 ${n === currentAdIndex ? "w-5 bg-accent" : "w-2 bg-white/50"}`} />
+                <span key={n} className={`h-2 rounded-full transition-all duration-300 ${n === currentAdIndex ? "w-5 bg-accent" : "w-2 bg-background/50"}`} />
               ))}
             </div>
           </div>
