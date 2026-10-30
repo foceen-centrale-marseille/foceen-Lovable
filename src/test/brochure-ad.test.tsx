@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import Brochure from "@/pages/Brochure";
 
@@ -33,10 +33,10 @@ describe("Mandatory two-ad sequence", () => {
   });
   it("closes on the second advertisement and stays closed in the same session", () => {
     openAds();
-    fireEvent.click(screen.getByRole("button", { name: "Page suivante" }));
+    fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: "Page suivante" }));
     fireEvent.click(screen.getByRole("button", { name: "Publicité précédente" }));
     expect(screen.queryByRole("button", { name: "Fermer la publicité" })).toBeNull();
-    fireEvent.click(screen.getByRole("button", { name: "Page suivante" }));
+    fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: "Page suivante" }));
     fireEvent.click(screen.getByRole("button", { name: "Fermer la publicité" }));
     expect(screen.queryByRole("dialog")).toBeNull();
     expect(sessionStorage.getItem("foceen-ad-shown")).toBe("1");
