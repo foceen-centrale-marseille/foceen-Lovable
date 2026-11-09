@@ -25,7 +25,7 @@ const etudiants: QA[] = [
     a: (
       <>
         Oui, l'inscription préalable est obligatoire via le site internet dans l'onglet{" "}
-        <a href="https://forum-foceen.eventmaker.io/" target="_blank" rel="noopener noreferrer" className="text-cyan font-semibold hover:underline underline-offset-4">
+        <a href="https://inscriptions.foceen-centrale-marseille.fr/" target="_blank" rel="noopener noreferrer" className="text-cyan font-semibold hover:underline underline-offset-4">
           « S'inscrire »
         </a>.
       </>
