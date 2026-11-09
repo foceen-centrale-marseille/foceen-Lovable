@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="space-y-3">
             <h4 className="font-heading font-semibold text-sm uppercase tracking-wider">Liens</h4>
             <div className="flex flex-col gap-2 text-sm text-primary-foreground/70">
-              <a href="https://forum-foceen.eventmaker.io/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <a href="https://inscriptions.foceen-centrale-marseille.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 S'inscrire
               </a>
             </div>
