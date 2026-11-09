@@ -33,7 +33,7 @@ const Navbar = () => {
               link.external ? (
                 <a
                   key={link.label}
-                  href="https://forum-foceen.eventmaker.io/"
+                  href="https://inscriptions.foceen-centrale-marseille.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 rounded-md bg-cyan text-primary font-heading font-bold text-sm hover:bg-cyan/80 transition-colors"
@@ -80,7 +80,7 @@ const Navbar = () => {
                 link.external ? (
                   <a
                     key={link.label}
-                    href="https://forum-foceen.eventmaker.io/"
+                    href="https://inscriptions.foceen-centrale-marseille.fr/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block px-4 py-2 rounded-md bg-cyan text-primary font-heading font-bold text-sm text-center"
